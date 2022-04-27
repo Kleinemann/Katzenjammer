@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/table/columnmodel/resizebehavior/Abstract.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "extend",
+    "core",
+    "Object",
+    "members",
+    "_setNumColumns",
+    "numColumns",
+    "Error",
+    "onAppear",
+    "event",
+    "forceRefresh",
+    "onTableWidthChanged",
+    "onVerticalScrollBarChanged",
+    "onColumnWidthChanged",
+    "onVisibilityChanged",
+    "_getAvailableWidth",
+    "tableColumnModel",
+    "getTableColumnModel",
+    "table",
+    "getTable",
+    "scrollerArr",
+    "_getPaneScrollerArr",
+    "getLayoutParent",
+    "getBounds",
+    "scrollerParentWidth",
+    "width",
+    "lastScroller",
+    "length",
+    "getPaneInsetRight",
+    "ui",
+    "columnmodel",
+    "resizebehavior",
+    "Abstract"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iDAAhB,EAAmE;AACjEC,IAAAA,IAAI,EAAE,UAD2D;AAEjEC,IAAAA,MAAM,EAAEP,EAAE,CAACQ,IAAH,CAAQC,MAFiD;;AAIjE;AACF;AACA;AACA;AACA;AAEEC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,cAVO,0BAUQC,UAVR,EAUoB;AACzB,cAAM,IAAIC,KAAJ,CAAU,4BAAV,CAAN;AACD,OAZM;;AAcP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,QAtBO,oBAsBEC,KAtBF,EAsBSC,YAtBT,EAsBuB;AAC5B,cAAM,IAAIH,KAAJ,CAAU,sBAAV,CAAN;AACD,OAxBM;;AA0BP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACII,MAAAA,mBAlCO,+BAkCaF,KAlCb,EAkCoB;AACzB,cAAM,IAAIF,KAAJ,CAAU,iCAAV,CAAN;AACD,OApCM;;AAsCP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIK,MAAAA,0BAhDO,sCAgDoBH,KAhDpB,EAgD2B;AAChC,cAAM,IAAIF,KAAJ,CAAU,wCAAV,CAAN;AACD,OAlDM;;AAoDP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIM,MAAAA,oBA9DO,gCA8DcJ,KA9Dd,EA8DqB;AAC1B,cAAM,IAAIF,KAAJ,CAAU,kCAAV,CAAN;AACD,OAhEM;;AAkEP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIO,MAAAA,mBA5EO,+BA4EaL,KA5Eb,EA4EoB;AACzB,cAAM,IAAIF,KAAJ,CAAU,iCAAV,CAAN;AACD,OA9EM;;AAgFP;AACJ;AACA;AACA;AACA;AACIQ,MAAAA,kBArFO,gCAqFc;AACnB,YAAIC,gBAAgB,GAAG,KAAKC,mBAAL,EAAvB,CADmB,CAGnB;;AACA,YAAIC,KAAK,GAAGF,gBAAgB,CAACG,QAAjB,EAAZ;;AAEA,YAAIC,WAAW,GAAGF,KAAK,CAACG,mBAAN,EAAlB;;AACA,YAAI,CAACD,WAAW,CAAC,CAAD,CAAZ,IAAmB,CAACA,WAAW,CAAC,CAAD,CAAX,CAAeE,eAAf,GAAiCC,SAAjC,EAAxB,EAAsE;AACpE,iBAAO,IAAP;AACD;;AACD,YAAIC,mBAAmB,GAAGJ,WAAW,CAAC,CAAD,CAAX,CACvBE,eADuB,GAEvBC,SAFuB,GAEXE,KAFf;AAIA,YAAIC,YAAY,GAAGN,WAAW,CAACA,WAAW,CAACO,MAAZ,GAAqB,CAAtB,CAA9B;AACAH,QAAAA,mBAAmB,IAAIE,YAAY,CAACE,iBAAb,EAAvB;AAEA,eAAOJ,mBAAP;AACD;AAvGM;AAVwD,GAAnE;AAtBA9B,EAAAA,EAAE,CAACmC,EAAH,CAAMX,KAAN,CAAYY,WAAZ,CAAwBC,cAAxB,CAAuCC,QAAvC,CAAgDnC,aAAhD,GAAgEA,aAAhE",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007 Derrell Lipman\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Derrell Lipman (derrell)\n\n************************************************************************ */\n\n/**\n * An abstract resize behavior.  All resize behaviors should extend this\n * class.\n */\nqx.Class.define(\"qx.ui.table.columnmodel.resizebehavior.Abstract\", {\n  type: \"abstract\",\n  extend: qx.core.Object,\n\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members: {\n    /**\n     * Called when the ResizeTableColumnModel is initialized, and upon loading of\n     * a new TableModel, to allow the Resize Behaviors to know how many columns\n     * are in use.\n     *\n     * @abstract\n     * @param numColumns {Integer} The number of columns in use.\n     * @throws {Error} the abstract function warning.\n     */\n    _setNumColumns(numColumns) {\n      throw new Error(\"_setNumColumns is abstract\");\n    },\n\n    /**\n     * Called when the table has first been rendered.\n     *\n     * @abstract\n     * @param event {var} The <i>onappear</i> event object.\n     * @param forceRefresh {Boolean?false} Whether a refresh should be forced\n     * @throws {Error} the abstract function warning.\n     */\n    onAppear(event, forceRefresh) {\n      throw new Error(\"onAppear is abstract\");\n    },\n\n    /**\n     * Called when the table width changes due to either a window size change\n     * or a parent object changing size causing the table to change size.\n     *\n     * @abstract\n     * @param event {var} The <i>tableWidthChanged</i> event object.\n     * @throws {Error} the abstract function warning.\n     */\n    onTableWidthChanged(event) {\n      throw new Error(\"onTableWidthChanged is abstract\");\n    },\n\n    /**\n     * Called when the use of vertical scroll bar in the table changes, either\n     * from present to not present, or vice versa.\n     *\n     * @abstract\n     * @param event {var} The <i>verticalScrollBarChanged</i> event object.  This event has data,\n     *     obtained via event.getValue(), which is a boolean indicating whether a\n     *     vertical scroll bar is now present.\n     * @throws {Error} the abstract function warning.\n     */\n    onVerticalScrollBarChanged(event) {\n      throw new Error(\"onVerticalScrollBarChanged is abstract\");\n    },\n\n    /**\n     * Called when a column width is changed.\n     *\n     * @abstract\n     * @param event {var} The <i>widthChanged</i> event object.  This event has data, obtained via\n     *     event.getValue(), which is an object with three properties: the column\n     *     which changed width (data.col), the old width (data.oldWidth) and the new\n     *     width (data.newWidth).\n     * @throws {Error} the abstract function warning.\n     */\n    onColumnWidthChanged(event) {\n      throw new Error(\"onColumnWidthChanged is abstract\");\n    },\n\n    /**\n     * Called when a column visibility is changed.\n     *\n     * @abstract\n     * @param event {var} The <i>visibilityChanged</i> event object.  This event has data, obtained\n     *     via event.getValue(), which is an object with two properties: the column\n     *     which changed width (data.col) and the new visibility of the column\n     *     (data.visible).\n     * @throws {Error} the abstract function warning.\n     */\n    onVisibilityChanged(event) {\n      throw new Error(\"onVisibilityChanged is abstract\");\n    },\n\n    /**\n     * Determine the inner width available to columns in the table.\n     *\n     * @return {Integer} The available width\n     */\n    _getAvailableWidth() {\n      var tableColumnModel = this.getTableColumnModel();\n\n      // Get the inner width off the table\n      var table = tableColumnModel.getTable();\n\n      var scrollerArr = table._getPaneScrollerArr();\n      if (!scrollerArr[0] || !scrollerArr[0].getLayoutParent().getBounds()) {\n        return null;\n      }\n      var scrollerParentWidth = scrollerArr[0]\n        .getLayoutParent()\n        .getBounds().width;\n\n      var lastScroller = scrollerArr[scrollerArr.length - 1];\n      scrollerParentWidth -= lastScroller.getPaneInsetRight();\n\n      return scrollerParentWidth;\n    }\n  }\n});\n"
+  ]
+}

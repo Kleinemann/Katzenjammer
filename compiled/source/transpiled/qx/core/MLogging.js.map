@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/core/MLogging.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "__Logger",
+    "log",
+    "Logger",
+    "debug",
+    "varargs",
+    "__logMessage",
+    "arguments",
+    "info",
+    "warn",
+    "error",
+    "trace",
+    "level",
+    "argumentsArray",
+    "lang",
+    "Array",
+    "fromArguments",
+    "unshift",
+    "apply",
+    "core",
+    "MLogging"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,kBAAhB,EAAoC;AAClCC,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,gBAAQ,EAAEP,EAAE,CAACQ,GAAH,CAAOC,MAFV;;AAIP;AACJ;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,KAXO,iBAWDC,OAXC,EAWQ;AACb,aAAKC,oBAAL,CAAkB,OAAlB,EAA2BC,SAA3B;AACD,OAbM;;AAeP;AACJ;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,IAtBO,gBAsBFH,OAtBE,EAsBO;AACZ,aAAKC,oBAAL,CAAkB,MAAlB,EAA0BC,SAA1B;AACD,OAxBM;;AA0BP;AACJ;AACA;AACA;AACA;AACA;AACA;AACIE,MAAAA,IAjCO,gBAiCFJ,OAjCE,EAiCO;AACZ,aAAKC,oBAAL,CAAkB,MAAlB,EAA0BC,SAA1B;AACD,OAnCM;;AAqCP;AACJ;AACA;AACA;AACA;AACA;AACA;AACIG,MAAAA,KA5CO,iBA4CDL,OA5CC,EA4CQ;AACb,aAAKC,oBAAL,CAAkB,OAAlB,EAA2BC,SAA3B;AACD,OA9CM;;AAgDP;AACJ;AACA;AACA;AACA;AACA;AACA;AACII,MAAAA,KAvDO,iBAuDDN,OAvDC,EAuDQ;AACb,aAAKC,oBAAL,CAAkB,OAAlB,EAA2BC,SAA3B;AACD,OAzDM;;AA2DP;AACJ;AACA;AACA;AACA;AACA;AACA;AACID,MAAAA,oBAlEO,gCAkEMM,KAlEN,EAkEaP,OAlEb,EAkEsB;AAC3B,YAAIQ,cAAc,GAAGnB,EAAE,CAACoB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BX,OAA5B,CAArB;AACAQ,QAAAA,cAAc,CAACI,OAAf,CAAuB,IAAvB;;AACA,aAAKhB,gBAAL,CAAcW,KAAd,EAAqBM,KAArB,CAA2B,KAAKjB,gBAAhC,EAA0CY,cAA1C;AACD;AAtEM;AADyB,GAApC;AArBAnB,EAAAA,EAAE,CAACyB,IAAH,CAAQC,QAAR,CAAiBvB,aAAjB,GAAiCA,aAAjC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n\n************************************************************************ */\n\n/**\n * This mixin offers the basic logging features offered by {@link qx.log.Logger}.\n */\nqx.Mixin.define(\"qx.core.MLogging\", {\n  members: {\n    /** @type {Class} Pointer to the regular logger class */\n    __Logger: qx.log.Logger,\n\n    /**\n     * Logs a debug message.\n     *\n     * @param varargs {var} The item(s) to log. Any number of arguments is\n     * supported. If an argument is not a string, the object dump will be\n     * logged.\n     */\n    debug(varargs) {\n      this.__logMessage(\"debug\", arguments);\n    },\n\n    /**\n     * Logs an info message.\n     *\n     * @param varargs {var} The item(s) to log. Any number of arguments is\n     * supported. If an argument is not a string, the object dump will be\n     * logged.\n     */\n    info(varargs) {\n      this.__logMessage(\"info\", arguments);\n    },\n\n    /**\n     * Logs a warning message.\n     *\n     * @param varargs {var} The item(s) to log. Any number of arguments is\n     * supported. If an argument is not a string, the object dump will be\n     * logged.\n     */\n    warn(varargs) {\n      this.__logMessage(\"warn\", arguments);\n    },\n\n    /**\n     * Logs an error message.\n     *\n     * @param varargs {var} The item(s) to log. Any number of arguments is\n     * supported. If an argument is not a string, the object dump will be\n     * logged.\n     */\n    error(varargs) {\n      this.__logMessage(\"error\", arguments);\n    },\n\n    /**\n     * Logs an error message with the current stack trace\n     *\n     * @param varargs {var} The item(s) to log. Any number of arguments is\n     * supported. If an argument is not a string, the object dump will be\n     * logged.\n     */\n    trace(varargs) {\n      this.__logMessage(\"trace\", arguments);\n    },\n\n    /**\n     * Helper that calls the appropriate logger function with the current object\n     * and any number of items.\n     *\n     * @param level {String} The log level of the message\n     * @param varargs {arguments} Arguments list to be logged\n     */\n    __logMessage(level, varargs) {\n      var argumentsArray = qx.lang.Array.fromArguments(varargs);\n      argumentsArray.unshift(this);\n      this.__Logger[level].apply(this.__Logger, argumentsArray);\n    }\n  }\n});\n"
+  ]
+}

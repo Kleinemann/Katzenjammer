@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/core/BaseInit.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "statics",
+    "__application",
+    "getApplication",
+    "ready",
+    "core",
+    "Environment",
+    "get",
+    "log",
+    "Logger",
+    "warn",
+    "debug",
+    "Date",
+    "LOADSTART",
+    "app",
+    "clazz",
+    "getByName",
+    "start",
+    "main",
+    "finalize",
+    "event",
+    "handler",
+    "Application",
+    "onAppInstanceInitialized",
+    "__close",
+    "e",
+    "close",
+    "__shutdown",
+    "terminate",
+    "BaseInit"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Daniel Wagner (d_wagner)\n     * John Spackman\n\n************************************************************************ */\n\n/**\n * This is the base class for non-browser qooxdoo applications.\n */\nqx.Class.define(\"qx.core.BaseInit\", {\n  /*\n  *****************************************************************************\n     STATICS\n  *****************************************************************************\n  */\n\n  statics: {\n    __application: null,\n\n    /**\n     * Returns the instantiated qooxdoo application.\n     *\n     * @return {qx.core.Object} The application instance.\n     */\n    getApplication() {\n      return this.__application || null;\n    },\n\n    /**\n     * Runs when the application is loaded. Automatically creates an instance\n     * of the class defined by the setting <code>qx.application</code>.\n     *\n     */\n    ready() {\n      if (this.__application) {\n        return;\n      }\n\n      if (qx.core.Environment.get(\"engine.name\") == \"\") {\n        qx.log.Logger.warn(\"Could not detect engine!\");\n      }\n      if (qx.core.Environment.get(\"engine.version\") == \"\") {\n        qx.log.Logger.warn(\"Could not detect the version of the engine!\");\n      }\n      if (qx.core.Environment.get(\"os.name\") == \"\") {\n        qx.log.Logger.warn(\"Could not detect operating system!\");\n      }\n\n      if (qx.core.Environment.get(\"qx.debug.startupTimings\")) {\n        qx.log.Logger.debug(\n          this,\n          \"Load runtime: \" + (new Date() - qx.Bootstrap.LOADSTART) + \"ms\"\n        );\n      }\n\n      var app = qx.core.Environment.get(\"qx.application\");\n      var clazz = qx.Class.getByName(app);\n\n      if (clazz) {\n        this.__application = new clazz();\n\n        var start = new Date();\n        this.__application.main();\n        if (qx.core.Environment.get(\"qx.debug.startupTimings\")) {\n          qx.log.Logger.debug(\n            this,\n            \"Main runtime: \" + (new Date() - start) + \"ms\"\n          );\n        }\n\n        var start = new Date();\n        this.__application.finalize();\n        if (qx.core.Environment.get(\"qx.debug.startupTimings\")) {\n          qx.log.Logger.debug(\n            this,\n            \"Finalize runtime: \" + (new Date() - start) + \"ms\"\n          );\n        }\n\n        qx.event.handler.Application.onAppInstanceInitialized();\n      } else {\n        qx.log.Logger.warn(\"Missing application class: \" + app);\n      }\n    },\n\n    /**\n     * Runs before the document is unloaded. Calls the application's close\n     * method to check if the unload process should be stopped.\n     *\n     * @param e {qx.event.type.Native} Incoming beforeunload event.\n     */\n    __close(e) {\n      var app = this.__application;\n      if (app) {\n        app.close();\n      }\n    },\n\n    /**\n     * Runs when the document is unloaded. Automatically terminates a previously\n     * created application instance.\n     *\n     */\n    __shutdown() {\n      var app = this.__application;\n\n      if (app) {\n        app.terminate();\n      }\n    }\n  }\n});\n"
+  ]
+}

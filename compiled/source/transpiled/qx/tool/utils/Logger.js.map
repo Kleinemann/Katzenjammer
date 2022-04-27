@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/tool/utils/Logger.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "id",
+    "minLevel",
+    "set",
+    "properties",
+    "check",
+    "members",
+    "is",
+    "level",
+    "tool",
+    "utils",
+    "LogManager",
+    "getInstance",
+    "_levels",
+    "getMinLevel",
+    "log",
+    "msg",
+    "_output",
+    "output",
+    "trace",
+    "debug",
+    "info",
+    "warn",
+    "error",
+    "fatal",
+    "Logger"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EAAwC;AACtCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MADsB;AAGtCC,IAAAA,SAHsC,qBAG5BC,EAH4B,EAGxBC,QAHwB,EAGd;AACtB;AACA,WAAKC,GAAL,CAAS;AAAEF,QAAAA,EAAE,EAAEA,EAAN;AAAUC,QAAAA,QAAQ,EAAEA;AAApB,OAAT;AACD,KANqC;AAQtCE,IAAAA,UAAU,EAAE;AACVH,MAAAA,EAAE,EAAE;AACFI,QAAAA,KAAK,EAAE;AADL,OADM;AAKVH,MAAAA,QAAQ,EAAE;AACRG,QAAAA,KAAK,EAAE;AADC;AALA,KAR0B;AAkBtCC,IAAAA,OAAO,EAAE;AACPC,MAAAA,EADO,cACJC,KADI,EACG;AACR,YAAI,OAAOA,KAAP,IAAgB,QAApB,EAA8B;AAC5BA,UAAAA,KAAK,GAAGjB,EAAE,CAACkB,IAAH,CAAQC,KAAR,CAAcC,UAAd,CAAyBC,WAAzB,GAAuCC,OAAvC,CAA+CL,KAA/C,CAAR;AACD;;AACD,eAAO,KAAKM,WAAL,MAAsBN,KAA7B;AACD,OANM;AAQPO,MAAAA,GARO,eAQHP,KARG,EAQIQ,GARJ,EAQS;AACd,YAAI,KAAKT,EAAL,CAAQC,KAAR,CAAJ,EAAoB;AAClB,eAAKS,OAAL,CAAaT,KAAb,EAAoBQ,GAApB;AACD;AACF,OAZM;AAcPC,MAAAA,OAdO,mBAcCT,KAdD,EAcQQ,GAdR,EAca;AAClBzB,QAAAA,EAAE,CAACkB,IAAH,CAAQC,KAAR,CAAcC,UAAd,CAAyBC,WAAzB,GAAuCM,MAAvC,CAA8C,IAA9C,EAAoDV,KAApD,EAA2DQ,GAA3D;AACD,OAhBM;AAkBPG,MAAAA,KAlBO,iBAkBDH,GAlBC,EAkBI;AACT,eAAO,KAAKD,GAAL,CAAS,OAAT,EAAkBC,GAAlB,CAAP;AACD,OApBM;AAsBPI,MAAAA,KAtBO,iBAsBDJ,GAtBC,EAsBI;AACT,eAAO,KAAKD,GAAL,CAAS,OAAT,EAAkBC,GAAlB,CAAP;AACD,OAxBM;AA0BPK,MAAAA,IA1BO,gBA0BFL,GA1BE,EA0BG;AACR,eAAO,KAAKD,GAAL,CAAS,MAAT,EAAiBC,GAAjB,CAAP;AACD,OA5BM;AA8BPM,MAAAA,IA9BO,gBA8BFN,GA9BE,EA8BG;AACR,eAAO,KAAKD,GAAL,CAAS,MAAT,EAAiBC,GAAjB,CAAP;AACD,OAhCM;AAkCPO,MAAAA,KAlCO,iBAkCDP,GAlCC,EAkCI;AACT,eAAO,KAAKD,GAAL,CAAS,OAAT,EAAkBC,GAAlB,CAAP;AACD,OApCM;AAsCPQ,MAAAA,KAtCO,iBAsCDR,GAtCC,EAsCI;AACT,eAAO,KAAKD,GAAL,CAAS,OAAT,EAAkBC,GAAlB,CAAP;AACD;AAxCM;AAlB6B,GAAxC;AArBAzB,EAAAA,EAAE,CAACkB,IAAH,CAAQC,KAAR,CAAce,MAAd,CAAqB/B,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n *\n *    qooxdoo-compiler - node.js based replacement for the Qooxdoo python\n *    toolchain\n *\n *    https://github.com/qooxdoo/qooxdoo\n *\n *    Copyright:\n *      2011-2017 Zenesis Limited, http://www.zenesis.com\n *\n *    License:\n *      MIT: https://opensource.org/licenses/MIT\n *\n *      This software is provided under the same licensing terms as Qooxdoo,\n *      please see the LICENSE file in the Qooxdoo project's top-level directory\n *      for details.\n *\n *    Authors:\n *      * John Spackman (john.spackman@zenesis.com, @johnspackman)\n *\n * *********************************************************************** */\nqx.Class.define(\"qx.tool.utils.Logger\", {\n  extend: qx.core.Object,\n\n  construct(id, minLevel) {\n    super();\n    this.set({ id: id, minLevel: minLevel });\n  },\n\n  properties: {\n    id: {\n      check: \"String\"\n    },\n\n    minLevel: {\n      check: \"Integer\"\n    }\n  },\n\n  members: {\n    is(level) {\n      if (typeof level == \"string\") {\n        level = qx.tool.utils.LogManager.getInstance()._levels[level];\n      }\n      return this.getMinLevel() <= level;\n    },\n\n    log(level, msg) {\n      if (this.is(level)) {\n        this._output(level, msg);\n      }\n    },\n\n    _output(level, msg) {\n      qx.tool.utils.LogManager.getInstance().output(this, level, msg);\n    },\n\n    trace(msg) {\n      return this.log(\"trace\", msg);\n    },\n\n    debug(msg) {\n      return this.log(\"debug\", msg);\n    },\n\n    info(msg) {\n      return this.log(\"info\", msg);\n    },\n\n    warn(msg) {\n      return this.log(\"warn\", msg);\n    },\n\n    error(msg) {\n      return this.log(\"error\", msg);\n    },\n\n    fatal(msg) {\n      return this.log(\"fatal\", msg);\n    }\n  }\n});\n"
+  ]
+}

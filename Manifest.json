@@ -1,0 +1,26 @@
+{
+ "$schema": "https://qooxdoo.org/schema/Manifest-2-0-0.json",
+  "info" :
+  {
+    "name" : "katzenjammer",
+    "summary" : "undefined",
+    "description" : "undefined",
+    "homepage" : "undefined",
+    "license" : "MIT license",
+    "authors" : ["Marcel Klein"],
+    "version": "0.0.3"
+  },
+
+  "provides" :
+  {
+    "namespace"   : "katzenjammer",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation"
+  },
+
+  "requires": {
+    "@qooxdoo/framework": "^7.0.0"
+  }
+}

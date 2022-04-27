@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Workspace/katzenjammer/source/class/katzenjammer/theme/Decoration.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "theme",
+    "indigo",
+    "Decoration",
+    "decorations",
+    "style",
+    "radius",
+    "backgroundColor",
+    "width",
+    "color",
+    "katzenjammer"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AAEAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,KAAH,CAASC,MAAT,CAAgBC,UAD3B;AAGEC,IAAAA,WAAW,EACX;AACC,eACA;AACCC,QAAAA,KAAK,EAAE;AACNC,UAAAA,MAAM,EAAE,EADF;AAENC,UAAAA,eAAe,EAAE,mBAFX;AAGNC,UAAAA,KAAK,EAAE,CAHD;AAKNC,UAAAA,KAAK,EAAE,QALD;AAONJ,UAAAA,KAAK,EAAE;AAPD;AADR;AAFD;AAJF,GADA;AAVAK,EAAAA,YAAY,CAACT,KAAb,CAAmBE,UAAnB,CAA8BN,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "/* ************************************************************************\r\n\r\n   Copyright: 2022 undefined\r\n\r\n   License: MIT license\r\n\r\n   Authors: undefined\r\n\r\n************************************************************************ */\r\n\r\nqx.Theme.define(\"katzenjammer.theme.Decoration\",\r\n{\r\n  extend : qx.theme.indigo.Decoration,\r\n\r\n  decorations :\r\n  {\r\n\t  \"round\":\r\n\t  {\r\n\t\t  style: {\r\n\t\t\t  radius: 10,\r\n\t\t\t  backgroundColor: \"background-window\",\r\n\t\t\t  width: 1,\r\n\r\n\t\t\t  color: \"border\",\r\n\r\n\t\t\t  style: \"solid\"\r\n\t\t  }\r\n\t  }\r\n  }\r\n});"
+  ]
+}

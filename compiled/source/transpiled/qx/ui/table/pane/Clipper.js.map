@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/table/pane/Clipper.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "container",
+    "Composite",
+    "construct",
+    "layout",
+    "Grow",
+    "setMinWidth",
+    "members",
+    "scrollToX",
+    "value",
+    "getContentElement",
+    "scrollToY",
+    "table",
+    "pane",
+    "Clipper"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,0BAAhB,EAA4C;AAC1CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,SADkB;AAG1CC,IAAAA,SAH0C,uBAG9B;AACV,uDAAM,IAAIV,EAAE,CAACO,EAAH,CAAMI,MAAN,CAAaC,IAAjB,EAAN;AACA,WAAKC,WAAL,CAAiB,CAAjB;AACD,KANyC;AAQ1CC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;AACIC,MAAAA,SANO,qBAMGC,KANH,EAMU;AACf,aAAKC,iBAAL,GAAyBF,SAAzB,CAAmCC,KAAnC,EAA0C,KAA1C;AACD,OARM;;AAUP;AACJ;AACA;AACA;AACA;AACIE,MAAAA,SAfO,qBAeGF,KAfH,EAeU;AACf,aAAKC,iBAAL,GAAyBC,SAAzB,CAAmCF,KAAnC,EAA0C,IAA1C;AACD;AAjBM;AARiC,GAA5C;AArBAhB,EAAAA,EAAE,CAACO,EAAH,CAAMY,KAAN,CAAYC,IAAZ,CAAiBC,OAAjB,CAAyBlB,aAAzB,GAAyCA,aAAzC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * Clipping area for the table header and table pane.\n */\nqx.Class.define(\"qx.ui.table.pane.Clipper\", {\n  extend: qx.ui.container.Composite,\n\n  construct() {\n    super(new qx.ui.layout.Grow());\n    this.setMinWidth(0);\n  },\n\n  members: {\n    /**\n     * Scrolls the element's content to the given left coordinate\n     *\n     * @param value {Integer} The vertical position to scroll to.\n     */\n    scrollToX(value) {\n      this.getContentElement().scrollToX(value, false);\n    },\n\n    /**\n     * Scrolls the element's content to the given top coordinate\n     *\n     * @param value {Integer} The horizontal position to scroll to.\n     */\n    scrollToY(value) {\n      this.getContentElement().scrollToY(value, true);\n    }\n  }\n});\n"
+  ]
+}

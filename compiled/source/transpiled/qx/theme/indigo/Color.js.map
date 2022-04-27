@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/theme/indigo/Color.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "colors",
+    "background",
+    "font",
+    "highlight",
+    "link",
+    "button",
+    "invalid",
+    "shadow",
+    "core",
+    "Environment",
+    "get",
+    "text",
+    "tooltip",
+    "theme",
+    "indigo",
+    "Color"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uBAAhB,EAAyC;AACvCC,IAAAA,MAAM,EAAE;AACN;AACAC,MAAAA,UAAU,EAAE,OAFN;AAGN,mBAAa,SAHP;AAIN,0BAAoB,SAJd;AAKNC,MAAAA,IAAI,EAAE,SALA;AAONC,MAAAA,SAAS,EAAE,SAPL;AAOgB;AACtB,yBAAmB,SARb;AAQwB;AAE9B;AACA,6BAAuB,SAXjB;AAYN,sCAAgC,SAZ1B;AAaN,kCAA4B,SAbtB;AAcN,6BAAuB,SAdjB;AAeN,qCAA+B,SAfzB;AAgBN,yBAAmB,OAhBb;AAkBN;AACA,4BAAsB,SAnBhB;AAoBN,+BAAyB,SApBnB;AAqBN,uCAAiC,SArB3B;AAuBN;AACAC,MAAAA,IAAI,EAAE,MAxBA;AA0BN;AACA,0BAAoB,SA3Bd;AA4BN,wBAAkB,SA5BZ;AA8BN;AACAC,MAAAA,MAAM,EAAE,SA/BF;AAgCN,uBAAiB,MAhCX;AAiCN,+BAAyB,SAjCnB;AAkCNC,MAAAA,OAAO,EAAE,SAlCH;AAmCN,2BAAqB,SAnCf;AAoCN,yBAAmB,SApCb;AAqCN,mCAA6B,SArCvB;AAsCN,iCAA2B,SAtCrB;AAuCN,qBAAe,SAvCT;AAyCN;AACA,uBAAiB,SA1CX;AA2CN,6BAAuB,SA3CjB;AA6CN;AACA,0BAAoB,SA9Cd;AAgDN;AACAC,MAAAA,MAAM,EAAEb,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,UAAxB,IACJ,oBADI,GAEJ,SAnDE;AAqDN;AACA,qBAAe,SAtDT;AAuDN,sBAAgB,SAvDV;AAwDN,6BAAuB,SAxDjB;AA0DN;AACA,0BAAoB,SA3Dd;AA6DN;AACAC,MAAAA,IAAI,EAAE,SA9DA;AA+DN,uBAAiB,SA/DX;AAgEN,uBAAiB,OAhEX;AAiEN,0BAAoB,SAjEd;AAmEN;AACAC,MAAAA,OAAO,EAAE,MApEH;AAqEN,sBAAgB,OArEV;AAuEN;AACA,sBAAgB,CAAC,GAAD,EAAM,GAAN,EAAW,GAAX,CAxEV;AAyEN,+BAAyB,SAzEnB;AA2EN;AACA,2BAAqB,CAAC,GAAD,EAAM,GAAN,EAAW,GAAX,CA5Ef;AA6EN,+CAAyC,SA7EnC;AA8EN,sCAAgC,SA9E1B;AA+EN,uCAAiC,CAAC,EAAD,EAAK,EAAL,EAAS,GAAT,CA/E3B;AAgFN,mCAA6B,OAhFvB;AAiFN,kCAA4B,OAjFtB;AAkFN,4BAAsB,CAAC,GAAD,EAAM,GAAN,EAAW,GAAX,CAlFhB;AAmFN,mBAAa,CAAC,CAAD,EAAI,CAAJ,EAAO,CAAP,CAnFP;AAoFN,wBAAkB,MApFZ;AAqFN,2BAAqB,MArFf;AAuFN;AACA,kCAA4B,SAxFtB;AAyFN,+CAAyC,CAAC,GAAD,EAAM,GAAN,EAAW,GAAX,CAzFnC;AA0FN,8CAAwC,CAAC,GAAD,EAAM,GAAN,EAAW,GAAX,CA1FlC;AA2FN,4CAAsC,MA3FhC;AA4FN,gDAA0C,SA5FpC;AA6FN,kDAA4C,OA7FtC;AA8FN,oDAA8C,MA9FxC;AA+FN,8CAAwC;AA/FlC;AAD+B,GAAzC;AAtBAlB,EAAAA,EAAE,CAACmB,KAAH,CAASC,MAAT,CAAgBC,KAAhB,CAAsBlB,aAAtB,GAAsCA,aAAtC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n     * Tristan Koch (trkoch)\n\n************************************************************************ */\n\n/**\n * Indigo color theme\n */\nqx.Theme.define(\"qx.theme.indigo.Color\", {\n  colors: {\n    // main\n    background: \"white\",\n    \"dark-blue\": \"#323335\",\n    \"light-background\": \"#F4F4F4\",\n    font: \"#262626\",\n\n    highlight: \"#3D72C9\", // bright blue\n    \"highlight-shade\": \"#5583D0\", // bright blue\n\n    // backgrounds\n    \"background-selected\": \"#3D72C9\",\n    \"background-selected-disabled\": \"#CDCDCD\",\n    \"background-selected-dark\": \"#323335\",\n    \"background-disabled\": \"#F7F7F7\",\n    \"background-disabled-checked\": \"#BBBBBB\",\n    \"background-pane\": \"white\",\n\n    // tabview\n    \"tabview-unselected\": \"#1866B5\",\n    \"tabview-button-border\": \"#134983\",\n    \"tabview-label-active-disabled\": \"#D9D9D9\",\n\n    // text colors\n    link: \"#24B\",\n\n    // scrollbar\n    \"scrollbar-bright\": \"#F1F1F1\",\n    \"scrollbar-dark\": \"#EBEBEB\",\n\n    // form\n    button: \"#E8F0E3\",\n    \"button-border\": \"#BBB\",\n    \"button-border-hovered\": \"#939393\",\n    invalid: \"#C00F00\",\n    \"button-box-bright\": \"#F9F9F9\",\n    \"button-box-dark\": \"#E3E3E3\",\n    \"button-box-bright-pressed\": \"#BABABA\",\n    \"button-box-dark-pressed\": \"#EBEBEB\",\n    \"border-lead\": \"#888888\",\n\n    // window\n    \"window-border\": \"#dddddd\",\n    \"window-border-inner\": \"#F4F4F4\",\n\n    // group box\n    \"white-box-border\": \"#dddddd\",\n\n    // shadows\n    shadow: qx.core.Environment.get(\"css.rgba\")\n      ? \"rgba(0, 0, 0, 0.4)\"\n      : \"#666666\",\n\n    // borders\n    \"border-main\": \"#dddddd\",\n    \"border-light\": \"#B7B7B7\",\n    \"border-light-shadow\": \"#686868\",\n\n    // separator\n    \"border-separator\": \"#808080\",\n\n    // text\n    text: \"#262626\",\n    \"text-disabled\": \"#A7A6AA\",\n    \"text-selected\": \"white\",\n    \"text-placeholder\": \"#CBC8CD\",\n\n    // tooltip\n    tooltip: \"#FE0\",\n    \"tooltip-text\": \"black\",\n\n    // table\n    \"table-header\": [242, 242, 242],\n    \"table-focus-indicator\": \"#3D72C9\",\n\n    // used in table code\n    \"table-header-cell\": [235, 234, 219],\n    \"table-row-background-focused-selected\": \"#3D72C9\",\n    \"table-row-background-focused\": \"#F4F4F4\",\n    \"table-row-background-selected\": [51, 94, 168],\n    \"table-row-background-even\": \"white\",\n    \"table-row-background-odd\": \"white\",\n    \"table-row-selected\": [255, 255, 255],\n    \"table-row\": [0, 0, 0],\n    \"table-row-line\": \"#EEE\",\n    \"table-column-line\": \"#EEE\",\n\n    // used in progressive code\n    \"progressive-table-header\": \"#AAAAAA\",\n    \"progressive-table-row-background-even\": [250, 248, 243],\n    \"progressive-table-row-background-odd\": [255, 255, 255],\n    \"progressive-progressbar-background\": \"gray\",\n    \"progressive-progressbar-indicator-done\": \"#CCCCCC\",\n    \"progressive-progressbar-indicator-undone\": \"white\",\n    \"progressive-progressbar-percent-background\": \"gray\",\n    \"progressive-progressbar-percent-text\": \"white\"\n  }\n});\n"
+  ]
+}

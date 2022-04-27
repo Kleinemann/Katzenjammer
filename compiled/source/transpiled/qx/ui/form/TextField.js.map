@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/form/TextField.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "form",
+    "AbstractField",
+    "properties",
+    "appearance",
+    "refine",
+    "init",
+    "allowGrowY",
+    "allowShrinkY",
+    "members",
+    "_renderContentElement",
+    "innerHeight",
+    "element",
+    "core",
+    "Environment",
+    "get",
+    "parseInt",
+    "setStyles",
+    "_createContentElement",
+    "el",
+    "deviceType",
+    "addListener",
+    "_onKeyPress",
+    "evt",
+    "getKeyIdentifier",
+    "isFocusable",
+    "blur",
+    "setFocusable",
+    "destruct",
+    "getContentElement",
+    "removeListener",
+    "TextField"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EAAwC;AACtCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,aADmB;;AAGtC;AACF;AACA;AACA;AACA;AAEEC,IAAAA,UAAU,EAAE;AACV;AACAC,MAAAA,UAAU,EAAE;AACVC,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI,OAFF;AAOV;AACAC,MAAAA,UAAU,EAAE;AACVF,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI,OARF;AAaV;AACAE,MAAAA,YAAY,EAAE;AACZH,QAAAA,MAAM,EAAE,IADI;AAEZC,QAAAA,IAAI,EAAE;AAFM;AAdJ,KAT0B;AA6BtCG,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,qBAFO,iCAEeC,WAFf,EAE4BC,OAF5B,EAEqC;AAC1C,YACEnB,EAAE,CAACoB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,aAAxB,KAA0C,QAA1C,KACCC,QAAQ,CAACvB,EAAE,CAACoB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,gBAAxB,CAAD,EAA4C,EAA5C,CAAR,GAA0D,CAA1D,IACCtB,EAAE,CAACoB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,sBAAxB,IAAkD,CAFpD,CADF,EAIE;AACAH,UAAAA,OAAO,CAACK,SAAR,CAAkB;AAChB,2BAAeN,WAAW,GAAG;AADb,WAAlB;AAGD;AACF,OAZM;AAcP;AACAO,MAAAA,qBAfO,mCAeiB;AACtB,YAAIC,EAAE,6EAAN;;AACA,YAAIC,UAAU,GAAG3B,EAAE,CAACoB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,aAAxB,CAAjB;;AACA,YAAIK,UAAU,IAAI,QAAd,IAA0BA,UAAU,IAAI,QAA5C,EAAsD;AACpDD,UAAAA,EAAE,CAACE,WAAH,CAAe,UAAf,EAA2B,KAAKC,WAAhC,EAA6C,IAA7C;AACD;;AAED,eAAOH,EAAP;AACD,OAvBM;;AAyBP;AACJ;AACA;AACA;AACIG,MAAAA,WA7BO,uBA6BKC,GA7BL,EA6BU;AACf;AACA,YAAIA,GAAG,CAACC,gBAAJ,MAA0B,OAA9B,EAAuC;AACrC,cAAI,KAAKC,WAAL,EAAJ,EAAwB;AACtB,iBAAKC,IAAL;AACD,WAFD,MAEO;AACL;AACA;AACA;AACA,iBAAKC,YAAL,CAAkB,IAAlB;AACA,iBAAKD,IAAL;AACA,iBAAKC,YAAL,CAAkB,KAAlB;AACD;AACF;AACF;AA3CM,KA7B6B;AA2EtCC,IAAAA,QA3EsC,sBA2E3B;AACT,WAAKC,iBAAL,GAAyBC,cAAzB,CAAwC,UAAxC,EAAoD,KAAKR,WAAzD,EAAsE,IAAtE;AACD;AA7EqC,GAAxC;AAxBA7B,EAAAA,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAW8B,SAAX,CAAqBnC,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Andreas Ecker (ecker)\n     * Fabian Jakobs (fjakobs)\n     * Adrian Olaru (adrianolaru)\n\n************************************************************************ */\n\n/**\n * The TextField is a single-line text input field.\n */\nqx.Class.define(\"qx.ui.form.TextField\", {\n  extend: qx.ui.form.AbstractField,\n\n  /*\n  *****************************************************************************\n     PROPERTIES\n  *****************************************************************************\n  */\n\n  properties: {\n    // overridden\n    appearance: {\n      refine: true,\n      init: \"textfield\"\n    },\n\n    // overridden\n    allowGrowY: {\n      refine: true,\n      init: false\n    },\n\n    // overridden\n    allowShrinkY: {\n      refine: true,\n      init: false\n    }\n  },\n\n  members: {\n    // overridden\n    _renderContentElement(innerHeight, element) {\n      if (\n        qx.core.Environment.get(\"engine.name\") == \"mshtml\" &&\n        (parseInt(qx.core.Environment.get(\"engine.version\"), 10) < 9 ||\n          qx.core.Environment.get(\"browser.documentmode\") < 9)\n      ) {\n        element.setStyles({\n          \"line-height\": innerHeight + \"px\"\n        });\n      }\n    },\n\n    // overridden\n    _createContentElement() {\n      var el = super._createContentElement();\n      var deviceType = qx.core.Environment.get(\"device.type\");\n      if (deviceType == \"tablet\" || deviceType == \"mobile\") {\n        el.addListener(\"keypress\", this._onKeyPress, this);\n      }\n\n      return el;\n    },\n\n    /**\n     * Close the virtual keyboard if the Enter key is pressed.\n     * @param evt {qx.event.type.KeySequence} the keypress event.\n     */\n    _onKeyPress(evt) {\n      // On return\n      if (evt.getKeyIdentifier() == \"Enter\") {\n        if (this.isFocusable()) {\n          this.blur();\n        } else {\n          // When the text field is not focusable, blur() will raise an exception on\n          // touch devices and the virtual keyboard is not closed. To work around this\n          // issue, we're enabling the focus just for the blur() call.\n          this.setFocusable(true);\n          this.blur();\n          this.setFocusable(false);\n        }\n      }\n    }\n  },\n\n  destruct() {\n    this.getContentElement().removeListener(\"keypress\", this._onKeyPress, this);\n  }\n});\n"
+  ]
+}

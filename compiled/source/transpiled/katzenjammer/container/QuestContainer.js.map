@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Workspace/katzenjammer/source/class/katzenjammer/container/QuestContainer.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "container",
+    "Composite",
+    "statics",
+    "properties",
+    "construct",
+    "layout",
+    "VBox",
+    "members",
+    "katzenjammer",
+    "QuestContainer"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAC;;AACD;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EAAyD;AACrDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,SAD6B;AAGrDC,IAAAA,OAAO,EACP,EAJqD;AAOrDC,IAAAA,UAAU,EACV,EARqD;AAWrDC,IAAAA,SAAS,EAAE,qBACX;AACI,UAAIC,MAAM,GAAG,IAAIb,EAAE,CAACO,EAAH,CAAMM,MAAN,CAAaC,IAAjB,CAAsB,CAAtB,CAAb;AACA,uDAAqBD,MAArB;AACH,KAfoD;AAiBrDE,IAAAA,OAAO,EACP;AAlBqD,GAAzD;AAJAC,EAAAA,YAAY,CAACR,SAAb,CAAuBS,cAAvB,CAAsCd,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "﻿/* global katzenjammer */\r\n/**\r\n*\r\n**/\r\nqx.Class.define(\"katzenjammer.container.QuestContainer\", {\r\n    extend: qx.ui.container.Composite,\r\n\r\n    statics:\r\n    {\r\n    },\r\n\r\n    properties:\r\n    {\r\n    },\r\n\r\n    construct: function ()\r\n    {\r\n        var layout = new qx.ui.layout.VBox(3);\r\n        this.base(arguments, layout);\r\n    },\r\n\r\n    members:\r\n    {\r\n \r\n    }\r\n});\r\n"
+  ]
+}

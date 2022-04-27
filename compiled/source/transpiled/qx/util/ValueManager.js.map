@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/util/ValueManager.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "type",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "_dynamic",
+    "members",
+    "resolveDynamic",
+    "value",
+    "isDynamic",
+    "resolve",
+    "_setDynamic",
+    "_getDynamic",
+    "util",
+    "ValueManager"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EAAwC;AACtCC,IAAAA,IAAI,EAAE,UADgC;AAEtCC,IAAAA,MAAM,EAAEP,EAAE,CAACQ,IAAH,CAAQC,MAFsB;;AAItC;AACF;AACA;AACA;AACA;AAEEC,IAAAA,SAVsC,uBAU1B;AACV,4CADU,CAGV;;AACA,WAAKC,QAAL,GAAgB,EAAhB;AACD,KAfqC;;AAiBtC;AACF;AACA;AACA;AACA;AAEEC,IAAAA,OAAO,EAAE;AACPD,MAAAA,QAAQ,EAAE,IADH;;AAGP;AACJ;AACA;AACA;AACA;AACA;AACIE,MAAAA,cATO,0BASQC,KATR,EASe;AACpB,eAAO,KAAKH,QAAL,CAAcG,KAAd,CAAP;AACD,OAXM;;AAaP;AACJ;AACA;AACA;AACA;AACA;AACIC,MAAAA,SAnBO,qBAmBGD,KAnBH,EAmBU;AACf,eAAO,CAAC,CAAC,KAAKH,QAAL,CAAcG,KAAd,CAAT;AACD,OArBM;;AAuBP;AACJ;AACA;AACA;AACA;AACA;AACA;AACIE,MAAAA,OA9BO,mBA8BCF,KA9BD,EA8BQ;AACb,YAAIA,KAAK,IAAI,KAAKH,QAAL,CAAcG,KAAd,CAAb,EAAmC;AACjC,iBAAO,KAAKH,QAAL,CAAcG,KAAd,CAAP;AACD;;AAED,eAAOA,KAAP;AACD,OApCM;;AAsCP;AACJ;AACA;AACA;AACIG,MAAAA,WA1CO,uBA0CKH,KA1CL,EA0CY;AACjB,aAAKH,QAAL,GAAgBG,KAAhB;AACD,OA5CM;;AA8CP;AACJ;AACA;AACA;AACII,MAAAA,WAlDO,yBAkDO;AACZ,eAAO,KAAKP,QAAZ;AACD;AApDM;AAvB6B,GAAxC;AAtBAX,EAAAA,EAAE,CAACmB,IAAH,CAAQC,YAAR,CAAqBjB,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Andreas Ecker (ecker)\n\n************************************************************************ */\n\n/**\n * Abstract base class for all managers of themed values.\n */\nqx.Class.define(\"qx.util.ValueManager\", {\n  type: \"abstract\",\n  extend: qx.core.Object,\n\n  /*\n  *****************************************************************************\n     CONSTRUCTOR\n  *****************************************************************************\n  */\n\n  construct() {\n    super();\n\n    // Create empty dynamic map\n    this._dynamic = {};\n  },\n\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members: {\n    _dynamic: null,\n\n    /**\n     * Returns the dynamically interpreted result for the incoming value\n     *\n     * @param value {String} dynamically interpreted identifier\n     * @return {var} return the (translated) result of the incoming value\n     */\n    resolveDynamic(value) {\n      return this._dynamic[value];\n    },\n\n    /**\n     * Whether a value is interpreted dynamically\n     *\n     * @param value {String} dynamically interpreted identifier\n     * @return {Boolean} returns true if the value is interpreted dynamically\n     */\n    isDynamic(value) {\n      return !!this._dynamic[value];\n    },\n\n    /**\n     * Returns the dynamically interpreted result for the incoming value,\n     * (if available), otherwise returns the original value\n     * @param value {String} Value to resolve\n     * @return {var} either returns the (translated) result of the incoming\n     * value or the value itself\n     */\n    resolve(value) {\n      if (value && this._dynamic[value]) {\n        return this._dynamic[value];\n      }\n\n      return value;\n    },\n\n    /**\n     * Sets the dynamics map.\n     * @param value {Map} The map.\n     */\n    _setDynamic(value) {\n      this._dynamic = value;\n    },\n\n    /**\n     * Returns the dynamics map.\n     * @return {Map} The map.\n     */\n    _getDynamic() {\n      return this._dynamic;\n    }\n  }\n});\n"
+  ]
+}

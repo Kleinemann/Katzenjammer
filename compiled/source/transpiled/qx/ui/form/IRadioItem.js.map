@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/form/IRadioItem.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Interface",
+    "define",
+    "events",
+    "changeValue",
+    "members",
+    "setValue",
+    "value",
+    "getValue",
+    "setGroup",
+    "assertInstance",
+    "ui",
+    "form",
+    "RadioGroup",
+    "getGroup",
+    "IRadioItem"
+  ],
+  "mappings": ";;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,uBAApB,EAA6C;AAC3C;AACF;AACA;AACA;AACA;AAEEC,IAAAA,MAAM,EAAE;AACN;AACAC,MAAAA,WAAW,EAAE;AAFP,KAPmC;;AAY3C;AACF;AACA;AACA;AACA;AAEEC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;AACIC,MAAAA,QANO,oBAMEC,KANF,EAMS,CAAE,CANX;;AAQP;AACJ;AACA;AACA;AACA;AACIC,MAAAA,QAbO,sBAaI,CAAE,CAbN;;AAeP;AACJ;AACA;AACA;AACA;AACA;AACIC,MAAAA,QArBO,oBAqBEF,KArBF,EAqBS;AACd,aAAKG,cAAL,CAAoBH,KAApB,EAA2BV,EAAE,CAACc,EAAH,CAAMC,IAAN,CAAWC,UAAtC;AACD,OAvBM;;AAyBP;AACJ;AACA;AACA;AACA;AACIC,MAAAA,QA9BO,sBA8BI,CAAE;AA9BN;AAlBkC,GAA7C;AAvBAjB,EAAAA,EAAE,CAACc,EAAH,CAAMC,IAAN,CAAWG,UAAX,CAAsBf,aAAtB,GAAsCA,aAAtC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * Each object, which should be managed by a {@link RadioGroup} have to\n * implement this interface.\n */\nqx.Interface.define(\"qx.ui.form.IRadioItem\", {\n  /*\n  *****************************************************************************\n     EVENTS\n  *****************************************************************************\n  */\n\n  events: {\n    /** Fired when the item was checked or unchecked */\n    changeValue: \"qx.event.type.Data\"\n  },\n\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members: {\n    /**\n     * Set whether the item is checked\n     *\n     * @param value {Boolean} whether the item should be checked\n     */\n    setValue(value) {},\n\n    /**\n     * Get whether the item is checked\n     *\n     * @return {Boolean} whether the item it checked\n     */\n    getValue() {},\n\n    /**\n     * Set the radiogroup, which manages this item\n     *\n     * @param value {qx.ui.form.RadioGroup} The radiogroup, which should\n     *     manage the item.\n     */\n    setGroup(value) {\n      this.assertInstance(value, qx.ui.form.RadioGroup);\n    },\n\n    /**\n     * Get the radiogroup, which manages this item\n     *\n     * @return {qx.ui.form.RadioGroup} The radiogroup, which manages the item.\n     */\n    getGroup() {}\n  }\n});\n"
+  ]
+}

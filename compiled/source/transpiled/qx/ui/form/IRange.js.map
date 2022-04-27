@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/form/IRange.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Interface",
+    "define",
+    "members",
+    "setMinimum",
+    "min",
+    "arguments",
+    "length",
+    "getMinimum",
+    "setMaximum",
+    "max",
+    "getMaximum",
+    "setSingleStep",
+    "step",
+    "getSingleStep",
+    "setPageStep",
+    "getPageStep",
+    "ui",
+    "form",
+    "IRange"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,mBAApB,EAAyC;AACvC;AACF;AACA;AACA;AACA;AAEEC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;;AAEI;AACJ;AACA;AACA;AACA;AACIC,MAAAA,UAZO,sBAYIC,GAZJ,EAYS;AACd,eAAOC,SAAS,CAACC,MAAV,IAAoB,CAA3B;AACD,OAdM;;AAgBP;AACJ;AACA;AACA;AACA;AACIC,MAAAA,UArBO,wBAqBM,CAAE,CArBR;;AAuBP;AACJ;AACA;AACA;AACA;;AAEI;AACJ;AACA;AACA;AACA;AACIC,MAAAA,UAlCO,sBAkCIC,GAlCJ,EAkCS;AACd,eAAOJ,SAAS,CAACC,MAAV,IAAoB,CAA3B;AACD,OApCM;;AAsCP;AACJ;AACA;AACA;AACA;AACII,MAAAA,UA3CO,wBA2CM,CAAE,CA3CR;;AA6CP;AACJ;AACA;AACA;AACA;;AAEI;AACJ;AACA;AACA;AACA;AACIC,MAAAA,aAxDO,yBAwDOC,IAxDP,EAwDa;AAClB,eAAOP,SAAS,CAACC,MAAV,IAAoB,CAA3B;AACD,OA1DM;;AA4DP;AACJ;AACA;AACA;AACA;AACIO,MAAAA,aAjEO,2BAiES,CAAE,CAjEX;;AAmEP;AACJ;AACA;AACA;AACA;;AAEI;AACJ;AACA;AACA;AACA;AACIC,MAAAA,WA9EO,uBA8EKF,IA9EL,EA8EW;AAChB,eAAOP,SAAS,CAACC,MAAV,IAAoB,CAA3B;AACD,OAhFM;;AAkFP;AACJ;AACA;AACA;AACA;AACIS,MAAAA,WAvFO,yBAuFO,CAAE;AAvFT;AAP8B,GAAzC;AAtBAnB,EAAAA,EAAE,CAACoB,EAAH,CAAMC,IAAN,CAAWC,MAAX,CAAkBnB,aAAlB,GAAkCA,aAAlC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n\n************************************************************************ */\n\n/**\n * Form interface for all widgets which deal with ranges. The spinner is a good\n * example for a range using widget.\n */\nqx.Interface.define(\"qx.ui.form.IRange\", {\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members: {\n    /*\n    ---------------------------------------------------------------------------\n      MINIMUM PROPERTY\n    ---------------------------------------------------------------------------\n    */\n\n    /**\n     * Set the minimum value of the range.\n     *\n     * @param min {Number} The minimum.\n     */\n    setMinimum(min) {\n      return arguments.length == 1;\n    },\n\n    /**\n     * Return the current set minimum of the range.\n     *\n     * @return {Number} The current set minimum.\n     */\n    getMinimum() {},\n\n    /*\n    ---------------------------------------------------------------------------\n      MAXIMUM PROPERTY\n    ---------------------------------------------------------------------------\n    */\n\n    /**\n     * Set the maximum value of the range.\n     *\n     * @param max {Number} The maximum.\n     */\n    setMaximum(max) {\n      return arguments.length == 1;\n    },\n\n    /**\n     * Return the current set maximum of the range.\n     *\n     * @return {Number} The current set maximum.\n     */\n    getMaximum() {},\n\n    /*\n    ---------------------------------------------------------------------------\n      SINGLESTEP PROPERTY\n    ---------------------------------------------------------------------------\n    */\n\n    /**\n     * Sets the value for single steps in the range.\n     *\n     * @param step {Number} The value of the step.\n     */\n    setSingleStep(step) {\n      return arguments.length == 1;\n    },\n\n    /**\n     * Returns the value which will be stepped in a single step in the range.\n     *\n     * @return {Number} The current value for single steps.\n     */\n    getSingleStep() {},\n\n    /*\n    ---------------------------------------------------------------------------\n      PAGESTEP PROPERTY\n    ---------------------------------------------------------------------------\n    */\n\n    /**\n     * Sets the value for page steps in the range.\n     *\n     * @param step {Number} The value of the step.\n     */\n    setPageStep(step) {\n      return arguments.length == 1;\n    },\n\n    /**\n     * Returns the value which will be stepped in a page step in the range.\n     *\n     * @return {Number} The current value for page steps.\n     */\n    getPageStep() {}\n  }\n});\n"
+  ]
+}

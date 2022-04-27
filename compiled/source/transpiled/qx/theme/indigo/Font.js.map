@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/theme/indigo/Font.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "fonts",
+    "size",
+    "family",
+    "color",
+    "lineHeight",
+    "bold",
+    "headline",
+    "sources",
+    "source",
+    "small",
+    "monospace",
+    "theme",
+    "indigo",
+    "Font"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EAAwC;AACtCC,IAAAA,KAAK,EAAE;AACL,iBAAS;AACPC,QAAAA,IAAI,EAAE,EADC;AAEPC,QAAAA,MAAM,EAAE,CAAC,eAAD,EAAkB,aAAlB,EAAiC,SAAjC,EAA4C,YAA5C,CAFD;AAGPC,QAAAA,KAAK,EAAE,MAHA;AAIPC,QAAAA,UAAU,EAAE;AAJL,OADJ;AAQLC,MAAAA,IAAI,EAAE;AACJJ,QAAAA,IAAI,EAAE,EADF;AAEJC,QAAAA,MAAM,EAAE,CAAC,eAAD,EAAkB,aAAlB,EAAiC,SAAjC,EAA4C,YAA5C,CAFJ;AAGJG,QAAAA,IAAI,EAAE,IAHF;AAIJF,QAAAA,KAAK,EAAE,MAJH;AAKJC,QAAAA,UAAU,EAAE;AALR,OARD;AAgBLE,MAAAA,QAAQ,EAAE;AACRL,QAAAA,IAAI,EAAE,EADE;AAERC,QAAAA,MAAM,EAAE,CAAC,OAAD,CAFA;AAGRK,QAAAA,OAAO,EAAE,CACP;AACEL,UAAAA,MAAM,EAAE,aADV;AAEEM,UAAAA,MAAM,EAAE,CACN,qDADM,EAEN,oDAFM;AAFV,SADO;AAHD,OAhBL;AA8BLC,MAAAA,KAAK,EAAE;AACLR,QAAAA,IAAI,EAAE,EADD;AAELC,QAAAA,MAAM,EAAE,CAAC,eAAD,EAAkB,aAAlB,EAAiC,SAAjC,EAA4C,YAA5C,CAFH;AAGLC,QAAAA,KAAK,EAAE,MAHF;AAILC,QAAAA,UAAU,EAAE;AAJP,OA9BF;AAqCLM,MAAAA,SAAS,EAAE;AACTT,QAAAA,IAAI,EAAE,EADG;AAETC,QAAAA,MAAM,EAAE,CAAC,kBAAD,EAAqB,aAArB,EAAoC,WAApC,CAFC;AAGTC,QAAAA,KAAK,EAAE,MAHE;AAITC,QAAAA,UAAU,EAAE;AAJH;AArCN;AAD+B,GAAxC;AA7BAV,EAAAA,EAAE,CAACiB,KAAH,CAASC,MAAT,CAAgBC,IAAhB,CAAqBhB,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n   * Martin Wittemann (martinwittemann)\n\n************************************************************************* */\n\n/* ************************************************************************\n\n\n************************************************************************* */\n\n/**\n * The simple qooxdoo font theme.\n *\n * @asset(qx/decoration/Indigo/font/JosefinSlab-SemiBold.woff)\n * @asset(qx/decoration/Indigo/font/JosefinSlab-SemiBold.ttf)\n */\nqx.Theme.define(\"qx.theme.indigo.Font\", {\n  fonts: {\n    default: {\n      size: 12,\n      family: [\"Lucida Grande\", \"DejaVu Sans\", \"Verdana\", \"sans-serif\"],\n      color: \"font\",\n      lineHeight: 1.8\n    },\n\n    bold: {\n      size: 12,\n      family: [\"Lucida Grande\", \"DejaVu Sans\", \"Verdana\", \"sans-serif\"],\n      bold: true,\n      color: \"font\",\n      lineHeight: 1.8\n    },\n\n    headline: {\n      size: 22,\n      family: [\"serif\"],\n      sources: [\n        {\n          family: \"JosefinSlab\",\n          source: [\n            \"qx/decoration/Indigo/font/JosefinSlab-SemiBold.woff\",\n            \"qx/decoration/Indigo/font/JosefinSlab-SemiBold.ttf\"\n          ]\n        }\n      ]\n    },\n\n    small: {\n      size: 11,\n      family: [\"Lucida Grande\", \"DejaVu Sans\", \"Verdana\", \"sans-serif\"],\n      color: \"font\",\n      lineHeight: 1.8\n    },\n\n    monospace: {\n      size: 11,\n      family: [\"DejaVu Sans Mono\", \"Courier New\", \"monospace\"],\n      color: \"font\",\n      lineHeight: 1.8\n    }\n  }\n});\n"
+  ]
+}

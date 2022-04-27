@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/core/scroll/IScrollBar.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Interface",
+    "define",
+    "events",
+    "scroll",
+    "scrollAnimationEnd",
+    "properties",
+    "orientation",
+    "maximum",
+    "position",
+    "knobFactor",
+    "members",
+    "scrollTo",
+    "duration",
+    "assertNumber",
+    "scrollBy",
+    "offset",
+    "scrollBySteps",
+    "steps",
+    "ui",
+    "core",
+    "IScrollBar"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,8BAApB,EAAoD;AAClDC,IAAAA,MAAM,EAAE;AACN;AACAC,MAAAA,MAAM,EAAE,oBAFF;;AAGN;AACAC,MAAAA,kBAAkB,EAAE;AAJd,KAD0C;AAQlDC,IAAAA,UAAU,EAAE;AACV;AACJ;AACA;AACIC,MAAAA,WAAW,EAAE,EAJH;;AAMV;AACJ;AACA;AACA;AACIC,MAAAA,OAAO,EAAE,EAVC;;AAYV;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,QAAQ,EAAE,EApBA;;AAsBV;AACJ;AACA;AACA;AACIC,MAAAA,UAAU,EAAE;AA1BF,KARsC;AAqClDC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,QAVO,oBAUEH,QAVF,EAUYI,QAVZ,EAUsB;AAC3B,aAAKC,YAAL,CAAkBL,QAAlB;AACD,OAZM;;AAcP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIM,MAAAA,QAvBO,oBAuBEC,MAvBF,EAuBUH,QAvBV,EAuBoB;AACzB,aAAKC,YAAL,CAAkBE,MAAlB;AACD,OAzBM;;AA2BP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,aApCO,yBAoCOC,KApCP,EAoCcL,QApCd,EAoCwB;AAC7B,aAAKC,YAAL,CAAkBI,KAAlB;AACD;AAtCM;AArCyC,GAApD;AArBArB,EAAAA,EAAE,CAACsB,EAAH,CAAMC,IAAN,CAAWhB,MAAX,CAAkBiB,UAAlB,CAA6BrB,aAA7B,GAA6CA,aAA7C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * All widget used as scrollbars must implement this interface.\n */\nqx.Interface.define(\"qx.ui.core.scroll.IScrollBar\", {\n  events: {\n    /** Fired if the user scroll */\n    scroll: \"qx.event.type.Data\",\n    /** Fired as soon as the scroll animation ended. */\n    scrollAnimationEnd: \"qx.event.type.Event\"\n  },\n\n  properties: {\n    /**\n     * The scroll bar orientation\n     */\n    orientation: {},\n\n    /**\n     * The maximum value (difference between available size and\n     * content size).\n     */\n    maximum: {},\n\n    /**\n     * Position of the scrollbar (which means the scroll left/top of the\n     * attached area's pane)\n     *\n     * Strictly validates according to {@link #maximum}.\n     * Does not apply any correction to the incoming value. If you depend\n     * on this, please use {@link #scrollTo} instead.\n     */\n    position: {},\n\n    /**\n     * Factor to apply to the width/height of the knob in relation\n     * to the dimension of the underlying area.\n     */\n    knobFactor: {}\n  },\n\n  members: {\n    /**\n     * Scrolls to the given position.\n     *\n     * This method automatically corrects the given position to respect\n     * the {@link #maximum}.\n     *\n     * @param position {Integer} Scroll to this position. Must be greater zero.\n     * @param duration {Number} The time in milliseconds the slide to should take.\n     */\n    scrollTo(position, duration) {\n      this.assertNumber(position);\n    },\n\n    /**\n     * Scrolls by the given offset.\n     *\n     * This method automatically corrects the given position to respect\n     * the {@link #maximum}.\n     *\n     * @param offset {Integer} Scroll by this offset\n     * @param duration {Number} The time in milliseconds the slide to should take.\n     */\n    scrollBy(offset, duration) {\n      this.assertNumber(offset);\n    },\n\n    /**\n     * Scrolls by the given number of steps.\n     *\n     * This method automatically corrects the given position to respect\n     * the {@link #maximum}.\n     *\n     * @param steps {Integer} Number of steps\n     * @param duration {Number} The time in milliseconds the slide to should take.\n     */\n    scrollBySteps(steps, duration) {\n      this.assertNumber(steps);\n    }\n  }\n});\n"
+  ]
+}

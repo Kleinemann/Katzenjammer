@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Workspace/katzenjammer/source/class/katzenjammer/theme/Appearance.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "theme",
+    "indigo",
+    "Appearance",
+    "appearances",
+    "style",
+    "decorator",
+    "margin",
+    "padding",
+    "alias",
+    "states",
+    "textColor",
+    "hovered",
+    "undefined",
+    "katzenjammer"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AAEAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,KAAH,CAASC,MAAT,CAAgBC,UAD3B;AAGEC,IAAAA,WAAW,EACX;AACC,oBACA;AACCC,QAAAA,KAAK,EAAE,iBACP;AACC,iBAAO;AACNC,YAAAA,SAAS,EAAE,OADL;AAENC,YAAAA,MAAM,EAAE,CAFF;AAGNC,YAAAA,OAAO,EAAE;AAHH,WAAP;AAKA;AARF,OAFD;AAaC,cACA;AACCC,QAAAA,KAAK,EAAE,OADR;AAGCJ,QAAAA,KAAK,EAAE,eAAUK,MAAV,EACP;AACC,iBAAO;AACN;AACAC,YAAAA,SAAS,EAAED,MAAM,CAACE,OAAP,GAAiBC,SAAjB,GAA4B;AAFjC,WAAP;AAIA;AATF;AAdD;AAJF,GADA;AAVAC,EAAAA,YAAY,CAACb,KAAb,CAAmBE,UAAnB,CAA8BN,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   Copyright: 2022 undefined\n\n   License: MIT license\n\n   Authors: undefined\n\n************************************************************************ */\n\nqx.Theme.define(\"katzenjammer.theme.Appearance\",\n{\n  extend : qx.theme.indigo.Appearance,\n\n  appearances :\n  {\n\t  \"WindowBase\":\n\t  {\n\t\t  style: function ()\r\n\t\t  {\r\n\t\t\t  return {\t\t\t\t  \r\n\t\t\t\t  decorator: \"round\",\r\n\t\t\t\t  margin: 5,\r\n\t\t\t\t  padding: 5\r\n\t\t\t  }\r\n\t\t  }\r\n\t  },\n\n\t  \"Link\":\r\n\t  {\r\n\t\t  alias: \"label\",\r\n\r\n\t\t  style: function (states)\r\n\t\t  {\r\n\t\t\t  return {\r\n\t\t\t\t  //textAlign: \"center\",\r\n\t\t\t\t  textColor: states.hovered ? undefined :\"link\"\r\n\t\t\t  };\r\n\t\t  }\r\n\t  },\n  }\n});"
+  ]
+}

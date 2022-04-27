@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/toolbar/PartContainer.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "container",
+    "Composite",
+    "construct",
+    "_setLayout",
+    "layout",
+    "HBox",
+    "events",
+    "changeChildren",
+    "properties",
+    "appearance",
+    "refine",
+    "init",
+    "show",
+    "check",
+    "inheritable",
+    "event",
+    "members",
+    "_afterAddChild",
+    "child",
+    "fireEvent",
+    "_afterRemoveChild",
+    "toolbar",
+    "PartContainer"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EAA+C;AAC7CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,SADqB;AAG7CC,IAAAA,SAH6C,uBAGjC;AACV;;AACA,WAAKC,UAAL,CAAgB,IAAIX,EAAE,CAACO,EAAH,CAAMK,MAAN,CAAaC,IAAjB,EAAhB;AACD,KAN4C;AAQ7CC,IAAAA,MAAM,EAAE;AACN;AACAC,MAAAA,cAAc,EAAE;AAFV,KARqC;AAa7CC,IAAAA,UAAU,EAAE;AACVC,MAAAA,UAAU,EAAE;AACVC,QAAAA,MAAM,EAAE,IADE;AAEVC,QAAAA,IAAI,EAAE;AAFI,OADF;;AAMV;AACAC,MAAAA,IAAI,EAAE;AACJD,QAAAA,IAAI,EAAE,MADF;AAEJE,QAAAA,KAAK,EAAE,CAAC,MAAD,EAAS,OAAT,EAAkB,MAAlB,CAFH;AAGJC,QAAAA,WAAW,EAAE,IAHT;AAIJC,QAAAA,KAAK,EAAE;AAJH;AAPI,KAbiC;AA4B7CC,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,cAFO,0BAEQC,KAFR,EAEe;AACpB,aAAKC,SAAL,CAAe,gBAAf;AACD,OAJM;AAMP;AACAC,MAAAA,iBAPO,6BAOWF,KAPX,EAOkB;AACvB,aAAKC,SAAL,CAAe,gBAAf;AACD;AATM;AA5BoC,GAA/C;AAzBA3B,EAAAA,EAAE,CAACO,EAAH,CAAMsB,OAAN,CAAcC,aAAd,CAA4B3B,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Andreas Ecker (ecker)\n     * Jonathan Weiß (jonathan_rass)\n\n************************************************************************ */\n\n/**\n * The container used by {@link Part} to insert the buttons.\n *\n * @internal\n */\nqx.Class.define(\"qx.ui.toolbar.PartContainer\", {\n  extend: qx.ui.container.Composite,\n\n  construct() {\n    super();\n    this._setLayout(new qx.ui.layout.HBox());\n  },\n\n  events: {\n    /** Fired if a child has been added or removed */\n    changeChildren: \"qx.event.type.Event\"\n  },\n\n  properties: {\n    appearance: {\n      refine: true,\n      init: \"toolbar/part/container\"\n    },\n\n    /** Whether icons, labels, both or none should be shown. */\n    show: {\n      init: \"both\",\n      check: [\"both\", \"label\", \"icon\"],\n      inheritable: true,\n      event: \"changeShow\"\n    }\n  },\n\n  members: {\n    // overridden\n    _afterAddChild(child) {\n      this.fireEvent(\"changeChildren\");\n    },\n\n    // overridden\n    _afterRemoveChild(child) {\n      this.fireEvent(\"changeChildren\");\n    }\n  }\n});\n"
+  ]
+}

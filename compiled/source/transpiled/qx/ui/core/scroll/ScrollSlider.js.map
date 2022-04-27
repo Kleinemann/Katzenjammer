@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/ui/core/scroll/ScrollSlider.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "form",
+    "Slider",
+    "construct",
+    "orientation",
+    "removeListener",
+    "_onKeyPress",
+    "_onRoll",
+    "members",
+    "_createChildControlImpl",
+    "id",
+    "hash",
+    "control",
+    "addListener",
+    "e",
+    "stopPropagation",
+    "getSizeHint",
+    "compute",
+    "hint",
+    "getOrientation",
+    "width",
+    "height",
+    "core",
+    "scroll",
+    "ScrollSlider"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAkD;AAChDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,IAAN,CAAWC,MAD6B;AAGhD;AACAC,IAAAA,SAJgD,qBAItCC,WAJsC,EAIzB;AACrB,+CAAMA,WAAN,EADqB,CAGrB;;AACA,WAAKC,cAAL,CAAoB,UAApB,EAAgC,KAAKC,WAArC;AACA,WAAKD,cAAL,CAAoB,MAApB,EAA4B,KAAKE,OAAjC;AACD,KAV+C;AAYhDC,IAAAA,OAAO,EAAE;AACP;AACAC,MAAAA,uBAFO,mCAEiBC,EAFjB,EAEqBC,IAFrB,EAE2B;AAChC,YAAIC,OAAJ;;AAEA,gBAAQF,EAAR;AACE,eAAK,MAAL;AACEE,YAAAA,OAAO,0FAAiCF,EAAjC,CAAP;AACAE,YAAAA,OAAO,CAACC,WAAR,CAAoB,UAApB,EAAgC,UAAUC,CAAV,EAAa;AAC3CA,cAAAA,CAAC,CAACC,eAAF;AACD,aAFD;AAHJ;;AAQA,eAAOH,OAAO,2FAAkCF,EAAlC,CAAd;AACD,OAdM;AAgBP;AACAM,MAAAA,WAjBO,uBAiBKC,OAjBL,EAiBc;AACnB;AACA,YAAIC,IAAI,6EAAR,CAFmB,CAGnB;AACA;AACA;AACA;;AACA,YAAI,KAAKC,cAAL,OAA0B,YAA9B,EAA4C;AAC1CD,UAAAA,IAAI,CAACE,KAAL,GAAa,CAAb;AACD,SAFD,MAEO;AACLF,UAAAA,IAAI,CAACG,MAAL,GAAc,CAAd;AACD;;AACD,eAAOH,IAAP;AACD;AA9BM;AAZuC,GAAlD;AAzBAzB,EAAAA,EAAE,CAACO,EAAH,CAAMsB,IAAN,CAAWC,MAAX,CAAkBC,YAAlB,CAA+B5B,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * Minimal modified version of the {@link qx.ui.form.Slider} to be\n * used by {@link qx.ui.core.scroll.ScrollBar}.\n *\n * @internal\n */\nqx.Class.define(\"qx.ui.core.scroll.ScrollSlider\", {\n  extend: qx.ui.form.Slider,\n\n  // overridden\n  construct(orientation) {\n    super(orientation);\n\n    // Remove roll/keypress events\n    this.removeListener(\"keypress\", this._onKeyPress);\n    this.removeListener(\"roll\", this._onRoll);\n  },\n\n  members: {\n    // overridden\n    _createChildControlImpl(id, hash) {\n      var control;\n\n      switch (id) {\n        case \"knob\":\n          control = super._createChildControlImpl(id);\n          control.addListener(\"dblclick\", function (e) {\n            e.stopPropagation();\n          });\n      }\n\n      return control || super._createChildControlImpl(id);\n    },\n\n    // overridden\n    getSizeHint(compute) {\n      // get the original size hint\n      var hint = super.getSizeHint();\n      // set the width or height to 0 depending on the orientation.\n      // this is necessary to prevent the ScrollSlider to change the size\n      // hint of its parent, which can cause errors on outer flex layouts\n      // [BUG #3279]\n      if (this.getOrientation() === \"horizontal\") {\n        hint.width = 0;\n      } else {\n        hint.height = 0;\n      }\n      return hint;\n    }\n  }\n});\n"
+  ]
+}

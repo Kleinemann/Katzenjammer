@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/locale/MTranslation.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "tr",
+    "messageId",
+    "varargs",
+    "nlsManager",
+    "locale",
+    "Manager",
+    "apply",
+    "arguments",
+    "Error",
+    "trn",
+    "singularMessageId",
+    "pluralMessageId",
+    "count",
+    "trc",
+    "hint",
+    "trnc",
+    "marktr",
+    "MTranslation"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EAA0C;AACxCC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,EATO,cASJC,SATI,EASOC,OATP,EASgB;AACrB,YAAIC,UAAU,GAAGV,EAAE,CAACW,MAAH,CAAUC,OAA3B;;AACA,YAAIF,UAAJ,EAAgB;AACd,iBAAOA,UAAU,CAACH,EAAX,CAAcM,KAAd,CAAoBH,UAApB,EAAgCI,SAAhC,CAAP;AACD;;AAED,cAAM,IAAIC,KAAJ,CACJ,0EADI,CAAN;AAGD,OAlBM;;AAoBP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,GAhCO,eAgCHC,iBAhCG,EAgCgBC,eAhChB,EAgCiCC,KAhCjC,EAgCwCV,OAhCxC,EAgCiD;AACtD,YAAIC,UAAU,GAAGV,EAAE,CAACW,MAAH,CAAUC,OAA3B;;AACA,YAAIF,UAAJ,EAAgB;AACd,iBAAOA,UAAU,CAACM,GAAX,CAAeH,KAAf,CAAqBH,UAArB,EAAiCI,SAAjC,CAAP;AACD;;AAED,cAAM,IAAIC,KAAJ,CACJ,0EADI,CAAN;AAGD,OAzCM;;AA2CP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIK,MAAAA,GApDO,eAoDHC,IApDG,EAoDGb,SApDH,EAoDcC,OApDd,EAoDuB;AAC5B,YAAIC,UAAU,GAAGV,EAAE,CAACW,MAAH,CAAUC,OAA3B;;AACA,YAAIF,UAAJ,EAAgB;AACd,iBAAOA,UAAU,CAACU,GAAX,CAAeP,KAAf,CAAqBH,UAArB,EAAiCI,SAAjC,CAAP;AACD;;AAED,cAAM,IAAIC,KAAJ,CACJ,0EADI,CAAN;AAGD,OA7DM;;AA+DP;AACJ;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACIO,MAAAA,IA5EO,gBA4EFD,IA5EE,EA4EIJ,iBA5EJ,EA4EuBC,eA5EvB,EA4EwCC,KA5ExC,EA4E+CV,OA5E/C,EA4EwD;AAC7D,YAAIC,UAAU,GAAGV,EAAE,CAACW,MAAH,CAAUC,OAA3B;;AACA,YAAIF,UAAJ,EAAgB;AACd,iBAAOA,UAAU,CAACY,IAAX,CAAgBT,KAAhB,CAAsBH,UAAtB,EAAkCI,SAAlC,CAAP;AACD;;AAED,cAAM,IAAIC,KAAJ,CACJ,0EADI,CAAN;AAGD,OArFM;;AAuFP;AACJ;AACA;AACA;AACA;AACA;AACIQ,MAAAA,MA7FO,kBA6FAf,SA7FA,EA6FW;AAChB,YAAIE,UAAU,GAAGV,EAAE,CAACW,MAAH,CAAUC,OAA3B;;AACA,YAAIF,UAAJ,EAAgB;AACd,iBAAOA,UAAU,CAACa,MAAX,CAAkBV,KAAlB,CAAwBH,UAAxB,EAAoCI,SAApC,CAAP;AACD;;AAED,cAAM,IAAIC,KAAJ,CACJ,0EADI,CAAN;AAGD;AAtGM;AAD+B,GAA1C;AA1BAf,EAAAA,EAAE,CAACW,MAAH,CAAUa,YAAV,CAAuBrB,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Sebastian Werner (wpbasti)\n     * Andreas Ecker (ecker)\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * This mixin contains the methods needed to use the translation features\n * of qooxdoo.\n *\n * @ignore(qx.locale.Manager)\n */\nqx.Mixin.define(\"qx.locale.MTranslation\", {\n  members: {\n    /**\n     * Translate a message\n     * Mark the message for translation.\n     *\n     * @param messageId {String} message id (may contain format strings)\n     * @param varargs {Object?} variable number of arguments applied to the format string\n     * @return {String | LocalizedString} The translated message or localized string\n     */\n    tr(messageId, varargs) {\n      var nlsManager = qx.locale.Manager;\n      if (nlsManager) {\n        return nlsManager.tr.apply(nlsManager, arguments);\n      }\n\n      throw new Error(\n        \"To enable localization please include qx.locale.Manager into your build!\"\n      );\n    },\n\n    /**\n     * Translate a plural message\n     * Mark the messages for translation.\n     *\n     * Depending on the third argument the plural or the singular form is chosen.\n     *\n     * @param singularMessageId {String} message id of the singular form (may contain format strings)\n     * @param pluralMessageId {String} message id of the plural form (may contain format strings)\n     * @param count {Integer} if greater than 1 the plural form otherwise the singular form is returned.\n     * @param varargs {Object?} variable number of arguments applied to the format string\n     * @return {String | LocalizedString} The translated message or localized string\n     */\n    trn(singularMessageId, pluralMessageId, count, varargs) {\n      var nlsManager = qx.locale.Manager;\n      if (nlsManager) {\n        return nlsManager.trn.apply(nlsManager, arguments);\n      }\n\n      throw new Error(\n        \"To enable localization please include qx.locale.Manager into your build!\"\n      );\n    },\n\n    /**\n     * Translate a message with translation hint\n     * Mark the messages for translation.\n     *\n     * @param hint {String} hint for the translator of the message. Will be included in the .po file.\n     * @param messageId {String} message id (may contain format strings)\n     * @param varargs {Object?} variable number of arguments applied to the format string\n     * @return {String | LocalizedString} The translated message or localized string\n     */\n    trc(hint, messageId, varargs) {\n      var nlsManager = qx.locale.Manager;\n      if (nlsManager) {\n        return nlsManager.trc.apply(nlsManager, arguments);\n      }\n\n      throw new Error(\n        \"To enable localization please include qx.locale.Manager into your build!\"\n      );\n    },\n\n    /**\n     * Translate a plural message with translation hint\n     * Mark the messages for translation.\n     *\n     * Depending on the third argument the plural or the singular form is chosen.\n     *\n     * @param hint {String} hint for the translator of the message. Will be included in the .po file.\n     * @param singularMessageId {String} message id of the singular form (may contain format strings)\n     * @param pluralMessageId {String} message id of the plural form (may contain format strings)\n     * @param count {Integer} if greater than 1 the plural form otherwise the singular form is returned.\n     * @param varargs {Object?} variable number of arguments applied to the format string\n     * @return {String | LocalizedString} The translated message or localized string\n     */\n    trnc(hint, singularMessageId, pluralMessageId, count, varargs) {\n      var nlsManager = qx.locale.Manager;\n      if (nlsManager) {\n        return nlsManager.trnc.apply(nlsManager, arguments);\n      }\n\n      throw new Error(\n        \"To enable localization please include qx.locale.Manager into your build!\"\n      );\n    },\n\n    /**\n     * Mark the message for translation but return the original message.\n     *\n     * @param messageId {String} the message ID\n     * @return {String} messageId\n     */\n    marktr(messageId) {\n      var nlsManager = qx.locale.Manager;\n      if (nlsManager) {\n        return nlsManager.marktr.apply(nlsManager, arguments);\n      }\n\n      throw new Error(\n        \"To enable localization please include qx.locale.Manager into your build!\"\n      );\n    }\n  }\n});\n"
+  ]
+}

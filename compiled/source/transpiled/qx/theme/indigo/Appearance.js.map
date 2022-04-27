@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/theme/indigo/Appearance.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "theme",
+    "simple",
+    "Appearance",
+    "appearances",
+    "include",
+    "alias",
+    "style",
+    "paddingTop",
+    "toolbar",
+    "states",
+    "backgroundColor",
+    "padding",
+    "source",
+    "Image",
+    "URLS",
+    "horizontal",
+    "window",
+    "contentPadding",
+    "maximized",
+    "undefined",
+    "decorator",
+    "active",
+    "disabled",
+    "textColor",
+    "cursor",
+    "font",
+    "marginRight",
+    "alignY",
+    "itemHeight",
+    "textDecorationStyle",
+    "textDecorationLine",
+    "indigo"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n   * Martin Wittemann (martinwittemann)\n\n************************************************************************* */\n\n/* ************************************************************************\n\n\n************************************************************************* */\n\n/**\n * The simple qooxdoo appearance theme.\n *\n * @asset(qx/icon/${qx.icontheme}/16/apps/office-calendar.png)\n * @asset(qx/icon/${qx.icontheme}/16/places/folder-open.png)\n * @asset(qx/icon/${qx.icontheme}/16/places/folder.png)\n * @asset(qx/icon/${qx.icontheme}/16/mimetypes/text-plain.png)\n * @asset(qx/icon/${qx.icontheme}/16/actions/view-refresh.png)\n * @asset(qx/icon/${qx.icontheme}/16/actions/window-close.png)\n * @asset(qx/icon/${qx.icontheme}/16/actions/dialog-cancel.png)\n * @asset(qx/icon/${qx.icontheme}/16/actions/dialog-ok.png)\n */\nqx.Theme.define(\"qx.theme.indigo.Appearance\", {\n  extend: qx.theme.simple.Appearance,\n\n  appearances: {\n    \"colorselector/input-field-set\": {\n      include: \"groupbox\",\n      alias: \"groupbox\",\n      style() {\n        return {\n          paddingTop: 0\n        };\n      }\n    },\n\n    \"colorselector/preview-field-set\": {\n      include: \"groupbox\",\n      alias: \"groupbox\",\n      style() {\n        return {\n          paddingTop: 0\n        };\n      }\n    },\n\n    toolbar: {\n      style(states) {\n        return {\n          backgroundColor: \"light-background\",\n          padding: [4, 0]\n        };\n      }\n    },\n\n    \"splitpane/splitter/knob\": {\n      style(states) {\n        return {\n          source:\n            qx.theme.simple.Image.URLS[\n              \"knob-\" + (states.horizontal ? \"horizontal\" : \"vertical\")\n            ],\n\n          padding: 3\n        };\n      }\n    },\n\n    window: {\n      style(states) {\n        return {\n          contentPadding: [10, 10, 10, 10],\n          backgroundColor: states.maximized ? \"background\" : undefined,\n          decorator: states.maximized\n            ? undefined\n            : states.active\n            ? \"window-active\"\n            : \"window\"\n        };\n      }\n    },\n\n    \"window/captionbar\": {\n      style(states) {\n        var active = states.active && !states.disabled;\n        return {\n          padding: [3, 8, active ? 1 : 3, 8],\n          textColor: active ? \"highlight\" : \"font\",\n          decorator: active ? \"window-caption-active\" : \"window-caption\"\n        };\n      }\n    },\n\n    \"window/title\": {\n      style(states) {\n        return {\n          cursor: \"default\",\n          font: \"default\",\n          marginRight: 20,\n          alignY: \"middle\"\n        };\n      }\n    },\n\n    \"virtual-tree\": {\n      include: \"tree\",\n      alias: \"tree\",\n\n      style(states) {\n        return {\n          itemHeight: 27\n        };\n      }\n    },\n\n    \"app-header\": {\n      style(states) {\n        return {\n          font: \"headline\",\n          textColor: \"text-selected\",\n          decorator: \"app-header\",\n          padding: 10\n        };\n      }\n    },\n\n    \"app-header-label\": {\n      style(states) {\n        return {\n          paddingTop: 5\n        };\n      }\n    },\n\n    \"app-splitpane\": {\n      alias: \"splitpane\",\n      style(states) {\n        return {\n          padding: [0, 10, 10, 10],\n          backgroundColor: \"light-background\"\n        };\n      }\n    },\n\n    /*\n    --------------------\n    VIRTUAL SELECTBOX \n    --------------------\n    */\n\n    \"list-search-highlight\": {\n      style(states) {\n        return {\n          backgroundColor: \"rgba(255, 251, 0, 0.53)\",\n          textDecorationStyle: \"dotted\",\n          textDecorationLine: \"underline\"\n        };\n      }\n    }\n  }\n});\n"
+  ]
+}

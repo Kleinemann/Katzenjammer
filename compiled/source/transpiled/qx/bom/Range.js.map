@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/klein/AppData/Roaming/npm/node_modules/@qooxdoo/framework/source/class/qx/bom/Range.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "define",
+    "statics",
+    "get",
+    "core",
+    "Environment",
+    "select",
+    "selection",
+    "node",
+    "dom",
+    "Node",
+    "isElement",
+    "nodeName",
+    "toLowerCase",
+    "type",
+    "createTextRange",
+    "bom",
+    "Selection",
+    "getSelectionObject",
+    "getDocument",
+    "createRange",
+    "window",
+    "doc",
+    "sel",
+    "rangeCount",
+    "getRangeAt",
+    "Range"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACC,SAAH,CAAaG,MAAb,CAAoB,cAApB,EAAoC;AAClC;AACF;AACA;AACA;AACA;AAEEC,IAAAA,OAAO,EAAE;AACP;AACJ;AACA;AACA;AACA;AACA;AACA;AACIC,MAAAA,GAAG,EAAEN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2B,gBAA3B,EAA6C;AAChDC,QAAAA,SADgD,qBACtCC,IADsC,EAChC;AACd;AACA;AACA;AACA;AACA,cAAIX,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYC,SAAZ,CAAsBH,IAAtB,CAAJ,EAAiC;AAC/B,oBAAQA,IAAI,CAACI,QAAL,CAAcC,WAAd,EAAR;AACE,mBAAK,OAAL;AACE,wBAAQL,IAAI,CAACM,IAAb;AACE,uBAAK,MAAL;AACA,uBAAK,UAAL;AACA,uBAAK,QAAL;AACA,uBAAK,QAAL;AACA,uBAAK,OAAL;AACA,uBAAK,MAAL;AACA,uBAAK,QAAL;AACE,2BAAON,IAAI,CAACO,eAAL,EAAP;;AAEF;AACE,2BAAOlB,EAAE,CAACmB,GAAH,CAAOC,SAAP,CAAiBC,kBAAjB,CACLrB,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYS,WAAZ,CAAwBX,IAAxB,CADK,EAELY,WAFK,EAAP;AAXJ;;AAgBF,mBAAK,UAAL;AACA,mBAAK,MAAL;AACA,mBAAK,QAAL;AACE,uBAAOZ,IAAI,CAACO,eAAL,EAAP;;AAEF;AACE,uBAAOlB,EAAE,CAACmB,GAAH,CAAOC,SAAP,CAAiBC,kBAAjB,CACLrB,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYS,WAAZ,CAAwBX,IAAxB,CADK,EAELY,WAFK,EAAP;AAxBJ;AA4BD,WA7BD,MA6BO;AACL,gBAAIZ,IAAI,IAAI,IAAZ,EAAkB;AAChBA,cAAAA,IAAI,GAAGa,MAAP;AACD,aAHI,CAKL;;;AACA,mBAAOxB,EAAE,CAACmB,GAAH,CAAOC,SAAP,CAAiBC,kBAAjB,CACLrB,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYS,WAAZ,CAAwBX,IAAxB,CADK,EAELY,WAFK,EAAP;AAGD;AACF,SA7C+C;AA+ChD;AA/CgD,qCAgDxCZ,IAhDwC,EAgDlC;AACZ,cAAIc,GAAG,GAAGzB,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYS,WAAZ,CAAwBX,IAAxB,CAAV,CADY,CAGZ;;AACA,cAAIe,GAAG,GAAG1B,EAAE,CAACmB,GAAH,CAAOC,SAAP,CAAiBC,kBAAjB,CAAoCI,GAApC,CAAV;;AAEA,cAAIC,GAAG,CAACC,UAAJ,GAAiB,CAArB,EAAwB;AACtB,mBAAOD,GAAG,CAACE,UAAJ,CAAe,CAAf,CAAP;AACD,WAFD,MAEO;AACL,mBAAOH,GAAG,CAACF,WAAJ,EAAP;AACD;AACF;AA3D+C,OAA7C;AARE;AAPyB,GAApC;AAvBAvB,EAAAA,EAAE,CAACmB,GAAH,CAAOU,KAAP,CAAa1B,aAAb,GAA6BA,aAA7B",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Alexander Steitz (aback)\n\n************************************************************************ */\n\n/**\n * Low-level Range API which is used together with the low-level Selection API.\n * This is especially useful whenever a developer want to work on text level,\n * e.g. for an editor.\n */\nqx.Bootstrap.define(\"qx.bom.Range\", {\n  /*\n  *****************************************************************************\n     STATICS\n  *****************************************************************************\n  */\n\n  statics: {\n    /**\n     * Returns the range object of the given node.\n     *\n     * @signature function(node)\n     * @param node {Node} node to get the range of\n     * @return {Range} valid range of given selection\n     */\n    get: qx.core.Environment.select(\"html.selection\", {\n      selection(node) {\n        // check for the type of the given node\n        // for legacy IE the nodes input, textarea, button and body\n        // have access to own TextRange objects. Everything else is\n        // gathered via the selection object.\n        if (qx.dom.Node.isElement(node)) {\n          switch (node.nodeName.toLowerCase()) {\n            case \"input\":\n              switch (node.type) {\n                case \"text\":\n                case \"password\":\n                case \"hidden\":\n                case \"button\":\n                case \"reset\":\n                case \"file\":\n                case \"submit\":\n                  return node.createTextRange();\n\n                default:\n                  return qx.bom.Selection.getSelectionObject(\n                    qx.dom.Node.getDocument(node)\n                  ).createRange();\n              }\n\n            case \"textarea\":\n            case \"body\":\n            case \"button\":\n              return node.createTextRange();\n\n            default:\n              return qx.bom.Selection.getSelectionObject(\n                qx.dom.Node.getDocument(node)\n              ).createRange();\n          }\n        } else {\n          if (node == null) {\n            node = window;\n          }\n\n          // need to pass the document node to work with multi-documents\n          return qx.bom.Selection.getSelectionObject(\n            qx.dom.Node.getDocument(node)\n          ).createRange();\n        }\n      },\n\n      // suitable for gecko, opera and webkit\n      default(node) {\n        var doc = qx.dom.Node.getDocument(node);\n\n        // get the selection object of the corresponding document\n        var sel = qx.bom.Selection.getSelectionObject(doc);\n\n        if (sel.rangeCount > 0) {\n          return sel.getRangeAt(0);\n        } else {\n          return doc.createRange();\n        }\n      }\n    })\n  }\n});\n"
+  ]
+}
