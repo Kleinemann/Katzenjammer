@@ -38,6 +38,10 @@
     properties: {
       SearchField: {
         init: null
+      },
+      CurrentPos: {
+        init: null,
+        nullable: true
       }
     },
     construct: function construct() {
@@ -58,6 +62,7 @@
     },
     members: {
       searchPos: function searchPos(e) {
+        this.resetCurrentPos();
         var txt = this.getSearchField().getValue();
         var req = katzenjammer.data.ServiceRequest.SearchAdressRequest(txt);
         req.addListener("success", function (e) {
@@ -65,6 +70,7 @@
 
           if (response.length === 1) {
             var pos = [response[0].lat, response[0].lon];
+            this.setCurrentPos(pos);
             katzenjammer.container.MapContainer.Instance.createMarker(pos, this);
           } else console.log("Not Found");
         }, this);
@@ -74,6 +80,7 @@
         var req = katzenjammer.data.ServiceRequest.SearchAdressRevertRequest(pos);
         req.addListener("success", function (e) {
           var response = e.getTarget().getResponse();
+          this.setCurrentPos([response.lat, response.lon]);
           this.getSearchField().setValue(response.display_name);
         }, this);
         req.send();
@@ -83,4 +90,4 @@
   katzenjammer.widgets.PosSearch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PosSearch.js.map?dt=1651047783119
+//# sourceMappingURL=PosSearch.js.map?dt=1651061797380

@@ -3954,6 +3954,8 @@
     "qx.ui.table.celleditor.AbstractField",
     "qx.ui.menu.Manager",
     "qx.ui.window.Manager",
-    "qx.ui.core.selection.Abstract"
+    "qx.ui.core.selection.Abstract",
+    "katzenjammer.data.Building",
+    "katzenjammer.data.UserBuilding"
   ]
 }

@@ -20,7 +20,9 @@ qx.Class.define("katzenjammer.data.User", {
         Name: { init: null, nullable: true  },
         Home: { init: null, nullable: true  },
         Money: { init: null, nullable: true  },
-        Guild: { init: null, nullable: true }
+        Guild: { init: null, nullable: true },
+
+        Buildings: { init: null, nullable: true }
     },
 
     construct: function ()
@@ -42,6 +44,8 @@ qx.Class.define("katzenjammer.data.User", {
                 this.resetHome();
                 this.resetMoney();
                 this.resetGuild();
+
+                this.resetBuildings();
 			}
 
             for (var i in args)
@@ -58,6 +62,67 @@ qx.Class.define("katzenjammer.data.User", {
                     default: console.log("Key " + i + " is not in use."); break;
                 }
             }
-		}
+
+            this.loadingUserData();
+        },
+
+
+        updateHome: function (homeData)
+        {
+            this.setHome(homeData);
+
+            var data =
+            {
+                Action: "userUpdate",
+                Data: {
+                    id: this.getID(),
+                    home: this.getHome()
+				}
+			}
+
+            var req = new katzenjammer.data.ServiceRequest(data);
+            req.send();
+        },
+
+
+        loadingUserData: function ()
+        {
+            this.loadingUserBuildings();
+        },
+
+        loadingUserBuildings: function ()
+        {
+            var user = katzenjammer.data.User.Instance.getID();
+
+            var data = {
+                Action: "select",
+                Data: "UserBuildings",
+                ID: user
+            };
+
+            var req = new katzenjammer.data.ServiceRequest(data);
+            req.addListener("success", function (e)
+            {
+                var response = e.getTarget().getResponse();
+                //console.log(response);
+
+                if (response.success)
+                {
+                    var data = e.getTarget().getResponse().data;
+
+                    var buildings = [];
+                    for (var i in data)
+                    {
+                        buildings[data[i].id] = new katzenjammer.data.UserBuilding(data[i]);
+                    }
+
+                    this.setBuildings(buildings);
+
+                    katzenjammer.container.MainContainer.Instance.getBuildings().updateBuildingList();
+                }
+            }, this);
+
+            req.send();
+        }
     }
 });

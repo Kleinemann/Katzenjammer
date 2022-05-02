@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 107,
+        "line": 185,
         "column": 3
       }
     },
@@ -28,7 +28,7 @@
   },
   "type": "class",
   "properties": {
-    "NewBuilding": {
+    "BuildingHeader": {
       "location": {
         "start": {
           "line": 14,
@@ -36,6 +36,34 @@
         },
         "end": {
           "line": 14,
+          "column": 38
+        }
+      },
+      "name": "BuildingHeader",
+      "propertyType": "new"
+    },
+    "NewButton": {
+      "location": {
+        "start": {
+          "line": 15,
+          "column": 8
+        },
+        "end": {
+          "line": 15,
+          "column": 33
+        }
+      },
+      "name": "NewButton",
+      "propertyType": "new"
+    },
+    "NewBuilding": {
+      "location": {
+        "start": {
+          "line": 16,
+          "column": 8
+        },
+        "end": {
+          "line": 16,
           "column": 35
         }
       },
@@ -45,54 +73,124 @@
     "BuildingSelect": {
       "location": {
         "start": {
-          "line": 15,
+          "line": 17,
           "column": 8
         },
         "end": {
-          "line": 15,
+          "line": 17,
           "column": 38
         }
       },
       "name": "BuildingSelect",
+      "propertyType": "new"
+    },
+    "SearchField": {
+      "location": {
+        "start": {
+          "line": 18,
+          "column": 8
+        },
+        "end": {
+          "line": 18,
+          "column": 35
+        }
+      },
+      "name": "SearchField",
+      "propertyType": "new"
+    },
+    "BuildingList": {
+      "location": {
+        "start": {
+          "line": 20,
+          "column": 8
+        },
+        "end": {
+          "line": 20,
+          "column": 36
+        }
+      },
+      "name": "BuildingList",
       "propertyType": "new"
     }
   },
   "construct": {
     "location": {
       "start": {
-        "line": 18,
+        "line": 23,
         "column": 15
       },
       "end": {
-        "line": 25,
+        "line": 31,
         "column": 5
       }
     },
     "jsdoc": {}
   },
   "members": {
-    "initNewBuilding": {
+    "initBuildingHeader": {
       "location": {
         "start": {
-          "line": 29,
+          "line": 35,
           "column": 8
         },
         "end": {
-          "line": 41,
+          "line": 40,
+          "column": 3
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "initNewBuilding": {
+      "location": {
+        "start": {
+          "line": 42,
+          "column": 8
+        },
+        "end": {
+          "line": 64,
           "column": 9
         }
       },
       "type": "function",
       "access": "public"
     },
-    "initBuildingSelect": {
+    "createBuildingSelect": {
       "location": {
         "start": {
-          "line": 43,
+          "line": 66,
           "column": 8
         },
         "end": {
-          "line": 72,
+          "line": 83,
+          "column": 3
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "startBuilding": {
+      "location": {
+        "start": {
+          "line": 85,
+          "column": 8
+        },
+        "end": {
+          "line": 109,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "buildBuiling": {
+      "location": {
+        "start": {
+          "line": 112,
+          "column": 8
+        },
+        "end": {
+          "line": 160,
           "column": 3
         }
       },
@@ -102,26 +200,26 @@
     "initBuildingList": {
       "location": {
         "start": {
-          "line": 75,
+          "line": 163,
           "column": 8
         },
         "end": {
-          "line": 80,
-          "column": 3
+          "line": 168,
+          "column": 9
         }
       },
       "type": "function",
       "access": "public"
     },
-    "updateData": {
+    "updateBuildingList": {
       "location": {
         "start": {
-          "line": 83,
+          "line": 170,
           "column": 8
         },
         "end": {
-          "line": 105,
-          "column": 9
+          "line": 183,
+          "column": 3
         }
       },
       "type": "function",
@@ -3921,6 +4019,138 @@
         ]
       }
     },
+    "getBuildingHeader": {
+      "type": "function",
+      "name": "getBuildingHeader",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>BuildingHeader</code>.\n\nFor further details take a look at the property definition: {@link #BuildingHeader}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for BuildingHeader"
+          }
+        ]
+      }
+    },
+    "setBuildingHeader": {
+      "type": "function",
+      "name": "setBuildingHeader",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>BuildingHeader</code>.\n\nFor further details take a look at the property definition: {@link #BuildingHeader}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for BuildingHeader"
+          }
+        ]
+      }
+    },
+    "resetBuildingHeader": {
+      "type": "function",
+      "name": "resetBuildingHeader",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>BuildingHeader</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #BuildingHeader}."
+          }
+        ]
+      }
+    },
+    "getNewButton": {
+      "type": "function",
+      "name": "getNewButton",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>NewButton</code>.\n\nFor further details take a look at the property definition: {@link #NewButton}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for NewButton"
+          }
+        ]
+      }
+    },
+    "setNewButton": {
+      "type": "function",
+      "name": "setNewButton",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>NewButton</code>.\n\nFor further details take a look at the property definition: {@link #NewButton}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for NewButton"
+          }
+        ]
+      }
+    },
+    "resetNewButton": {
+      "type": "function",
+      "name": "resetNewButton",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>NewButton</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #NewButton}."
+          }
+        ]
+      }
+    },
     "getNewBuilding": {
       "type": "function",
       "name": "getNewBuilding",
@@ -4049,6 +4279,138 @@
           {
             "name": "@description",
             "body": "Resets the user value of the property <code>BuildingSelect</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #BuildingSelect}."
+          }
+        ]
+      }
+    },
+    "getSearchField": {
+      "type": "function",
+      "name": "getSearchField",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>SearchField</code>.\n\nFor further details take a look at the property definition: {@link #SearchField}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for SearchField"
+          }
+        ]
+      }
+    },
+    "setSearchField": {
+      "type": "function",
+      "name": "setSearchField",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>SearchField</code>.\n\nFor further details take a look at the property definition: {@link #SearchField}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for SearchField"
+          }
+        ]
+      }
+    },
+    "resetSearchField": {
+      "type": "function",
+      "name": "resetSearchField",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>SearchField</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #SearchField}."
+          }
+        ]
+      }
+    },
+    "getBuildingList": {
+      "type": "function",
+      "name": "getBuildingList",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>BuildingList</code>.\n\nFor further details take a look at the property definition: {@link #BuildingList}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for BuildingList"
+          }
+        ]
+      }
+    },
+    "setBuildingList": {
+      "type": "function",
+      "name": "setBuildingList",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>BuildingList</code>.\n\nFor further details take a look at the property definition: {@link #BuildingList}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for BuildingList"
+          }
+        ]
+      }
+    },
+    "resetBuildingList": {
+      "type": "function",
+      "name": "resetBuildingList",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>BuildingList</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #BuildingList}."
           }
         ]
       }

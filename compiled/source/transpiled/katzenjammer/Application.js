@@ -10,6 +10,7 @@
       },
       "qx.log.appender.Native": {},
       "qx.log.appender.Console": {},
+      "katzenjammer.data.GameData": {},
       "katzenjammer.container.MainContainer": {}
     }
   };
@@ -60,7 +61,8 @@
           Below is your actual application code...
         -------------------------------------------------------------------------
         */
-        // Document is the application root
+
+        katzenjammer.data.GameData.initGameData(); // Document is the application root
 
         var doc = this.getRoot();
         doc.add(new katzenjammer.container.MainContainer(), {
@@ -73,4 +75,4 @@
   katzenjammer.Application.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Application.js.map?dt=1649863690652
+//# sourceMappingURL=Application.js.map?dt=1651254929496

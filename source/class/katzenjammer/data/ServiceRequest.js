@@ -83,7 +83,7 @@ qx.Class.define("katzenjammer.data.ServiceRequest", {
         {
             var string = ""
 
-            for (i in data)
+            for (var i in data)
             {
                 var value = data[i];
 

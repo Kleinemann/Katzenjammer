@@ -69,7 +69,7 @@
       addData: function addData(data) {
         var string = "";
 
-        for (i in data) {
+        for (var i in data) {
           var value = data[i];
           string += string === "" ? "?" : "&";
           string += i + "=" + value;
@@ -99,4 +99,4 @@
   katzenjammer.data.ServiceRequest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ServiceRequest.js.map?dt=1651047620776
+//# sourceMappingURL=ServiceRequest.js.map?dt=1651129430871

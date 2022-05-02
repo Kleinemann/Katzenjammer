@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 75,
+        "line": 79,
         "column": 3
       }
     },
@@ -36,21 +36,37 @@
         },
         "end": {
           "line": 14,
-          "column": 36
+          "column": 35
         }
       },
       "name": "SearchField",
       "propertyType": "new"
+    },
+    "CurrentPos": {
+      "location": {
+        "start": {
+          "line": 15,
+          "column": 8
+        },
+        "end": {
+          "line": 15,
+          "column": 50
+        }
+      },
+      "name": "CurrentPos",
+      "propertyType": "new",
+      "nullable": true,
+      "allowNull": true
     }
   },
   "construct": {
     "location": {
       "start": {
-        "line": 17,
+        "line": 18,
         "column": 15
       },
       "end": {
-        "line": 37,
+        "line": 38,
         "column": 5
       }
     },
@@ -60,11 +76,11 @@
     "searchPos": {
       "location": {
         "start": {
-          "line": 41,
+          "line": 42,
           "column": 8
         },
         "end": {
-          "line": 60,
+          "line": 63,
           "column": 9
         }
       },
@@ -74,11 +90,11 @@
     "updateMarker": {
       "location": {
         "start": {
-          "line": 62,
+          "line": 65,
           "column": 8
         },
         "end": {
-          "line": 73,
+          "line": 77,
           "column": 3
         }
       },
@@ -3941,6 +3957,72 @@
           {
             "name": "@description",
             "body": "Resets the user value of the property <code>SearchField</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #SearchField}."
+          }
+        ]
+      }
+    },
+    "getCurrentPos": {
+      "type": "function",
+      "name": "getCurrentPos",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>CurrentPos</code>.\n\nFor further details take a look at the property definition: {@link #CurrentPos}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for CurrentPos"
+          }
+        ]
+      }
+    },
+    "setCurrentPos": {
+      "type": "function",
+      "name": "setCurrentPos",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>CurrentPos</code>.\n\nFor further details take a look at the property definition: {@link #CurrentPos}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for CurrentPos"
+          }
+        ]
+      }
+    },
+    "resetCurrentPos": {
+      "type": "function",
+      "name": "resetCurrentPos",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>CurrentPos</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #CurrentPos}."
           }
         ]
       }

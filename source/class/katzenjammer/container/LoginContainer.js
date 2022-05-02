@@ -89,6 +89,7 @@ qx.Class.define("katzenjammer.container.LoginContainer", {
                 this.getAutoLogin().setValue(true);
                 this.getTextUserName().setValue(loginUser)
                 this.getTextPassword().setValue(loginPassword);
+
                 this.login(this.getTextUserName().getValue(), this.getTextPassword().getValue());
             }
 

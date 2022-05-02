@@ -8,7 +8,10 @@
       "qx.core.Object": {
         "construct": true,
         "require": true
-      }
+      },
+      "katzenjammer.data.ServiceRequest": {},
+      "katzenjammer.data.UserBuilding": {},
+      "katzenjammer.container.MainContainer": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -50,6 +53,10 @@
       Guild: {
         init: null,
         nullable: true
+      },
+      Buildings: {
+        init: null,
+        nullable: true
       }
     },
     construct: function construct() {
@@ -65,6 +72,7 @@
           this.resetHome();
           this.resetMoney();
           this.resetGuild();
+          this.resetBuildings();
         }
 
         for (var i in args) {
@@ -100,10 +108,52 @@
               break;
           }
         }
+
+        this.loadingUserData();
+      },
+      updateHome: function updateHome(homeData) {
+        this.setHome(homeData);
+        var data = {
+          Action: "userUpdate",
+          Data: {
+            id: this.getID(),
+            home: this.getHome()
+          }
+        };
+        var req = new katzenjammer.data.ServiceRequest(data);
+        req.send();
+      },
+      loadingUserData: function loadingUserData() {
+        this.loadingUserBuildings();
+      },
+      loadingUserBuildings: function loadingUserBuildings() {
+        var user = katzenjammer.data.User.Instance.getID();
+        var data = {
+          Action: "select",
+          Data: "UserBuildings",
+          ID: user
+        };
+        var req = new katzenjammer.data.ServiceRequest(data);
+        req.addListener("success", function (e) {
+          var response = e.getTarget().getResponse(); //console.log(response);
+
+          if (response.success) {
+            var data = e.getTarget().getResponse().data;
+            var buildings = [];
+
+            for (var i in data) {
+              buildings[data[i].id] = new katzenjammer.data.UserBuilding(data[i]);
+            }
+
+            this.setBuildings(buildings);
+            katzenjammer.container.MainContainer.Instance.getBuildings().updateBuildingList();
+          }
+        }, this);
+        req.send();
       }
     }
   });
   katzenjammer.data.User.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=User.js.map?dt=1650535880778
+//# sourceMappingURL=User.js.map?dt=1651476534571

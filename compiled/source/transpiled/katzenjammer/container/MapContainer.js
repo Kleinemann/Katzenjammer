@@ -8,7 +8,8 @@
       "qx.ui.core.Widget": {
         "construct": true,
         "require": true
-      }
+      },
+      "katzenjammer.data.User": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -32,6 +33,11 @@
       CurrentMarker: {
         init: null,
         nullable: true
+      },
+      Marker: {
+        init: {
+          UserBuildings: []
+        }
       }
     },
     construct: function construct() {
@@ -64,9 +70,9 @@
         var map = this.getMap();
         if (map !== null) map.setView(new L.LatLng(Math.random() * 90, Math.random() * 90), 5);
       },
-      movePosition: function movePosition(pos) {
+      movePosition: function movePosition(pos, zoom) {
         var map = this.getMap();
-        if (map !== null) map.setView(new L.LatLng(pos[0], pos[1]), 15);
+        if (map !== null) map.setView(new L.LatLng(pos[0], pos[1]), zoom !== undefined ? zoom : 15);
       },
       createMarker: function createMarker(pos, source) {
         var map = this.getMap();
@@ -74,7 +80,8 @@
         var old = this.getCurrentMarker();
         if (old !== null) old.remove();
         var marker = L.marker(pos, {
-          draggable: true
+          draggable: true,
+          title: "Marker kann verschoben werden"
         });
         this.setCurrentMarker(marker);
 
@@ -87,10 +94,36 @@
         }
 
         marker.addTo(map);
+      },
+      updateUserBuildings: function updateUserBuildings() {
+        var oldBuildings = this.getMarker().UserBuildings;
+
+        for (var i in oldBuildings) {
+          oldBuildings[i].remove();
+        }
+
+        var map = this.getMap();
+        var buildingMarkers = [];
+        var userBuildings = katzenjammer.data.User.Instance.getBuildings();
+
+        for (var i in userBuildings) {
+          var building = userBuildings[i];
+          var marker = this.createBuilding(building);
+          buildingMarkers[building.getID] = marker;
+          marker.addTo(map);
+        }
+
+        this.getMarker().UserBuildings = buildingMarkers;
+      },
+      createBuilding: function createBuilding(building) {
+        var marker = L.marker(building.getPosition(), {
+          title: building.getName()
+        });
+        return marker;
       }
     }
   });
   katzenjammer.container.MapContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MapContainer.js.map?dt=1651047316670
+//# sourceMappingURL=MapContainer.js.map?dt=1651479039036

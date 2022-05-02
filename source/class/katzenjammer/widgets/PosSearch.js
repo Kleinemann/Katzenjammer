@@ -11,7 +11,8 @@ qx.Class.define("katzenjammer.widgets.PosSearch", {
 
     properties:
     {
-        SearchField: { init : null },
+        SearchField: { init: null },
+        CurrentPos: { init: null, nullable: true }
     },
 
     construct: function ()
@@ -40,6 +41,8 @@ qx.Class.define("katzenjammer.widgets.PosSearch", {
     {
         searchPos: function (e)
         {
+            this.resetCurrentPos();
+
             var txt = this.getSearchField().getValue();
 
             var req = katzenjammer.data.ServiceRequest.SearchAdressRequest(txt);
@@ -49,7 +52,7 @@ qx.Class.define("katzenjammer.widgets.PosSearch", {
                 if (response.length === 1)
                 {
                     var pos = [response[0].lat, response[0].lon];
-
+                    this.setCurrentPos(pos);
                     katzenjammer.container.MapContainer.Instance.createMarker(pos, this);
                 }
                 else
@@ -62,10 +65,11 @@ qx.Class.define("katzenjammer.widgets.PosSearch", {
         updateMarker: function (pos)
         {
             var req = katzenjammer.data.ServiceRequest.SearchAdressRevertRequest(pos);
+
             req.addListener("success", function (e)
             {
                 var response = e.getTarget().getResponse();
-
+                this.setCurrentPos([response.lat, response.lon]);
                 this.getSearchField().setValue(response.display_name);
             }, this);
 

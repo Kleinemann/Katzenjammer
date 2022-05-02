@@ -83,7 +83,8 @@
         "Buildings": {
           "name": "Gebäude",
           "isWindow": true,
-          "subbody": "NewBuilding"
+          "subbody": "NewBuilding",
+          "subheader": "BuildingHeader"
         }
       },
       Layouts: {
@@ -203,14 +204,34 @@
       this.loadingLayout("start");
     },
     members: {
+      equalPosition: function equalPosition(a, b) {
+        if ((a === undefined || b === undefined) && a !== b) return false;
+
+        for (var i in a) {
+          if (b[i] === undefined || a[i] !== b[i]) return false;
+        }
+
+        return true;
+      },
       loadingLayout: function loadingLayout(layoutName) {
-        this.removeAll();
+        var oldPositions = katzenjammer.container.MainContainer.Layouts[this.getCurrentLayout()];
         this.setCurrentLayout(layoutName);
         var positions = katzenjammer.container.MainContainer.Layouts[layoutName];
+        var remove = [];
+        var skip = [];
+
+        for (var i in oldPositions) {
+          if (positions[i] !== undefined && this.equalPosition(oldPositions[i], positions[i])) skip.push(i);else remove.push(i);
+        }
+
+        for (var i in remove) {
+          var oldWindow = this.getLayout().getCellWidget(oldPositions[remove[i]].row, oldPositions[remove[i]].column);
+          this.remove(oldWindow);
+        }
 
         for (var i in positions) {
           if (this.get(i) !== null) this.set(i, null);
-          this.loadWindow(i, positions[i]);
+          if (skip.indexOf(i) === -1) this.loadWindow(i, positions[i]);
         }
       },
       initContainerByName: function initContainerByName(name) {
@@ -292,9 +313,10 @@
         var contSettings = katzenjammer.container.MainContainer.ContainerSettings[windowName];
         var window = this.get(windowName) !== null ? this.get(windowName) : this.initContainerByName(windowName);
         if (contSettings !== undefined && window !== undefined) this.set(windowName, window);
+        var header = contSettings.subheader !== undefined ? window.get(contSettings.subheader) : contSettings.name;
 
         if (contSettings.isWindow) {
-          if (contSettings.subbody !== undefined) this.add(new katzenjammer.widgets.WindowBase(contSettings.name, window, window.get(contSettings.subbody)), position);else this.add(new katzenjammer.widgets.WindowBase(contSettings.name, window), position);
+          if (contSettings.subbody !== undefined) this.add(new katzenjammer.widgets.WindowBase(header, window, window.get(contSettings.subbody)), position);else this.add(new katzenjammer.widgets.WindowBase(header, window), position);
         } else this.add(window, position);
       },
       loadingUser: function loadingUser(args) {
@@ -309,8 +331,8 @@
           var home = JSON.parse(this.getUser().getHome());
 
           if (home !== null) {
-            var map = this.getMap().getMap();
-            map.setView(new L.LatLng(home.center[0], home.center[1]), 15);
+            var map = katzenjammer.container.MapContainer.Instance;
+            map.movePosition([home.lat, home.lon], home.zoom);
           } else this.getMap().moveRandomPos();
         }
       }
@@ -319,4 +341,4 @@
   katzenjammer.container.MainContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MainContainer.js.map?dt=1650987850016
+//# sourceMappingURL=MainContainer.js.map?dt=1651225080478

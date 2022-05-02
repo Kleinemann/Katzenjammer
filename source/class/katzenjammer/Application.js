@@ -53,6 +53,9 @@ qx.Class.define("katzenjammer.Application",
       -------------------------------------------------------------------------
       */
 
+      katzenjammer.data.GameData.initGameData();
+
+
       // Document is the application root
       var doc = this.getRoot();
 

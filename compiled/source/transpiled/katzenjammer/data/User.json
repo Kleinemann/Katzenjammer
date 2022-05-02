@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 63,
+        "line": 128,
         "column": 3
       }
     },
@@ -149,6 +149,22 @@
       "nullable": true,
       "allowNull": true
     },
+    "Buildings": {
+      "location": {
+        "start": {
+          "line": 25,
+          "column": 8
+        },
+        "end": {
+          "line": 25,
+          "column": 49
+        }
+      },
+      "name": "Buildings",
+      "propertyType": "new",
+      "nullable": true,
+      "allowNull": true
+    },
     "qxOwner": {
       "type": "property",
       "name": "qxOwner",
@@ -185,11 +201,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 26,
+        "line": 28,
         "column": 15
       },
       "end": {
-        "line": 31,
+        "line": 33,
         "column": 5
       }
     },
@@ -199,12 +215,54 @@
     "loadingUser": {
       "location": {
         "start": {
-          "line": 35,
+          "line": 37,
           "column": 8
         },
         "end": {
-          "line": 61,
-          "column": 3
+          "line": 67,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "updateHome": {
+      "location": {
+        "start": {
+          "line": 70,
+          "column": 8
+        },
+        "end": {
+          "line": 85,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "loadingUserData": {
+      "location": {
+        "start": {
+          "line": 88,
+          "column": 8
+        },
+        "end": {
+          "line": 91,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "loadingUserBuildings": {
+      "location": {
+        "start": {
+          "line": 93,
+          "column": 8
+        },
+        "end": {
+          "line": 126,
+          "column": 9
         }
       },
       "type": "function",
@@ -740,6 +798,72 @@
           {
             "name": "@description",
             "body": "Resets the user value of the property <code>Guild</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #Guild}."
+          }
+        ]
+      }
+    },
+    "getBuildings": {
+      "type": "function",
+      "name": "getBuildings",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>Buildings</code>.\n\nFor further details take a look at the property definition: {@link #Buildings}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for Buildings"
+          }
+        ]
+      }
+    },
+    "setBuildings": {
+      "type": "function",
+      "name": "setBuildings",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>Buildings</code>.\n\nFor further details take a look at the property definition: {@link #Buildings}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for Buildings"
+          }
+        ]
+      }
+    },
+    "resetBuildings": {
+      "type": "function",
+      "name": "resetBuildings",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>Buildings</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #Buildings}."
           }
         ]
       }

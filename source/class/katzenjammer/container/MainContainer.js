@@ -20,10 +20,10 @@ qx.Class.define("katzenjammer.container.MainContainer", {
             "Login": { "name": "Login", "isWindow": true },
             "Register": { "name": "Registrieren", "isWindow": true },
             "Update": { "name": "Updates", "isWindow": true },
-            "News": {  "name": "News", "isWindow": true },
+            "News": { "name": "News", "isWindow": true },
             "TopPlayer": { "name": "Top-Spieler", "isWindow": true },
             "Quests": { "name": "Quests", "isWindow": true },
-            "Buildings": { "name": "Gebäude", "isWindow": true, "subbody": "NewBuilding" }
+            "Buildings": { "name": "Gebäude", "isWindow": true, "subbody": "NewBuilding", "subheader": "BuildingHeader" }
         },
 
         Layouts: {
@@ -51,7 +51,7 @@ qx.Class.define("katzenjammer.container.MainContainer", {
     {
         User: { init: katzenjammer.data.User.getInstance() },
 
-        CurrentLayout: { init: null},
+        CurrentLayout: { init: null },
 
         Header: { init: null, nullable: true },
         Map: { init: null, nullable: true },
@@ -87,20 +87,50 @@ qx.Class.define("katzenjammer.container.MainContainer", {
 
     members:
     {
+        equalPosition: function (a, b)
+        {
+            if ((a === undefined || b === undefined) && a !== b)
+                return false;
+
+            for (var i in a)
+            {
+                if (b[i] === undefined || a[i] !== b[i])
+                    return false;
+			}
+
+            return true;
+		},
+
+
         loadingLayout: function (layoutName)
         {
-            this.removeAll();
-
+            var oldPositions = katzenjammer.container.MainContainer.Layouts[this.getCurrentLayout()];
             this.setCurrentLayout(layoutName);
-
             var positions = katzenjammer.container.MainContainer.Layouts[layoutName];
+
+            var remove = [];
+            var skip = [];
+            for (var i in oldPositions)
+            {
+                if (positions[i] !== undefined && this.equalPosition(oldPositions[i], positions[i]))
+                    skip.push(i);
+                else
+                    remove.push(i);
+			}
+
+            for (var i in remove)
+            {
+                var oldWindow = this.getLayout().getCellWidget(oldPositions[remove[i]].row, oldPositions[remove[i]].column);
+                this.remove(oldWindow);
+			}
 
             for (var i in positions)
             {
                 if (this.get(i) !== null)
                     this.set(i, null);
 
-                this.loadWindow(i, positions[i]);
+                if (skip.indexOf(i) === -1)
+                    this.loadWindow(i, positions[i]);
 			}
         },
 
@@ -180,12 +210,14 @@ qx.Class.define("katzenjammer.container.MainContainer", {
             if (contSettings !== undefined && window !== undefined)
                 this.set(windowName, window);
 
+            var header = contSettings.subheader !== undefined ? window.get(contSettings.subheader) : contSettings.name;
+
             if (contSettings.isWindow)
             {
                 if (contSettings.subbody !== undefined)
-                    this.add(new katzenjammer.widgets.WindowBase(contSettings.name, window, window.get(contSettings.subbody)), position);
+                    this.add(new katzenjammer.widgets.WindowBase(header, window, window.get(contSettings.subbody)), position);
                 else
-                    this.add(new katzenjammer.widgets.WindowBase(contSettings.name, window), position);
+                    this.add(new katzenjammer.widgets.WindowBase(header, window), position);
             }
             else
                 this.add(window, position);
@@ -209,8 +241,8 @@ qx.Class.define("katzenjammer.container.MainContainer", {
                 var home = JSON.parse(this.getUser().getHome());
                 if (home !== null)
                 {
-                    var map = this.getMap().getMap();
-                    map.setView(new L.LatLng(home.center[0], home.center[1]), 15);
+                    var map = katzenjammer.container.MapContainer.Instance;
+                    map.movePosition([home.lat, home.lon], home.zoom);
                 }
                 else
                     this.getMap().moveRandomPos();
