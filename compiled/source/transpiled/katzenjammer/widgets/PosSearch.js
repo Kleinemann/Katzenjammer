@@ -90,4 +90,4 @@
   katzenjammer.widgets.PosSearch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PosSearch.js.map?dt=1651061797380
+//# sourceMappingURL=PosSearch.js.map?dt=1652417295016

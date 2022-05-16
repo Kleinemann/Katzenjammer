@@ -109,7 +109,7 @@
             "body": "type {String} Name of the event e.g. \"click\", \"keydown\", ...",
             "paramName": "type",
             "description": " Name of the event e.g. \"click\", \"keydown\", ...",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
@@ -139,7 +139,7 @@
           {
             "name": "@return",
             "body": "{String} An opaque id, which can be used to remove the event listener\n       using the {@link #removeListenerById} method.",
-            "type": "String",
+            "type": "qx.bom.String",
             "description": " An opaque id, which can be used to remove the event listener\n       using the {@link #removeListenerById} method."
           }
         ]
@@ -178,7 +178,7 @@
             "body": "type {String} Name of the event",
             "paramName": "type",
             "description": " Name of the event",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
@@ -247,7 +247,7 @@
             "body": "id {String} The id returned by {@link #addListener}",
             "paramName": "id",
             "description": " The id returned by {@link #addListener}",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ],
         "@return": [
@@ -293,7 +293,7 @@
             "body": "type {String} The event type",
             "paramName": "type",
             "description": " The event type",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",

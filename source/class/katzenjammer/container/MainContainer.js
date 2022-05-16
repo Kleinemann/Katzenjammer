@@ -15,34 +15,50 @@ qx.Class.define("katzenjammer.container.MainContainer", {
         Instance: null,
 
         ContainerSettings: {
-            "Header": { "name": null, "isWindow": false },
-            "Map": { "name": null, "isWindow": true },
+            "Header": { "isWindow": false },
+            "Map": { "isWindow": true },
             "Login": { "name": "Login", "isWindow": true },
             "Register": { "name": "Registrieren", "isWindow": true },
             "Update": { "name": "Updates", "isWindow": true },
             "News": { "name": "News", "isWindow": true },
             "TopPlayer": { "name": "Top-Spieler", "isWindow": true },
+            "Information": { "name": "Informationes", "isWindow": true },
             "Quests": { "name": "Quests", "isWindow": true },
-            "Buildings": { "name": "Gebäude", "isWindow": true, "subbody": "NewBuilding", "subheader": "BuildingHeader" }
+            "Buildings": { "name": "Gebäude", "isWindow": true, "subbody": "NewBuilding", "subheader": "BuildingHeader" },
+            "Building": { "name": "Gebäude: ", "propname": "Name", "isWindow": true, "subbody": "Description", "closeable": true },
+            "Quest": { "name": "Quest: ", "propname": "Name", "isWindow": true, "subbody": "Description", "closeable": true }
         },
 
         Layouts: {
             "start": {
                 "Header": { row: 0, column: 0, colSpan: 3 },
-                "Map": { row: 1, column: 0, colSpan: 2 },
-                "Login": { row: 1, column: 2 },
-                "Update": { row: 2, column: 0 },
-                "News": { row: 2, column: 1 },
-                "TopPlayer": { row: 2, column: 2 }
+                "Map": { row: 1, column: 0, colSpan: 2, rowSpan: 2 },
+                "Login": { row: 1, column: 2, rowSpan: 2 },
+                "Update": { row: 3, column: 0 },
+                "News": { row: 3, column: 1 },
+                "TopPlayer": { row: 3, column: 2 }
             },
 
             "default": {
                 "Header": { row: 0, column: 0, colSpan: 3 },
-                "Map": { row: 1, column: 0, colSpan: 2 },
-                "Quests": { row: 1, column: 2 },
-                "Buildings": { row: 2, column: 0 },
-                "News": { row: 2, column: 1 },
-                "TopPlayer": { row: 2, column: 2 }
+                "Map": { row: 1, column: 0, colSpan: 2, rowSpan: 2 },
+                "Quests": { row: 1, column: 2, rowSpan: 3 },
+                "Buildings": { row: 3, column: 0 },
+                "Information": { row: 3, column: 1 }
+            },
+
+            "building": {
+                "Header": { row: 0, column: 0, colSpan: 3 },
+                "Building": { row: 1, column: 0, colSpan: 2, rowSpan: 3 },
+                "Map": { row: 1, column: 2},
+                "Buildings": { row: 2, column: 2, rowSpan: 2},
+            },
+
+            "quest": {
+                "Header": { row: 0, column: 0, colSpan: 3 },
+                "Quest": { row: 1, column: 0, colSpan: 2, rowSpan: 3 },
+                "Map": { row: 1, column: 2 },
+                "Quests": { row: 2, column: 2, rowSpan: 2 },
             }
         }
     },
@@ -61,7 +77,12 @@ qx.Class.define("katzenjammer.container.MainContainer", {
         News: { init: null, nullable: true },
         TopPlayer: { init: null, nullable: true },
         Quests: { init: null, nullable: true },
-        Buildings: { init: null, nullable: true }
+        Buildings: { init: null, nullable: true },
+        Information: { init: null, nullable: true },
+
+        //GameItems
+        Building: { init: null, nullable: true },
+        Quest: { init: null, nullable: true }
     },
 
     construct: function ()
@@ -72,9 +93,9 @@ qx.Class.define("katzenjammer.container.MainContainer", {
         layout.setColumnFlex(2, 1);
 
         layout.setRowFlex(0, 0);
-        layout.setRowFlex(1, 2);
+        layout.setRowFlex(1, 1);
         layout.setRowFlex(2, 1);
-
+        layout.setRowFlex(3, 1);
 
         this.base(arguments, layout);
 
@@ -83,10 +104,22 @@ qx.Class.define("katzenjammer.container.MainContainer", {
         this.setBackgroundColor("#CCCCCC");
 
         this.loadingLayout("start");
+
+        this.__gameTimer = new qx.event.Timer(30000);
+        this.__gameTimer.addListener("interval", this.gameInterval, this);
+        this.__gameTimer.start();
     },
 
     members:
     {
+        gameInterval: function ()
+        {
+            if (katzenjammer.data.User.Instance !== null)
+            {
+                katzenjammer.data.User.Instance.gameInterval();
+            }
+        },
+
         equalPosition: function (a, b)
         {
             if ((a === undefined || b === undefined) && a !== b)
@@ -126,12 +159,15 @@ qx.Class.define("katzenjammer.container.MainContainer", {
 
             for (var i in positions)
             {
-                if (this.get(i) !== null)
-                    this.set(i, null);
-
-                if (skip.indexOf(i) === -1)
+                if (skip.indexOf(i) === -1) {
                     this.loadWindow(i, positions[i]);
-			}
+                }
+            }
+
+            //resize everything
+            var evt = document.createEvent('UIEvents');
+            evt.initUIEvent('resize', true, false, window, 0);
+            window.dispatchEvent(evt);
         },
 
 
@@ -148,6 +184,9 @@ qx.Class.define("katzenjammer.container.MainContainer", {
                 case "News": return new katzenjammer.container.lists.NewsContainer(); break;
                 case "Update": return new katzenjammer.container.lists.UpdatesContainer(); break;
                 case "Buildings": return new katzenjammer.container.lists.BuildingsContainer(); break;
+                case "Building": return new katzenjammer.container.details.BuildingDetailContainer(); break;
+                case "Quest": return new katzenjammer.container.details.QuestDetailContainer(); break;
+                case "Information": return new katzenjammer.container.lists.InformationContainer(); break;
                 default: return undefined;
 			}
 		},
@@ -207,18 +246,12 @@ qx.Class.define("katzenjammer.container.MainContainer", {
             var contSettings = katzenjammer.container.MainContainer.ContainerSettings[windowName];
             var window = this.get(windowName) !== null ? this.get(windowName) : this.initContainerByName(windowName);
 
+
             if (contSettings !== undefined && window !== undefined)
                 this.set(windowName, window);
 
-            var header = contSettings.subheader !== undefined ? window.get(contSettings.subheader) : contSettings.name;
-
             if (contSettings.isWindow)
-            {
-                if (contSettings.subbody !== undefined)
-                    this.add(new katzenjammer.widgets.WindowBase(header, window, window.get(contSettings.subbody)), position);
-                else
-                    this.add(new katzenjammer.widgets.WindowBase(header, window), position);
-            }
+                this.add(new katzenjammer.widgets.WindowBase(window, contSettings), position);
             else
                 this.add(window, position);
 		},
@@ -247,6 +280,22 @@ qx.Class.define("katzenjammer.container.MainContainer", {
                 else
                     this.getMap().moveRandomPos();
             }
-		}
+        },
+
+        loadingBuilding: function (userBuilding)
+        {
+            this.loadingLayout("building");
+            this.getBuilding().load(userBuilding);
+
+            katzenjammer.container.MapContainer.Instance.movePosition(userBuilding.getPosition());
+        },
+
+        loadingQuest: function (quest)
+        {
+            this.loadingLayout("quest");
+            this.getQuest().load(quest);
+
+             katzenjammer.container.MapContainer.Instance.movePosition(quest.getPosition());
+        }
     }
 });

@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 62,
+        "line": 78,
         "column": 3
       }
     },
@@ -110,6 +110,38 @@
       },
       "name": "SubBody",
       "propertyType": "new"
+    },
+    "qxOwner": {
+      "type": "property",
+      "name": "qxOwner",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
+    },
+    "qxObjectId": {
+      "type": "property",
+      "name": "qxObjectId",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
     }
   },
   "construct": {
@@ -119,14 +151,27 @@
         "column": 15
       },
       "end": {
-        "line": 56,
+        "line": 69,
         "column": 5
       }
     },
     "jsdoc": {}
   },
-  "events": {},
   "members": {
+    "close": {
+      "location": {
+        "start": {
+          "line": 73,
+          "column": 8
+        },
+        "end": {
+          "line": 76,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
     "getQxOwner": {
       "type": "function",
       "name": "getQxOwner",
@@ -4186,5 +4231,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

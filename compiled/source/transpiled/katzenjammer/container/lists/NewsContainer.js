@@ -58,7 +58,9 @@
         table.setColumnVisibilityButtonVisible(false);
         table.getSelectionModel().setSelectionMode(qx.ui.table.selection.Model.NO_SELECTION);
         this.setTable(table);
-        this.add(table);
+        this.add(table, {
+          flex: 1
+        });
       },
       updateData: function updateData() {
         var data = {
@@ -81,4 +83,4 @@
   katzenjammer.container.lists.NewsContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NewsContainer.js.map?dt=1650899506170
+//# sourceMappingURL=NewsContainer.js.map?dt=1652417291650

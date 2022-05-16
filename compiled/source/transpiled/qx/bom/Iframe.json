@@ -266,7 +266,7 @@
             "body": "source {String} URL to be set.",
             "paramName": "source",
             "description": " URL to be set.",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ],
         "@signature": [
@@ -310,7 +310,7 @@
           {
             "name": "@return",
             "body": "{String} Returns the location href or null (if a query is not possible/allowed)",
-            "type": "String",
+            "type": "qx.bom.String",
             "description": " Returns the location href or null (if a query is not possible/allowed)"
           }
         ]

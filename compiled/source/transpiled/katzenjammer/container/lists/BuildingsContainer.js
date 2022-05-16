@@ -13,7 +13,6 @@
         "construct": true
       },
       "qx.ui.layout.HBox": {},
-      "qx.ui.basic.Label": {},
       "qx.ui.form.Button": {},
       "katzenjammer.widgets.PosSearch": {},
       "qx.ui.form.SelectBox": {},
@@ -65,15 +64,14 @@
     members: {
       initBuildingHeader: function initBuildingHeader() {
         var cont = new qx.ui.container.Composite(new qx.ui.layout.HBox(3));
-        cont.add(new qx.ui.basic.Label("Neues Gebäude"));
-        this.setBuildingHeader(cont);
-      },
-      initNewBuilding: function initNewBuilding() {
-        var cont = new qx.ui.container.Composite(new qx.ui.layout.VBox(3));
         var btnNew = new qx.ui.form.Button("Neu");
         this.setNewButton(btnNew);
         btnNew.addListener("execute", this.startBuilding, this);
         cont.add(btnNew);
+        this.setBuildingHeader(cont);
+      },
+      initNewBuilding: function initNewBuilding() {
+        var cont = new qx.ui.container.Composite(new qx.ui.layout.VBox(3));
         this.setSearchField(new katzenjammer.widgets.PosSearch());
         cont.add(this.getSearchField());
         var buildingSelect = new qx.ui.container.Composite(new qx.ui.layout.HBox(3));
@@ -141,6 +139,7 @@
           if (response.success) {
             var buildings = katzenjammer.data.User.Instance.getBuildings();
             if (buildings === null) buildings = [];
+            var data = response.data;
 
             for (var i in data) {
               buildings[data[i].id] = new katzenjammer.data.UserBuilding(data[i]);
@@ -174,4 +173,4 @@
   katzenjammer.container.lists.BuildingsContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BuildingsContainer.js.map?dt=1651477907638
+//# sourceMappingURL=BuildingsContainer.js.map?dt=1652417291683

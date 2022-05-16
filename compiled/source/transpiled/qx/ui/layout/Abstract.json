@@ -731,13 +731,13 @@
     "jsdoc": {}
   },
   "descendants": [
-    "qx.ui.layout.Canvas",
-    "qx.ui.layout.Atom",
-    "qx.ui.layout.HBox",
-    "qx.ui.layout.VBox",
     "qx.ui.layout.Grid",
-    "qx.ui.layout.Grow",
+    "qx.ui.layout.VBox",
+    "qx.ui.layout.Canvas",
     "qx.ui.layout.Dock",
+    "qx.ui.layout.HBox",
+    "qx.ui.layout.Atom",
+    "qx.ui.layout.Grow",
     "qx.ui.menu.ButtonLayout"
   ]
 }

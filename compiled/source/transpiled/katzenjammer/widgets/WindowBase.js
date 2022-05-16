@@ -15,9 +15,13 @@
       "qx.ui.basic.Label": {
         "construct": true
       },
+      "qx.ui.form.Button": {
+        "construct": true
+      },
       "qx.ui.container.Scroll": {
         "construct": true
-      }
+      },
+      "katzenjammer.container.MainContainer": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -50,21 +54,38 @@
         init: null
       }
     },
-    construct: function construct(header, body, subbody) {
-      var layout = new qx.ui.layout.Dock(3, 3); //layout.setSeparatorX("separator-horizontal");
-
+    construct: function construct(window, settings) {
+      var layout = new qx.ui.layout.Dock(3, 3);
       layout.setSeparatorY("separator-vertical");
       qx.ui.container.Composite.constructor.call(this, layout);
-
-      if (header !== undefined && header !== null) {
-        if (typeof header === "string") this.setHeader(new qx.ui.basic.Label(header));else this.setHeader(header);
-        this.add(this.getHeader(), {
-          edge: "north"
+      if (settings.header !== undefined) this.setHeader(this.get(settings.header));else {
+        var headerCont = new qx.ui.container.Composite(new qx.ui.layout.Dock(3, 3));
+        if (settings.name !== undefined) headerCont.add(new qx.ui.basic.Label(settings.name), {
+          edge: "west"
         });
-      }
+        if (settings.propname !== undefined) headerCont.add(window.get(settings.propname), {
+          edge: "west"
+        });
 
-      if (subbody !== undefined && subbody !== null) {
-        this.setSubBody(subbody);
+        if (settings.closeable) {
+          var btnClose = new qx.ui.form.Button("X");
+          btnClose.addListener("execute", this.close, this);
+          headerCont.add(btnClose, {
+            edge: "east"
+          });
+        }
+
+        if (settings.subheader !== undefined) headerCont.add(window.get(settings.subheader), {
+          edge: "east"
+        });
+        this.setHeader(headerCont);
+      }
+      this.add(this.getHeader(), {
+        edge: "north"
+      });
+
+      if (settings.subbody !== undefined) {
+        this.setSubBody(window.get(settings.subbody));
         this.add(this.getSubBody(), {
           edge: "north"
         });
@@ -73,14 +94,18 @@
       this.setScroll(new qx.ui.container.Scroll());
       this.add(this.getScroll());
 
-      if (body !== undefined) {
-        this.setBody(body);
+      if (window !== undefined && window !== null) {
+        this.setBody(window);
         this.getScroll().add(this.getBody());
       }
     },
-    members: {}
+    members: {
+      close: function close() {
+        katzenjammer.container.MainContainer.Instance.loadingLayout("default");
+      }
+    }
   });
   katzenjammer.widgets.WindowBase.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WindowBase.js.map?dt=1650969130289
+//# sourceMappingURL=WindowBase.js.map?dt=1652417291763

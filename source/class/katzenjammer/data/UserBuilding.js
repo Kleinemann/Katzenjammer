@@ -16,17 +16,25 @@ qx.Class.define("katzenjammer.data.UserBuilding", {
         ID: { init: null },
         BuildingId: { init: null },
         Name: { init: null },
-        Position: { init: null }
+        Position: { init: null },
+
+        Icon: { init: null },
+        Quest: { init: null, nullable: true }
     },
 
     construct: function (buildingData)
     {
         this.base(arguments);
 
-        var buildingBase = katzenjammer.data.GameData.Buildings[buildingData.id];
+        var buildingBase = katzenjammer.data.GameData.Buildings[buildingData.building_id];
 
         this.setID(buildingData.id);
         this.setName(buildingData.name !== null ? buildingData.name : buildingBase.name);
+        this.setBuildingId(buildingBase.id);
+
+        var iconId = buildingData.icon_id !== null ? buildingData.icon_id : buildingBase.icon_id;
+        this.setIcon(katzenjammer.data.GameData.Icons[iconId]);
+
         this.setPosition(typeof buildingData.position !== 'string' ? buildingData.position : JSON.parse(buildingData.position));
     },
 
@@ -34,26 +42,29 @@ qx.Class.define("katzenjammer.data.UserBuilding", {
     {
         getItem: function ()
         {
-            var item = new qx.ui.container.Composite(new qx.ui.layout.HBox(3));
+            var item = new qx.ui.container.Composite(new qx.ui.layout.Dock()).set({paddingLeft: 10, paddingRight: 10});
+            item.setUserData("data", this);
 
-            item.add(new qx.ui.basic.Label("(" + this.getID() + ")"));
+            item.add(new qx.ui.basic.Label("(" + this.getID() + ")"), { edge: "west" });
 
-            var lblName = new qx.ui.basic.Label(this.getName());
-            item.add(lblName);
-
-
-            var lblPosition = new qx.ui.basic.Label("#");
-            lblPosition.setUserData("data", this.getPosition());
-
-            lblPosition.addListener("click", function (e)
+            var lblName = new qx.ui.basic.Atom(this.getName(), this.getIcon().iconUrl);
+            lblName.addListener("click", function (e)
             {
-                var lbl = e.getTarget();
-                var data = lbl.getUserData("data");
-                var pos = [data.lat, data.lon];
-                katzenjammer.container.MapContainer.Instance.movePosition(pos, 17);
+                var pos = this.getPosition();
+                katzenjammer.container.MapContainer.Instance.movePosition(pos, 15);                
             }, this);
 
-            item.add(lblPosition);
+            item.add(lblName, { edge: "west" });
+
+
+            var btnopen = new qx.ui.form.Button("Details");
+
+            btnopen.addListener("execute", function (e)
+            {
+                katzenjammer.container.MainContainer.Instance.loadingBuilding(this);
+            }, this);
+
+            item.add(btnopen, { edge: "east" });
 
             return item;
 		}

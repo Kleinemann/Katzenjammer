@@ -205,10 +205,10 @@
     *****************************************************************************
     */
     members: {
-      __widths__P_112_0: null,
-      __flexs__P_112_1: null,
-      __enableFlex__P_112_2: null,
-      __children__P_112_3: null,
+      __widths__P_62_0: null,
+      __flexs__P_62_1: null,
+      __enableFlex__P_62_2: null,
+      __children__P_62_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -226,16 +226,16 @@
       /**
        * Rebuilds caches for flex and percent layout properties
        */
-      __rebuildCache__P_112_4: function __rebuildCache__P_112_4() {
+      __rebuildCache__P_62_4: function __rebuildCache__P_62_4() {
         var children = this._getLayoutChildren();
 
         var length = children.length;
         var enableFlex = false;
-        var reuse = this.__widths__P_112_0 && this.__widths__P_112_0.length != length && this.__flexs__P_112_1 && this.__widths__P_112_0;
+        var reuse = this.__widths__P_62_0 && this.__widths__P_62_0.length != length && this.__flexs__P_62_1 && this.__widths__P_62_0;
         var props; // Sparse array (keep old one if lengths has not been modified)
 
-        var widths = reuse ? this.__widths__P_112_0 : new Array(length);
-        var flexs = reuse ? this.__flexs__P_112_1 : new Array(length); // Reverse support
+        var widths = reuse ? this.__widths__P_62_0 : new Array(length);
+        var flexs = reuse ? this.__flexs__P_62_1 : new Array(length); // Reverse support
 
         if (this.getReversed()) {
           children = children.concat().reverse();
@@ -260,12 +260,12 @@
 
 
         if (!reuse) {
-          this.__widths__P_112_0 = widths;
-          this.__flexs__P_112_1 = flexs;
+          this.__widths__P_62_0 = widths;
+          this.__flexs__P_62_1 = flexs;
         }
 
-        this.__enableFlex__P_112_2 = enableFlex;
-        this.__children__P_112_3 = children; // Clear invalidation marker
+        this.__enableFlex__P_62_2 = enableFlex;
+        this.__children__P_62_3 = children; // Clear invalidation marker
 
         delete this._invalidChildrenCache;
       },
@@ -295,11 +295,11 @@
       renderLayout: function renderLayout(availWidth, availHeight, padding) {
         // Rebuild flex/width caches
         if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_112_4();
+          this.__rebuildCache__P_62_4();
         } // Cache children
 
 
-        var children = this.__children__P_112_3;
+        var children = this.__children__P_62_3;
         var length = children.length;
         var util = qx.ui.layout.Util; // Compute gaps
 
@@ -320,7 +320,7 @@
         var allocatedWidth = gaps;
 
         for (i = 0; i < length; i += 1) {
-          percent = this.__widths__P_112_0[i];
+          percent = this.__widths__P_62_0[i];
           hint = children[i].getSizeHint();
           width = percent != null ? Math.floor((availWidth - gaps) * percent) : hint.width; // Limit computed value
 
@@ -335,13 +335,13 @@
         } // Flex support (growing/shrinking)
 
 
-        if (this.__enableFlex__P_112_2 && allocatedWidth != availWidth) {
+        if (this.__enableFlex__P_62_2 && allocatedWidth != availWidth) {
           var flexibles = {};
           var flex, offset;
           var notEnoughSpace = allocatedWidth > availWidth;
 
           for (i = 0; i < length; i += 1) {
-            flex = this.__flexs__P_112_1[i];
+            flex = this.__flexs__P_62_1[i];
 
             if (flex > 0) {
               hint = children[i].getSizeHint();
@@ -439,11 +439,11 @@
       _computeSizeHint: function _computeSizeHint() {
         // Rebuild flex/width caches
         if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_112_4();
+          this.__rebuildCache__P_62_4();
         }
 
         var util = qx.ui.layout.Util;
-        var children = this.__children__P_112_3; // Initialize
+        var children = this.__children__P_62_3; // Initialize
 
         var minWidth = 0,
             width = 0,
@@ -458,8 +458,8 @@
 
           width += hint.width; // Detect if child is shrinkable or has percent width and update minWidth
 
-          var flex = this.__flexs__P_112_1[i];
-          var percent = this.__widths__P_112_0[i];
+          var flex = this.__flexs__P_62_1[i];
+          var percent = this.__widths__P_62_0[i];
 
           if (flex) {
             minWidth += hint.minWidth;
@@ -510,10 +510,10 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__widths__P_112_0 = this.__flexs__P_112_1 = this.__children__P_112_3 = null;
+      this.__widths__P_62_0 = this.__flexs__P_62_1 = this.__children__P_62_3 = null;
     }
   });
   qx.ui.layout.HBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HBox.js.map?dt=1648192696267
+//# sourceMappingURL=HBox.js.map?dt=1652417294675

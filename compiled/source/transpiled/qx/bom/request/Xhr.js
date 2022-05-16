@@ -137,27 +137,27 @@
     extend: Object,
     implement: [qx.core.IDisposable],
     construct: function construct() {
-      var boundFunc = qx.Bootstrap.bind(this.__onNativeReadyStateChange__P_168_0, this); // GlobalError shouldn't be included in qx.Website builds so use it
+      var boundFunc = qx.Bootstrap.bind(this.__onNativeReadyStateChange__P_109_0, this); // GlobalError shouldn't be included in qx.Website builds so use it
       // if it's available but otherwise ignore it (see ignore stated above).
 
       if (qx.event && qx.event.GlobalError && qx.event.GlobalError.observeMethod) {
-        this.__onNativeReadyStateChangeBound__P_168_1 = qx.event.GlobalError.observeMethod(boundFunc);
+        this.__onNativeReadyStateChangeBound__P_109_1 = qx.event.GlobalError.observeMethod(boundFunc);
       } else {
-        this.__onNativeReadyStateChangeBound__P_168_1 = boundFunc;
+        this.__onNativeReadyStateChangeBound__P_109_1 = boundFunc;
       }
 
-      this.__onNativeAbortBound__P_168_2 = qx.Bootstrap.bind(this.__onNativeAbort__P_168_3, this);
-      this.__onNativeProgressBound__P_168_4 = qx.Bootstrap.bind(this.__onNativeProgress__P_168_5, this);
-      this.__onTimeoutBound__P_168_6 = qx.Bootstrap.bind(this.__onTimeout__P_168_7, this);
+      this.__onNativeAbortBound__P_109_2 = qx.Bootstrap.bind(this.__onNativeAbort__P_109_3, this);
+      this.__onNativeProgressBound__P_109_4 = qx.Bootstrap.bind(this.__onNativeProgress__P_109_5, this);
+      this.__onTimeoutBound__P_109_6 = qx.Bootstrap.bind(this.__onTimeout__P_109_7, this);
 
-      this.__initNativeXhr__P_168_8();
+      this.__initNativeXhr__P_109_8();
 
       this._emitter = new qx.event.Emitter(); // BUGFIX: IE
       // IE keeps connections alive unless aborted on unload
 
       if (window.attachEvent) {
-        this.__onUnloadBound__P_168_9 = qx.Bootstrap.bind(this.__onUnload__P_168_10, this);
-        window.attachEvent("onunload", this.__onUnloadBound__P_168_9);
+        this.__onUnloadBound__P_109_9 = qx.Bootstrap.bind(this.__onUnload__P_109_10, this);
+        window.attachEvent("onunload", this.__onUnloadBound__P_109_9);
       }
     },
     statics: {
@@ -268,7 +268,7 @@
        *  Optional password to use for authentication purposes.
        */
       open: function open(method, url, async, user, password) {
-        this.__checkDisposed__P_168_11(); // Mimick native behavior
+        this.__checkDisposed__P_109_11(); // Mimick native behavior
 
 
         if (typeof url === "undefined") {
@@ -278,17 +278,17 @@
         } // Reset flags that may have been set on previous request
 
 
-        this.__abort__P_168_12 = false;
-        this.__send__P_168_13 = false;
-        this.__conditional__P_168_14 = false; // Store URL for later checks
+        this.__abort__P_109_12 = false;
+        this.__send__P_109_13 = false;
+        this.__conditional__P_109_14 = false; // Store URL for later checks
 
-        this.__url__P_168_15 = url;
+        this.__url__P_109_15 = url;
 
         if (typeof async == "undefined") {
           async = true;
         }
 
-        this.__async__P_168_16 = async; // Default values according to spec.
+        this.__async__P_109_16 = async; // Default values according to spec.
 
         this.status = 0;
         this.statusText = this.responseText = "";
@@ -296,7 +296,7 @@
         this.response = null; // BUGFIX
         // IE < 9 and FF < 3.5 cannot reuse the native XHR to issue many requests
 
-        if (!this.__supportsManyRequests__P_168_17() && this.readyState > qx.bom.request.Xhr.UNSENT) {
+        if (!this.__supportsManyRequests__P_109_17() && this.readyState > qx.bom.request.Xhr.UNSENT) {
           // XmlHttpRequest Level 1 requires open() to abort any pending requests
           // associated to the object. Since we're dealing with a new object here,
           // we have to emulate this behavior. Moreover, allow old native XHR to be garbage collected
@@ -306,18 +306,18 @@
           this.dispose(); // Replace the underlying native XHR with a new one that can
           // be used to issue new requests.
 
-          this.__initNativeXhr__P_168_8();
+          this.__initNativeXhr__P_109_8();
         } // Restore handler in case it was removed before
 
 
-        this.__nativeXhr__P_168_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_168_1;
+        this.__nativeXhr__P_109_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_109_1;
 
         try {
           if (qx.core.Environment.get("qx.debug.io")) {
             qx.Bootstrap.debug(qx.bom.request.Xhr, "Open native request with method: " + method + ", url: " + url + ", async: " + async);
           }
 
-          this.__nativeXhr__P_168_18.open(method, url, async, user, password); // BUGFIX: IE, Firefox < 3.5
+          this.__nativeXhr__P_109_18.open(method, url, async, user, password); // BUGFIX: IE, Firefox < 3.5
           // Some browsers do not support Cross-Origin Resource Sharing (CORS)
           // for XMLHttpRequest. Instead, an exception is thrown even for async requests
           // if URL is cross-origin (as per XHR level 1). Use the proprietary XDomainRequest
@@ -333,18 +333,18 @@
             throw OpenError;
           }
 
-          if (!this.__async__P_168_16) {
-            this.__openError__P_168_19 = OpenError;
+          if (!this.__async__P_109_16) {
+            this.__openError__P_109_19 = OpenError;
           }
 
-          if (this.__async__P_168_16) {
+          if (this.__async__P_109_16) {
             // Try again with XDomainRequest
             // (Success case not handled on purpose)
             // - IE 9
             if (window.XDomainRequest) {
               this.readyState = 4;
-              this.__nativeXhr__P_168_18 = new window.XDomainRequest();
-              this.__nativeXhr__P_168_18.onerror = qx.Bootstrap.bind(function () {
+              this.__nativeXhr__P_109_18 = new window.XDomainRequest();
+              this.__nativeXhr__P_109_18.onerror = qx.Bootstrap.bind(function () {
                 this._emit("readystatechange");
 
                 this._emit("error");
@@ -356,7 +356,7 @@
                 qx.Bootstrap.debug(qx.bom.request.Xhr, "Retry open native request with method: " + method + ", url: " + url + ", async: " + async);
               }
 
-              this.__nativeXhr__P_168_18.open(method, url, async, user, password);
+              this.__nativeXhr__P_109_18.open(method, url, async, user, password);
 
               return;
             } // Access denied
@@ -366,7 +366,7 @@
 
 
             window.setTimeout(qx.Bootstrap.bind(function () {
-              if (this.__disposed__P_168_20) {
+              if (this.__disposed__P_109_20) {
                 return;
               }
 
@@ -384,13 +384,13 @@
         // representations. Force validating freshness of cached representation.
 
 
-        if (qx.core.Environment.get("engine.name") === "mshtml" && qx.core.Environment.get("browser.documentmode") < 9 && this.__nativeXhr__P_168_18.readyState > 0) {
-          this.__nativeXhr__P_168_18.setRequestHeader("If-Modified-Since", "-1");
+        if (qx.core.Environment.get("engine.name") === "mshtml" && qx.core.Environment.get("browser.documentmode") < 9 && this.__nativeXhr__P_109_18.readyState > 0) {
+          this.__nativeXhr__P_109_18.setRequestHeader("If-Modified-Since", "-1");
         } // BUGFIX: Firefox
         // Firefox < 4 fails to trigger onreadystatechange OPENED for sync requests
 
 
-        if (qx.core.Environment.get("engine.name") === "gecko" && parseInt(qx.core.Environment.get("engine.version"), 10) < 2 && !this.__async__P_168_16) {
+        if (qx.core.Environment.get("engine.name") === "gecko" && parseInt(qx.core.Environment.get("engine.version"), 10) < 2 && !this.__async__P_109_16) {
           // Native XHR is already set to readyState DONE. Fake readyState
           // and call onreadystatechange manually.
           this.readyState = qx.bom.request.Xhr.OPENED;
@@ -411,14 +411,14 @@
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       setRequestHeader: function setRequestHeader(key, value) {
-        this.__checkDisposed__P_168_11(); // Detect conditional requests
+        this.__checkDisposed__P_109_11(); // Detect conditional requests
 
 
         if (key == "If-Match" || key == "If-Modified-Since" || key == "If-None-Match" || key == "If-Range") {
-          this.__conditional__P_168_14 = true;
+          this.__conditional__P_109_14 = true;
         }
 
-        this.__nativeXhr__P_168_18.setRequestHeader(key, value);
+        this.__nativeXhr__P_109_18.setRequestHeader(key, value);
 
         return this;
       },
@@ -431,14 +431,14 @@
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       send: function send(data) {
-        this.__checkDisposed__P_168_11(); // BUGFIX: IE & Firefox < 3.5
+        this.__checkDisposed__P_109_11(); // BUGFIX: IE & Firefox < 3.5
         // For sync requests, some browsers throw error on open()
         // while it should be on send()
         //
 
 
-        if (!this.__async__P_168_16 && this.__openError__P_168_19) {
-          throw this.__openError__P_168_19;
+        if (!this.__async__P_109_16 && this.__openError__P_109_19) {
+          throw this.__openError__P_109_19;
         } // BUGFIX: Opera
         // On network error, Opera stalls at readyState HEADERS_RECEIVED
         // This violates the spec. See here http://www.w3.org/TR/XMLHttpRequest2/#send
@@ -458,7 +458,7 @@
 
 
         if (this.timeout > 0) {
-          this.__timerId__P_168_21 = window.setTimeout(this.__onTimeoutBound__P_168_6, this.timeout);
+          this.__timerId__P_109_21 = window.setTimeout(this.__onTimeoutBound__P_109_6, this.timeout);
         } // BUGFIX: Firefox 2
         // "NS_ERROR_XPC_NOT_ENOUGH_ARGS" when calling send() without arguments
 
@@ -470,7 +470,7 @@
         // behaviour of all other browsers (Chrome, IE and Safari)
 
         var dataType = qx.Bootstrap.getClass(data);
-        data = data !== null && this.__dataTypeWhiteList__P_168_22.indexOf(dataType) === -1 ? data.toString() : data; // Some browsers may throw an error when sending of async request fails.
+        data = data !== null && this.__dataTypeWhiteList__P_109_22.indexOf(dataType) === -1 ? data.toString() : data; // Some browsers may throw an error when sending of async request fails.
         // This violates the spec which states only sync requests should.
 
         try {
@@ -478,13 +478,13 @@
             qx.Bootstrap.debug(qx.bom.request.Xhr, "Send native request");
           }
 
-          if (this.__async__P_168_16) {
-            this.__nativeXhr__P_168_18.responseType = this.responseType;
+          if (this.__async__P_109_16) {
+            this.__nativeXhr__P_109_18.responseType = this.responseType;
           }
 
-          this.__nativeXhr__P_168_18.send(data);
+          this.__nativeXhr__P_109_18.send(data);
         } catch (SendError) {
-          if (!this.__async__P_168_16) {
+          if (!this.__async__P_109_16) {
             throw SendError;
           } // BUGFIX
           // Some browsers throws error when file not found via file:// protocol.
@@ -494,34 +494,34 @@
           if (this._getProtocol() === "file:") {
             this.readyState = 2;
 
-            this.__readyStateChange__P_168_23();
+            this.__readyStateChange__P_109_23();
 
             var that = this;
             window.setTimeout(function () {
-              if (that.__disposed__P_168_20) {
+              if (that.__disposed__P_109_20) {
                 return;
               }
 
               that.readyState = 3;
 
-              that.__readyStateChange__P_168_23();
+              that.__readyStateChange__P_109_23();
 
               that.readyState = 4;
 
-              that.__readyStateChange__P_168_23();
+              that.__readyStateChange__P_109_23();
             });
           }
         } // BUGFIX: Firefox
         // Firefox fails to trigger onreadystatechange DONE for sync requests
 
 
-        if (qx.core.Environment.get("engine.name") === "gecko" && !this.__async__P_168_16) {
+        if (qx.core.Environment.get("engine.name") === "gecko" && !this.__async__P_109_16) {
           // Properties all set, only missing native readystatechange event
-          this.__onNativeReadyStateChange__P_168_0();
+          this.__onNativeReadyStateChange__P_109_0();
         } // Set send flag
 
 
-        this.__send__P_168_13 = true;
+        this.__send__P_109_13 = true;
         return this;
       },
 
@@ -539,14 +539,14 @@
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       abort: function abort() {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        this.__abort__P_168_12 = true;
+        this.__abort__P_109_12 = true;
 
-        this.__nativeXhr__P_168_18.abort();
+        this.__nativeXhr__P_109_18.abort();
 
-        if (this.__nativeXhr__P_168_18 && this.readyState !== qx.bom.request.Xhr.DONE) {
-          this.readyState = this.__nativeXhr__P_168_18.readyState;
+        if (this.__nativeXhr__P_109_18 && this.readyState !== qx.bom.request.Xhr.DONE) {
+          this.readyState = this.__nativeXhr__P_109_18.readyState;
         }
 
         return this;
@@ -643,13 +643,13 @@
        *  Response header.
        */
       getResponseHeader: function getResponseHeader(header) {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_168_18.aborted) {
+        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_109_18.aborted) {
           return "";
         }
 
-        return this.__nativeXhr__P_168_18.getResponseHeader(header);
+        return this.__nativeXhr__P_109_18.getResponseHeader(header);
       },
 
       /**
@@ -658,13 +658,13 @@
        * @return {String} All response headers.
        */
       getAllResponseHeaders: function getAllResponseHeaders() {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_168_18.aborted) {
+        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_109_18.aborted) {
           return "";
         }
 
-        return this.__nativeXhr__P_168_18.getAllResponseHeaders();
+        return this.__nativeXhr__P_109_18.getAllResponseHeaders();
       },
 
       /**
@@ -683,10 +683,10 @@
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       overrideMimeType: function overrideMimeType(mimeType) {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        if (this.__nativeXhr__P_168_18.overrideMimeType) {
-          this.__nativeXhr__P_168_18.overrideMimeType(mimeType);
+        if (this.__nativeXhr__P_109_18.overrideMimeType) {
+          this.__nativeXhr__P_109_18.overrideMimeType(mimeType);
         } else {
           throw new Error("Native XHR object doesn't support overrideMimeType.");
         }
@@ -702,7 +702,7 @@
        * @return {Object} XMLHttpRequest or equivalent.
        */
       getRequest: function getRequest() {
-        return this.__nativeXhr__P_168_18;
+        return this.__nativeXhr__P_109_18;
       },
 
       /*
@@ -716,20 +716,20 @@
        * @return {Boolean} <code>true</code> if the object was successfully disposed
        */
       dispose: function dispose() {
-        if (this.__disposed__P_168_20) {
+        if (this.__disposed__P_109_20) {
           return false;
         }
 
-        window.clearTimeout(this.__timerId__P_168_21); // Remove unload listener in IE. Aborting on unload is no longer required
+        window.clearTimeout(this.__timerId__P_109_21); // Remove unload listener in IE. Aborting on unload is no longer required
         // for this instance.
 
         if (window.detachEvent) {
-          window.detachEvent("onunload", this.__onUnloadBound__P_168_9);
+          window.detachEvent("onunload", this.__onUnloadBound__P_109_9);
         } // May fail in IE
 
 
         try {
-          this.__nativeXhr__P_168_18.onreadystatechange;
+          this.__nativeXhr__P_109_18.onreadystatechange;
         } catch (PropertiesNotAccessable) {
           return false;
         } // Clear out listeners
@@ -737,16 +737,16 @@
 
         var noop = function noop() {};
 
-        this.__nativeXhr__P_168_18.onreadystatechange = noop;
-        this.__nativeXhr__P_168_18.onload = noop;
-        this.__nativeXhr__P_168_18.onerror = noop;
-        this.__nativeXhr__P_168_18.onprogress = noop; // Abort any network activity
+        this.__nativeXhr__P_109_18.onreadystatechange = noop;
+        this.__nativeXhr__P_109_18.onload = noop;
+        this.__nativeXhr__P_109_18.onerror = noop;
+        this.__nativeXhr__P_109_18.onprogress = noop; // Abort any network activity
 
         this.abort(); // Remove reference to native XHR
 
-        this.__nativeXhr__P_168_18 = null;
+        this.__nativeXhr__P_109_18 = null;
         this.responseText = null;
-        this.__disposed__P_168_20 = true;
+        this.__disposed__P_109_20 = true;
         return true;
       },
 
@@ -755,7 +755,7 @@
        * @return {Boolean} <code>true</code>, if the request has been disposed.
        */
       isDisposed: function isDisposed() {
-        return !!this.__disposed__P_168_20;
+        return !!this.__disposed__P_109_20;
       },
 
       /*
@@ -791,7 +791,7 @@
        * @return {String} The used protocol.
        */
       _getProtocol: function _getProtocol() {
-        var url = this.__url__P_168_15;
+        var url = this.__url__P_109_15;
         var protocolRe = /^(\w+:)\/\//; // Could be http:// from file://
 
         if (url !== null && url.match) {
@@ -814,99 +814,99 @@
       /**
        * @type {Object} XMLHttpRequest or equivalent.
        */
-      __nativeXhr__P_168_18: null,
+      __nativeXhr__P_109_18: null,
 
       /**
        * @type {Boolean} Whether request is async.
        */
-      __async__P_168_16: null,
+      __async__P_109_16: null,
 
       /**
        * @type {Function} Bound __onNativeReadyStateChange handler.
        */
-      __onNativeReadyStateChangeBound__P_168_1: null,
+      __onNativeReadyStateChangeBound__P_109_1: null,
 
       /**
        * @type {Function} Bound __onNativeAbort handler.
        */
-      __onNativeAbortBound__P_168_2: null,
+      __onNativeAbortBound__P_109_2: null,
 
       /**
        * @type {Function} Bound __onNativeProgress handler.
        */
-      __onNativeProgressBound__P_168_4: null,
+      __onNativeProgressBound__P_109_4: null,
 
       /**
        * @type {Function} Bound __onUnload handler.
        */
-      __onUnloadBound__P_168_9: null,
+      __onUnloadBound__P_109_9: null,
 
       /**
        * @type {Function} Bound __onTimeout handler.
        */
-      __onTimeoutBound__P_168_6: null,
+      __onTimeoutBound__P_109_6: null,
 
       /**
        * @type {Boolean} Send flag
        */
-      __send__P_168_13: null,
+      __send__P_109_13: null,
 
       /**
        * @type {String} Requested URL
        */
-      __url__P_168_15: null,
+      __url__P_109_15: null,
 
       /**
        * @type {Boolean} Abort flag
        */
-      __abort__P_168_12: null,
+      __abort__P_109_12: null,
 
       /**
        * @type {Boolean} Timeout flag
        */
-      __timeout__P_168_24: null,
+      __timeout__P_109_24: null,
 
       /**
        * @type {Boolean} Whether object has been disposed.
        */
-      __disposed__P_168_20: null,
+      __disposed__P_109_20: null,
 
       /**
        * @type {Number} ID of timeout timer.
        */
-      __timerId__P_168_21: null,
+      __timerId__P_109_21: null,
 
       /**
        * @type {Error} Error thrown on open, if any.
        */
-      __openError__P_168_19: null,
+      __openError__P_109_19: null,
 
       /**
        * @type {Boolean} Conditional get flag
        */
-      __conditional__P_168_14: null,
+      __conditional__P_109_14: null,
 
       /**
        * @type {Array} Whitelist with all allowed data types for the request payload
        */
-      __dataTypeWhiteList__P_168_22: null,
+      __dataTypeWhiteList__P_109_22: null,
 
       /**
        * Init native XHR.
        */
-      __initNativeXhr__P_168_8: function __initNativeXhr__P_168_8() {
+      __initNativeXhr__P_109_8: function __initNativeXhr__P_109_8() {
         // Create native XHR or equivalent and hold reference
-        this.__nativeXhr__P_168_18 = this._createNativeXhr(); // Track native ready state changes
+        this.__nativeXhr__P_109_18 = this._createNativeXhr(); // Track native ready state changes
 
-        this.__nativeXhr__P_168_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_168_1; // Track native abort, when supported
+        this.__nativeXhr__P_109_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_109_1; // Track native abort, when supported
 
-        if (qx.Bootstrap.getClass(this.__nativeXhr__P_168_18.onabort) !== "Undefined") {
-          this.__nativeXhr__P_168_18.onabort = this.__onNativeAbortBound__P_168_2;
+        if (qx.Bootstrap.getClass(this.__nativeXhr__P_109_18.onabort) !== "Undefined") {
+          this.__nativeXhr__P_109_18.onabort = this.__onNativeAbortBound__P_109_2;
         } // Track native progress, when supported
 
 
-        if (qx.Bootstrap.getClass(this.__nativeXhr__P_168_18.onprogress) !== "Undefined") {
-          this.__nativeXhr__P_168_18.onprogress = this.__onNativeProgressBound__P_168_4;
+        if (qx.Bootstrap.getClass(this.__nativeXhr__P_109_18.onprogress) !== "Undefined") {
+          this.__nativeXhr__P_109_18.onprogress = this.__onNativeProgressBound__P_109_4;
           this.progress = {
             lengthComputable: false,
             loaded: 0,
@@ -915,9 +915,9 @@
         } // Reset flags
 
 
-        this.__disposed__P_168_20 = this.__send__P_168_13 = this.__abort__P_168_12 = false; // Initialize data white list
+        this.__disposed__P_109_20 = this.__send__P_109_13 = this.__abort__P_109_12 = false; // Initialize data white list
 
-        this.__dataTypeWhiteList__P_168_22 = ["ArrayBuffer", "Blob", "File", "HTMLDocument", "String", "FormData"];
+        this.__dataTypeWhiteList__P_109_22 = ["ArrayBuffer", "Blob", "File", "HTMLDocument", "String", "FormData"];
       },
 
       /**
@@ -926,10 +926,10 @@
        * In case the end user cancels the request by other
        * means than calling abort().
        */
-      __onNativeAbort__P_168_3: function __onNativeAbort__P_168_3() {
+      __onNativeAbort__P_109_3: function __onNativeAbort__P_109_3() {
         // When the abort that triggered this method was not a result from
         // calling abort()
-        if (!this.__abort__P_168_12) {
+        if (!this.__abort__P_109_12) {
           this.abort();
         }
       },
@@ -938,7 +938,7 @@
        * Track native progress event.
        @param e {Event} The native progress event.
        */
-      __onNativeProgress__P_168_5: function __onNativeProgress__P_168_5(e) {
+      __onNativeProgress__P_109_5: function __onNativeProgress__P_109_5(e) {
         this.progress.lengthComputable = e.lengthComputable;
         this.progress.loaded = e.loaded;
         this.progress.total = e.total;
@@ -952,8 +952,8 @@
        * Calls user-defined function onreadystatechange on each
        * state change and syncs the XHR status properties.
        */
-      __onNativeReadyStateChange__P_168_0: function __onNativeReadyStateChange__P_168_0() {
-        var nxhr = this.__nativeXhr__P_168_18,
+      __onNativeReadyStateChange__P_109_0: function __onNativeReadyStateChange__P_109_0() {
+        var nxhr = this.__nativeXhr__P_109_18,
             propertiesReadable = true;
 
         if (qx.core.Environment.get("qx.debug.io")) {
@@ -973,7 +973,7 @@
         // Superfluous onreadystatechange DONE when aborting OPENED
         // without send flag
 
-        if (this.readyState === qx.bom.request.Xhr.DONE && this.__abort__P_168_12 && !this.__send__P_168_13) {
+        if (this.readyState === qx.bom.request.Xhr.DONE && this.__abort__P_109_12 && !this.__send__P_109_13) {
           return;
         } // BUGFIX: IE
         // IE fires onreadystatechange HEADERS_RECEIVED and LOADING when sync
@@ -982,7 +982,7 @@
         // be fired.
 
 
-        if (!this.__async__P_168_16 && (nxhr.readyState == 2 || nxhr.readyState == 3)) {
+        if (!this.__async__P_109_16 && (nxhr.readyState == 2 || nxhr.readyState == 3)) {
           return;
         } // Default values according to spec.
 
@@ -1012,13 +1012,13 @@
           }
 
           if (propertiesReadable) {
-            this.__normalizeStatus__P_168_25();
+            this.__normalizeStatus__P_109_25();
 
-            this.__normalizeResponseXML__P_168_26();
+            this.__normalizeResponseXML__P_109_26();
           }
         }
 
-        this.__readyStateChange__P_168_23(); // BUGFIX: IE
+        this.__readyStateChange__P_109_23(); // BUGFIX: IE
         // Memory leak in XMLHttpRequest (on-page)
 
 
@@ -1033,18 +1033,18 @@
       /**
        * Handle readystatechange. Called internally when readyState is changed.
        */
-      __readyStateChange__P_168_23: function __readyStateChange__P_168_23() {
+      __readyStateChange__P_109_23: function __readyStateChange__P_109_23() {
         // Cancel timeout before invoking handlers because they may throw
         if (this.readyState === qx.bom.request.Xhr.DONE) {
           // Request determined DONE. Cancel timeout.
-          window.clearTimeout(this.__timerId__P_168_21);
+          window.clearTimeout(this.__timerId__P_109_21);
         } // Always fire "readystatechange"
 
 
         this._emit("readystatechange");
 
         if (this.readyState === qx.bom.request.Xhr.DONE) {
-          this.__readyStateChangeDone__P_168_27();
+          this.__readyStateChangeDone__P_109_27();
         }
       },
 
@@ -1052,9 +1052,9 @@
        * Handle readystatechange. Called internally by
        * {@link #__readyStateChange} when readyState is DONE.
        */
-      __readyStateChangeDone__P_168_27: function __readyStateChangeDone__P_168_27() {
+      __readyStateChangeDone__P_109_27: function __readyStateChangeDone__P_109_27() {
         // Fire "timeout" if timeout flag is set
-        if (this.__timeout__P_168_24) {
+        if (this.__timeout__P_109_24) {
           this._emit("timeout"); // BUGFIX: Opera
           // Since Opera does not fire "error" on network error, fire additional
           // "error" on timeout (may well be related to network error)
@@ -1064,12 +1064,12 @@
             this._emit("error");
           }
 
-          this.__timeout__P_168_24 = false; // Fire either "abort", "load" or "error"
+          this.__timeout__P_109_24 = false; // Fire either "abort", "load" or "error"
         } else {
-          if (this.__abort__P_168_12) {
+          if (this.__abort__P_109_12) {
             this._emit("abort");
           } else {
-            if (this.__isNetworkError__P_168_28()) {
+            if (this.__isNetworkError__P_109_28()) {
               this._emit("error");
             } else {
               this._emit("load");
@@ -1086,7 +1086,7 @@
        *
        * @return {Boolean} Whether a network error occurred.
        */
-      __isNetworkError__P_168_28: function __isNetworkError__P_168_28() {
+      __isNetworkError__P_109_28: function __isNetworkError__P_109_28() {
         var error; // Infer the XHR internal error flag from statusText when not aborted.
         // See http://www.w3.org/TR/XMLHttpRequest2/#error-flag and
         // http://www.w3.org/TR/XMLHttpRequest2/#the-statustext-attribute
@@ -1106,30 +1106,30 @@
       /**
        * Handle faked timeout.
        */
-      __onTimeout__P_168_7: function __onTimeout__P_168_7() {
+      __onTimeout__P_109_7: function __onTimeout__P_109_7() {
         // Basically, mimick http://www.w3.org/TR/XMLHttpRequest2/#timeout-error
-        var nxhr = this.__nativeXhr__P_168_18;
+        var nxhr = this.__nativeXhr__P_109_18;
         this.readyState = qx.bom.request.Xhr.DONE; // Set timeout flag
 
-        this.__timeout__P_168_24 = true; // No longer consider request. Abort.
+        this.__timeout__P_109_24 = true; // No longer consider request. Abort.
 
         nxhr.aborted = true;
         nxhr.abort();
         this.responseText = "";
         this.responseXML = null; // Signal readystatechange
 
-        this.__readyStateChange__P_168_23();
+        this.__readyStateChange__P_109_23();
       },
 
       /**
        * Normalize status property across browsers.
        */
-      __normalizeStatus__P_168_25: function __normalizeStatus__P_168_25() {
+      __normalizeStatus__P_109_25: function __normalizeStatus__P_109_25() {
         var isDone = this.readyState === qx.bom.request.Xhr.DONE; // BUGFIX: Most browsers
         // Most browsers tell status 0 when it should be 200 for local files
 
         if (this._getProtocol() === "file:" && this.status === 0 && isDone) {
-          if (!this.__isNetworkError__P_168_28()) {
+          if (!this.__isNetworkError__P_109_28()) {
             this.status = 200;
           }
         } // BUGFIX: IE
@@ -1146,8 +1146,8 @@
 
         if (qx.core.Environment.get("engine.name") === "opera") {
           if (isDone && // Done
-          this.__conditional__P_168_14 && // Conditional request
-          !this.__abort__P_168_12 && // Not aborted
+          this.__conditional__P_109_14 && // Conditional request
+          !this.__abort__P_109_12 && // Not aborted
           this.status === 0 // But status 0!
           ) {
             this.status = 304;
@@ -1158,7 +1158,7 @@
       /**
        * Normalize responseXML property across browsers.
        */
-      __normalizeResponseXML__P_168_26: function __normalizeResponseXML__P_168_26() {
+      __normalizeResponseXML__P_109_26: function __normalizeResponseXML__P_109_26() {
         // BUGFIX: IE
         // IE does not recognize +xml extension, resulting in empty responseXML.
         //
@@ -1176,7 +1176,7 @@
       /**
        * Handler for native unload event.
        */
-      __onUnload__P_168_10: function __onUnload__P_168_10() {
+      __onUnload__P_109_10: function __onUnload__P_109_10() {
         try {
           // Abort and dispose
           if (this) {
@@ -1190,7 +1190,7 @@
        * same native XHR to send more requests.
        * @return {Boolean} <code>true</code> if request object reuse is supported
        */
-      __supportsManyRequests__P_168_17: function __supportsManyRequests__P_168_17() {
+      __supportsManyRequests__P_109_17: function __supportsManyRequests__P_109_17() {
         var name = qx.core.Environment.get("engine.name");
         var version = qx.core.Environment.get("browser.version");
         return !(name == "mshtml" && version < 9 || name == "gecko" && version < 3.5);
@@ -1199,8 +1199,8 @@
       /**
        * Throw when already disposed.
        */
-      __checkDisposed__P_168_11: function __checkDisposed__P_168_11() {
-        if (this.__disposed__P_168_20) {
+      __checkDisposed__P_109_11: function __checkDisposed__P_109_11() {
+        if (this.__disposed__P_109_20) {
           throw new Error("Already disposed");
         }
       }
@@ -1212,4 +1212,4 @@
   qx.bom.request.Xhr.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Xhr.js.map?dt=1648824152632
+//# sourceMappingURL=Xhr.js.map?dt=1652417296972

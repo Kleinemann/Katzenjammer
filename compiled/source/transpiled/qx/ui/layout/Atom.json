@@ -209,7 +209,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.core.Object",
+      "overriddenFrom": "qx.ui.layout.Abstract",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -234,7 +234,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.core.Object",
+      "overriddenFrom": "qx.ui.layout.Abstract",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -260,7 +260,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.core.Object",
+      "overriddenFrom": "qx.ui.layout.Abstract",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -278,7 +278,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.core.Object",
+      "overriddenFrom": "qx.ui.layout.Abstract",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -303,7 +303,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.core.Object",
+      "overriddenFrom": "qx.ui.layout.Abstract",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -329,7 +329,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.core.Object",
+      "overriddenFrom": "qx.ui.layout.Abstract",
       "property": "reset",
       "jsdoc": {
         "@description": [

@@ -59,7 +59,7 @@
       qx.html.Node.constructor.call(this, "#text");
 
       if (text) {
-        this.__text__P_118_0 = text;
+        this.__text__P_146_0 = text;
       }
     },
 
@@ -69,13 +69,13 @@
      * ****************************************************************************
      */
     members: {
-      __text__P_118_0: null,
+      __text__P_146_0: null,
 
       /*
        * @Override
        */
       _createDomElement: function _createDomElement() {
-        return window.document.createTextNode(this.__text__P_118_0 || "");
+        return window.document.createTextNode(this.__text__P_146_0 || "");
       },
 
       /*
@@ -92,7 +92,7 @@
         qx.html.Text.superclass.prototype._copyData.call(this, fromMarkup, propertiesFromDom);
 
         var elem = this._domNode;
-        elem.nodeValue = this.__text__P_118_0 || "";
+        elem.nodeValue = this.__text__P_146_0 || "";
       },
 
       /*
@@ -116,15 +116,15 @@
         qx.html.Text.superclass.prototype._syncData.call(this);
 
         var elem = this._domNode;
-        elem.nodeValue = this.__text__P_118_0 || "";
+        elem.nodeValue = this.__text__P_146_0 || "";
       },
 
       /*
        * @Override
        */
       _serializeImpl: function _serializeImpl(writer) {
-        if (this.__text__P_118_0 !== null) {
-          writer(this.__text__P_118_0);
+        if (this.__text__P_146_0 !== null) {
+          writer(this.__text__P_146_0);
         }
       },
 
@@ -142,7 +142,7 @@
        * @param direct {Boolean?} whether to set the DOM node immediately if there is one
        */
       setText: function setText(value, direct) {
-        this.__text__P_118_0 = value;
+        this.__text__P_146_0 = value;
 
         if (direct && this._domNode) {
           this._domNode.nodeValue = value;
@@ -159,7 +159,7 @@
        * @return {String} the text node
        */
       getText: function getText() {
-        return this.__text__P_118_0;
+        return this.__text__P_146_0;
       }
     },
 
@@ -169,7 +169,7 @@
      * ****************************************************************************
      */
     defer: function defer(statics) {
-      statics.__deferredCall__P_118_1 = new qx.util.DeferredCall(statics.flush, statics);
+      statics.__deferredCall__P_146_1 = new qx.util.DeferredCall(statics.flush, statics);
     },
 
     /*
@@ -183,10 +183,10 @@
         delete qx.html.Element._scroll[this.toHashCode()];
       }
 
-      this.__attribValues__P_118_2 = this.__styleValues__P_118_3 = this.__eventValues__P_118_4 = this.__attribJobs__P_118_5 = this.__styleJobs__P_118_6 = this.__lazyScrollIntoViewX__P_118_7 = this.__lazyScrollIntoViewY__P_118_8 = null;
+      this.__attribValues__P_146_2 = this.__styleValues__P_146_3 = this.__eventValues__P_146_4 = this.__attribJobs__P_146_5 = this.__styleJobs__P_146_6 = this.__lazyScrollIntoViewX__P_146_7 = this.__lazyScrollIntoViewY__P_146_8 = null;
     }
   });
   qx.html.Text.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Text.js.map?dt=1648192701284
+//# sourceMappingURL=Text.js.map?dt=1652417298580

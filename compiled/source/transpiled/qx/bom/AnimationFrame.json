@@ -201,7 +201,7 @@
             "body": "func {String} The defined timing function. One of the following values:\n   <code>\"ease-in\"</code>, <code>\"ease-out\"</code>, <code>\"linear\"</code>,\n   <code>\"ease-in-out\"</code>, <code>\"ease\"</code>.",
             "paramName": "func",
             "description": " The defined timing function. One of the following values:\n   <code>\"ease-in\"</code>, <code>\"ease-out\"</code>, <code>\"linear\"</code>,\n   <code>\"ease-in-out\"</code>, <code>\"ease\"</code>.",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",

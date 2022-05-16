@@ -119,7 +119,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
           {
-            this.__validateConfig__P_6_0(name, config);
+            this.__validateConfig__P_7_0(name, config);
           } // Create Interface from statics
 
           var mixin = config.statics ? config.statics : {};
@@ -414,7 +414,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       $$registry: {},
 
       /** @type {Map} allowed keys in mixin definition */
-      __allowedKeys__P_6_1: qx.core.Environment.select("qx.debug", {
+      __allowedKeys__P_7_1: qx.core.Environment.select("qx.debug", {
         "true": {
           include: "object",
           // Mixin | Mixin[]
@@ -441,10 +441,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param name {String} The name of the class
        * @param config {Map} Configuration map
        */
-      __validateConfig__P_6_0: qx.core.Environment.select("qx.debug", {
+      __validateConfig__P_7_0: qx.core.Environment.select("qx.debug", {
         "true": function _true(name, config) {
           // Validate keys
-          var allowed = this.__allowedKeys__P_6_1;
+          var allowed = this.__allowedKeys__P_7_1;
 
           for (var key in config) {
             if (!allowed[key]) {
@@ -493,4 +493,4 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   qx.Mixin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Mixin.js.map?dt=1648192695125
+//# sourceMappingURL=Mixin.js.map?dt=1652417290324

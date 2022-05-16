@@ -35,18 +35,18 @@ qx.Class.define("katzenjammer.container.lists.BuildingsContainer", {
         initBuildingHeader: function ()
         {
             var cont = new qx.ui.container.Composite(new qx.ui.layout.HBox(3));
-            cont.add(new qx.ui.basic.Label("Neues Gebäude"));
+
+            var btnNew = new qx.ui.form.Button("Neu");
+            this.setNewButton(btnNew);
+            btnNew.addListener("execute", this.startBuilding, this);
+            cont.add(btnNew);
+
             this.setBuildingHeader(cont);
 		},
 
         initNewBuilding: function ()
         {
             var cont = new qx.ui.container.Composite(new qx.ui.layout.VBox(3));
-            var btnNew = new qx.ui.form.Button("Neu");
-            this.setNewButton(btnNew);
-            btnNew.addListener("execute", this.startBuilding, this);
-            cont.add(btnNew);
-
 
             this.setSearchField(new katzenjammer.widgets.PosSearch());
             cont.add(this.getSearchField());
@@ -147,6 +147,7 @@ qx.Class.define("katzenjammer.container.lists.BuildingsContainer", {
                     if (buildings === null)
                         buildings = [];
 
+                    var data = response.data;
                     for (var i in data)
                     {
                         buildings[data[i].id] = new katzenjammer.data.UserBuilding(data[i]);
@@ -180,6 +181,6 @@ qx.Class.define("katzenjammer.container.lists.BuildingsContainer", {
             }
 
             katzenjammer.container.MapContainer.Instance.updateUserBuildings();
-		}
+        }
     }
 });

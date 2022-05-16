@@ -1232,7 +1232,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1257,7 +1257,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1283,7 +1283,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1301,7 +1301,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1326,7 +1326,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1352,7 +1352,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1370,7 +1370,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1395,7 +1395,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1421,7 +1421,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1439,7 +1439,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1464,7 +1464,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1490,7 +1490,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1508,7 +1508,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1533,7 +1533,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1559,7 +1559,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1577,7 +1577,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1602,7 +1602,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1628,7 +1628,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1646,7 +1646,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1671,7 +1671,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1697,7 +1697,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1715,7 +1715,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1740,7 +1740,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1766,7 +1766,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1784,7 +1784,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1809,7 +1809,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -1834,7 +1834,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1860,7 +1860,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1878,7 +1878,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1903,7 +1903,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -1928,7 +1928,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1954,7 +1954,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1972,7 +1972,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1997,7 +1997,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -2022,7 +2022,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2048,7 +2048,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2066,7 +2066,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2091,7 +2091,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -2116,7 +2116,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2142,7 +2142,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2160,7 +2160,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2186,7 +2186,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2204,7 +2204,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2230,7 +2230,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2248,7 +2248,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2273,7 +2273,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2299,7 +2299,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2317,7 +2317,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2342,7 +2342,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2368,7 +2368,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2386,7 +2386,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2411,7 +2411,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2437,7 +2437,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2455,7 +2455,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2480,7 +2480,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2506,7 +2506,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2524,7 +2524,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2550,7 +2550,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2568,7 +2568,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2593,7 +2593,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2619,7 +2619,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2637,7 +2637,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2662,7 +2662,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2688,7 +2688,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2706,7 +2706,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2731,7 +2731,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2757,7 +2757,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2775,7 +2775,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2800,7 +2800,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2826,7 +2826,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2844,7 +2844,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2869,7 +2869,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2895,7 +2895,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2913,7 +2913,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -2938,7 +2938,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -2964,7 +2964,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -2982,7 +2982,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3008,7 +3008,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3026,7 +3026,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3051,7 +3051,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3077,7 +3077,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3095,7 +3095,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3120,7 +3120,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3146,7 +3146,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3164,7 +3164,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3189,7 +3189,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3215,7 +3215,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3233,7 +3233,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3258,7 +3258,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3284,7 +3284,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3302,7 +3302,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3327,7 +3327,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3353,7 +3353,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3371,7 +3371,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3396,7 +3396,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3422,7 +3422,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3440,7 +3440,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3465,7 +3465,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3491,7 +3491,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3509,7 +3509,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3534,7 +3534,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3560,7 +3560,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3578,7 +3578,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3603,7 +3603,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3629,7 +3629,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3647,7 +3647,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3672,7 +3672,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3698,7 +3698,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3716,7 +3716,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3741,7 +3741,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -3766,7 +3766,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3792,7 +3792,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3810,7 +3810,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3835,7 +3835,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -3860,7 +3860,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3886,7 +3886,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3904,7 +3904,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3929,7 +3929,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -3955,7 +3955,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -3973,7 +3973,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -3998,7 +3998,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4023,7 +4023,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4049,7 +4049,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4067,7 +4067,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4092,7 +4092,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4117,7 +4117,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4143,7 +4143,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4161,7 +4161,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4186,7 +4186,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4212,7 +4212,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4230,7 +4230,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4255,7 +4255,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4280,7 +4280,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4306,7 +4306,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4324,7 +4324,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4349,7 +4349,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4374,7 +4374,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4400,7 +4400,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4418,7 +4418,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4443,7 +4443,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4468,7 +4468,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4494,7 +4494,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4512,7 +4512,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4537,7 +4537,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4562,7 +4562,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4588,7 +4588,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4606,7 +4606,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4631,7 +4631,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4656,7 +4656,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4682,7 +4682,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4700,7 +4700,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4725,7 +4725,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4750,7 +4750,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4776,7 +4776,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4794,7 +4794,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4819,7 +4819,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4845,7 +4845,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4863,7 +4863,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4888,7 +4888,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -4913,7 +4913,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -4939,7 +4939,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -4957,7 +4957,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -4982,7 +4982,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -5008,7 +5008,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
+      "overriddenFrom": "qx.ui.core.Widget",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -5026,7 +5026,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -5051,7 +5050,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -5077,7 +5075,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -5095,7 +5092,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -5120,7 +5116,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -5145,7 +5140,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -5171,7 +5165,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -5189,7 +5182,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -5214,7 +5206,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -5240,7 +5231,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -5258,7 +5248,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -5283,7 +5272,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -5308,7 +5296,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -5334,7 +5321,6 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.basic.Image",
       "property": "reset",
       "jsdoc": {
         "@description": [

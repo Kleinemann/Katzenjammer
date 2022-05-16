@@ -264,13 +264,13 @@ qx.$$packageData['0'] = {
       "png",
       "katzenjammer"
     ],
-    "katzenjammer/test.png": [
+    "katzenjammer/favicon.png": [
       32,
       32,
       "png",
       "katzenjammer"
     ],
-    "katzenjammer/favicon.png": [
+    "katzenjammer/test.png": [
       32,
       32,
       "png",
@@ -280,6 +280,18 @@ qx.$$packageData['0'] = {
       256,
       256,
       "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/welcome.png": [
+      300,
+      225,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/leaflet/leaflet-src.js.map": [
+      null,
+      null,
+      "map",
       "katzenjammer"
     ],
     "katzenjammer/leaflet/leaflet-src.esm.js": [
@@ -306,7 +318,7 @@ qx.$$packageData['0'] = {
       "css",
       "katzenjammer"
     ],
-    "katzenjammer/leaflet/leaflet-src.js.map": [
+    "katzenjammer/leaflet/leaflet.js.map": [
       null,
       null,
       "map",
@@ -316,12 +328,6 @@ qx.$$packageData['0'] = {
       null,
       null,
       "js",
-      "katzenjammer"
-    ],
-    "katzenjammer/leaflet/leaflet.js.map": [
-      null,
-      null,
-      "map",
       "katzenjammer"
     ],
     "katzenjammer/leaflet/images/layers-2x.png": [
@@ -336,15 +342,15 @@ qx.$$packageData['0'] = {
       "png",
       "katzenjammer"
     ],
-    "katzenjammer/leaflet/images/marker-icon-2x.png": [
-      50,
-      82,
-      "png",
-      "katzenjammer"
-    ],
     "katzenjammer/leaflet/images/marker-icon.png": [
       25,
       41,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/leaflet/images/marker-icon-2x.png": [
+      50,
+      82,
       "png",
       "katzenjammer"
     ],
@@ -390,9 +396,69 @@ qx.$$packageData['0'] = {
       "png",
       "katzenjammer"
     ],
-    "katzenjammer/welcome.png": [
-      300,
-      225,
+    "katzenjammer/icons/buildings/baracke.png": [
+      17,
+      17,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/buildings/haus.png": [
+      15,
+      16,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/buildings/huette.png": [
+      13,
+      14,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/buildings/lager.png": [
+      13,
+      13,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/quests/dungeon.png": [
+      15,
+      13,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/quests/gold.png": [
+      15,
+      13,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/quests/holz.png": [
+      16,
+      16,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/heroes/hero.png": [
+      19,
+      27,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/heroes/ritter.png": [
+      18,
+      28,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/heroes/townman.png": [
+      18,
+      25,
+      "png",
+      "katzenjammer"
+    ],
+    "katzenjammer/icons/heroes/witch.png": [
+      18,
+      27,
       "png",
       "katzenjammer"
     ],
@@ -564,13 +630,13 @@ qx.$$packageData['0'] = {
       "gif",
       "qx"
     ],
-    "qx/decoration/Simple/menu/radiobutton-invert.gif": [
+    "qx/decoration/Simple/menu/radiobutton.gif": [
       16,
       5,
       "gif",
       "qx"
     ],
-    "qx/decoration/Simple/menu/radiobutton.gif": [
+    "qx/decoration/Simple/menu/radiobutton-invert.gif": [
       16,
       5,
       "gif",
@@ -594,15 +660,15 @@ qx.$$packageData['0'] = {
       "png",
       "qx"
     ],
-    "qx/decoration/Simple/table/ascending.png": [
-      10,
-      10,
-      "png",
-      "qx"
-    ],
     "qx/decoration/Simple/table/boolean-false.png": [
       11,
       11,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Simple/table/ascending.png": [
+      10,
+      10,
       "png",
       "qx"
     ],
@@ -618,15 +684,15 @@ qx.$$packageData['0'] = {
       "png",
       "qx"
     ],
-    "qx/decoration/Simple/table/descending.png": [
-      10,
-      10,
-      "png",
-      "qx"
-    ],
     "qx/decoration/Simple/table/select-column-order.png": [
       10,
       9,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Simple/table/descending.png": [
+      10,
+      10,
       "png",
       "qx"
     ],
@@ -690,25 +756,25 @@ qx.$$packageData['0'] = {
       "gif",
       "qx"
     ],
-    "qx/decoration/Simple/treevirtual/only_minus.gif": [
-      19,
-      16,
-      "gif",
-      "qx"
-    ],
     "qx/decoration/Simple/treevirtual/only_plus.gif": [
       19,
       16,
       "gif",
       "qx"
     ],
-    "qx/decoration/Simple/treevirtual/start.gif": [
+    "qx/decoration/Simple/treevirtual/only_minus.gif": [
       19,
       16,
       "gif",
       "qx"
     ],
     "qx/decoration/Simple/treevirtual/start_minus.gif": [
+      19,
+      16,
+      "gif",
+      "qx"
+    ],
+    "qx/decoration/Simple/treevirtual/start.gif": [
       19,
       16,
       "gif",
@@ -738,18 +804,6 @@ qx.$$packageData['0'] = {
       "gif",
       "qx"
     ],
-    "qx/decoration/Simple/window/maximize.gif": [
-      9,
-      9,
-      "gif",
-      "qx"
-    ],
-    "qx/decoration/Simple/window/minimize-white.gif": [
-      9,
-      9,
-      "gif",
-      "qx"
-    ],
     "qx/decoration/Simple/window/minimize.gif": [
       9,
       9,
@@ -762,8 +816,20 @@ qx.$$packageData['0'] = {
       "gif",
       "qx"
     ],
+    "qx/decoration/Simple/window/maximize.gif": [
+      9,
+      9,
+      "gif",
+      "qx"
+    ],
     "qx/decoration/Simple/window/restore.gif": [
       8,
+      9,
+      "gif",
+      "qx"
+    ],
+    "qx/decoration/Simple/window/minimize-white.gif": [
+      9,
       9,
       "gif",
       "qx"
@@ -840,16 +906,16 @@ qx.$$packageData['0'] = {
       "eot",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialicons-v70.woff": [
-      null,
-      null,
-      "woff",
-      "qx"
-    ],
     "qx/iconfont/MaterialIcons/materialicons-v70.ttf": [
       null,
       null,
       "ttf",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialicons-v70.woff": [
+      null,
+      null,
+      "woff",
       "qx"
     ],
     "qx/iconfont/MaterialIcons/materialicons-v70.woff2": [

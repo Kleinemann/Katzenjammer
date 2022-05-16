@@ -9,9 +9,10 @@
         "construct": true,
         "require": true
       },
+      "katzenjammer.data.Quest": {},
+      "katzenjammer.container.MainContainer": {},
       "katzenjammer.data.ServiceRequest": {},
-      "katzenjammer.data.UserBuilding": {},
-      "katzenjammer.container.MainContainer": {}
+      "katzenjammer.data.UserBuilding": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -57,6 +58,10 @@
       Buildings: {
         init: null,
         nullable: true
+      },
+      Quests: {
+        init: null,
+        nullable: true
       }
     },
     construct: function construct() {
@@ -64,6 +69,21 @@
       katzenjammer.data.User.Instance = this;
     },
     members: {
+      gameInterval: function gameInterval() {
+        var buildings = this.getBuildings();
+
+        for (var i in buildings) {
+          var building = buildings[i];
+          var quest = building.getQuest();
+
+          if (quest === null) {
+            console.log(building.getName() + " (" + building.getID() + ") benötigt eine Quest.");
+            var quest = katzenjammer.data.Quest.createNewQuest(building);
+            var questCont = katzenjammer.container.MainContainer.Instance.getQuests();
+            questCont.addQuest(quest);
+          } else console.log(building.getName() + " (" + building.getID() + ") hat die Quest -> " + quest.getName());
+        }
+      },
       loadingUser: function loadingUser(args) {
         if (args === null) {
           this.resetID();
@@ -147,6 +167,32 @@
 
             this.setBuildings(buildings);
             katzenjammer.container.MainContainer.Instance.getBuildings().updateBuildingList();
+            this.loadingQuests();
+          }
+        }, this);
+        req.send();
+      },
+      loadingQuests: function loadingQuests() {
+        var user = katzenjammer.data.User.Instance.getID();
+        var data = {
+          Action: "select",
+          Data: "Quests",
+          ID: user
+        };
+        var req = new katzenjammer.data.ServiceRequest(data);
+        req.addListener("success", function (e) {
+          var response = e.getTarget().getResponse(); //console.log(response);
+
+          if (response.success) {
+            var data = e.getTarget().getResponse().data;
+            var quests = [];
+
+            for (var i in data) {
+              quests[data[i].user_building_id] = new katzenjammer.data.Quest(data[i]);
+            }
+
+            this.setQuests(quests);
+            katzenjammer.container.MainContainer.Instance.getQuests().updateQuestList();
           }
         }, this);
         req.send();
@@ -156,4 +202,4 @@
   katzenjammer.data.User.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=User.js.map?dt=1651476534571
+//# sourceMappingURL=User.js.map?dt=1652417291389

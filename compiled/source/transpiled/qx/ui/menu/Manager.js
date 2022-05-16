@@ -86,7 +86,7 @@
     construct: function construct() {
       qx.core.Object.constructor.call(this); // Create data structure
 
-      this.__objects__P_212_0 = [];
+      this.__objects__P_191_0 = [];
       var el = document.body;
       var Registration = qx.event.Registration; // React on pointer/mouse events, but on native, to support inline applications
 
@@ -104,14 +104,14 @@
       } // Create open timer
 
 
-      this.__openTimer__P_212_1 = new qx.event.Timer();
+      this.__openTimer__P_191_1 = new qx.event.Timer();
 
-      this.__openTimer__P_212_1.addListener("interval", this._onOpenInterval, this); // Create close timer
+      this.__openTimer__P_191_1.addListener("interval", this._onOpenInterval, this); // Create close timer
 
 
-      this.__closeTimer__P_212_2 = new qx.event.Timer();
+      this.__closeTimer__P_191_2 = new qx.event.Timer();
 
-      this.__closeTimer__P_212_2.addListener("interval", this._onCloseInterval, this);
+      this.__closeTimer__P_191_2.addListener("interval", this._onCloseInterval, this);
     },
 
     /*
@@ -122,11 +122,11 @@
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __scheduleOpen__P_212_3: null,
-      __scheduleClose__P_212_4: null,
-      __openTimer__P_212_1: null,
-      __closeTimer__P_212_2: null,
-      __objects__P_212_0: null,
+      __scheduleOpen__P_191_3: null,
+      __scheduleClose__P_191_4: null,
+      __openTimer__P_191_1: null,
+      __closeTimer__P_191_2: null,
+      __objects__P_191_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -196,7 +196,7 @@
        * @return {Boolean} <code>true</code> if the widget is a menu opener
        */
       _isMenuOpener: function _isMenuOpener(widget) {
-        var menus = this.__objects__P_212_0;
+        var menus = this.__objects__P_191_0;
 
         for (var i = 0; i < menus.length; i++) {
           if (menus[i].getOpener() === widget) {
@@ -242,7 +242,7 @@
             throw new Error("Object is no menu: " + obj);
           }
         }
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
         reg.push(obj);
         obj.setZIndex(1e6 + reg.length);
       },
@@ -258,7 +258,7 @@
             throw new Error("Object is no menu: " + obj);
           }
         }
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
 
         if (reg) {
           qx.lang.Array.remove(reg, obj);
@@ -269,7 +269,7 @@
        * Hides all currently opened menus.
        */
       hideAll: function hideAll() {
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
 
         if (reg) {
           for (var i = reg.length - 1; i >= 0; i--) {
@@ -285,7 +285,7 @@
        * @return {qx.ui.menu.Menu} The current active menu or <code>null</code>
        */
       getActiveMenu: function getActiveMenu() {
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
         return reg.length > 0 ? reg[reg.length - 1] : null;
       },
 
@@ -308,16 +308,16 @@
 
         if (menu.isVisible()) {
           // Cancel all other open requests
-          if (this.__scheduleOpen__P_212_3) {
-            this.cancelOpen(this.__scheduleOpen__P_212_3);
+          if (this.__scheduleOpen__P_191_3) {
+            this.cancelOpen(this.__scheduleOpen__P_191_3);
           }
         } // When the menu is not visible and not scheduled already
         // then schedule it for opening
-        else if (this.__scheduleOpen__P_212_3 != menu) {
+        else if (this.__scheduleOpen__P_191_3 != menu) {
           // menu.debug("Schedule open");
-          this.__scheduleOpen__P_212_3 = menu;
+          this.__scheduleOpen__P_191_3 = menu;
 
-          this.__openTimer__P_212_1.restartWith(menu.getOpenInterval());
+          this.__openTimer__P_191_1.restartWith(menu.getOpenInterval());
         }
       },
 
@@ -334,16 +334,16 @@
 
         if (!menu.isVisible()) {
           // Cancel all other close requests
-          if (this.__scheduleClose__P_212_4) {
-            this.cancelClose(this.__scheduleClose__P_212_4);
+          if (this.__scheduleClose__P_191_4) {
+            this.cancelClose(this.__scheduleClose__P_191_4);
           }
         } // When the menu is visible and not scheduled already
         // then schedule it for closing
-        else if (this.__scheduleClose__P_212_4 != menu) {
+        else if (this.__scheduleClose__P_191_4 != menu) {
           // menu.debug("Schedule close");
-          this.__scheduleClose__P_212_4 = menu;
+          this.__scheduleClose__P_191_4 = menu;
 
-          this.__closeTimer__P_212_2.restartWith(menu.getCloseInterval());
+          this.__closeTimer__P_191_2.restartWith(menu.getCloseInterval());
         }
       },
 
@@ -354,11 +354,11 @@
        * @param menu {qx.ui.menu.Menu} The menu to cancel for open
        */
       cancelOpen: function cancelOpen(menu) {
-        if (this.__scheduleOpen__P_212_3 == menu) {
+        if (this.__scheduleOpen__P_191_3 == menu) {
           // menu.debug("Cancel open");
-          this.__openTimer__P_212_1.stop();
+          this.__openTimer__P_191_1.stop();
 
-          this.__scheduleOpen__P_212_3 = null;
+          this.__scheduleOpen__P_191_3 = null;
         }
       },
 
@@ -369,11 +369,11 @@
        * @param menu {qx.ui.menu.Menu} The menu to cancel for close
        */
       cancelClose: function cancelClose(menu) {
-        if (this.__scheduleClose__P_212_4 == menu) {
+        if (this.__scheduleClose__P_191_4 == menu) {
           // menu.debug("Cancel close");
-          this.__closeTimer__P_212_2.stop();
+          this.__closeTimer__P_191_2.stop();
 
-          this.__scheduleClose__P_212_4 = null;
+          this.__scheduleClose__P_191_4 = null;
         }
       },
 
@@ -391,12 +391,12 @@
        */
       _onOpenInterval: function _onOpenInterval(e) {
         // Stop timer
-        this.__openTimer__P_212_1.stop(); // Open menu and reset flag
+        this.__openTimer__P_191_1.stop(); // Open menu and reset flag
 
 
-        this.__scheduleOpen__P_212_3.open();
+        this.__scheduleOpen__P_191_3.open();
 
-        this.__scheduleOpen__P_212_3 = null;
+        this.__scheduleOpen__P_191_3 = null;
       },
 
       /**
@@ -407,12 +407,12 @@
        */
       _onCloseInterval: function _onCloseInterval(e) {
         // Stop timer, reset scheduling flag
-        this.__closeTimer__P_212_2.stop(); // Close menu and reset flag
+        this.__closeTimer__P_191_2.stop(); // Close menu and reset flag
 
 
-        this.__scheduleClose__P_212_4.exclude();
+        this.__scheduleClose__P_191_4.exclude();
 
-        this.__scheduleClose__P_212_4 = null;
+        this.__scheduleClose__P_191_4 = null;
       },
 
       /*
@@ -430,7 +430,7 @@
        * @internal
        */
       preventContextMenuOnce: function preventContextMenuOnce() {
-        qx.event.Registration.addListener(document.body, "contextmenu", this.__onPreventContextMenu__P_212_5, this, true);
+        qx.event.Registration.addListener(document.body, "contextmenu", this.__onPreventContextMenu__P_191_5, this, true);
       },
 
       /**
@@ -441,7 +441,7 @@
        *
        * @internal
        */
-      __onPreventContextMenu__P_212_5: function __onPreventContextMenu__P_212_5(e) {
+      __onPreventContextMenu__P_191_5: function __onPreventContextMenu__P_191_5(e) {
         var target = e.getTarget();
         target = qx.ui.core.Widget.getWidgetByElement(target, true);
 
@@ -451,7 +451,7 @@
         } // stop only once
 
 
-        qx.event.Registration.removeListener(document.body, "contextmenu", this.__onPreventContextMenu__P_212_5, this, true);
+        qx.event.Registration.removeListener(document.body, "contextmenu", this.__onPreventContextMenu__P_191_5, this, true);
       },
 
       /*
@@ -485,7 +485,7 @@
         } // All taps not inside a menu will hide all currently open menus
 
 
-        if (this.__objects__P_212_0.length > 0 && !this._isInMenu(target)) {
+        if (this.__objects__P_191_0.length > 0 && !this._isInMenu(target)) {
           this.hideAll();
         }
       },
@@ -500,7 +500,7 @@
        * @type {Map} Map of all keys working on an active menu selection
        * @lint ignoreReferenceField(__selectionKeys)
        */
-      __selectionKeys__P_212_6: {
+      __selectionKeys__P_191_6: {
         Enter: 1,
         Space: 1
       },
@@ -509,7 +509,7 @@
        * @type {Map} Map of all keys working without a selection
        * @lint ignoreReferenceField(__navigationKeys)
        */
-      __navigationKeys__P_212_7: {
+      __navigationKeys__P_191_7: {
         Tab: 1,
         Escape: 1,
         Up: 1,
@@ -534,7 +534,7 @@
 
         var iden = e.getKeyIdentifier();
 
-        if (this.__navigationKeys__P_212_7[iden] || this.__selectionKeys__P_212_6[iden] && menu.getSelectedButton()) {
+        if (this.__navigationKeys__P_191_7[iden] || this.__selectionKeys__P_191_6[iden] && menu.getSelectedButton()) {
           e.stopPropagation();
         }
       },
@@ -556,8 +556,8 @@
         }
 
         var iden = e.getKeyIdentifier();
-        var navigation = this.__navigationKeys__P_212_7[iden];
-        var selection = this.__selectionKeys__P_212_6[iden];
+        var navigation = this.__navigationKeys__P_191_7[iden];
+        var selection = this.__selectionKeys__P_191_6[iden];
 
         if (navigation) {
           switch (iden) {
@@ -840,7 +840,7 @@
         var target = e.getTarget();
         target = qx.ui.core.Widget.getWidgetByElement(target, true);
 
-        if (this.__objects__P_212_0.length > 0 && !this._isInMenu(target) && !this._isMenuOpener(target) && !e.getMomentum()) {
+        if (this.__objects__P_191_0.length > 0 && !this._isInMenu(target) && !this._isMenuOpener(target) && !e.getMomentum()) {
           this.hideAll();
         }
       }
@@ -861,12 +861,12 @@
       Registration.removeListener(el, "keyup", this._onKeyUpDown, this, true);
       Registration.removeListener(el, "keypress", this._onKeyPress, this, true);
 
-      this._disposeObjects("__openTimer__P_212_1", "__closeTimer__P_212_2");
+      this._disposeObjects("__openTimer__P_191_1", "__closeTimer__P_191_2");
 
-      this._disposeArray("__objects__P_212_0");
+      this._disposeArray("__objects__P_191_0");
     }
   });
   qx.ui.menu.Manager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Manager.js.map?dt=1650892429222
+//# sourceMappingURL=Manager.js.map?dt=1652417300439

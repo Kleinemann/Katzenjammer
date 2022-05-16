@@ -52,7 +52,7 @@
             "body": "key {String} The key for the saved string value.",
             "paramName": "key",
             "description": " The key for the saved string value.",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ],
         "@return": [
@@ -91,14 +91,14 @@
             "body": "key {String} The key for the string value.",
             "paramName": "key",
             "description": " The key for the string value.",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
             "body": "value {String} The string value.",
             "paramName": "value",
             "description": " The string value.",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
@@ -174,7 +174,7 @@
             "body": "key {String} The key for the string value.",
             "paramName": "key",
             "description": " The key for the string value.",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",

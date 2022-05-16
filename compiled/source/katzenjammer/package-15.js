@@ -199,13 +199,13 @@
         } else if (this.isSystemColor(str)) {
           throw new Error("Could not convert system colors to RGB: " + str);
         } else if (this.isRgbaString(str)) {
-          color = this.__rgbaStringToRgb__P_110_0(str);
+          color = this.__rgbaStringToRgb__P_140_0(str);
         } else if (this.isRgbString(str)) {
-          color = this.__rgbStringToRgb__P_110_1();
+          color = this.__rgbStringToRgb__P_140_1();
         } else if (this.ishexShortString(str)) {
-          color = this.__hexShortStringToRgb__P_110_2();
+          color = this.__hexShortStringToRgb__P_140_2();
         } else if (this.ishexLongString(str)) {
-          color = this.__hexLongStringToRgb__P_110_3();
+          color = this.__hexLongStringToRgb__P_140_3();
         }
 
         if (color) {
@@ -342,7 +342,7 @@
        *
        * @return {Array} an array with red, green, blue
        */
-      __rgbStringToRgb__P_110_1: function __rgbStringToRgb__P_110_1() {
+      __rgbStringToRgb__P_140_1: function __rgbStringToRgb__P_140_1() {
         var red = parseInt(RegExp.$1, 10);
         var green = parseInt(RegExp.$2, 10);
         var blue = parseInt(RegExp.$3, 10);
@@ -354,7 +354,7 @@
        *
        * @return {Array} an array with red, green, blue
        */
-      __rgbaStringToRgb__P_110_0: function __rgbaStringToRgb__P_110_0() {
+      __rgbaStringToRgb__P_140_0: function __rgbaStringToRgb__P_140_0() {
         var red = parseInt(RegExp.$1, 10);
         var green = parseInt(RegExp.$2, 10);
         var blue = parseInt(RegExp.$3, 10);
@@ -374,7 +374,7 @@
        *
        * @return {Array} an array with red, green, blue
        */
-      __hexShortStringToRgb__P_110_2: function __hexShortStringToRgb__P_110_2() {
+      __hexShortStringToRgb__P_140_2: function __hexShortStringToRgb__P_140_2() {
         var red = parseInt(RegExp.$1, 16) * 17;
         var green = parseInt(RegExp.$2, 16) * 17;
         var blue = parseInt(RegExp.$3, 16) * 17;
@@ -387,7 +387,7 @@
        *
        * @return {Array} an array with red, green, blue
        */
-      __hex3StringToRgb__P_110_4: function __hex3StringToRgb__P_110_4() {
+      __hex3StringToRgb__P_140_4: function __hex3StringToRgb__P_140_4() {
         var red = parseInt(RegExp.$1, 16) * 17;
         var green = parseInt(RegExp.$2, 16) * 17;
         var blue = parseInt(RegExp.$3, 16) * 17;
@@ -399,7 +399,7 @@
        *
        * @return {Array} an array with red, green, blue
        */
-      __hex6StringToRgb__P_110_5: function __hex6StringToRgb__P_110_5() {
+      __hex6StringToRgb__P_140_5: function __hex6StringToRgb__P_140_5() {
         var red = parseInt(RegExp.$1, 16) * 16 + parseInt(RegExp.$2, 16);
         var green = parseInt(RegExp.$3, 16) * 16 + parseInt(RegExp.$4, 16);
         var blue = parseInt(RegExp.$5, 16) * 16 + parseInt(RegExp.$6, 16);
@@ -411,7 +411,7 @@
        *
        * @return {Array} an array with red, green, blue
        */
-      __hexLongStringToRgb__P_110_3: function __hexLongStringToRgb__P_110_3() {
+      __hexLongStringToRgb__P_140_3: function __hexLongStringToRgb__P_140_3() {
         var red = parseInt(RegExp.$1, 16);
         var green = parseInt(RegExp.$2, 16);
         var blue = parseInt(RegExp.$3, 16);
@@ -427,7 +427,7 @@
        */
       hex3StringToRgb: function hex3StringToRgb(value) {
         if (this.isHex3String(value)) {
-          return this.__hex3StringToRgb__P_110_4(value);
+          return this.__hex3StringToRgb__P_140_4(value);
         }
 
         throw new Error("Invalid hex3 value: " + value);
@@ -456,7 +456,7 @@
        */
       hex6StringToRgb: function hex6StringToRgb(value) {
         if (this.isHex6String(value)) {
-          return this.__hex6StringToRgb__P_110_5(value);
+          return this.__hex6StringToRgb__P_140_5(value);
         }
 
         throw new Error("Invalid hex6 value: " + value);
@@ -470,11 +470,11 @@
        */
       hexStringToRgb: function hexStringToRgb(value) {
         if (this.ishexShortString(value)) {
-          return this.__hexShortStringToRgb__P_110_2(value);
+          return this.__hexShortStringToRgb__P_140_2(value);
         }
 
         if (this.ishexLongString(value)) {
-          return this.__hexLongStringToRgb__P_110_3(value);
+          return this.__hexLongStringToRgb__P_140_3(value);
         }
 
         throw new Error("Invalid hex value: " + value);
@@ -679,7 +679,7 @@
        * @param hue_tuner {Function}  function
        * @return {String} a valid CSS rgb color string.*
        */
-      __tuner__P_110_6: function __tuner__P_110_6(color, tuneMap, tuner, hue_tuner) {
+      __tuner__P_140_6: function __tuner__P_140_6(color, tuneMap, tuner, hue_tuner) {
         var rgba = this.stringToRgb(color);
 
         for (var key in tuneMap) {
@@ -789,7 +789,7 @@
        * @return {String} a valid CSS rgb color string.
        */
       scale: function scale(color, scaleMap) {
-        return this.__tuner__P_110_6(color, scaleMap, function (value, scale, max) {
+        return this.__tuner__P_140_6(color, scaleMap, function (value, scale, max) {
           if (value > max) {
             value = max;
           }
@@ -829,7 +829,7 @@
        * @return {String} a valid CSS rgb color string.
        */
       adjust: function adjust(color, adjustMap) {
-        return this.__tuner__P_110_6(color, adjustMap, function (value, offset, max) {
+        return this.__tuner__P_140_6(color, adjustMap, function (value, offset, max) {
           value += offset;
 
           if (value > max) {
@@ -1030,7 +1030,7 @@
     implement: [qx.ui.decoration.IDecorator],
     type: "abstract",
     members: {
-      __insets__P_129_0: null,
+      __insets__P_165_0: null,
 
       /**
        * Abstract method. Should return a map containing the default insets of
@@ -1062,15 +1062,15 @@
        * Resets the insets.
        */
       _resetInsets: function _resetInsets() {
-        this.__insets__P_129_0 = null;
+        this.__insets__P_165_0 = null;
       },
       // interface implementation
       getInsets: function getInsets() {
-        if (!this.__insets__P_129_0) {
-          this.__insets__P_129_0 = this._getDefaultInsets();
+        if (!this.__insets__P_165_0) {
+          this.__insets__P_165_0 = this._getDefaultInsets();
         }
 
-        return this.__insets__P_129_0;
+        return this.__insets__P_165_0;
       }
     },
 
@@ -1080,7 +1080,7 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this.__insets__P_129_0 = null;
+      this.__insets__P_165_0 = null;
     }
   });
   qx.ui.decoration.Abstract.$$dbClassInfo = $$dbClassInfo;
@@ -2136,8 +2136,8 @@
     include: [qx.ui.decoration.MSingleBorder, qx.ui.decoration.MBackgroundImage],
     construct: function construct() {
       // override the methods of single border and background image
-      this._getDefaultInsetsForBorder = this.__getDefaultInsetsForDoubleBorder__P_130_0;
-      this._styleBorder = this.__styleDoubleBorder__P_130_1;
+      this._getDefaultInsetsForBorder = this.__getDefaultInsetsForDoubleBorder__P_166_0;
+      this._styleBorder = this.__styleDoubleBorder__P_166_1;
     },
 
     /*
@@ -2245,7 +2245,7 @@
        *
        * @param styles {Map} A map to add the styles.
        */
-      __styleDoubleBorder__P_130_1: function __styleDoubleBorder__P_130_1(styles) {
+      __styleDoubleBorder__P_166_1: function __styleDoubleBorder__P_166_1(styles) {
         var propName = qx.core.Environment.get("css.boxshadow");
         var color, innerColor, innerWidth;
 
@@ -2312,7 +2312,7 @@
         var innerOpacity = this.getInnerOpacity();
 
         if (innerOpacity < 1) {
-          this.__processInnerOpacity__P_130_2(innerColor, innerOpacity);
+          this.__processInnerOpacity__P_166_2(innerColor, innerOpacity);
         } // inner border
 
 
@@ -2389,7 +2389,7 @@
        * @param innerColor {Map} map of top, right, bottom and left colors
        * @param innerOpacity {Number} alpha value
        */
-      __processInnerOpacity__P_130_2: function __processInnerOpacity__P_130_2(innerColor, innerOpacity) {
+      __processInnerOpacity__P_166_2: function __processInnerOpacity__P_166_2(innerColor, innerOpacity) {
         if (!qx.core.Environment.get("css.rgba")) {
           {
             qx.log.Logger.warn("innerOpacity is configured but the browser doesn't support RGBA colors.");
@@ -2418,7 +2418,7 @@
        * @return {Map} A map containing the default insets.
        *   (top, right, bottom, left)
        */
-      __getDefaultInsetsForDoubleBorder__P_130_0: function __getDefaultInsetsForDoubleBorder__P_130_0() {
+      __getDefaultInsetsForDoubleBorder__P_166_0: function __getDefaultInsetsForDoubleBorder__P_166_0() {
         return {
           top: this.getWidthTop() + this.getInnerWidthTop(),
           right: this.getWidthRight() + this.getInnerWidthRight(),
@@ -2605,22 +2605,22 @@
           return;
         }
 
-        var styleImpl = this.__styleLinearBackgroundGradientAccordingToSpec__P_131_0;
+        var styleImpl = this.__styleLinearBackgroundGradientAccordingToSpec__P_167_0;
 
         if (qx.core.Environment.get("css.gradient.legacywebkit")) {
-          styleImpl = this.__styleLinearBackgroundGradientForLegacyWebkit__P_131_1;
+          styleImpl = this.__styleLinearBackgroundGradientForLegacyWebkit__P_167_1;
         } else if (!qx.core.Environment.get("css.gradient.linear") && qx.core.Environment.get("css.borderradius")) {
-          styleImpl = this.__styleLinearBackgroundGradientWithCanvas__P_131_2;
+          styleImpl = this.__styleLinearBackgroundGradientWithCanvas__P_167_2;
         } else if (!qx.core.Environment.get("css.gradient.linear")) {
-          styleImpl = this.__styleLinearBackgroundGradientWithMSFilter__P_131_3;
+          styleImpl = this.__styleLinearBackgroundGradientWithMSFilter__P_167_3;
         }
 
         var gradientProperties = ["startColor", "endColor", "colorPositionUnit", "orientation", "startColorPosition", "endColorPosition"];
         (function (startColors, endColors, units, orientations, startColorPositions, endColorPositions) {
           for (var i = 0; i < startColors.length; i++) {
-            var startColor = this.__getColor__P_131_4(startColors[i]);
+            var startColor = this.__getColor__P_167_4(startColors[i]);
 
-            var endColor = this.__getColor__P_131_4(endColors[i]);
+            var endColor = this.__getColor__P_167_4(endColors[i]);
 
             var unit = units[i];
             var orientation = orientations[i];
@@ -2662,7 +2662,7 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (true).
        */
-      __styleLinearBackgroundGradientForLegacyWebkit__P_131_1: function __styleLinearBackgroundGradientForLegacyWebkit__P_131_1(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+      __styleLinearBackgroundGradientForLegacyWebkit__P_167_1: function __styleLinearBackgroundGradientForLegacyWebkit__P_167_1(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
         // webkit uses px values if non are given
         unit = unit === "px" ? "" : unit;
 
@@ -2695,11 +2695,11 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (true).
        */
-      __styleLinearBackgroundGradientWithCanvas__P_131_2: function __styleLinearBackgroundGradientWithCanvas__P_131_2(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
-        var me = qx.ui.decoration.MLinearBackgroundGradient.__styleLinearBackgroundGradientWithCanvas__P_131_2;
+      __styleLinearBackgroundGradientWithCanvas__P_167_2: function __styleLinearBackgroundGradientWithCanvas__P_167_2(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+        var me = qx.ui.decoration.MLinearBackgroundGradient.__styleLinearBackgroundGradientWithCanvas__P_167_2;
 
-        if (!me.__canvas__P_131_5) {
-          me.__canvas__P_131_5 = document.createElement("canvas");
+        if (!me.__canvas__P_167_5) {
+          me.__canvas__P_167_5 = document.createElement("canvas");
         }
 
         var isVertical = orientation == "vertical";
@@ -2721,10 +2721,10 @@
           }
         }
 
-        me.__canvas__P_131_5.width = width;
-        me.__canvas__P_131_5.height = height;
+        me.__canvas__P_167_5.width = width;
+        me.__canvas__P_167_5.height = height;
 
-        var ctx = me.__canvas__P_131_5.getContext("2d");
+        var ctx = me.__canvas__P_167_5.getContext("2d");
 
         if (isVertical) {
           var lingrad = ctx.createLinearGradient(0, 0, 0, height);
@@ -2754,7 +2754,7 @@
           size = isVertical ? height + "px 100%" : "100% " + width + "px";
         }
 
-        backgroundStyle.push("url(" + me.__canvas__P_131_5.toDataURL() + ") " + size);
+        backgroundStyle.push("url(" + me.__canvas__P_167_5.toDataURL() + ") " + size);
         return true;
       },
 
@@ -2774,7 +2774,7 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (false).
        */
-      __styleLinearBackgroundGradientWithMSFilter__P_131_3: function __styleLinearBackgroundGradientWithMSFilter__P_131_3(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+      __styleLinearBackgroundGradientWithMSFilter__P_167_3: function __styleLinearBackgroundGradientWithMSFilter__P_167_3(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
         var type = orientation == "horizontal" ? 1 : 0; // convert rgb, hex3 and named colors to hex6
 
         if (!qx.util.ColorUtil.isHex6String(startColor)) {
@@ -2825,7 +2825,7 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (true).
        */
-      __styleLinearBackgroundGradientAccordingToSpec__P_131_0: function __styleLinearBackgroundGradientAccordingToSpec__P_131_0(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+      __styleLinearBackgroundGradientAccordingToSpec__P_167_0: function __styleLinearBackgroundGradientAccordingToSpec__P_167_0(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
         // WebKit, Opera and Gecko interpret 0deg as "to right"
         var deg = orientation == "horizontal" ? 0 : 270;
         var start = startColor + " " + startColorPosition + unit;
@@ -2846,7 +2846,7 @@
        * @param color {String} The color name
        * @return {Map} The resolved color
        */
-      __getColor__P_131_4: function __getColor__P_131_4(color) {
+      __getColor__P_167_4: function __getColor__P_167_4(color) {
         return qx.core.Environment.get("qx.theme") ? qx.theme.manager.Color.getInstance().resolve(color) : color;
       },
       // property apply
@@ -3102,7 +3102,7 @@
 
         var resolvedImage = qx.util.AliasManager.getInstance().resolve(this.getBorderImage());
 
-        var computedSlices = this.__getSlices__P_132_0(resolvedImage);
+        var computedSlices = this.__getSlices__P_168_0(resolvedImage);
 
         return {
           top: this.getSliceTop() || computedSlices[0],
@@ -3125,7 +3125,7 @@
        * @param baseImage {String} Resource Id of the base border image
        * @return {Integer[]} Array with the top, right, bottom and left slice widths
        */
-      __getSlices__P_132_0: function __getSlices__P_132_0(baseImage) {
+      __getSlices__P_168_0: function __getSlices__P_168_0(baseImage) {
         var mode = this.getBorderImageMode();
         var topSlice = 0;
         var rightSlice = 0;
@@ -3384,7 +3384,7 @@
     implement: [qx.ui.decoration.IDecorator],
     include: [qx.ui.decoration.MBackgroundColor, qx.ui.decoration.MBorderRadius, qx.ui.decoration.MBoxShadow, qx.ui.decoration.MDoubleBorder, qx.ui.decoration.MLinearBackgroundGradient, qx.ui.decoration.MBorderImage, qx.ui.decoration.MTransition],
     members: {
-      __initialized__P_111_0: false,
+      __initialized__P_133_0: false,
 
       /**
        * Returns the configured padding minus the border width.
@@ -3450,7 +3450,7 @@
           }
         }
 
-        this.__initialized__P_111_0 = true;
+        this.__initialized__P_133_0 = true;
         return styles;
       },
       // overridden
@@ -3492,7 +3492,7 @@
       },
       // overridden
       _isInitialized: function _isInitialized() {
-        return this.__initialized__P_111_0;
+        return this.__initialized__P_133_0;
       },
 
       /**
@@ -3521,7 +3521,7 @@
         }));
 
         for (var i = 0; i < propertyValues.length; i++) {
-          this.__extendArray__P_111_1(propertyValues[i], items);
+          this.__extendArray__P_133_1(propertyValues[i], items);
         }
 
         return propertyValues;
@@ -3532,7 +3532,7 @@
        * @param array {Array} Incoming array. Has to contain at least one element.
        * @param to {Integer} Desired length. Must be greater than or equal to the the length of arr.
        */
-      __extendArray__P_111_1: function __extendArray__P_111_1(array, to) {
+      __extendArray__P_133_1: function __extendArray__P_133_1(array, to) {
         var initial = array.length;
 
         while (array.length < to) {
@@ -3615,7 +3615,7 @@
     construct: function construct() {
       qx.util.ValueManager.constructor.call(this); // Contains defined aliases (like icons/, widgets/, application/, ...)
 
-      this.__aliases__P_102_0 = {}; // Define static alias from setting
+      this.__aliases__P_134_0 = {}; // Define static alias from setting
 
       this.add("static", "qx/static");
     },
@@ -3626,7 +3626,7 @@
     *****************************************************************************
     */
     members: {
-      __aliases__P_102_0: null,
+      __aliases__P_134_0: null,
 
       /**
        * pre-process incoming dynamic value
@@ -3645,12 +3645,12 @@
             return value;
           }
 
-          if (this.__aliases__P_102_0[value]) {
-            return this.__aliases__P_102_0[value];
+          if (this.__aliases__P_134_0[value]) {
+            return this.__aliases__P_134_0[value];
           }
 
           var alias = value.substring(0, value.indexOf("/"));
-          var resolved = this.__aliases__P_102_0[alias];
+          var resolved = this.__aliases__P_134_0[alias];
 
           if (resolved !== undefined) {
             dynamics[value] = resolved + value.substring(alias.length);
@@ -3668,7 +3668,7 @@
        */
       add: function add(alias, base) {
         // Store new alias value
-        this.__aliases__P_102_0[alias] = base; // Localify stores
+        this.__aliases__P_134_0[alias] = base; // Localify stores
 
         var dynamics = this._getDynamic(); // Update old entries which use this alias
 
@@ -3686,7 +3686,7 @@
        * @param alias {String} alias name for the resource path/url
        */
       remove: function remove(alias) {
-        delete this.__aliases__P_102_0[alias]; // No signal for depending objects here. These
+        delete this.__aliases__P_134_0[alias]; // No signal for depending objects here. These
         // will informed with the new value using add().
       },
 
@@ -3714,8 +3714,8 @@
       getAliases: function getAliases() {
         var res = {};
 
-        for (var key in this.__aliases__P_102_0) {
-          res[key] = this.__aliases__P_102_0[key];
+        for (var key in this.__aliases__P_134_0) {
+          res[key] = this.__aliases__P_134_0[key];
         }
 
         return res;
@@ -3782,7 +3782,7 @@
      */
     construct: function construct(size, family) {
       qx.core.Object.constructor.call(this);
-      this.__lookupMap__P_100_0 = {
+      this.__lookupMap__P_114_0 = {
         fontFamily: "",
         fontSize: null,
         fontWeight: null,
@@ -3870,7 +3870,7 @@
       },
 
       /** @type {Map} Default (empty) CSS styles */
-      __defaultStyles__P_100_1: {
+      __defaultStyles__P_114_1: {
         fontFamily: "",
         fontSize: "",
         fontWeight: "",
@@ -3891,7 +3891,7 @@
        * @return {Map} Default styles
        */
       getDefaultStyles: function getDefaultStyles() {
-        return this.__defaultStyles__P_100_1;
+        return this.__defaultStyles__P_114_1;
       }
     },
 
@@ -4012,13 +4012,13 @@
     *****************************************************************************
     */
     members: {
-      __lookupMap__P_100_0: null,
+      __lookupMap__P_114_0: null,
       // property apply
       _applySize: function _applySize(value, old) {
-        this.__lookupMap__P_100_0.fontSize = value === null ? null : value + "px";
+        this.__lookupMap__P_114_0.fontSize = value === null ? null : value + "px";
       },
       _applyLineHeight: function _applyLineHeight(value, old) {
-        this.__lookupMap__P_100_0.lineHeight = value === null ? null : value;
+        this.__lookupMap__P_114_0.lineHeight = value === null ? null : value;
       },
       // property apply
       _applyFamily: function _applyFamily(value, old) {
@@ -4041,39 +4041,39 @@
         // the browser from applying the element style
 
 
-        this.__lookupMap__P_100_0.fontFamily = family;
+        this.__lookupMap__P_114_0.fontFamily = family;
       },
       // property apply
       _applyBold: function _applyBold(value, old) {
-        this.__lookupMap__P_100_0.fontWeight = value == null ? null : value ? "bold" : "normal";
+        this.__lookupMap__P_114_0.fontWeight = value == null ? null : value ? "bold" : "normal";
       },
       // property apply
       _applyItalic: function _applyItalic(value, old) {
-        this.__lookupMap__P_100_0.fontStyle = value == null ? null : value ? "italic" : "normal";
+        this.__lookupMap__P_114_0.fontStyle = value == null ? null : value ? "italic" : "normal";
       },
       // property apply
       _applyDecoration: function _applyDecoration(value, old) {
-        this.__lookupMap__P_100_0.textDecoration = value == null ? null : value;
+        this.__lookupMap__P_114_0.textDecoration = value == null ? null : value;
       },
       // property apply
       _applyColor: function _applyColor(value, old) {
-        this.__lookupMap__P_100_0.color = null;
+        this.__lookupMap__P_114_0.color = null;
 
         if (value) {
-          this.__lookupMap__P_100_0.color = qx.theme.manager.Color.getInstance().resolve(value);
+          this.__lookupMap__P_114_0.color = qx.theme.manager.Color.getInstance().resolve(value);
         }
       },
       // property apply
       _applyWeight: function _applyWeight(value, old) {
-        this.__lookupMap__P_100_0.fontWeight = value;
+        this.__lookupMap__P_114_0.fontWeight = value;
       },
       // property apply
       _applyTextShadow: function _applyTextShadow(value, old) {
-        this.__lookupMap__P_100_0.textShadow = value == null ? null : value;
+        this.__lookupMap__P_114_0.textShadow = value == null ? null : value;
       },
       // property apply
       _applyLetterSpacing: function _applyLetterSpacing(value, old) {
-        this.__lookupMap__P_100_0.letterSpacing = value === null ? null : value + "px";
+        this.__lookupMap__P_114_0.letterSpacing = value === null ? null : value + "px";
       },
 
       /**
@@ -4085,7 +4085,7 @@
        * widget.
        */
       getStyles: function getStyles() {
-        return this.__lookupMap__P_100_0;
+        return this.__lookupMap__P_114_0;
       }
     }
   });
@@ -4173,7 +4173,7 @@
     *****************************************************************************
     */
     members: {
-      __families__P_99_0: null,
+      __families__P_113_0: null,
       // property apply
       _applySources: function _applySources(value, old) {
         var families = [];
@@ -4302,11 +4302,11 @@
       }
     },
     members: {
-      __timer__P_146_0: null,
+      __timer__P_184_0: null,
       // property apply
       _applyTimeoutInterval: function _applyTimeoutInterval(value) {
-        if (this.__timer__P_146_0) {
-          this.__timer__P_146_0.setInterval(value);
+        if (this.__timer__P_184_0) {
+          this.__timer__P_184_0.setInterval(value);
         }
       },
 
@@ -4320,25 +4320,25 @@
       /**
        * Starts the timer but only if there are listeners for the "interval" event
        */
-      __startTimer__P_146_1: function __startTimer__P_146_1() {
-        if (!this.__timer__P_146_0 && this.hasListener("interval")) {
+      __startTimer__P_184_1: function __startTimer__P_184_1() {
+        if (!this.__timer__P_184_0 && this.hasListener("interval")) {
           var timer = new qx.event.Timer(this.getTimeoutInterval());
           timer.addListener("interval", this._onInterval, this);
           timer.start();
-          this.__timer__P_146_0 = timer;
+          this.__timer__P_184_0 = timer;
         }
       },
 
       /**
        * Stops the timer but only if there are no listeners for the interval event
        */
-      __stopTimer__P_146_2: function __stopTimer__P_146_2() {
-        if (this.__timer__P_146_0 && !this.hasListener("interval")) {
-          this.__timer__P_146_0.stop();
+      __stopTimer__P_184_2: function __stopTimer__P_184_2() {
+        if (this.__timer__P_184_0 && !this.hasListener("interval")) {
+          this.__timer__P_184_0.stop();
 
-          this.__timer__P_146_0.dispose();
+          this.__timer__P_184_0.dispose();
 
-          this.__timer__P_146_0 = null;
+          this.__timer__P_184_0 = null;
         }
       },
 
@@ -4348,7 +4348,7 @@
       addListener: function addListener(type, listener, self, capture) {
         var result = qx.event.Idle.superclass.prototype.addListener.call(this, type, listener, self, capture);
 
-        this.__startTimer__P_146_1();
+        this.__startTimer__P_184_1();
 
         return result;
       },
@@ -4359,7 +4359,7 @@
       addListenerOnce: function addListenerOnce(type, listener, self, capture) {
         var result = qx.event.Idle.superclass.prototype.addListenerOnce.call(this, type, listener, self, capture);
 
-        this.__startTimer__P_146_1();
+        this.__startTimer__P_184_1();
 
         return result;
       },
@@ -4370,7 +4370,7 @@
       removeListener: function removeListener(type, listener, self, capture) {
         var result = qx.event.Idle.superclass.prototype.removeListener.call(this, type, listener, self, capture);
 
-        this.__stopTimer__P_146_2();
+        this.__stopTimer__P_184_2();
 
         return result;
       },
@@ -4381,7 +4381,7 @@
       removeListenerById: function removeListenerById(id) {
         var result = qx.event.Idle.superclass.prototype.removeListenerById.call(this, id);
 
-        this.__stopTimer__P_146_2();
+        this.__stopTimer__P_184_2();
 
         return result;
       }
@@ -4393,11 +4393,11 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__timer__P_146_0) {
-        this.__timer__P_146_0.stop();
+      if (this.__timer__P_184_0) {
+        this.__timer__P_184_0.stop();
       }
 
-      this.__timer__P_146_0 = null;
+      this.__timer__P_184_0 = null;
     }
   });
   qx.event.Idle.$$dbClassInfo = $$dbClassInfo;
@@ -4452,7 +4452,7 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__defaultAxis__P_147_0 = qx.util.placement.DirectAxis;
+      this.__defaultAxis__P_185_0 = qx.util.placement.DirectAxis;
     },
     properties: {
       /**
@@ -4486,7 +4486,7 @@
       }
     },
     statics: {
-      __instance__P_147_1: null,
+      __instance__P_185_1: null,
 
       /**
        * DOM and widget independent method to compute the location
@@ -4524,7 +4524,7 @@
        *   <code>left</code> and <code>top</code>.
        */
       compute: function compute(size, area, target, offsets, position, modeX, modeY) {
-        this.__instance__P_147_1 = this.__instance__P_147_1 || new qx.util.placement.Placement();
+        this.__instance__P_185_1 = this.__instance__P_185_1 || new qx.util.placement.Placement();
         var splitted = position.split("-");
         var edge = splitted[0];
         var align = splitted[1];
@@ -4540,18 +4540,18 @@
           }
         }
 
-        this.__instance__P_147_1.set({
-          axisX: this.__getAxis__P_147_2(modeX),
-          axisY: this.__getAxis__P_147_2(modeY),
+        this.__instance__P_185_1.set({
+          axisX: this.__getAxis__P_185_2(modeX),
+          axisY: this.__getAxis__P_185_2(modeY),
           edge: edge,
           align: align
         });
 
-        return this.__instance__P_147_1.compute(size, area, target, offsets);
+        return this.__instance__P_185_1.compute(size, area, target, offsets);
       },
-      __direct__P_147_3: null,
-      __keepAlign__P_147_4: null,
-      __bestFit__P_147_5: null,
+      __direct__P_185_3: null,
+      __keepAlign__P_185_4: null,
+      __bestFit__P_185_5: null,
 
       /**
        * Get the axis implementation for the given mode
@@ -4560,19 +4560,19 @@
        *   <code>best-fit</code>
        * @return {qx.util.placement.AbstractAxis}
        */
-      __getAxis__P_147_2: function __getAxis__P_147_2(mode) {
+      __getAxis__P_185_2: function __getAxis__P_185_2(mode) {
         switch (mode) {
           case "direct":
-            this.__direct__P_147_3 = this.__direct__P_147_3 || qx.util.placement.DirectAxis;
-            return this.__direct__P_147_3;
+            this.__direct__P_185_3 = this.__direct__P_185_3 || qx.util.placement.DirectAxis;
+            return this.__direct__P_185_3;
 
           case "keep-align":
-            this.__keepAlign__P_147_4 = this.__keepAlign__P_147_4 || qx.util.placement.KeepAlignAxis;
-            return this.__keepAlign__P_147_4;
+            this.__keepAlign__P_185_4 = this.__keepAlign__P_185_4 || qx.util.placement.KeepAlignAxis;
+            return this.__keepAlign__P_185_4;
 
           case "best-fit":
-            this.__bestFit__P_147_5 = this.__bestFit__P_147_5 || qx.util.placement.BestFitAxis;
-            return this.__bestFit__P_147_5;
+            this.__bestFit__P_185_5 = this.__bestFit__P_185_5 || qx.util.placement.BestFitAxis;
+            return this.__bestFit__P_185_5;
 
           default:
             throw new Error("Invalid 'mode' argument!'");
@@ -4580,7 +4580,7 @@
       }
     },
     members: {
-      __defaultAxis__P_147_0: null,
+      __defaultAxis__P_185_0: null,
 
       /**
        * DOM and widget independent method to compute the location
@@ -4620,7 +4620,7 @@
           this.assertNumber(offsets.left, "offsets.left");
         }
 
-        var axisX = this.getAxisX() || this.__defaultAxis__P_147_0;
+        var axisX = this.getAxisX() || this.__defaultAxis__P_185_0;
 
         var left = axisX.computeStart(size.width, {
           start: target.left,
@@ -4628,9 +4628,9 @@
         }, {
           start: offsets.left,
           end: offsets.right
-        }, area.width, this.__getPositionX__P_147_6());
+        }, area.width, this.__getPositionX__P_185_6());
 
-        var axisY = this.getAxisY() || this.__defaultAxis__P_147_0;
+        var axisY = this.getAxisY() || this.__defaultAxis__P_185_0;
 
         var top = axisY.computeStart(size.height, {
           start: target.top,
@@ -4638,7 +4638,7 @@
         }, {
           start: offsets.top,
           end: offsets.bottom
-        }, area.height, this.__getPositionY__P_147_7());
+        }, area.height, this.__getPositionY__P_185_7());
         return {
           left: left,
           top: top
@@ -4650,7 +4650,7 @@
        *
        * @return {String} the position
        */
-      __getPositionX__P_147_6: function __getPositionX__P_147_6() {
+      __getPositionX__P_185_6: function __getPositionX__P_185_6() {
         var edge = this.getEdge();
         var align = this.getAlign();
 
@@ -4672,7 +4672,7 @@
        *
        * @return {String} the position
        */
-      __getPositionY__P_147_7: function __getPositionY__P_147_7() {
+      __getPositionY__P_185_7: function __getPositionY__P_185_7() {
         var edge = this.getEdge();
         var align = this.getAlign();
 
@@ -4690,7 +4690,7 @@
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__defaultAxis__P_147_0");
+      this._disposeObjects("__defaultAxis__P_185_0");
     }
   });
   qx.util.placement.Placement.$$dbClassInfo = $$dbClassInfo;
@@ -4757,9 +4757,9 @@
     construct: function construct() {
       qx.core.Object.constructor.call(this); // Create data structure, use an array because order matters [BUG #4323]
 
-      this.__objects__P_133_0 = []; // Register pointerdown handler
+      this.__objects__P_171_0 = []; // Register pointerdown handler
 
-      qx.event.Registration.addListener(document.documentElement, "pointerdown", this.__onPointerDown__P_133_1, this, true); // Hide all popups on window blur
+      qx.event.Registration.addListener(document.documentElement, "pointerdown", this.__onPointerDown__P_171_1, this, true); // Hide all popups on window blur
 
       qx.bom.Element.addListener(window, "blur", this.hideAll, this);
     },
@@ -4779,7 +4779,7 @@
     *****************************************************************************
     */
     members: {
-      __objects__P_133_0: null,
+      __objects__P_171_0: null,
 
       /**
        * Registers a visible popup.
@@ -4793,9 +4793,9 @@
           }
         }
 
-        this.__objects__P_133_0.push(obj);
+        this.__objects__P_171_0.push(obj);
 
-        this.__updateIndexes__P_133_2();
+        this.__updateIndexes__P_171_2();
       },
 
       /**
@@ -4809,9 +4809,9 @@
             throw new Error("Object is no popup: " + obj);
           }
         }
-        qx.lang.Array.remove(this.__objects__P_133_0, obj);
+        qx.lang.Array.remove(this.__objects__P_171_0, obj);
 
-        this.__updateIndexes__P_133_2();
+        this.__updateIndexes__P_171_2();
       },
 
       /**
@@ -4819,11 +4819,11 @@
        * except those with {@link qx.ui.popup.Popup#autoHide} set to false.
        */
       hideAll: function hideAll() {
-        var l = this.__objects__P_133_0.length,
+        var l = this.__objects__P_171_0.length,
             current = {};
 
         while (l--) {
-          current = this.__objects__P_133_0[l];
+          current = this.__objects__P_171_0[l];
 
           if (current.getAutoHide()) {
             current.exclude();
@@ -4842,11 +4842,11 @@
        * newly added ones on top of existing ones
        *
        */
-      __updateIndexes__P_133_2: function __updateIndexes__P_133_2() {
+      __updateIndexes__P_171_2: function __updateIndexes__P_171_2() {
         var min = 1e7;
 
-        for (var i = 0; i < this.__objects__P_133_0.length; i++) {
-          this.__objects__P_133_0[i].setZIndex(min++);
+        for (var i = 0; i < this.__objects__P_171_0.length; i++) {
+          this.__objects__P_171_0[i].setZIndex(min++);
         }
       },
 
@@ -4861,14 +4861,14 @@
        *
        * @param e {qx.event.type.Pointer} Pointer event object
        */
-      __onPointerDown__P_133_1: function __onPointerDown__P_133_1(e) {
+      __onPointerDown__P_171_1: function __onPointerDown__P_171_1(e) {
         // Get the corresponding widget of the target since we are dealing with
         // DOM elements here. This is necessary because we have to be aware of
         // Inline applications which are not covering the whole document and
         // therefore are not able to get all pointer events when only the
         // application root is monitored.
         var target = qx.ui.core.Widget.getWidgetByElement(e.getTarget());
-        var reg = this.__objects__P_133_0;
+        var reg = this.__objects__P_171_0;
 
         for (var i = 0; i < reg.length; i++) {
           var obj = reg[i];
@@ -4888,9 +4888,9 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      qx.event.Registration.removeListener(document.documentElement, "pointerdown", this.__onPointerDown__P_133_1, this, true);
+      qx.event.Registration.removeListener(document.documentElement, "pointerdown", this.__onPointerDown__P_171_1, this, true);
 
-      this._disposeArray("__objects__P_133_0");
+      this._disposeArray("__objects__P_171_0");
     }
   });
   qx.ui.popup.Manager.$$dbClassInfo = $$dbClassInfo;
@@ -5103,10 +5103,10 @@
     *****************************************************************************
     */
     members: {
-      __widths__P_112_0: null,
-      __flexs__P_112_1: null,
-      __enableFlex__P_112_2: null,
-      __children__P_112_3: null,
+      __widths__P_62_0: null,
+      __flexs__P_62_1: null,
+      __enableFlex__P_62_2: null,
+      __children__P_62_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -5124,16 +5124,16 @@
       /**
        * Rebuilds caches for flex and percent layout properties
        */
-      __rebuildCache__P_112_4: function __rebuildCache__P_112_4() {
+      __rebuildCache__P_62_4: function __rebuildCache__P_62_4() {
         var children = this._getLayoutChildren();
 
         var length = children.length;
         var enableFlex = false;
-        var reuse = this.__widths__P_112_0 && this.__widths__P_112_0.length != length && this.__flexs__P_112_1 && this.__widths__P_112_0;
+        var reuse = this.__widths__P_62_0 && this.__widths__P_62_0.length != length && this.__flexs__P_62_1 && this.__widths__P_62_0;
         var props; // Sparse array (keep old one if lengths has not been modified)
 
-        var widths = reuse ? this.__widths__P_112_0 : new Array(length);
-        var flexs = reuse ? this.__flexs__P_112_1 : new Array(length); // Reverse support
+        var widths = reuse ? this.__widths__P_62_0 : new Array(length);
+        var flexs = reuse ? this.__flexs__P_62_1 : new Array(length); // Reverse support
 
         if (this.getReversed()) {
           children = children.concat().reverse();
@@ -5158,12 +5158,12 @@
 
 
         if (!reuse) {
-          this.__widths__P_112_0 = widths;
-          this.__flexs__P_112_1 = flexs;
+          this.__widths__P_62_0 = widths;
+          this.__flexs__P_62_1 = flexs;
         }
 
-        this.__enableFlex__P_112_2 = enableFlex;
-        this.__children__P_112_3 = children; // Clear invalidation marker
+        this.__enableFlex__P_62_2 = enableFlex;
+        this.__children__P_62_3 = children; // Clear invalidation marker
 
         delete this._invalidChildrenCache;
       },
@@ -5193,11 +5193,11 @@
       renderLayout: function renderLayout(availWidth, availHeight, padding) {
         // Rebuild flex/width caches
         if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_112_4();
+          this.__rebuildCache__P_62_4();
         } // Cache children
 
 
-        var children = this.__children__P_112_3;
+        var children = this.__children__P_62_3;
         var length = children.length;
         var util = qx.ui.layout.Util; // Compute gaps
 
@@ -5218,7 +5218,7 @@
         var allocatedWidth = gaps;
 
         for (i = 0; i < length; i += 1) {
-          percent = this.__widths__P_112_0[i];
+          percent = this.__widths__P_62_0[i];
           hint = children[i].getSizeHint();
           width = percent != null ? Math.floor((availWidth - gaps) * percent) : hint.width; // Limit computed value
 
@@ -5233,13 +5233,13 @@
         } // Flex support (growing/shrinking)
 
 
-        if (this.__enableFlex__P_112_2 && allocatedWidth != availWidth) {
+        if (this.__enableFlex__P_62_2 && allocatedWidth != availWidth) {
           var flexibles = {};
           var flex, offset;
           var notEnoughSpace = allocatedWidth > availWidth;
 
           for (i = 0; i < length; i += 1) {
-            flex = this.__flexs__P_112_1[i];
+            flex = this.__flexs__P_62_1[i];
 
             if (flex > 0) {
               hint = children[i].getSizeHint();
@@ -5337,11 +5337,11 @@
       _computeSizeHint: function _computeSizeHint() {
         // Rebuild flex/width caches
         if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_112_4();
+          this.__rebuildCache__P_62_4();
         }
 
         var util = qx.ui.layout.Util;
-        var children = this.__children__P_112_3; // Initialize
+        var children = this.__children__P_62_3; // Initialize
 
         var minWidth = 0,
             width = 0,
@@ -5356,8 +5356,8 @@
 
           width += hint.width; // Detect if child is shrinkable or has percent width and update minWidth
 
-          var flex = this.__flexs__P_112_1[i];
-          var percent = this.__widths__P_112_0[i];
+          var flex = this.__flexs__P_62_1[i];
+          var percent = this.__widths__P_62_0[i];
 
           if (flex) {
             minWidth += hint.minWidth;
@@ -5408,7 +5408,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__widths__P_112_0 = this.__flexs__P_112_1 = this.__children__P_112_3 = null;
+      this.__widths__P_62_0 = this.__flexs__P_62_1 = this.__children__P_62_3 = null;
     }
   });
   qx.ui.layout.HBox.$$dbClassInfo = $$dbClassInfo;
@@ -5872,10 +5872,10 @@
 
             if (value instanceof Array) {
               for (var i = 0; i < value.length; i++) {
-                this.__toParameterPair__P_51_0(key, value[i], parts, post);
+                this.__toParameterPair__P_54_0(key, value[i], parts, post);
               }
             } else {
-              this.__toParameterPair__P_51_0(key, value, parts, post);
+              this.__toParameterPair__P_54_0(key, value, parts, post);
             }
           }
         }
@@ -5891,7 +5891,7 @@
        * @param parts {Array} Array to push to.
        * @param post {Boolean} Whether spaces should be encoded with "+".
        */
-      __toParameterPair__P_51_0: function __toParameterPair__P_51_0(key, value, parts, post) {
+      __toParameterPair__P_54_0: function __toParameterPair__P_54_0(key, value, parts, post) {
         var encode = window.encodeURIComponent;
 
         if (post) {
@@ -6006,15 +6006,15 @@
   qx.Bootstrap.define("qx.bom.element.AnimationCss", {
     statics: {
       // initialization
-      __sheet__P_150_0: null,
-      __rulePrefix__P_150_1: "Anni",
-      __id__P_150_2: 0,
+      __sheet__P_199_0: null,
+      __rulePrefix__P_199_1: "Anni",
+      __id__P_199_2: 0,
 
       /** Static map of rules */
-      __rules__P_150_3: {},
+      __rules__P_199_3: {},
 
       /** The used keys for transforms. */
-      __transitionKeys__P_150_4: {
+      __transitionKeys__P_199_4: {
         scale: true,
         rotate: true,
         skew: true,
@@ -6022,7 +6022,7 @@
       },
 
       /** Map of cross browser CSS keys. */
-      __cssAnimationKeys__P_150_5: qx.core.Environment.get("css.animation"),
+      __cssAnimationKeys__P_199_5: qx.core.Environment.get("css.animation"),
 
       /**
        * This is the main function to start the animation in reverse mode.
@@ -6064,11 +6064,11 @@
        * @return {qx.bom.element.AnimationHandle} The handle.
        */
       _animate: function _animate(el, desc, duration, reverse) {
-        this.__normalizeDesc__P_150_6(desc); // debug validation
+        this.__normalizeDesc__P_199_6(desc); // debug validation
 
 
         {
-          this.__validateDesc__P_150_7(desc);
+          this.__validateDesc__P_199_7(desc);
         } // reverse the keep property if the animation is reverse as well
 
         var keep = desc.keep;
@@ -6077,8 +6077,8 @@
           keep = 100 - keep;
         }
 
-        if (!this.__sheet__P_150_0) {
-          this.__sheet__P_150_0 = qx.bom.Stylesheet.createElement();
+        if (!this.__sheet__P_199_0) {
+          this.__sheet__P_199_0 = qx.bom.Stylesheet.createElement();
         }
 
         var keyFrames = desc.keyFrames;
@@ -6088,22 +6088,22 @@
         } // if animations are supported
 
 
-        if (this.__cssAnimationKeys__P_150_5 != null) {
-          var name = this.__addKeyFrames__P_150_8(keyFrames, reverse);
+        if (this.__cssAnimationKeys__P_199_5 != null) {
+          var name = this.__addKeyFrames__P_199_8(keyFrames, reverse);
 
           var style = name + " " + duration + "ms " + desc.timing + " " + (desc.delay ? desc.delay + "ms " : "") + desc.repeat + " " + (desc.alternate ? "alternate" : "");
-          qx.bom.Event.addNativeListener(el, this.__cssAnimationKeys__P_150_5["start-event"], this.__onAnimationStart__P_150_9);
-          qx.bom.Event.addNativeListener(el, this.__cssAnimationKeys__P_150_5["iteration-event"], this.__onAnimationIteration__P_150_10);
-          qx.bom.Event.addNativeListener(el, this.__cssAnimationKeys__P_150_5["end-event"], this.__onAnimationEnd__P_150_11);
+          qx.bom.Event.addNativeListener(el, this.__cssAnimationKeys__P_199_5["start-event"], this.__onAnimationStart__P_199_9);
+          qx.bom.Event.addNativeListener(el, this.__cssAnimationKeys__P_199_5["iteration-event"], this.__onAnimationIteration__P_199_10);
+          qx.bom.Event.addNativeListener(el, this.__cssAnimationKeys__P_199_5["end-event"], this.__onAnimationEnd__P_199_11);
           {
             if (qx.bom.element.Style.get(el, "display") == "none") {
               qx.log.Logger.warn(el, "Some browsers will not animate elements with display==none");
             }
           }
-          el.style[qx.lang.String.camelCase(this.__cssAnimationKeys__P_150_5["name"])] = style; // use the fill mode property if available and suitable
+          el.style[qx.lang.String.camelCase(this.__cssAnimationKeys__P_199_5["name"])] = style; // use the fill mode property if available and suitable
 
-          if (keep && keep == 100 && this.__cssAnimationKeys__P_150_5["fill-mode"]) {
-            el.style[this.__cssAnimationKeys__P_150_5["fill-mode"]] = "forwards";
+          if (keep && keep == 100 && this.__cssAnimationKeys__P_199_5["fill-mode"]) {
+            el.style[this.__cssAnimationKeys__P_199_5["fill-mode"]] = "forwards";
           }
         }
 
@@ -6118,9 +6118,9 @@
         } // fallback for browsers not supporting animations
 
 
-        if (this.__cssAnimationKeys__P_150_5 == null) {
+        if (this.__cssAnimationKeys__P_199_5 == null) {
           window.setTimeout(function () {
-            qx.bom.element.AnimationCss.__onAnimationEnd__P_150_11({
+            qx.bom.element.AnimationCss.__onAnimationEnd__P_199_11({
               target: el
             });
           }, 0);
@@ -6133,7 +6133,7 @@
        * Handler for the animation start.
        * @param e {Event} The native event from the browser.
        */
-      __onAnimationStart__P_150_9: function __onAnimationStart__P_150_9(e) {
+      __onAnimationStart__P_199_9: function __onAnimationStart__P_199_9(e) {
         if (e.target.$$animation) {
           e.target.$$animation.emit("start", e.target);
         }
@@ -6143,7 +6143,7 @@
        * Handler for the animation iteration.
        * @param e {Event} The native event from the browser.
        */
-      __onAnimationIteration__P_150_10: function __onAnimationIteration__P_150_10(e) {
+      __onAnimationIteration__P_199_10: function __onAnimationIteration__P_199_10(e) {
         // It could happen that an animation end event is fired before an
         // animation iteration appears [BUG #6928]
         if (e.target != null && e.target.$$animation != null) {
@@ -6155,7 +6155,7 @@
        * Handler for the animation end.
        * @param e {Event} The native event from the browser.
        */
-      __onAnimationEnd__P_150_11: function __onAnimationEnd__P_150_11(e) {
+      __onAnimationEnd__P_199_11: function __onAnimationEnd__P_199_11(e) {
         var el = e.target;
         var animation = el.$$animation; // ignore events when already cleaned up
 
@@ -6165,18 +6165,18 @@
 
         var desc = animation.desc;
 
-        if (qx.bom.element.AnimationCss.__cssAnimationKeys__P_150_5 != null) {
+        if (qx.bom.element.AnimationCss.__cssAnimationKeys__P_199_5 != null) {
           // reset the styling
-          var key = qx.lang.String.camelCase(qx.bom.element.AnimationCss.__cssAnimationKeys__P_150_5["name"]);
+          var key = qx.lang.String.camelCase(qx.bom.element.AnimationCss.__cssAnimationKeys__P_199_5["name"]);
           el.style[key] = "";
-          qx.bom.Event.removeNativeListener(el, qx.bom.element.AnimationCss.__cssAnimationKeys__P_150_5["name"], qx.bom.element.AnimationCss.__onAnimationEnd__P_150_11);
+          qx.bom.Event.removeNativeListener(el, qx.bom.element.AnimationCss.__cssAnimationKeys__P_199_5["name"], qx.bom.element.AnimationCss.__onAnimationEnd__P_199_11);
         }
 
         if (desc.origin != null) {
           qx.bom.element.Transform.setOrigin(el, "");
         }
 
-        qx.bom.element.AnimationCss.__keepFrame__P_150_12(el, desc.keyFrames[animation.keep]);
+        qx.bom.element.AnimationCss.__keepFrame__P_199_12(el, desc.keyFrames[animation.keep]);
 
         el.$$animation = null;
         animation.el = null;
@@ -6192,12 +6192,12 @@
        * @param endFrame {Map} The description of the end frame, which is basically
        *   a map containing CSS properties and values including transforms.
        */
-      __keepFrame__P_150_12: function __keepFrame__P_150_12(el, endFrame) {
+      __keepFrame__P_199_12: function __keepFrame__P_199_12(el, endFrame) {
         // keep the element at this animation step
         var transforms;
 
         for (var style in endFrame) {
-          if (style in qx.bom.element.AnimationCss.__transitionKeys__P_150_4) {
+          if (style in qx.bom.element.AnimationCss.__transitionKeys__P_199_4) {
             if (!transforms) {
               transforms = {};
             }
@@ -6219,7 +6219,7 @@
        * set to its default.
        * @param desc {Map} The description of the animation.
        */
-      __normalizeDesc__P_150_6: function __normalizeDesc__P_150_6(desc) {
+      __normalizeDesc__P_199_6: function __normalizeDesc__P_199_6(desc) {
         if (!desc.hasOwnProperty("alternate")) {
           desc.alternate = false;
         }
@@ -6246,7 +6246,7 @@
        * @signature function(desc)
        * @param desc {Map} The description of the animation.
        */
-      __validateDesc__P_150_7: qx.core.Environment.select("qx.debug", {
+      __validateDesc__P_199_7: qx.core.Environment.select("qx.debug", {
         "true": function _true(desc) {
           var possibleKeys = ["origin", "duration", "keep", "keyFrames", "delay", "repeat", "timing", "alternate"]; // check for unknown keys
 
@@ -6278,7 +6278,7 @@
        *   be added in reverse order.
        * @return {String} The generated name of the keyframes rule.
        */
-      __addKeyFrames__P_150_8: function __addKeyFrames__P_150_8(frames, reverse) {
+      __addKeyFrames__P_199_8: function __addKeyFrames__P_199_8(frames, reverse) {
         var rule = ""; // for each key frame
 
         for (var position in frames) {
@@ -6287,7 +6287,7 @@
           var transforms; // each style
 
           for (var style in frame) {
-            if (style in this.__transitionKeys__P_150_4) {
+            if (style in this.__transitionKeys__P_199_4) {
               if (!transforms) {
                 transforms = {};
               }
@@ -6309,28 +6309,28 @@
         } // cached shorthand
 
 
-        if (this.__rules__P_150_3[rule]) {
-          return this.__rules__P_150_3[rule];
+        if (this.__rules__P_199_3[rule]) {
+          return this.__rules__P_199_3[rule];
         }
 
-        var name = this.__rulePrefix__P_150_1 + this.__id__P_150_2++;
-        var selector = this.__cssAnimationKeys__P_150_5["keyframes"] + " " + name;
-        qx.bom.Stylesheet.addRule(this.__sheet__P_150_0, selector, rule);
-        this.__rules__P_150_3[rule] = name;
+        var name = this.__rulePrefix__P_199_1 + this.__id__P_199_2++;
+        var selector = this.__cssAnimationKeys__P_199_5["keyframes"] + " " + name;
+        qx.bom.Stylesheet.addRule(this.__sheet__P_199_0, selector, rule);
+        this.__rules__P_199_3[rule] = name;
         return name;
       },
 
       /**
        * Internal helper to reset the cache.
        */
-      __clearCache__P_150_13: function __clearCache__P_150_13() {
-        this.__id__P_150_2 = 0;
+      __clearCache__P_199_13: function __clearCache__P_199_13() {
+        this.__id__P_199_2 = 0;
 
-        if (this.__sheet__P_150_0) {
-          this.__sheet__P_150_0.ownerNode.remove();
+        if (this.__sheet__P_199_0) {
+          this.__sheet__P_199_0.ownerNode.remove();
 
-          this.__sheet__P_150_0 = null;
-          this.__rules__P_150_3 = {};
+          this.__sheet__P_199_0 = null;
+          this.__rules__P_199_3 = {};
         }
       }
     },
@@ -6340,7 +6340,7 @@
       if (qx.core.Environment.get("os.name") === "ios" && parseInt(qx.core.Environment.get("os.version")) >= 8) {
         document.addEventListener("visibilitychange", function () {
           if (!document.hidden) {
-            statics.__clearCache__P_150_13();
+            statics.__clearCache__P_199_13();
           }
         }, false);
       }
@@ -6402,15 +6402,15 @@
       /**
        * The maximal time a frame should take.
        */
-      __maxStepTime__P_151_0: 30,
+      __maxStepTime__P_200_0: 30,
 
       /**
        * The supported CSS units.
        */
-      __units__P_151_1: ["%", "in", "cm", "mm", "em", "ex", "pt", "pc", "px"],
+      __units__P_200_1: ["%", "in", "cm", "mm", "em", "ex", "pt", "pc", "px"],
 
       /** The used keys for transforms. */
-      __transitionKeys__P_151_2: {
+      __transitionKeys__P_200_2: {
         scale: true,
         rotate: true,
         skew: true,
@@ -6470,15 +6470,15 @@
 
         var keyFrames = desc.keyFrames;
 
-        var keys = this.__getOrderedKeys__P_151_3(keyFrames);
+        var keys = this.__getOrderedKeys__P_200_3(keyFrames);
 
-        var stepTime = this.__getStepTime__P_151_4(duration, keys);
+        var stepTime = this.__getStepTime__P_200_4(duration, keys);
 
         var steps = parseInt(duration / stepTime, 10);
 
-        this.__normalizeKeyFrames__P_151_5(keyFrames, el);
+        this.__normalizeKeyFrames__P_200_5(keyFrames, el);
 
-        var delta = this.__calculateDelta__P_151_6(steps, stepTime, keys, keyFrames, duration, desc.timing);
+        var delta = this.__calculateDelta__P_200_6(steps, stepTime, keys, keyFrames, duration, desc.timing);
 
         var handle = new qx.bom.element.AnimationHandle();
         handle.jsAnimation = true;
@@ -6496,7 +6496,7 @@
         el.$$animation = handle;
         handle.i = 0;
         handle.initValues = {};
-        handle.repeatSteps = this.__applyRepeat__P_151_7(steps, desc.repeat);
+        handle.repeatSteps = this.__applyRepeat__P_200_7(steps, desc.repeat);
         var delay = desc.delay || 0;
         var self = this;
         handle.delayId = window.setTimeout(function () {
@@ -6512,7 +6512,7 @@
        * @param keyFrames {Map} The map of key frames.
        * @param el {Element} The element to animate.
        */
-      __normalizeKeyFrames__P_151_5: function __normalizeKeyFrames__P_151_5(keyFrames, el) {
+      __normalizeKeyFrames__P_200_5: function __normalizeKeyFrames__P_200_5(keyFrames, el) {
         // collect all possible keys and its units
         var units = {};
 
@@ -6533,7 +6533,7 @@
               var item = keyFrames[percent][name];
 
               if (typeof item == "string") {
-                units[name] = this.__getUnit__P_151_8(item);
+                units[name] = this.__getUnit__P_200_8(item);
               } else {
                 units[name] = "";
               }
@@ -6559,7 +6559,7 @@
               } // if its a unit we know, set 0 as fallback
 
 
-              if (frame[name] === "" && this.__units__P_151_1.indexOf(units[name]) != -1) {
+              if (frame[name] === "" && this.__units__P_200_1.indexOf(units[name]) != -1) {
                 frame[name] = "0" + units[name];
               }
             }
@@ -6573,12 +6573,12 @@
        * @param frame {Map} A single key frame of the description.
        * @return {Map} A modified clone of the given frame.
        */
-      __normalizeKeyFrameTransforms__P_151_9: function __normalizeKeyFrameTransforms__P_151_9(frame) {
+      __normalizeKeyFrameTransforms__P_200_9: function __normalizeKeyFrameTransforms__P_200_9(frame) {
         frame = qx.lang.Object.clone(frame);
         var transforms;
 
         for (var name in frame) {
-          if (name in this.__transitionKeys__P_151_2) {
+          if (name in this.__transitionKeys__P_200_2) {
             if (!transforms) {
               transforms = {};
             }
@@ -6613,10 +6613,10 @@
        * @param timing {String} The given timing function.
        * @return {Array} An array containing the animation deltas.
        */
-      __calculateDelta__P_151_6: function __calculateDelta__P_151_6(steps, stepTime, keys, keyFrames, duration, timing) {
+      __calculateDelta__P_200_6: function __calculateDelta__P_200_6(steps, stepTime, keys, keyFrames, duration, timing) {
         var delta = new Array(steps);
         var keyIndex = 1;
-        delta[0] = this.__normalizeKeyFrameTransforms__P_151_9(keyFrames[0]);
+        delta[0] = this.__normalizeKeyFrameTransforms__P_200_9(keyFrames[0]);
         var last = keyFrames[0];
         var next = keyFrames[keys[keyIndex]];
         var stepsToNext = Math.floor(keys[keyIndex] / (stepTime / duration * 100));
@@ -6639,7 +6639,7 @@
           for (var name in next) {
             var nItem = next[name] + ""; // transform values
 
-            if (name in this.__transitionKeys__P_151_2) {
+            if (name in this.__transitionKeys__P_200_2) {
               if (!transforms) {
                 transforms = {};
               }
@@ -6654,11 +6654,11 @@
                 for (var j = 0; j < next[name].length; j++) {
                   var item = next[name][j] + "";
                   var x = calculationIndex / stepsToNext;
-                  transforms[name][j] = this.__getNextValue__P_151_10(item, last[name], timing, x);
+                  transforms[name][j] = this.__getNextValue__P_200_10(item, last[name], timing, x);
                 }
               } else {
                 var x = calculationIndex / stepsToNext;
-                transforms[name] = this.__getNextValue__P_151_10(nItem, last[name], timing, x);
+                transforms[name] = this.__getNextValue__P_200_10(nItem, last[name], timing, x);
               } // color values
 
             } else if (nItem.charAt(0) == "#") {
@@ -6677,7 +6677,7 @@
               delta[i][name] = qx.util.ColorUtil.rgbToHexString(stepValue);
             } else if (!isNaN(parseFloat(nItem))) {
               var x = calculationIndex / stepsToNext;
-              delta[i][name] = this.__getNextValue__P_151_10(nItem, last[name], timing, x);
+              delta[i][name] = this.__getNextValue__P_200_10(nItem, last[name], timing, x);
             } else {
               delta[i][name] = last[name] + "";
             }
@@ -6696,7 +6696,7 @@
         } // make sure the last key frame is right
 
 
-        delta[delta.length - 1] = this.__normalizeKeyFrameTransforms__P_151_9(keyFrames[100]);
+        delta[delta.length - 1] = this.__normalizeKeyFrameTransforms__P_200_9(keyFrames[100]);
         return delta;
       },
 
@@ -6706,7 +6706,7 @@
        * @param item {String} A CSS value including its unit.
        * @return {String} The unit of the given value.
        */
-      __getUnit__P_151_8: function __getUnit__P_151_8(item) {
+      __getUnit__P_200_8: function __getUnit__P_200_8(item) {
         return item.substring((parseFloat(item) + "").length, item.length);
       },
 
@@ -6719,9 +6719,9 @@
        * @param x {Number} The x position of the animation on the time axis
        * @return {String} The calculated value including its unit.
        */
-      __getNextValue__P_151_10: function __getNextValue__P_151_10(nextItem, lastItem, timing, x) {
+      __getNextValue__P_200_10: function __getNextValue__P_200_10(nextItem, lastItem, timing, x) {
         var range = parseFloat(nextItem) - parseFloat(lastItem);
-        return parseFloat(lastItem) + range * qx.bom.AnimationFrame.calculateTiming(timing, x) + this.__getUnit__P_151_8(nextItem);
+        return parseFloat(lastItem) + range * qx.bom.AnimationFrame.calculateTiming(timing, x) + this.__getUnit__P_200_8(nextItem);
       },
 
       /**
@@ -6754,7 +6754,7 @@
             }
           }
 
-          qx.bom.element.AnimationJs.__applyStyles__P_151_11(handle.el, values);
+          qx.bom.element.AnimationJs.__applyStyles__P_200_11(handle.el, values);
 
           handle.i++; // iteration condition
 
@@ -6825,9 +6825,9 @@
             keep = 100 - keep;
           }
 
-          this.__applyStyles__P_151_11(el, this.__normalizeKeyFrameTransforms__P_151_9(desc.keyFrames[keep]));
+          this.__applyStyles__P_200_11(el, this.__normalizeKeyFrameTransforms__P_200_9(desc.keyFrames[keep]));
         } else {
-          this.__applyStyles__P_151_11(el, initValues);
+          this.__applyStyles__P_200_11(el, initValues);
         }
 
         el.$$animation = null;
@@ -6845,7 +6845,7 @@
        * animation should be repeated or the string 'infinite'.
        * @return {Integer} The number of steps to animate.
        */
-      __applyRepeat__P_151_7: function __applyRepeat__P_151_7(steps, repeat) {
+      __applyRepeat__P_200_7: function __applyRepeat__P_200_7(steps, repeat) {
         if (repeat == undefined) {
           return steps;
         }
@@ -6862,7 +6862,7 @@
        * @param el {Element} The DOM element to apply the styles.
        * @param styles {Map} A map containing styles and values.
        */
-      __applyStyles__P_151_11: function __applyStyles__P_151_11(el, styles) {
+      __applyStyles__P_200_11: function __applyStyles__P_200_11(el, styles) {
         for (var key in styles) {
           // ignore undefined values (might be a bad detection)
           if (styles[key] === undefined) {
@@ -6892,7 +6892,7 @@
        * @param keys {Array} An array containing the ordered set of key frame keys.
        * @return {Integer} The best suited step time.
        */
-      __getStepTime__P_151_4: function __getStepTime__P_151_4(duration, keys) {
+      __getStepTime__P_200_4: function __getStepTime__P_200_4(duration, keys) {
         // get min difference
         var minDiff = 100;
 
@@ -6902,7 +6902,7 @@
 
         var stepTime = duration * minDiff / 100;
 
-        while (stepTime > this.__maxStepTime__P_151_0) {
+        while (stepTime > this.__maxStepTime__P_200_0) {
           stepTime = stepTime / 2;
         }
 
@@ -6914,7 +6914,7 @@
        * @param keyFrames {Map} The map of key frames.
        * @return {Array} An ordered list of keys.
        */
-      __getOrderedKeys__P_151_3: function __getOrderedKeys__P_151_3(keyFrames) {
+      __getOrderedKeys__P_200_3: function __getOrderedKeys__P_200_3(keyFrames) {
         var keys = Object.keys(keyFrames);
 
         for (var i = 0; i < keys.length; i++) {
@@ -7006,8 +7006,8 @@
     *****************************************************************************
     */
     members: {
-      __paddingTop__P_104_0: null,
-      __paddingLeft__P_104_1: null,
+      __paddingTop__P_163_0: null,
+      __paddingLeft__P_163_1: null,
       // this member variable is only used for IE browsers to be able
       // to the tag name which will be set. This is heavily connected to the runtime
       // change of decorators and the use of external (=unmanaged images). It is
@@ -7023,8 +7023,8 @@
        * @param paddingTop {Integer} top padding value
        */
       setPadding: function setPadding(paddingLeft, paddingTop) {
-        this.__paddingLeft__P_104_1 = paddingLeft;
-        this.__paddingTop__P_104_0 = paddingTop;
+        this.__paddingLeft__P_163_1 = paddingLeft;
+        this.__paddingTop__P_163_0 = paddingTop;
 
         if (this.getNodeName() == "div") {
           this.setStyle("backgroundPosition", paddingLeft + "px " + paddingTop + "px");
@@ -7064,8 +7064,8 @@
         if (source != null) {
           // Normalize "" to null
           source = source || null;
-          styles.paddingTop = this.__paddingTop__P_104_0;
-          styles.paddingLeft = this.__paddingLeft__P_104_1;
+          styles.paddingTop = this.__paddingTop__P_163_0;
+          styles.paddingLeft = this.__paddingLeft__P_163_1;
           qx.bom.element.Decoration.update(elem, source, repeat, styles);
         }
       },
@@ -7236,7 +7236,7 @@
       qx.html.Element.constructor.call(this, "iframe", styles, attributes);
       this.registerProperty("source", null, this._setSourceProperty);
       this.setSource(url);
-      this.addListener("navigate", this.__onNavigate__P_152_0, this); // add yourself to the element queue to enforce the creation of DOM element
+      this.addListener("navigate", this.__onNavigate__P_201_0, this); // add yourself to the element queue to enforce the creation of DOM element
 
       qx.html.Element._modified[this.toHashCode()] = this;
 
@@ -7418,7 +7418,7 @@
        *
        * @param e {qx.event.type.Data} navigate event
        */
-      __onNavigate__P_152_0: function __onNavigate__P_152_0(e) {
+      __onNavigate__P_201_0: function __onNavigate__P_201_0(e) {
         var actualUrl = e.getData();
 
         if (actualUrl) {
@@ -7515,7 +7515,7 @@
       }
 
       qx.html.Element.constructor.call(this, nodeName, styles, attributes);
-      this.__type__P_153_0 = type;
+      this.__type__P_117_0 = type;
       this.registerProperty("value", this._getValueProperty, this._setValueProperty);
       this.registerProperty("wrap", null, this._setWrapProperty);
     },
@@ -7526,10 +7526,10 @@
     *****************************************************************************
     */
     members: {
-      __type__P_153_0: null,
+      __type__P_117_0: null,
       // used for webkit only
-      __selectable__P_153_1: null,
-      __enabled__P_153_2: null,
+      __selectable__P_117_1: null,
+      __enabled__P_117_2: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -7541,7 +7541,7 @@
       },
       //overridden
       _createDomElement: function _createDomElement() {
-        return qx.bom.Input.create(this.__type__P_153_0);
+        return qx.bom.Input.create(this.__type__P_117_0);
       },
 
       /**
@@ -7594,7 +7594,7 @@
        * @param value {Boolean} true, if the input element should be enabled.
        */
       setEnabled: function setEnabled(value) {
-        this.__enabled__P_153_2 = value;
+        this.__enabled__P_117_2 = value;
         this.setAttribute("disabled", value === false);
 
         if (qx.core.Environment.get("engine.name") == "webkit") {
@@ -7606,7 +7606,7 @@
           } else {
             this.setStyles({
               userModify: null,
-              userSelect: this.__selectable__P_153_1 ? null : "none"
+              userSelect: this.__selectable__P_117_1 ? null : "none"
             });
           }
         }
@@ -7622,9 +7622,9 @@
        */
       setSelectable: qx.core.Environment.select("engine.name", {
         webkit: function webkit(value) {
-          this.__selectable__P_153_1 = value; // Only apply the value when it is enabled
+          this.__selectable__P_117_1 = value; // Only apply the value when it is enabled
 
-          qx.html.Input.superclass.prototype.setSelectable.call(this, this.__enabled__P_153_2 && value);
+          qx.html.Input.superclass.prototype.setSelectable.call(this, this.__enabled__P_117_2 && value);
         },
         "default": function _default(value) {
           qx.html.Input.superclass.prototype.setSelectable.call(this, value);
@@ -7685,7 +7685,7 @@
        * @return {qx.html.Input} This instance for for chaining support.
        */
       setWrap: function setWrap(wrap, direct) {
-        if (this.__type__P_153_0 === "textarea") {
+        if (this.__type__P_117_0 === "textarea") {
           this._setProperty("wrap", wrap, direct);
         } else {
           throw new Error("Text wrapping is only support by textareas!");
@@ -7702,7 +7702,7 @@
        * @return {Boolean} Whether wrapping is enabled or disabled.
        */
       getWrap: function getWrap() {
-        if (this.__type__P_153_0 === "textarea") {
+        if (this.__type__P_117_0 === "textarea") {
           return this._getProperty("wrap");
         } else {
           throw new Error("Text wrapping is only support by textareas!");
@@ -7834,8 +7834,8 @@
     *****************************************************************************
     */
     members: {
-      __orientation__P_162_0: null,
-      __mode__P_162_1: null,
+      __orientation__P_212_0: null,
+      __mode__P_212_1: null,
 
       /**
        * Initialize the fields of the event. The event must be initialized before
@@ -7847,8 +7847,8 @@
        */
       init: function init(orientation, mode) {
         qx.event.type.Orientation.superclass.prototype.init.call(this, false, false);
-        this.__orientation__P_162_0 = orientation;
-        this.__mode__P_162_1 = mode;
+        this.__orientation__P_212_0 = orientation;
+        this.__mode__P_212_1 = mode;
         return this;
       },
 
@@ -7864,8 +7864,8 @@
        */
       clone: function clone(embryo) {
         var clone = qx.event.type.Orientation.superclass.prototype.clone.call(this, embryo);
-        clone.__orientation__P_162_0 = this.__orientation__P_162_0;
-        clone.__mode__P_162_1 = this.__mode__P_162_1;
+        clone.__orientation__P_212_0 = this.__orientation__P_212_0;
+        clone.__mode__P_212_1 = this.__mode__P_212_1;
         return clone;
       },
 
@@ -7882,7 +7882,7 @@
        * @return {Integer} The current orientation in degree
        */
       getOrientation: function getOrientation() {
-        return this.__orientation__P_162_0;
+        return this.__orientation__P_212_0;
       },
 
       /**
@@ -7892,7 +7892,7 @@
        *     is currently in landscape mode.
        */
       isLandscape: function isLandscape() {
-        return this.__mode__P_162_1 == "landscape";
+        return this.__mode__P_212_1 == "landscape";
       },
 
       /**
@@ -7902,7 +7902,7 @@
        *     is currently in portrait mode.
        */
       isPortrait: function isPortrait() {
-        return this.__mode__P_162_1 == "portrait";
+        return this.__mode__P_212_1 == "portrait";
       }
     }
   });
@@ -8047,7 +8047,7 @@
        * @return {Boolean} Is multi-touch
        */
       isMultiTouch: function isMultiTouch() {
-        return this.__getEventSpecificTouches__P_156_0().length > 1;
+        return this.__getEventSpecificTouches__P_204_0().length > 1;
       },
 
       /**
@@ -8100,7 +8100,7 @@
        * @return {Integer} The horizontal position of the touch in the document.
        */
       getDocumentLeft: function getDocumentLeft(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).pageX;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).pageX;
       },
 
       /**
@@ -8112,7 +8112,7 @@
        * @return {Integer} The vertical position of the touch in the document.
        */
       getDocumentTop: function getDocumentTop(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).pageY;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).pageY;
       },
 
       /**
@@ -8123,7 +8123,7 @@
        * @return {Integer} The horizontal position of the touch
        */
       getScreenLeft: function getScreenLeft(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).screenX;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).screenX;
       },
 
       /**
@@ -8134,7 +8134,7 @@
        * @return {Integer} The vertical position of the touch
        */
       getScreenTop: function getScreenTop(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).screenY;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).screenY;
       },
 
       /**
@@ -8145,7 +8145,7 @@
        * @return {Integer} The horizontal position of the touch
        */
       getViewportLeft: function getViewportLeft(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).clientX;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).clientX;
       },
 
       /**
@@ -8156,7 +8156,7 @@
        * @return {Integer} The vertical position of the touch
        */
       getViewportTop: function getViewportTop(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).clientY;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).clientY;
       },
 
       /**
@@ -8166,7 +8166,7 @@
        * @return {Integer} Unique identifier of the touch object
        */
       getIdentifier: function getIdentifier(touchIndex) {
-        return this.__getEventSpecificTouch__P_156_1(touchIndex).identifier;
+        return this.__getEventSpecificTouch__P_204_1(touchIndex).identifier;
       },
 
       /**
@@ -8178,9 +8178,9 @@
        *     retrieve
        * @return {Object} A native Touch object
        */
-      __getEventSpecificTouch__P_156_1: function __getEventSpecificTouch__P_156_1(touchIndex) {
+      __getEventSpecificTouch__P_204_1: function __getEventSpecificTouch__P_204_1(touchIndex) {
         touchIndex = touchIndex == null ? 0 : touchIndex;
-        return this.__getEventSpecificTouches__P_156_0()[touchIndex];
+        return this.__getEventSpecificTouches__P_204_0()[touchIndex];
       },
 
       /**
@@ -8190,7 +8190,7 @@
        *
        * @return {Object[]} Array of native Touch objects
        */
-      __getEventSpecificTouches__P_156_0: function __getEventSpecificTouches__P_156_0() {
+      __getEventSpecificTouches__P_204_0: function __getEventSpecificTouches__P_204_0() {
         var touches = this._isTouchEnd() ? this.getChangedTargetTouches() : this.getTargetTouches();
         return touches;
       },
@@ -8335,7 +8335,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * Database of supported features.
        * Filled with additional data at initialization
        */
-      __db__P_157_0: {
+      __db__P_186_0: {
         quicktime: {
           plugin: ["QuickTime"],
           control: "QuickTimeCheckObject.QuickTimeCheck.1" // call returns boolean: instance.IsQuickTimeAvailable(0)
@@ -8371,8 +8371,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getQuicktimeVersion: function getQuicktimeVersion() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["quicktime"];
-        return qx.bom.client.Plugin.__getVersion__P_157_1(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["quicktime"];
+        return qx.bom.client.Plugin.__getVersion__P_186_1(entry.control, entry.plugin);
       },
 
       /**
@@ -8382,8 +8382,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getWindowsMediaVersion: function getWindowsMediaVersion() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["wmv"];
-        return qx.bom.client.Plugin.__getVersion__P_157_1(entry.control, entry.plugin, true);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["wmv"];
+        return qx.bom.client.Plugin.__getVersion__P_186_1(entry.control, entry.plugin, true);
       },
 
       /**
@@ -8393,8 +8393,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getDivXVersion: function getDivXVersion() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["divx"];
-        return qx.bom.client.Plugin.__getVersion__P_157_1(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["divx"];
+        return qx.bom.client.Plugin.__getVersion__P_186_1(entry.control, entry.plugin);
       },
 
       /**
@@ -8404,8 +8404,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getSilverlightVersion: function getSilverlightVersion() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["silverlight"];
-        return qx.bom.client.Plugin.__getVersion__P_157_1(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["silverlight"];
+        return qx.bom.client.Plugin.__getVersion__P_186_1(entry.control, entry.plugin);
       },
 
       /**
@@ -8429,8 +8429,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getPdfVersion: function getPdfVersion() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["pdf"];
-        return qx.bom.client.Plugin.__getVersion__P_157_1(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["pdf"];
+        return qx.bom.client.Plugin.__getVersion__P_186_1(entry.control, entry.plugin);
       },
 
       /**
@@ -8439,8 +8439,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getQuicktime: function getQuicktime() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["quicktime"];
-        return qx.bom.client.Plugin.__isAvailable__P_157_2(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["quicktime"];
+        return qx.bom.client.Plugin.__isAvailable__P_186_2(entry.control, entry.plugin);
       },
 
       /**
@@ -8449,8 +8449,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getWindowsMedia: function getWindowsMedia() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["wmv"];
-        return qx.bom.client.Plugin.__isAvailable__P_157_2(entry.control, entry.plugin, true);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["wmv"];
+        return qx.bom.client.Plugin.__isAvailable__P_186_2(entry.control, entry.plugin, true);
       },
 
       /**
@@ -8459,8 +8459,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getDivX: function getDivX() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["divx"];
-        return qx.bom.client.Plugin.__isAvailable__P_157_2(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["divx"];
+        return qx.bom.client.Plugin.__isAvailable__P_186_2(entry.control, entry.plugin);
       },
 
       /**
@@ -8469,8 +8469,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getSilverlight: function getSilverlight() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["silverlight"];
-        return qx.bom.client.Plugin.__isAvailable__P_157_2(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["silverlight"];
+        return qx.bom.client.Plugin.__isAvailable__P_186_2(entry.control, entry.plugin);
       },
 
       /**
@@ -8493,8 +8493,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @internal
        */
       getPdf: function getPdf() {
-        var entry = qx.bom.client.Plugin.__db__P_157_0["pdf"];
-        return qx.bom.client.Plugin.__isAvailable__P_157_2(entry.control, entry.plugin);
+        var entry = qx.bom.client.Plugin.__db__P_186_0["pdf"];
+        return qx.bom.client.Plugin.__isAvailable__P_186_2(entry.control, entry.plugin);
       },
 
       /**
@@ -8508,8 +8508,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *   for IE11 plugins that aren't listed in navigator.plugins
        * @return {String} The version of the plugin as string.
        */
-      __getVersion__P_157_1: function __getVersion__P_157_1(activeXName, pluginNames, forceActiveX) {
-        var available = qx.bom.client.Plugin.__isAvailable__P_157_2(activeXName, pluginNames, forceActiveX); // don't check if the plugin is not available
+      __getVersion__P_186_1: function __getVersion__P_186_1(activeXName, pluginNames, forceActiveX) {
+        var available = qx.bom.client.Plugin.__isAvailable__P_186_2(activeXName, pluginNames, forceActiveX); // don't check if the plugin is not available
 
 
         if (!available) {
@@ -8587,7 +8587,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *   for IE11 plugins that aren't listed in navigator.plugins
        * @return {Boolean} <code>true</code>, if the plugin available
        */
-      __isAvailable__P_157_2: function __isAvailable__P_157_2(activeXName, pluginNames, forceActiveX) {
+      __isAvailable__P_186_2: function __isAvailable__P_186_2(activeXName, pluginNames, forceActiveX) {
         // IE checks
         if (qx.bom.client.Engine.getName() == "mshtml" && (qx.bom.client.Browser.getDocumentMode() < 11 || forceActiveX)) {
           if (!this.getActiveX()) {
@@ -9728,19 +9728,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   qx.Bootstrap.define("qx.io.ImageLoader", {
     statics: {
       /** @type {Map} Internal data structure to cache image sizes */
-      __data__P_103_0: {},
+      __data__P_162_0: {},
 
       /** @type {Map} Default image size */
-      __defaultSize__P_103_1: {
+      __defaultSize__P_162_1: {
         width: null,
         height: null
       },
 
       /** @type {RegExp} Known image types */
-      __knownImageTypesRegExp__P_103_2: /\.(png|gif|jpg|jpeg|bmp)\b/i,
+      __knownImageTypesRegExp__P_162_2: /\.(png|gif|jpg|jpeg|bmp)\b/i,
 
       /** @type {RegExp} Image types of a data URL */
-      __dataUrlRegExp__P_103_3: /^data:image\/(png|gif|jpg|jpeg|bmp)\b/i,
+      __dataUrlRegExp__P_162_3: /^data:image\/(png|gif|jpg|jpeg|bmp)\b/i,
 
       /**
        * Whether the given image has previously been loaded using the
@@ -9750,7 +9750,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code> when the image is loaded
        */
       isLoaded: function isLoaded(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
         return !!(entry && entry.loaded);
       },
 
@@ -9762,7 +9762,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code> when the image loading failed
        */
       isFailed: function isFailed(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
         return !!(entry && entry.failed);
       },
 
@@ -9773,7 +9773,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code> when the image is loading in the moment.
        */
       isLoading: function isLoading(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
         return !!(entry && entry.loading);
       },
 
@@ -9784,15 +9784,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String ? null} The format of the image or <code>null</code>
        */
       getFormat: function getFormat(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
 
         if (!entry || !entry.format) {
-          var result = this.__dataUrlRegExp__P_103_3.exec(source);
+          var result = this.__dataUrlRegExp__P_162_3.exec(source);
 
           if (result != null) {
             // If width and height aren't defined, provide some defaults
-            var width = entry && qx.lang.Type.isNumber(entry.width) ? entry.width : this.__defaultSize__P_103_1.width;
-            var height = entry && qx.lang.Type.isNumber(entry.height) ? entry.height : this.__defaultSize__P_103_1.height;
+            var width = entry && qx.lang.Type.isNumber(entry.width) ? entry.width : this.__defaultSize__P_162_1.width;
+            var height = entry && qx.lang.Type.isNumber(entry.height) ? entry.height : this.__defaultSize__P_162_1.height;
             entry = {
               loaded: true,
               format: result[1],
@@ -9814,11 +9814,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *    dimensions are given as <code>null</code> for width and height.
        */
       getSize: function getSize(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
         return entry ? {
           width: entry.width,
           height: entry.height
-        } : this.__defaultSize__P_103_1;
+        } : this.__defaultSize__P_162_1;
       },
 
       /**
@@ -9828,7 +9828,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Integer} The width or <code>null</code> when the image is not loaded
        */
       getWidth: function getWidth(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
         return entry ? entry.width : null;
       },
 
@@ -9839,7 +9839,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Integer} The height or <code>null</code> when the image is not loaded
        */
       getHeight: function getHeight(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
         return entry ? entry.height : null;
       },
 
@@ -9858,10 +9858,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        */
       load: function load(source, callback, context) {
         // Shorthand
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
 
         if (!entry) {
-          entry = this.__data__P_103_0[source] = {};
+          entry = this.__data__P_162_0[source] = {};
         } // Normalize context
 
 
@@ -9900,7 +9900,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
           var el = document.createElement("img"); // Create common callback routine
 
-          var boundCallback = qx.lang.Function.listener(this.__onload__P_103_4, this, el, source); // Assign callback to element
+          var boundCallback = qx.lang.Function.listener(this.__onload__P_162_4, this, el, source); // Assign callback to element
 
           el.onload = boundCallback;
           el.onerror = boundCallback; // Start loading of image
@@ -9917,7 +9917,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param source {String} URL of the image to abort its loading.
        */
       abort: function abort(source) {
-        var entry = this.__data__P_103_0[source];
+        var entry = this.__data__P_162_0[source];
 
         if (entry && !entry.loaded) {
           entry.aborted = true;
@@ -9937,16 +9937,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
         }
 
-        this.__data__P_103_0[source] = null;
+        this.__data__P_162_0[source] = null;
       },
 
       /**
        * Calls a method based on qx.globalErrorHandling
        */
-      __onload__P_103_4: function __onload__P_103_4() {
+      __onload__P_162_4: function __onload__P_162_4() {
         var callback = qx.core.Environment.select("qx.globalErrorHandling", {
-          "true": qx.event.GlobalError.observeMethod(this.__onLoadHandler__P_103_5),
-          "false": this.__onLoadHandler__P_103_5
+          "true": qx.event.GlobalError.observeMethod(this.__onLoadHandler__P_162_5),
+          "false": this.__onLoadHandler__P_162_5
         });
         callback.apply(this, arguments);
       },
@@ -9960,9 +9960,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param element {Element} DOM element which represents the image
        * @param source {String} The image source loaded
        */
-      __onLoadHandler__P_103_5: function __onLoadHandler__P_103_5(event, element, source) {
+      __onLoadHandler__P_162_5: function __onLoadHandler__P_162_5(event, element, source) {
         // Shorthand
-        var entry = this.__data__P_103_0[source]; // [BUG #9149]: When loading a SVG IE11 won't have
+        var entry = this.__data__P_162_0[source]; // [BUG #9149]: When loading a SVG IE11 won't have
         // the width/height of the element set, unless
         // it is inserted into the DOM.
 
@@ -9982,7 +9982,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           entry.width = element.width;
           entry.height = element.height; // try to determine the image format
 
-          var result = this.__knownImageTypesRegExp__P_103_2.exec(source);
+          var result = this.__knownImageTypesRegExp__P_162_2.exec(source);
 
           if (result != null) {
             entry.format = result[1];
@@ -10013,7 +10013,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * Dispose stored images.
        */
       dispose: function dispose() {
-        this.__data__P_103_0 = {};
+        this.__data__P_162_0 = {};
       }
     }
   });
@@ -10082,7 +10082,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     *****************************************************************************
     */
     members: {
-      __rich__P_98_0: null,
+      __rich__P_112_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -10101,7 +10101,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       },
       // overridden
       _createDomElement: function _createDomElement() {
-        var rich = this.__rich__P_98_0;
+        var rich = this.__rich__P_112_0;
         var el = qx.bom.Label.create(this._content, rich);
         el.style.overflow = "hidden";
         return el;
@@ -10133,11 +10133,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         value = !!value;
 
-        if (this.__rich__P_98_0 == value) {
+        if (this.__rich__P_112_0 == value) {
           return this;
         }
 
-        this.__rich__P_98_0 = value;
+        this.__rich__P_112_0 = value;
         return this;
       },
 
@@ -10438,10 +10438,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     */
     statics: {
       /** @type {Map} the shared image registry */
-      __registry__P_105_0: qx.$$resources || {},
+      __registry__P_135_0: qx.$$resources || {},
 
       /** @type {Map} prefix per library used in HTTPS mode for IE */
-      __urlPrefix__P_105_1: {}
+      __urlPrefix__P_135_1: {}
     },
 
     /*
@@ -10528,7 +10528,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Array|null} an array containing the IDs or null if the registry is not initialized
        */
       getIds: function getIds(pathfragment) {
-        var registry = qx.util.ResourceManager.__registry__P_105_0;
+        var registry = qx.util.ResourceManager.__registry__P_135_0;
 
         if (!registry) {
           return null;
@@ -10546,7 +10546,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code> when the resource is known.
        */
       has: function has(id) {
-        return !!qx.util.ResourceManager.__registry__P_105_0[id];
+        return !!qx.util.ResourceManager.__registry__P_135_0[id];
       },
 
       /**
@@ -10556,7 +10556,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Array} Registered data or <code>null</code>
        */
       getData: function getData(id) {
-        return qx.util.ResourceManager.__registry__P_105_0[id] || null;
+        return qx.util.ResourceManager.__registry__P_135_0[id] || null;
       },
 
       /**
@@ -10579,7 +10579,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
         }
 
-        var entry = qx.util.ResourceManager.__registry__P_105_0[id]; // [ width, height, codepoint ]
+        var entry = qx.util.ResourceManager.__registry__P_135_0[id]; // [ width, height, codepoint ]
 
         if (size && entry) {
           var width = Math.ceil(size / entry[1] * entry[0]);
@@ -10607,7 +10607,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
         }
 
-        var entry = qx.util.ResourceManager.__registry__P_105_0[id];
+        var entry = qx.util.ResourceManager.__registry__P_135_0[id];
         return entry ? entry[1] : null;
       },
 
@@ -10624,7 +10624,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           return "font";
         }
 
-        var entry = qx.util.ResourceManager.__registry__P_105_0[id];
+        var entry = qx.util.ResourceManager.__registry__P_135_0[id];
         return entry ? entry[2] : null;
       },
 
@@ -10638,12 +10638,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        */
       getCombinedFormat: function getCombinedFormat(id) {
         var clippedtype = "";
-        var entry = qx.util.ResourceManager.__registry__P_105_0[id];
-        var isclipped = entry && entry.length > 4 && typeof entry[4] == "string" && this.constructor.__registry__P_105_0[entry[4]];
+        var entry = qx.util.ResourceManager.__registry__P_135_0[id];
+        var isclipped = entry && entry.length > 4 && typeof entry[4] == "string" && this.constructor.__registry__P_135_0[entry[4]];
 
         if (isclipped) {
           var combId = entry[4];
-          var combImg = this.constructor.__registry__P_105_0[combId];
+          var combImg = this.constructor.__registry__P_135_0[combId];
           clippedtype = combImg[2];
         }
 
@@ -10661,7 +10661,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           return id;
         }
 
-        var entry = qx.util.ResourceManager.__registry__P_105_0[id];
+        var entry = qx.util.ResourceManager.__registry__P_135_0[id];
 
         if (!entry) {
           return id;
@@ -10681,7 +10681,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var urlPrefix = "";
 
         if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("io.ssl")) {
-          urlPrefix = qx.util.ResourceManager.__urlPrefix__P_105_1[lib];
+          urlPrefix = qx.util.ResourceManager.__urlPrefix__P_135_1[lib];
         }
 
         return urlPrefix + qx.util.LibraryManager.getInstance().get(lib, "resourceUri") + "/" + id;
@@ -10699,8 +10699,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} "data:" or "http:" URI
        */
       toDataUri: function toDataUri(resid) {
-        var resentry = this.constructor.__registry__P_105_0[resid];
-        var combined = resentry ? this.constructor.__registry__P_105_0[resentry[4]] : null;
+        var resentry = this.constructor.__registry__P_135_0[resid];
+        var combined = resentry ? this.constructor.__registry__P_135_0[resentry[4]] : null;
         var uri;
 
         if (combined) {
@@ -10780,7 +10780,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               resourceUri = qx.util.LibraryManager.getInstance().get(lib, "resourceUri");
             } else {
               // default for libraries without a resourceUri set
-              statics.__urlPrefix__P_105_1[lib] = "";
+              statics.__urlPrefix__P_135_1[lib] = "";
               continue;
             }
 
@@ -10796,24 +10796,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
             if (resourceUri.match(/^\/\//) != null) {
-              statics.__urlPrefix__P_105_1[lib] = window.location.protocol;
+              statics.__urlPrefix__P_135_1[lib] = window.location.protocol;
             } // If the resourceUri begins with a single slash, include the current
             // hostname
             else if (resourceUri.match(/^\//) != null) {
               if (href) {
-                statics.__urlPrefix__P_105_1[lib] = href;
+                statics.__urlPrefix__P_135_1[lib] = href;
               } else {
-                statics.__urlPrefix__P_105_1[lib] = window.location.protocol + "//" + window.location.host;
+                statics.__urlPrefix__P_135_1[lib] = window.location.protocol + "//" + window.location.host;
               }
             } // If the resolved URL begins with "./" the final URL has to be
             // put together using the document.URL property.
             // IMPORTANT: this is only applicable for the source version
             else if (resourceUri.match(/^\.\//) != null) {
               var url = document.URL;
-              statics.__urlPrefix__P_105_1[lib] = url.substring(0, url.lastIndexOf("/") + 1);
+              statics.__urlPrefix__P_135_1[lib] = url.substring(0, url.lastIndexOf("/") + 1);
             } else if (resourceUri.match(/^http/) != null) {
               // Let absolute URLs pass through
-              statics.__urlPrefix__P_105_1[lib] = "";
+              statics.__urlPrefix__P_135_1[lib] = "";
             } else {
               if (!href) {
                 // check for parameters with URLs as value
@@ -10826,7 +10826,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                 }
               }
 
-              statics.__urlPrefix__P_105_1[lib] = href.substring(0, href.lastIndexOf("/") + 1);
+              statics.__urlPrefix__P_135_1[lib] = href.substring(0, href.lastIndexOf("/") + 1);
             }
           }
         }
@@ -10877,7 +10877,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     type: "singleton",
     statics: {
       /** @type {Map} The libraries used by this application */
-      __libs__P_127_0: qx.$$libraries || {}
+      __libs__P_169_0: qx.$$libraries || {}
     },
     members: {
       /**
@@ -10887,7 +10887,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code> if the given library is known
        */
       has: function has(namespace) {
-        return !!qx.util.LibraryManager.__libs__P_127_0[namespace];
+        return !!qx.util.LibraryManager.__libs__P_169_0[namespace];
       },
 
       /**
@@ -10897,7 +10897,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {var|null} The attribute's value or <code>null</code> if it's not defined
        */
       get: function get(namespace, key) {
-        return qx.util.LibraryManager.__libs__P_127_0[namespace][key] ? qx.util.LibraryManager.__libs__P_127_0[namespace][key] : null;
+        return qx.util.LibraryManager.__libs__P_169_0[namespace][key] ? qx.util.LibraryManager.__libs__P_169_0[namespace][key] : null;
       },
 
       /**
@@ -10908,7 +10908,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param value {var} Value of the attribute
        */
       set: function set(namespace, key, value) {
-        qx.util.LibraryManager.__libs__P_127_0[namespace][key] = value;
+        qx.util.LibraryManager.__libs__P_169_0[namespace][key] = value;
       }
     }
   });
@@ -10994,10 +10994,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       DEBUG: false,
 
       /** @type {Map} Collect warnings for potential clipped images */
-      __warnings__P_106_0: {},
+      __warnings__P_164_0: {},
 
       /** @type {Map} List of repeat modes which supports the IE AlphaImageLoader */
-      __alphaFixRepeats__P_106_1: qx.core.Environment.select("engine.name", {
+      __alphaFixRepeats__P_164_1: qx.core.Environment.select("engine.name", {
         mshtml: {
           "scale-x": true,
           "scale-y": true,
@@ -11008,7 +11008,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }),
 
       /** @type {Map} Mapping between background repeat and the tag to create */
-      __repeatToTagname__P_106_2: {
+      __repeatToTagname__P_164_2: {
         "scale-x": "img",
         "scale-y": "img",
         scale: "img",
@@ -11125,11 +11125,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} The tag name: <code>div</code> or <code>img</code>
        */
       getTagName: function getTagName(repeat, source) {
-        if (source && qx.core.Environment.get("css.alphaimageloaderneeded") && this.__alphaFixRepeats__P_106_1[repeat] && source.endsWith(".png")) {
+        if (source && qx.core.Environment.get("css.alphaimageloaderneeded") && this.__alphaFixRepeats__P_164_1[repeat] && source.endsWith(".png")) {
           return "div";
         }
 
-        return this.__repeatToTagname__P_106_2[repeat];
+        return this.__repeatToTagname__P_164_2[repeat];
       },
 
       /**
@@ -11164,22 +11164,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
         var result; // Enable AlphaImageLoader in IE6/IE7/IE8
 
-        if (qx.core.Environment.get("css.alphaimageloaderneeded") && this.__alphaFixRepeats__P_106_1[repeat] && format === "png") {
-          var dimension = this.__getDimension__P_106_3(source);
+        if (qx.core.Environment.get("css.alphaimageloaderneeded") && this.__alphaFixRepeats__P_164_1[repeat] && format === "png") {
+          var dimension = this.__getDimension__P_164_3(source);
 
-          this.__normalizeWidthHeight__P_106_4(style, dimension.width, dimension.height);
+          this.__normalizeWidthHeight__P_164_4(style, dimension.width, dimension.height);
 
           result = this.processAlphaFix(style, repeat, source);
         } else {
           delete style.clip;
 
           if (repeat === "scale") {
-            result = this.__processScale__P_106_5(style, repeat, source);
+            result = this.__processScale__P_164_5(style, repeat, source);
           } else if (repeat === "scale-x" || repeat === "scale-y") {
-            result = this.__processScaleXScaleY__P_106_6(style, repeat, source);
+            result = this.__processScaleXScaleY__P_164_6(style, repeat, source);
           } else {
             // Native repeats or "no-repeat"
-            result = this.__processRepeats__P_106_7(style, repeat, source);
+            result = this.__processRepeats__P_164_7(style, repeat, source);
           }
         }
 
@@ -11193,7 +11193,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param width {Integer?null} width as number or null
        * @param height {Integer?null} height as number or null
        */
-      __normalizeWidthHeight__P_106_4: function __normalizeWidthHeight__P_106_4(style, width, height) {
+      __normalizeWidthHeight__P_164_4: function __normalizeWidthHeight__P_164_4(style, width, height) {
         if (style.width == null && width != null) {
           style.width = width + "px";
         }
@@ -11211,7 +11211,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param source {String} image source
        * @return {Map} dimension of image
        */
-      __getDimension__P_106_3: function __getDimension__P_106_3(source) {
+      __getDimension__P_164_3: function __getDimension__P_164_3(source) {
         var width = qx.util.ResourceManager.getInstance().getImageWidth(source) || qx.io.ImageLoader.getWidth(source);
         var height = qx.util.ResourceManager.getInstance().getImageHeight(source) || qx.io.ImageLoader.getHeight(source);
         return {
@@ -11255,12 +11255,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @return {Map} image URI and style infos
        */
-      __processScale__P_106_5: function __processScale__P_106_5(style, repeat, source) {
+      __processScale__P_164_5: function __processScale__P_164_5(style, repeat, source) {
         var uri = qx.util.ResourceManager.getInstance().toUri(source);
 
-        var dimension = this.__getDimension__P_106_3(source);
+        var dimension = this.__getDimension__P_164_3(source);
 
-        this.__normalizeWidthHeight__P_106_4(style, dimension.width, dimension.height);
+        this.__normalizeWidthHeight__P_164_4(style, dimension.width, dimension.height);
 
         return {
           src: uri,
@@ -11278,11 +11278,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @return {Map} image URI and style infos
        */
-      __processScaleXScaleY__P_106_6: function __processScaleXScaleY__P_106_6(style, repeat, sourceid) {
+      __processScaleXScaleY__P_164_6: function __processScaleXScaleY__P_164_6(style, repeat, sourceid) {
         var ResourceManager = qx.util.ResourceManager.getInstance();
         var clipped = ResourceManager.getCombinedFormat(sourceid);
 
-        var dimension = this.__getDimension__P_106_3(sourceid);
+        var dimension = this.__getDimension__P_164_3(sourceid);
 
         var uri;
 
@@ -11297,9 +11297,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
 
           if (repeat === "scale-x") {
-            style = this.__getStylesForClippedScaleX__P_106_8(style, data, dimension.height);
+            style = this.__getStylesForClippedScaleX__P_164_8(style, data, dimension.height);
           } else {
-            style = this.__getStylesForClippedScaleY__P_106_9(style, data, dimension.width);
+            style = this.__getStylesForClippedScaleY__P_164_9(style, data, dimension.width);
           }
 
           return {
@@ -11309,7 +11309,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } // No clipped image available
         else {
           {
-            this.__checkForPotentialClippedImage__P_106_10(sourceid);
+            this.__checkForPotentialClippedImage__P_164_10(sourceid);
           }
 
           if (repeat == "scale-x") {
@@ -11335,7 +11335,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @return {Map} style infos and image URI
        */
-      __getStylesForClippedScaleX__P_106_8: function __getStylesForClippedScaleX__P_106_8(style, data, height) {
+      __getStylesForClippedScaleX__P_164_8: function __getStylesForClippedScaleX__P_164_8(style, data, height) {
         // Use clipped image (multi-images on x-axis)
         var imageHeight = qx.util.ResourceManager.getInstance().getImageHeight(data[4]); // Add size and clipping
 
@@ -11364,7 +11364,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @return {Map} style infos and image URI
        */
-      __getStylesForClippedScaleY__P_106_9: function __getStylesForClippedScaleY__P_106_9(style, data, width) {
+      __getStylesForClippedScaleY__P_164_9: function __getStylesForClippedScaleY__P_164_9(style, data, width) {
         // Use clipped image (multi-images on x-axis)
         var imageWidth = qx.util.ResourceManager.getInstance().getImageWidth(data[4]); // Add size and clipping
 
@@ -11393,11 +11393,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @return {Map} image URI and style infos
        */
-      __processRepeats__P_106_7: function __processRepeats__P_106_7(style, repeat, sourceid) {
+      __processRepeats__P_164_7: function __processRepeats__P_164_7(style, repeat, sourceid) {
         var ResourceManager = qx.util.ResourceManager.getInstance();
         var clipped = ResourceManager.getCombinedFormat(sourceid);
 
-        var dimension = this.__getDimension__P_106_3(sourceid); // Double axis repeats cannot be clipped
+        var dimension = this.__getDimension__P_164_3(sourceid); // Double axis repeats cannot be clipped
 
 
         if (clipped && repeat !== "repeat") {
@@ -11452,13 +11452,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           style.backgroundPosition = left + "px " + top + "px";
           {
             if (repeat !== "repeat") {
-              this.__checkForPotentialClippedImage__P_106_10(sourceid);
+              this.__checkForPotentialClippedImage__P_164_10(sourceid);
             }
           }
 
-          this.__normalizeWidthHeight__P_106_4(style, dimension.width, dimension.height);
+          this.__normalizeWidthHeight__P_164_4(style, dimension.width, dimension.height);
 
-          this.__getStylesForSingleRepeat__P_106_11(style, sourceid, repeat);
+          this.__getStylesForSingleRepeat__P_164_11(style, sourceid, repeat);
 
           return {
             style: style
@@ -11473,7 +11473,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param repeat {String} repeat mode
        * @param source {String} image source
        */
-      __getStylesForSingleRepeat__P_106_11: function __getStylesForSingleRepeat__P_106_11(style, source, repeat) {
+      __getStylesForSingleRepeat__P_164_11: function __getStylesForSingleRepeat__P_164_11(style, source, repeat) {
         // retrieve the "backgroundPosition" style if available to prevent
         // overwriting with default values
         var top = null;
@@ -11514,11 +11514,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @param source {String} image source
        */
-      __checkForPotentialClippedImage__P_106_10: function __checkForPotentialClippedImage__P_106_10(source) {
+      __checkForPotentialClippedImage__P_164_10: function __checkForPotentialClippedImage__P_164_10(source) {
         if (this.DEBUG && qx.util.ResourceManager.getInstance().has(source) && source.indexOf("qx/icon") == -1) {
-          if (!this.__warnings__P_106_0[source]) {
+          if (!this.__warnings__P_164_0[source]) {
             qx.log.Logger.debug("Potential clipped image candidate: " + source);
-            this.__warnings__P_106_0[source] = true;
+            this.__warnings__P_164_0[source] = true;
           }
         }
       }
@@ -11631,8 +11631,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       this.addListener("dbltap", this._stopPropagation, this);
       this.addListener("swipe", this._stopPropagation, this);
       this.addListener("longtap", this._stopPropagation, this);
-      this.addListener("appear", this.__refreshCursor__P_144_0, this);
-      this.addListener("disappear", this.__refreshCursor__P_144_0, this);
+      this.addListener("appear", this.__refreshCursor__P_182_0, this);
+      this.addListener("disappear", this.__refreshCursor__P_182_0, this);
     },
     members: {
       /**
@@ -11648,7 +11648,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * Refreshes the cursor by setting it to <code>null</code> and then to the
        * old value.
        */
-      __refreshCursor__P_144_0: function __refreshCursor__P_144_0() {
+      __refreshCursor__P_182_0: function __refreshCursor__P_182_0() {
         var currentCursor = this.getStyle("cursor");
         this.setStyle("cursor", null, true);
         this.setStyle("cursor", currentCursor, true);
@@ -12176,7 +12176,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @internal
        */
-      __mgr__P_91_0: qx.locale.Manager.getInstance(),
+      __mgr__P_102_0: qx.locale.Manager.getInstance(),
 
       /**
        * Get AM marker for time definitions
@@ -12185,7 +12185,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} translated AM marker.
        */
       getAmMarker: function getAmMarker(locale) {
-        return this.__mgr__P_91_0.localize("cldr_am", [], locale);
+        return this.__mgr__P_102_0.localize("cldr_am", [], locale);
       },
 
       /**
@@ -12195,7 +12195,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} translated PM marker.
        */
       getPmMarker: function getPmMarker(locale) {
-        return this.__mgr__P_91_0.localize("cldr_pm", [], locale);
+        return this.__mgr__P_102_0.localize("cldr_pm", [], locale);
       },
 
       /**
@@ -12221,7 +12221,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         for (var i = 0; i < days.length; i++) {
           var key = "cldr_day_" + context + "_" + length + "_" + days[i];
-          names.push(withFallback ? this.__localizeWithFallback__P_91_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_91_0.localize(key, [], locale));
+          names.push(withFallback ? this.__localizeWithFallback__P_102_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_102_0.localize(key, [], locale));
         }
 
         return names;
@@ -12250,7 +12250,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
         var days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
         var key = "cldr_day_" + context + "_" + length + "_" + days[day];
-        return withFallback ? this.__localizeWithFallback__P_91_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_91_0.localize(key, [], locale);
+        return withFallback ? this.__localizeWithFallback__P_102_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_102_0.localize(key, [], locale);
       },
 
       /**
@@ -12275,7 +12275,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         for (var i = 0; i < 12; i++) {
           var key = "cldr_month_" + context + "_" + length + "_" + (i + 1);
-          names.push(withFallback ? this.__localizeWithFallback__P_91_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_91_0.localize(key, [], locale));
+          names.push(withFallback ? this.__localizeWithFallback__P_102_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_102_0.localize(key, [], locale));
         }
 
         return names;
@@ -12301,7 +12301,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           qx.core.Assert.assertInArray(context, ["format", "stand-alone"]);
         }
         var key = "cldr_month_" + context + "_" + length + "_" + (month + 1);
-        return withFallback ? this.__localizeWithFallback__P_91_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_91_0.localize(key, [], locale);
+        return withFallback ? this.__localizeWithFallback__P_102_1(context, context === "format" ? "stand-alone" : "format", key, locale) : this.__mgr__P_102_0.localize(key, [], locale);
       },
 
       /**
@@ -12317,7 +12317,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           qx.core.Assert.assertInArray(size, ["short", "medium", "long", "full"]);
         }
         var key = "cldr_date_format_" + size;
-        return this.__mgr__P_91_0.localize(key, [], locale);
+        return this.__mgr__P_102_0.localize(key, [], locale);
       },
 
       /**
@@ -12336,7 +12336,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       getDateTimeFormat: function getDateTimeFormat(canonical, fallback, locale) {
         var key = "cldr_date_time_format_" + canonical;
 
-        var localizedFormat = this.__mgr__P_91_0.localize(key, [], locale);
+        var localizedFormat = this.__mgr__P_102_0.localize(key, [], locale);
 
         if (localizedFormat == key) {
           localizedFormat = fallback;
@@ -12359,7 +12359,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
         var key = "cldr_time_format_" + size;
 
-        var localizedFormat = this.__mgr__P_91_0.localize(key, [], locale);
+        var localizedFormat = this.__mgr__P_102_0.localize(key, [], locale);
 
         if (localizedFormat != key) {
           return localizedFormat;
@@ -12577,7 +12577,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (locale) {
           var territory = locale.split("_")[1] || locale;
         } else {
-          territory = this.__mgr__P_91_0.getTerritory() || this.__mgr__P_91_0.getLanguage();
+          territory = this.__mgr__P_102_0.getTerritory() || this.__mgr__P_102_0.getLanguage();
         }
 
         return territory.toUpperCase();
@@ -12595,12 +12595,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} localized name for the key
        *
        */
-      __localizeWithFallback__P_91_1: function __localizeWithFallback__P_91_1(context, fallbackContext, key, locale) {
-        var localizedString = this.__mgr__P_91_0.localize(key, [], locale);
+      __localizeWithFallback__P_102_1: function __localizeWithFallback__P_102_1(context, fallbackContext, key, locale) {
+        var localizedString = this.__mgr__P_102_0.localize(key, [], locale);
 
         if (localizedString == key) {
           var newKey = key.replace("_" + context + "_", "_" + fallbackContext + "_");
-          return this.__mgr__P_91_0.localize(newKey, [], locale);
+          return this.__mgr__P_102_0.localize(newKey, [], locale);
         } else {
           return localizedString;
         }
@@ -12785,12 +12785,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
             for (var i = 0; i < value.length; i++) {
               var valueAtI = isdataArray ? value.getItem(i) : value[i];
-              result += this.__toUriParameter__P_171_0(name, valueAtI, qxSerializer);
+              result += this.__toUriParameter__P_57_0(name, valueAtI, qxSerializer);
             }
           } else if (qx.lang.Type.isDate(value) && dateFormat != null) {
-            result += this.__toUriParameter__P_171_0(name, dateFormat.format(value), qxSerializer);
+            result += this.__toUriParameter__P_57_0(name, dateFormat.format(value), qxSerializer);
           } else {
-            result += this.__toUriParameter__P_171_0(name, value, qxSerializer);
+            result += this.__toUriParameter__P_57_0(name, value, qxSerializer);
           }
         }
 
@@ -12806,7 +12806,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param qxSerializer {Function?} The serializer for qooxdoo objects.
        * @return {String} The serialized name value pair.
        */
-      __toUriParameter__P_171_0: function __toUriParameter__P_171_0(name, value, qxSerializer) {
+      __toUriParameter__P_57_0: function __toUriParameter__P_57_0(name, value, qxSerializer) {
         if (value && value.$$type == "Class") {
           value = value.classname;
         }
@@ -13219,27 +13219,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     extend: Object,
     implement: [qx.core.IDisposable],
     construct: function construct() {
-      var boundFunc = qx.Bootstrap.bind(this.__onNativeReadyStateChange__P_168_0, this); // GlobalError shouldn't be included in qx.Website builds so use it
+      var boundFunc = qx.Bootstrap.bind(this.__onNativeReadyStateChange__P_109_0, this); // GlobalError shouldn't be included in qx.Website builds so use it
       // if it's available but otherwise ignore it (see ignore stated above).
 
       if (qx.event && qx.event.GlobalError && qx.event.GlobalError.observeMethod) {
-        this.__onNativeReadyStateChangeBound__P_168_1 = qx.event.GlobalError.observeMethod(boundFunc);
+        this.__onNativeReadyStateChangeBound__P_109_1 = qx.event.GlobalError.observeMethod(boundFunc);
       } else {
-        this.__onNativeReadyStateChangeBound__P_168_1 = boundFunc;
+        this.__onNativeReadyStateChangeBound__P_109_1 = boundFunc;
       }
 
-      this.__onNativeAbortBound__P_168_2 = qx.Bootstrap.bind(this.__onNativeAbort__P_168_3, this);
-      this.__onNativeProgressBound__P_168_4 = qx.Bootstrap.bind(this.__onNativeProgress__P_168_5, this);
-      this.__onTimeoutBound__P_168_6 = qx.Bootstrap.bind(this.__onTimeout__P_168_7, this);
+      this.__onNativeAbortBound__P_109_2 = qx.Bootstrap.bind(this.__onNativeAbort__P_109_3, this);
+      this.__onNativeProgressBound__P_109_4 = qx.Bootstrap.bind(this.__onNativeProgress__P_109_5, this);
+      this.__onTimeoutBound__P_109_6 = qx.Bootstrap.bind(this.__onTimeout__P_109_7, this);
 
-      this.__initNativeXhr__P_168_8();
+      this.__initNativeXhr__P_109_8();
 
       this._emitter = new qx.event.Emitter(); // BUGFIX: IE
       // IE keeps connections alive unless aborted on unload
 
       if (window.attachEvent) {
-        this.__onUnloadBound__P_168_9 = qx.Bootstrap.bind(this.__onUnload__P_168_10, this);
-        window.attachEvent("onunload", this.__onUnloadBound__P_168_9);
+        this.__onUnloadBound__P_109_9 = qx.Bootstrap.bind(this.__onUnload__P_109_10, this);
+        window.attachEvent("onunload", this.__onUnloadBound__P_109_9);
       }
     },
     statics: {
@@ -13350,7 +13350,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *  Optional password to use for authentication purposes.
        */
       open: function open(method, url, async, user, password) {
-        this.__checkDisposed__P_168_11(); // Mimick native behavior
+        this.__checkDisposed__P_109_11(); // Mimick native behavior
 
 
         if (typeof url === "undefined") {
@@ -13360,17 +13360,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } // Reset flags that may have been set on previous request
 
 
-        this.__abort__P_168_12 = false;
-        this.__send__P_168_13 = false;
-        this.__conditional__P_168_14 = false; // Store URL for later checks
+        this.__abort__P_109_12 = false;
+        this.__send__P_109_13 = false;
+        this.__conditional__P_109_14 = false; // Store URL for later checks
 
-        this.__url__P_168_15 = url;
+        this.__url__P_109_15 = url;
 
         if (typeof async == "undefined") {
           async = true;
         }
 
-        this.__async__P_168_16 = async; // Default values according to spec.
+        this.__async__P_109_16 = async; // Default values according to spec.
 
         this.status = 0;
         this.statusText = this.responseText = "";
@@ -13378,7 +13378,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         this.response = null; // BUGFIX
         // IE < 9 and FF < 3.5 cannot reuse the native XHR to issue many requests
 
-        if (!this.__supportsManyRequests__P_168_17() && this.readyState > qx.bom.request.Xhr.UNSENT) {
+        if (!this.__supportsManyRequests__P_109_17() && this.readyState > qx.bom.request.Xhr.UNSENT) {
           // XmlHttpRequest Level 1 requires open() to abort any pending requests
           // associated to the object. Since we're dealing with a new object here,
           // we have to emulate this behavior. Moreover, allow old native XHR to be garbage collected
@@ -13388,18 +13388,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           this.dispose(); // Replace the underlying native XHR with a new one that can
           // be used to issue new requests.
 
-          this.__initNativeXhr__P_168_8();
+          this.__initNativeXhr__P_109_8();
         } // Restore handler in case it was removed before
 
 
-        this.__nativeXhr__P_168_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_168_1;
+        this.__nativeXhr__P_109_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_109_1;
 
         try {
           if (qx.core.Environment.get("qx.debug.io")) {
             qx.Bootstrap.debug(qx.bom.request.Xhr, "Open native request with method: " + method + ", url: " + url + ", async: " + async);
           }
 
-          this.__nativeXhr__P_168_18.open(method, url, async, user, password); // BUGFIX: IE, Firefox < 3.5
+          this.__nativeXhr__P_109_18.open(method, url, async, user, password); // BUGFIX: IE, Firefox < 3.5
           // Some browsers do not support Cross-Origin Resource Sharing (CORS)
           // for XMLHttpRequest. Instead, an exception is thrown even for async requests
           // if URL is cross-origin (as per XHR level 1). Use the proprietary XDomainRequest
@@ -13415,18 +13415,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             throw OpenError;
           }
 
-          if (!this.__async__P_168_16) {
-            this.__openError__P_168_19 = OpenError;
+          if (!this.__async__P_109_16) {
+            this.__openError__P_109_19 = OpenError;
           }
 
-          if (this.__async__P_168_16) {
+          if (this.__async__P_109_16) {
             // Try again with XDomainRequest
             // (Success case not handled on purpose)
             // - IE 9
             if (window.XDomainRequest) {
               this.readyState = 4;
-              this.__nativeXhr__P_168_18 = new window.XDomainRequest();
-              this.__nativeXhr__P_168_18.onerror = qx.Bootstrap.bind(function () {
+              this.__nativeXhr__P_109_18 = new window.XDomainRequest();
+              this.__nativeXhr__P_109_18.onerror = qx.Bootstrap.bind(function () {
                 this._emit("readystatechange");
 
                 this._emit("error");
@@ -13438,7 +13438,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                 qx.Bootstrap.debug(qx.bom.request.Xhr, "Retry open native request with method: " + method + ", url: " + url + ", async: " + async);
               }
 
-              this.__nativeXhr__P_168_18.open(method, url, async, user, password);
+              this.__nativeXhr__P_109_18.open(method, url, async, user, password);
 
               return;
             } // Access denied
@@ -13448,7 +13448,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
             window.setTimeout(qx.Bootstrap.bind(function () {
-              if (this.__disposed__P_168_20) {
+              if (this.__disposed__P_109_20) {
                 return;
               }
 
@@ -13466,13 +13466,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         // representations. Force validating freshness of cached representation.
 
 
-        if (qx.core.Environment.get("engine.name") === "mshtml" && qx.core.Environment.get("browser.documentmode") < 9 && this.__nativeXhr__P_168_18.readyState > 0) {
-          this.__nativeXhr__P_168_18.setRequestHeader("If-Modified-Since", "-1");
+        if (qx.core.Environment.get("engine.name") === "mshtml" && qx.core.Environment.get("browser.documentmode") < 9 && this.__nativeXhr__P_109_18.readyState > 0) {
+          this.__nativeXhr__P_109_18.setRequestHeader("If-Modified-Since", "-1");
         } // BUGFIX: Firefox
         // Firefox < 4 fails to trigger onreadystatechange OPENED for sync requests
 
 
-        if (qx.core.Environment.get("engine.name") === "gecko" && parseInt(qx.core.Environment.get("engine.version"), 10) < 2 && !this.__async__P_168_16) {
+        if (qx.core.Environment.get("engine.name") === "gecko" && parseInt(qx.core.Environment.get("engine.version"), 10) < 2 && !this.__async__P_109_16) {
           // Native XHR is already set to readyState DONE. Fake readyState
           // and call onreadystatechange manually.
           this.readyState = qx.bom.request.Xhr.OPENED;
@@ -13493,14 +13493,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       setRequestHeader: function setRequestHeader(key, value) {
-        this.__checkDisposed__P_168_11(); // Detect conditional requests
+        this.__checkDisposed__P_109_11(); // Detect conditional requests
 
 
         if (key == "If-Match" || key == "If-Modified-Since" || key == "If-None-Match" || key == "If-Range") {
-          this.__conditional__P_168_14 = true;
+          this.__conditional__P_109_14 = true;
         }
 
-        this.__nativeXhr__P_168_18.setRequestHeader(key, value);
+        this.__nativeXhr__P_109_18.setRequestHeader(key, value);
 
         return this;
       },
@@ -13513,14 +13513,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       send: function send(data) {
-        this.__checkDisposed__P_168_11(); // BUGFIX: IE & Firefox < 3.5
+        this.__checkDisposed__P_109_11(); // BUGFIX: IE & Firefox < 3.5
         // For sync requests, some browsers throw error on open()
         // while it should be on send()
         //
 
 
-        if (!this.__async__P_168_16 && this.__openError__P_168_19) {
-          throw this.__openError__P_168_19;
+        if (!this.__async__P_109_16 && this.__openError__P_109_19) {
+          throw this.__openError__P_109_19;
         } // BUGFIX: Opera
         // On network error, Opera stalls at readyState HEADERS_RECEIVED
         // This violates the spec. See here http://www.w3.org/TR/XMLHttpRequest2/#send
@@ -13540,7 +13540,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
         if (this.timeout > 0) {
-          this.__timerId__P_168_21 = window.setTimeout(this.__onTimeoutBound__P_168_6, this.timeout);
+          this.__timerId__P_109_21 = window.setTimeout(this.__onTimeoutBound__P_109_6, this.timeout);
         } // BUGFIX: Firefox 2
         // "NS_ERROR_XPC_NOT_ENOUGH_ARGS" when calling send() without arguments
 
@@ -13552,7 +13552,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         // behaviour of all other browsers (Chrome, IE and Safari)
 
         var dataType = qx.Bootstrap.getClass(data);
-        data = data !== null && this.__dataTypeWhiteList__P_168_22.indexOf(dataType) === -1 ? data.toString() : data; // Some browsers may throw an error when sending of async request fails.
+        data = data !== null && this.__dataTypeWhiteList__P_109_22.indexOf(dataType) === -1 ? data.toString() : data; // Some browsers may throw an error when sending of async request fails.
         // This violates the spec which states only sync requests should.
 
         try {
@@ -13560,13 +13560,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             qx.Bootstrap.debug(qx.bom.request.Xhr, "Send native request");
           }
 
-          if (this.__async__P_168_16) {
-            this.__nativeXhr__P_168_18.responseType = this.responseType;
+          if (this.__async__P_109_16) {
+            this.__nativeXhr__P_109_18.responseType = this.responseType;
           }
 
-          this.__nativeXhr__P_168_18.send(data);
+          this.__nativeXhr__P_109_18.send(data);
         } catch (SendError) {
-          if (!this.__async__P_168_16) {
+          if (!this.__async__P_109_16) {
             throw SendError;
           } // BUGFIX
           // Some browsers throws error when file not found via file:// protocol.
@@ -13576,34 +13576,34 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (this._getProtocol() === "file:") {
             this.readyState = 2;
 
-            this.__readyStateChange__P_168_23();
+            this.__readyStateChange__P_109_23();
 
             var that = this;
             window.setTimeout(function () {
-              if (that.__disposed__P_168_20) {
+              if (that.__disposed__P_109_20) {
                 return;
               }
 
               that.readyState = 3;
 
-              that.__readyStateChange__P_168_23();
+              that.__readyStateChange__P_109_23();
 
               that.readyState = 4;
 
-              that.__readyStateChange__P_168_23();
+              that.__readyStateChange__P_109_23();
             });
           }
         } // BUGFIX: Firefox
         // Firefox fails to trigger onreadystatechange DONE for sync requests
 
 
-        if (qx.core.Environment.get("engine.name") === "gecko" && !this.__async__P_168_16) {
+        if (qx.core.Environment.get("engine.name") === "gecko" && !this.__async__P_109_16) {
           // Properties all set, only missing native readystatechange event
-          this.__onNativeReadyStateChange__P_168_0();
+          this.__onNativeReadyStateChange__P_109_0();
         } // Set send flag
 
 
-        this.__send__P_168_13 = true;
+        this.__send__P_109_13 = true;
         return this;
       },
 
@@ -13621,14 +13621,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       abort: function abort() {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        this.__abort__P_168_12 = true;
+        this.__abort__P_109_12 = true;
 
-        this.__nativeXhr__P_168_18.abort();
+        this.__nativeXhr__P_109_18.abort();
 
-        if (this.__nativeXhr__P_168_18 && this.readyState !== qx.bom.request.Xhr.DONE) {
-          this.readyState = this.__nativeXhr__P_168_18.readyState;
+        if (this.__nativeXhr__P_109_18 && this.readyState !== qx.bom.request.Xhr.DONE) {
+          this.readyState = this.__nativeXhr__P_109_18.readyState;
         }
 
         return this;
@@ -13725,13 +13725,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *  Response header.
        */
       getResponseHeader: function getResponseHeader(header) {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_168_18.aborted) {
+        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_109_18.aborted) {
           return "";
         }
 
-        return this.__nativeXhr__P_168_18.getResponseHeader(header);
+        return this.__nativeXhr__P_109_18.getResponseHeader(header);
       },
 
       /**
@@ -13740,13 +13740,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} All response headers.
        */
       getAllResponseHeaders: function getAllResponseHeaders() {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_168_18.aborted) {
+        if (qx.core.Environment.get("browser.documentmode") === 9 && this.__nativeXhr__P_109_18.aborted) {
           return "";
         }
 
-        return this.__nativeXhr__P_168_18.getAllResponseHeaders();
+        return this.__nativeXhr__P_109_18.getAllResponseHeaders();
       },
 
       /**
@@ -13765,10 +13765,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {qx.bom.request.Xhr} Self for chaining.
        */
       overrideMimeType: function overrideMimeType(mimeType) {
-        this.__checkDisposed__P_168_11();
+        this.__checkDisposed__P_109_11();
 
-        if (this.__nativeXhr__P_168_18.overrideMimeType) {
-          this.__nativeXhr__P_168_18.overrideMimeType(mimeType);
+        if (this.__nativeXhr__P_109_18.overrideMimeType) {
+          this.__nativeXhr__P_109_18.overrideMimeType(mimeType);
         } else {
           throw new Error("Native XHR object doesn't support overrideMimeType.");
         }
@@ -13784,7 +13784,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Object} XMLHttpRequest or equivalent.
        */
       getRequest: function getRequest() {
-        return this.__nativeXhr__P_168_18;
+        return this.__nativeXhr__P_109_18;
       },
 
       /*
@@ -13798,20 +13798,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code> if the object was successfully disposed
        */
       dispose: function dispose() {
-        if (this.__disposed__P_168_20) {
+        if (this.__disposed__P_109_20) {
           return false;
         }
 
-        window.clearTimeout(this.__timerId__P_168_21); // Remove unload listener in IE. Aborting on unload is no longer required
+        window.clearTimeout(this.__timerId__P_109_21); // Remove unload listener in IE. Aborting on unload is no longer required
         // for this instance.
 
         if (window.detachEvent) {
-          window.detachEvent("onunload", this.__onUnloadBound__P_168_9);
+          window.detachEvent("onunload", this.__onUnloadBound__P_109_9);
         } // May fail in IE
 
 
         try {
-          this.__nativeXhr__P_168_18.onreadystatechange;
+          this.__nativeXhr__P_109_18.onreadystatechange;
         } catch (PropertiesNotAccessable) {
           return false;
         } // Clear out listeners
@@ -13819,16 +13819,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         var noop = function noop() {};
 
-        this.__nativeXhr__P_168_18.onreadystatechange = noop;
-        this.__nativeXhr__P_168_18.onload = noop;
-        this.__nativeXhr__P_168_18.onerror = noop;
-        this.__nativeXhr__P_168_18.onprogress = noop; // Abort any network activity
+        this.__nativeXhr__P_109_18.onreadystatechange = noop;
+        this.__nativeXhr__P_109_18.onload = noop;
+        this.__nativeXhr__P_109_18.onerror = noop;
+        this.__nativeXhr__P_109_18.onprogress = noop; // Abort any network activity
 
         this.abort(); // Remove reference to native XHR
 
-        this.__nativeXhr__P_168_18 = null;
+        this.__nativeXhr__P_109_18 = null;
         this.responseText = null;
-        this.__disposed__P_168_20 = true;
+        this.__disposed__P_109_20 = true;
         return true;
       },
 
@@ -13837,7 +13837,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {Boolean} <code>true</code>, if the request has been disposed.
        */
       isDisposed: function isDisposed() {
-        return !!this.__disposed__P_168_20;
+        return !!this.__disposed__P_109_20;
       },
 
       /*
@@ -13873,7 +13873,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @return {String} The used protocol.
        */
       _getProtocol: function _getProtocol() {
-        var url = this.__url__P_168_15;
+        var url = this.__url__P_109_15;
         var protocolRe = /^(\w+:)\/\//; // Could be http:// from file://
 
         if (url !== null && url.match) {
@@ -13896,99 +13896,99 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       /**
        * @type {Object} XMLHttpRequest or equivalent.
        */
-      __nativeXhr__P_168_18: null,
+      __nativeXhr__P_109_18: null,
 
       /**
        * @type {Boolean} Whether request is async.
        */
-      __async__P_168_16: null,
+      __async__P_109_16: null,
 
       /**
        * @type {Function} Bound __onNativeReadyStateChange handler.
        */
-      __onNativeReadyStateChangeBound__P_168_1: null,
+      __onNativeReadyStateChangeBound__P_109_1: null,
 
       /**
        * @type {Function} Bound __onNativeAbort handler.
        */
-      __onNativeAbortBound__P_168_2: null,
+      __onNativeAbortBound__P_109_2: null,
 
       /**
        * @type {Function} Bound __onNativeProgress handler.
        */
-      __onNativeProgressBound__P_168_4: null,
+      __onNativeProgressBound__P_109_4: null,
 
       /**
        * @type {Function} Bound __onUnload handler.
        */
-      __onUnloadBound__P_168_9: null,
+      __onUnloadBound__P_109_9: null,
 
       /**
        * @type {Function} Bound __onTimeout handler.
        */
-      __onTimeoutBound__P_168_6: null,
+      __onTimeoutBound__P_109_6: null,
 
       /**
        * @type {Boolean} Send flag
        */
-      __send__P_168_13: null,
+      __send__P_109_13: null,
 
       /**
        * @type {String} Requested URL
        */
-      __url__P_168_15: null,
+      __url__P_109_15: null,
 
       /**
        * @type {Boolean} Abort flag
        */
-      __abort__P_168_12: null,
+      __abort__P_109_12: null,
 
       /**
        * @type {Boolean} Timeout flag
        */
-      __timeout__P_168_24: null,
+      __timeout__P_109_24: null,
 
       /**
        * @type {Boolean} Whether object has been disposed.
        */
-      __disposed__P_168_20: null,
+      __disposed__P_109_20: null,
 
       /**
        * @type {Number} ID of timeout timer.
        */
-      __timerId__P_168_21: null,
+      __timerId__P_109_21: null,
 
       /**
        * @type {Error} Error thrown on open, if any.
        */
-      __openError__P_168_19: null,
+      __openError__P_109_19: null,
 
       /**
        * @type {Boolean} Conditional get flag
        */
-      __conditional__P_168_14: null,
+      __conditional__P_109_14: null,
 
       /**
        * @type {Array} Whitelist with all allowed data types for the request payload
        */
-      __dataTypeWhiteList__P_168_22: null,
+      __dataTypeWhiteList__P_109_22: null,
 
       /**
        * Init native XHR.
        */
-      __initNativeXhr__P_168_8: function __initNativeXhr__P_168_8() {
+      __initNativeXhr__P_109_8: function __initNativeXhr__P_109_8() {
         // Create native XHR or equivalent and hold reference
-        this.__nativeXhr__P_168_18 = this._createNativeXhr(); // Track native ready state changes
+        this.__nativeXhr__P_109_18 = this._createNativeXhr(); // Track native ready state changes
 
-        this.__nativeXhr__P_168_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_168_1; // Track native abort, when supported
+        this.__nativeXhr__P_109_18.onreadystatechange = this.__onNativeReadyStateChangeBound__P_109_1; // Track native abort, when supported
 
-        if (qx.Bootstrap.getClass(this.__nativeXhr__P_168_18.onabort) !== "Undefined") {
-          this.__nativeXhr__P_168_18.onabort = this.__onNativeAbortBound__P_168_2;
+        if (qx.Bootstrap.getClass(this.__nativeXhr__P_109_18.onabort) !== "Undefined") {
+          this.__nativeXhr__P_109_18.onabort = this.__onNativeAbortBound__P_109_2;
         } // Track native progress, when supported
 
 
-        if (qx.Bootstrap.getClass(this.__nativeXhr__P_168_18.onprogress) !== "Undefined") {
-          this.__nativeXhr__P_168_18.onprogress = this.__onNativeProgressBound__P_168_4;
+        if (qx.Bootstrap.getClass(this.__nativeXhr__P_109_18.onprogress) !== "Undefined") {
+          this.__nativeXhr__P_109_18.onprogress = this.__onNativeProgressBound__P_109_4;
           this.progress = {
             lengthComputable: false,
             loaded: 0,
@@ -13997,9 +13997,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } // Reset flags
 
 
-        this.__disposed__P_168_20 = this.__send__P_168_13 = this.__abort__P_168_12 = false; // Initialize data white list
+        this.__disposed__P_109_20 = this.__send__P_109_13 = this.__abort__P_109_12 = false; // Initialize data white list
 
-        this.__dataTypeWhiteList__P_168_22 = ["ArrayBuffer", "Blob", "File", "HTMLDocument", "String", "FormData"];
+        this.__dataTypeWhiteList__P_109_22 = ["ArrayBuffer", "Blob", "File", "HTMLDocument", "String", "FormData"];
       },
 
       /**
@@ -14008,10 +14008,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * In case the end user cancels the request by other
        * means than calling abort().
        */
-      __onNativeAbort__P_168_3: function __onNativeAbort__P_168_3() {
+      __onNativeAbort__P_109_3: function __onNativeAbort__P_109_3() {
         // When the abort that triggered this method was not a result from
         // calling abort()
-        if (!this.__abort__P_168_12) {
+        if (!this.__abort__P_109_12) {
           this.abort();
         }
       },
@@ -14020,7 +14020,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * Track native progress event.
        @param e {Event} The native progress event.
        */
-      __onNativeProgress__P_168_5: function __onNativeProgress__P_168_5(e) {
+      __onNativeProgress__P_109_5: function __onNativeProgress__P_109_5(e) {
         this.progress.lengthComputable = e.lengthComputable;
         this.progress.loaded = e.loaded;
         this.progress.total = e.total;
@@ -14034,8 +14034,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * Calls user-defined function onreadystatechange on each
        * state change and syncs the XHR status properties.
        */
-      __onNativeReadyStateChange__P_168_0: function __onNativeReadyStateChange__P_168_0() {
-        var nxhr = this.__nativeXhr__P_168_18,
+      __onNativeReadyStateChange__P_109_0: function __onNativeReadyStateChange__P_109_0() {
+        var nxhr = this.__nativeXhr__P_109_18,
             propertiesReadable = true;
 
         if (qx.core.Environment.get("qx.debug.io")) {
@@ -14055,7 +14055,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         // Superfluous onreadystatechange DONE when aborting OPENED
         // without send flag
 
-        if (this.readyState === qx.bom.request.Xhr.DONE && this.__abort__P_168_12 && !this.__send__P_168_13) {
+        if (this.readyState === qx.bom.request.Xhr.DONE && this.__abort__P_109_12 && !this.__send__P_109_13) {
           return;
         } // BUGFIX: IE
         // IE fires onreadystatechange HEADERS_RECEIVED and LOADING when sync
@@ -14064,7 +14064,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         // be fired.
 
 
-        if (!this.__async__P_168_16 && (nxhr.readyState == 2 || nxhr.readyState == 3)) {
+        if (!this.__async__P_109_16 && (nxhr.readyState == 2 || nxhr.readyState == 3)) {
           return;
         } // Default values according to spec.
 
@@ -14094,13 +14094,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
 
           if (propertiesReadable) {
-            this.__normalizeStatus__P_168_25();
+            this.__normalizeStatus__P_109_25();
 
-            this.__normalizeResponseXML__P_168_26();
+            this.__normalizeResponseXML__P_109_26();
           }
         }
 
-        this.__readyStateChange__P_168_23(); // BUGFIX: IE
+        this.__readyStateChange__P_109_23(); // BUGFIX: IE
         // Memory leak in XMLHttpRequest (on-page)
 
 
@@ -14115,18 +14115,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       /**
        * Handle readystatechange. Called internally when readyState is changed.
        */
-      __readyStateChange__P_168_23: function __readyStateChange__P_168_23() {
+      __readyStateChange__P_109_23: function __readyStateChange__P_109_23() {
         // Cancel timeout before invoking handlers because they may throw
         if (this.readyState === qx.bom.request.Xhr.DONE) {
           // Request determined DONE. Cancel timeout.
-          window.clearTimeout(this.__timerId__P_168_21);
+          window.clearTimeout(this.__timerId__P_109_21);
         } // Always fire "readystatechange"
 
 
         this._emit("readystatechange");
 
         if (this.readyState === qx.bom.request.Xhr.DONE) {
-          this.__readyStateChangeDone__P_168_27();
+          this.__readyStateChangeDone__P_109_27();
         }
       },
 
@@ -14134,9 +14134,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * Handle readystatechange. Called internally by
        * {@link #__readyStateChange} when readyState is DONE.
        */
-      __readyStateChangeDone__P_168_27: function __readyStateChangeDone__P_168_27() {
+      __readyStateChangeDone__P_109_27: function __readyStateChangeDone__P_109_27() {
         // Fire "timeout" if timeout flag is set
-        if (this.__timeout__P_168_24) {
+        if (this.__timeout__P_109_24) {
           this._emit("timeout"); // BUGFIX: Opera
           // Since Opera does not fire "error" on network error, fire additional
           // "error" on timeout (may well be related to network error)
@@ -14146,12 +14146,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             this._emit("error");
           }
 
-          this.__timeout__P_168_24 = false; // Fire either "abort", "load" or "error"
+          this.__timeout__P_109_24 = false; // Fire either "abort", "load" or "error"
         } else {
-          if (this.__abort__P_168_12) {
+          if (this.__abort__P_109_12) {
             this._emit("abort");
           } else {
-            if (this.__isNetworkError__P_168_28()) {
+            if (this.__isNetworkError__P_109_28()) {
               this._emit("error");
             } else {
               this._emit("load");
@@ -14168,7 +14168,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @return {Boolean} Whether a network error occurred.
        */
-      __isNetworkError__P_168_28: function __isNetworkError__P_168_28() {
+      __isNetworkError__P_109_28: function __isNetworkError__P_109_28() {
         var error; // Infer the XHR internal error flag from statusText when not aborted.
         // See http://www.w3.org/TR/XMLHttpRequest2/#error-flag and
         // http://www.w3.org/TR/XMLHttpRequest2/#the-statustext-attribute
@@ -14188,30 +14188,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       /**
        * Handle faked timeout.
        */
-      __onTimeout__P_168_7: function __onTimeout__P_168_7() {
+      __onTimeout__P_109_7: function __onTimeout__P_109_7() {
         // Basically, mimick http://www.w3.org/TR/XMLHttpRequest2/#timeout-error
-        var nxhr = this.__nativeXhr__P_168_18;
+        var nxhr = this.__nativeXhr__P_109_18;
         this.readyState = qx.bom.request.Xhr.DONE; // Set timeout flag
 
-        this.__timeout__P_168_24 = true; // No longer consider request. Abort.
+        this.__timeout__P_109_24 = true; // No longer consider request. Abort.
 
         nxhr.aborted = true;
         nxhr.abort();
         this.responseText = "";
         this.responseXML = null; // Signal readystatechange
 
-        this.__readyStateChange__P_168_23();
+        this.__readyStateChange__P_109_23();
       },
 
       /**
        * Normalize status property across browsers.
        */
-      __normalizeStatus__P_168_25: function __normalizeStatus__P_168_25() {
+      __normalizeStatus__P_109_25: function __normalizeStatus__P_109_25() {
         var isDone = this.readyState === qx.bom.request.Xhr.DONE; // BUGFIX: Most browsers
         // Most browsers tell status 0 when it should be 200 for local files
 
         if (this._getProtocol() === "file:" && this.status === 0 && isDone) {
-          if (!this.__isNetworkError__P_168_28()) {
+          if (!this.__isNetworkError__P_109_28()) {
             this.status = 200;
           }
         } // BUGFIX: IE
@@ -14228,8 +14228,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         if (qx.core.Environment.get("engine.name") === "opera") {
           if (isDone && // Done
-          this.__conditional__P_168_14 && // Conditional request
-          !this.__abort__P_168_12 && // Not aborted
+          this.__conditional__P_109_14 && // Conditional request
+          !this.__abort__P_109_12 && // Not aborted
           this.status === 0 // But status 0!
           ) {
             this.status = 304;
@@ -14240,7 +14240,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       /**
        * Normalize responseXML property across browsers.
        */
-      __normalizeResponseXML__P_168_26: function __normalizeResponseXML__P_168_26() {
+      __normalizeResponseXML__P_109_26: function __normalizeResponseXML__P_109_26() {
         // BUGFIX: IE
         // IE does not recognize +xml extension, resulting in empty responseXML.
         //
@@ -14258,7 +14258,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       /**
        * Handler for native unload event.
        */
-      __onUnload__P_168_10: function __onUnload__P_168_10() {
+      __onUnload__P_109_10: function __onUnload__P_109_10() {
         try {
           // Abort and dispose
           if (this) {
@@ -14272,7 +14272,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * same native XHR to send more requests.
        * @return {Boolean} <code>true</code> if request object reuse is supported
        */
-      __supportsManyRequests__P_168_17: function __supportsManyRequests__P_168_17() {
+      __supportsManyRequests__P_109_17: function __supportsManyRequests__P_109_17() {
         var name = qx.core.Environment.get("engine.name");
         var version = qx.core.Environment.get("browser.version");
         return !(name == "mshtml" && version < 9 || name == "gecko" && version < 3.5);
@@ -14281,8 +14281,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       /**
        * Throw when already disposed.
        */
-      __checkDisposed__P_168_11: function __checkDisposed__P_168_11() {
-        if (this.__disposed__P_168_20) {
+      __checkDisposed__P_109_11: function __checkDisposed__P_109_11() {
+        if (this.__disposed__P_109_20) {
           throw new Error("Already disposed");
         }
       }
@@ -14359,7 +14359,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     },
     members: {
-      __parser__P_170_0: null,
+      __parser__P_111_0: null,
 
       /**
        * Returns given response parsed with parser
@@ -14411,14 +14411,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       setParser: function setParser(parser) {
         // Symbolically given known parser
         if (typeof qx.util.ResponseParser.PARSER[parser] === "function") {
-          return this.__parser__P_170_0 = qx.util.ResponseParser.PARSER[parser];
+          return this.__parser__P_111_0 = qx.util.ResponseParser.PARSER[parser];
         } // If parser is not a symbol, it must be a function
 
 
         {
           qx.core.Assert.assertFunction(parser);
         }
-        return this.__parser__P_170_0 = parser;
+        return this.__parser__P_111_0 = parser;
       },
 
       /**
@@ -14436,7 +14436,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        */
       _getParser: function _getParser(contentType) {
-        var parser = this.__parser__P_170_0,
+        var parser = this.__parser__P_111_0,
             contentTypeOrig = "",
             contentTypeNormalized = ""; // Use user-provided parser, if any
 
@@ -14467,6 +14467,859 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   });
   qx.util.ResponseParser.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.core.Environment": {
+        "defer": "load",
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.ui.layout.Abstract": {
+        "construct": true,
+        "require": true
+      },
+      "qx.ui.layout.Util": {},
+      "qx.theme.manager.Decoration": {}
+    },
+    "environment": {
+      "provided": [],
+      "required": {
+        "qx.debug": {
+          "load": true
+        }
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2004-2008 1&1 Internet AG, Germany, http://www.1und1.de
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Sebastian Werner (wpbasti)
+       * Fabian Jakobs (fjakobs)
+  
+  ************************************************************************ */
+
+  /**
+   * Docks children to one of the edges.
+   *
+   * *Features*
+   *
+   * * Percent width for left/right/center attached children
+   * * Percent height for top/bottom/center attached children
+   * * Minimum and maximum dimensions
+   * * Prioritized growing/shrinking (flex)
+   * * Auto sizing
+   * * Margins and Spacings
+   * * Alignment in orthogonal axis (e.g. alignX of north attached)
+   * * Different sort options for children
+   *
+   * *Item Properties*
+   *
+   * <ul>
+   * <li><strong>edge</strong> <em>(String)</em>: The edge where the layout item
+   *   should be docked. This may be one of <code>north</code>, <code>east</code>,
+   *   <code>south</code>, <code>west</code> or <code>center</code>. (Required)</li>
+   * <li><strong>width</strong> <em>(String)</em>: Defines a percent
+   *   width for the item. The percent width,
+   *   when specified, is used instead of the width defined by the size hint.
+   *   This is only supported for children added to the north or south edge or
+   *   are centered in the middle of the layout.
+   *   The minimum and maximum width still takes care of the elements limitations.
+   *   It has no influence on the layout's size hint. Percents are mainly useful for
+   *   widgets which are sized by the outer hierarchy.
+   * </li>
+   * <li><strong>height</strong> <em>(String)</em>: Defines a percent
+   *   height for the item. The percent height,
+   *   when specified, is used instead of the height defined by the size hint.
+   *   This is only supported for children added to the west or east edge or
+   *   are centered in the middle of the layout.
+   *   The minimum and maximum height still takes care of the elements limitations.
+   *   It has no influence on the layout's size hint. Percents are mainly useful for
+   *   widgets which are sized by the outer hierarchy.
+   * </li>
+   * </ul>
+   *
+   * *Example*
+   *
+   * <pre class="javascript">
+   * var layout = new qx.ui.layout.Dock();
+   *
+   * var w1 = new qx.ui.core.Widget();
+   * var w2 = new qx.ui.core.Widget();
+   * var w3 = new qx.ui.core.Widget();
+   *
+   * w1.setHeight(200);
+   * w2.setWidth(150);
+   *
+   * var container = new qx.ui.container.Composite(layout);
+   * container.add(w1, {edge:"north"});
+   * container.add(w2, {edge:"west"});
+   * container.add(w3, {edge:"center"});
+   * </pre>
+   *
+   * *Detailed Description*
+   *
+   * Using this layout, items may be "docked" to a specific side
+   * of the available space. Each displayed item reduces the available space
+   * for the following children. Priorities depend on the position of
+   * the child in the internal children list.
+   *
+   * *External Documentation*
+   *
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/dock.md'>
+   * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
+   */
+  qx.Class.define("qx.ui.layout.Dock", {
+    extend: qx.ui.layout.Abstract,
+
+    /*
+    *****************************************************************************
+       CONSTRUCTOR
+    *****************************************************************************
+    */
+
+    /**
+     * @param spacingX {Integer?0} The horizontal spacing. Sets {@link #spacingX}.
+     * @param spacingY {Integer?0} The vertical spacing. Sets {@link #spacingY}.
+     * @param separatorX {String|qx.ui.decoration.IDecorator} Separator to render between columns
+     * @param separatorY {String|qx.ui.decoration.IDecorator} Separator to render between rows
+     */
+    construct: function construct(spacingX, spacingY, separatorX, separatorY) {
+      qx.ui.layout.Abstract.constructor.call(this);
+
+      if (spacingX) {
+        this.setSpacingX(spacingX);
+      }
+
+      if (spacingY) {
+        this.setSpacingY(spacingY);
+      }
+
+      if (separatorX) {
+        this.setSeparatorX(separatorX);
+      }
+
+      if (separatorY) {
+        this.setSeparatorY(separatorY);
+      }
+    },
+
+    /*
+    *****************************************************************************
+       PROPERTIES
+    *****************************************************************************
+    */
+    properties: {
+      /**
+       * The way the widgets should be displayed (in conjunction with their
+       * position in the childrens array).
+       */
+      sort: {
+        check: ["auto", "y", "x"],
+        init: "auto",
+        apply: "_applySort"
+      },
+
+      /** Separator lines to use between the horizontal objects */
+      separatorX: {
+        check: "Decorator",
+        nullable: true,
+        apply: "_applyLayoutChange"
+      },
+
+      /** Separator lines to use between the vertical objects */
+      separatorY: {
+        check: "Decorator",
+        nullable: true,
+        apply: "_applyLayoutChange"
+      },
+
+      /**
+       * Whether separators should be collapsed so when a spacing is
+       * configured the line go over into each other
+       */
+      connectSeparators: {
+        check: "Boolean",
+        init: false,
+        apply: "_applyLayoutChange"
+      },
+
+      /** Horizontal spacing between two children */
+      spacingX: {
+        check: "Integer",
+        init: 0,
+        apply: "_applyLayoutChange"
+      },
+
+      /** Vertical spacing between two children */
+      spacingY: {
+        check: "Integer",
+        init: 0,
+        apply: "_applyLayoutChange"
+      }
+    },
+
+    /*
+    *****************************************************************************
+       MEMBERS
+    *****************************************************************************
+    */
+    members: {
+      __children__P_60_0: null,
+      __edges__P_60_1: null,
+      // overridden
+      verifyLayoutProperty: qx.core.Environment.select("qx.debug", {
+        "true": function _true(item, name, value) {
+          this.assertInArray(name, ["flex", "edge", "height", "width"], "The property '" + name + "' is not supported by the Dock layout!");
+
+          if (name === "edge") {
+            this.assertInArray(value, ["north", "south", "west", "east", "center"]);
+          } else if (name === "flex") {
+            this.assertNumber(value);
+            this.assert(value >= 0);
+          } else {
+            this.assertMatch(value, qx.ui.layout.Util.PERCENT_VALUE);
+          }
+        },
+        "false": null
+      }),
+      // property apply
+      _applySort: function _applySort() {
+        // easiest way is to invalidate the cache
+        this._invalidChildrenCache = true; // call normal layout change
+
+        this._applyLayoutChange();
+      },
+
+      /**
+       * @type {Map} Maps edge IDs to numeric values
+       *
+       * @lint ignoreReferenceField(__edgeMap)
+       */
+      __edgeMap__P_60_2: {
+        north: 1,
+        south: 2,
+        west: 3,
+        east: 4,
+        center: 5
+      },
+
+      /**
+       * @type {Map} Maps edges to align values
+       *
+       * @lint ignoreReferenceField(__alignMap)
+       */
+      __alignMap__P_60_3: {
+        1: "top",
+        2: "bottom",
+        3: "left",
+        4: "right"
+      },
+
+      /**
+       * Rebuilds cache for sorted children list.
+       *
+       */
+      __rebuildCache__P_60_4: function __rebuildCache__P_60_4() {
+        var all = this._getLayoutChildren();
+
+        var child, center;
+        var length = all.length;
+        var high = [];
+        var low = [];
+        var edge = [];
+        var yfirst = this.getSort() === "y";
+        var xfirst = this.getSort() === "x";
+
+        for (var i = 0; i < length; i++) {
+          child = all[i];
+          edge = child.getLayoutProperties().edge;
+
+          if (edge === "center") {
+            if (center) {
+              throw new Error("It is not allowed to have more than one child aligned to 'center'!");
+            }
+
+            center = child;
+          } else if (xfirst || yfirst) {
+            if (edge === "north" || edge === "south") {
+              yfirst ? high.push(child) : low.push(child);
+            } else if (edge === "west" || edge === "east") {
+              yfirst ? low.push(child) : high.push(child);
+            }
+          } else {
+            high.push(child);
+          }
+        } // Combine sorted children list
+
+
+        var result = high.concat(low);
+
+        if (center) {
+          result.push(center);
+        }
+
+        this.__children__P_60_0 = result; // Cache edges for faster access
+
+        var edges = [];
+
+        for (var i = 0; i < length; i++) {
+          edge = result[i].getLayoutProperties().edge;
+          edges[i] = this.__edgeMap__P_60_2[edge] || 5;
+        }
+
+        this.__edges__P_60_1 = edges; // Clear invalidation marker
+
+        delete this._invalidChildrenCache;
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        LAYOUT INTERFACE
+      ---------------------------------------------------------------------------
+      */
+      // overridden
+      renderLayout: function renderLayout(availWidth, availHeight, padding) {
+        // Rebuild flex/width caches
+        if (this._invalidChildrenCache) {
+          this.__rebuildCache__P_60_4();
+        }
+
+        var util = qx.ui.layout.Util;
+        var children = this.__children__P_60_0;
+        var edges = this.__edges__P_60_1;
+        var length = children.length;
+        var flexibles, child, hint, props, flex, grow, width, height, offset;
+        var widths = [];
+        var heights = [];
+
+        var separatorWidths = this._getSeparatorWidths();
+
+        var spacingX = this.getSpacingX();
+        var spacingY = this.getSpacingY(); // **************************************
+        //   Caching children data
+        // **************************************
+
+        var allocatedWidth = -spacingX;
+        var allocatedHeight = -spacingY;
+
+        if (separatorWidths.x) {
+          allocatedWidth -= separatorWidths.x + spacingX;
+        }
+
+        if (separatorWidths.y) {
+          allocatedHeight -= separatorWidths.y + spacingY;
+        }
+
+        for (var i = 0; i < length; i++) {
+          child = children[i];
+          props = child.getLayoutProperties();
+          hint = child.getSizeHint();
+          width = hint.width;
+          height = hint.height;
+
+          if (props.width != null) {
+            width = Math.floor(availWidth * parseFloat(props.width) / 100);
+
+            if (width < hint.minWidth) {
+              width = hint.minWidth;
+            } else if (width > hint.maxWidth) {
+              width = hint.maxWidth;
+            }
+          }
+
+          if (props.height != null) {
+            height = Math.floor(availHeight * parseFloat(props.height) / 100);
+
+            if (height < hint.minHeight) {
+              height = hint.minHeight;
+            } else if (height > hint.maxHeight) {
+              height = hint.maxHeight;
+            }
+          }
+
+          widths[i] = width;
+          heights[i] = height; // Update allocated width
+
+          switch (edges[i]) {
+            // north+south
+            case 1:
+            case 2:
+              allocatedHeight += height + child.getMarginTop() + child.getMarginBottom() + spacingY;
+
+              if (separatorWidths.y) {
+                allocatedHeight += separatorWidths.y + spacingY;
+              }
+
+              break;
+            // west+east
+
+            case 3:
+            case 4:
+              allocatedWidth += width + child.getMarginLeft() + child.getMarginRight() + spacingX;
+
+              if (separatorWidths.x) {
+                allocatedWidth += separatorWidths.x + spacingX;
+              }
+
+              break;
+            // center
+
+            default:
+              allocatedWidth += width + child.getMarginLeft() + child.getMarginRight() + spacingX;
+              allocatedHeight += height + child.getMarginTop() + child.getMarginBottom() + spacingY;
+
+              if (separatorWidths.x) {
+                allocatedWidth += separatorWidths.x + spacingX;
+              }
+
+              if (separatorWidths.y) {
+                allocatedHeight += separatorWidths.y + spacingY;
+              }
+
+          }
+        } // **************************************
+        //   Horizontal flex support
+        // **************************************
+
+
+        if (allocatedWidth != availWidth) {
+          flexibles = {};
+          grow = allocatedWidth < availWidth;
+
+          for (var i = 0; i < length; i++) {
+            child = children[i];
+
+            switch (edges[i]) {
+              case 3:
+              case 4:
+              case 5:
+                flex = child.getLayoutProperties().flex; // Default flex for centered children is '1'
+
+                if (flex == null && edges[i] == 5) {
+                  flex = 1;
+                }
+
+                if (flex > 0) {
+                  hint = child.getSizeHint();
+                  flexibles[i] = {
+                    min: hint.minWidth,
+                    value: widths[i],
+                    max: hint.maxWidth,
+                    flex: flex
+                  };
+                }
+
+            }
+          }
+
+          var result = util.computeFlexOffsets(flexibles, availWidth, allocatedWidth);
+
+          for (var i in result) {
+            offset = result[i].offset;
+            widths[i] += offset;
+            allocatedWidth += offset;
+          }
+        } // **************************************
+        //   Vertical flex support
+        // **************************************
+        // Process height for flex stretching/shrinking
+
+
+        if (allocatedHeight != availHeight) {
+          flexibles = {};
+          grow = allocatedHeight < availHeight;
+
+          for (var i = 0; i < length; i++) {
+            child = children[i];
+
+            switch (edges[i]) {
+              case 1:
+              case 2:
+              case 5:
+                flex = child.getLayoutProperties().flex; // Default flex for centered children is '1'
+
+                if (flex == null && edges[i] == 5) {
+                  flex = 1;
+                }
+
+                if (flex > 0) {
+                  hint = child.getSizeHint();
+                  flexibles[i] = {
+                    min: hint.minHeight,
+                    value: heights[i],
+                    max: hint.maxHeight,
+                    flex: flex
+                  };
+                }
+
+            }
+          }
+
+          var result = util.computeFlexOffsets(flexibles, availHeight, allocatedHeight);
+
+          for (var i in result) {
+            offset = result[i].offset;
+            heights[i] += offset;
+            allocatedHeight += offset;
+          }
+        } // **************************************
+        //   Layout children
+        // **************************************
+        // Pre configure separators
+
+
+        this._clearSeparators(); // Prepare loop
+
+
+        var separatorX = this.getSeparatorX(),
+            separatorY = this.getSeparatorY();
+        var connectSeparators = this.getConnectSeparators();
+        var nextTop = 0,
+            nextLeft = 0;
+        var left, top, width, height, used, edge;
+        var separatorLeft, separatorTop, separatorWidth, separatorHeight;
+        var marginTop, marginBottom, marginLeft, marginRight;
+        var alignMap = this.__alignMap__P_60_3;
+
+        for (var i = 0; i < length; i++) {
+          // Cache child data
+          child = children[i];
+          edge = edges[i];
+          hint = child.getSizeHint(); // Cache child margins
+
+          marginTop = child.getMarginTop();
+          marginBottom = child.getMarginBottom();
+          marginLeft = child.getMarginLeft();
+          marginRight = child.getMarginRight(); // Calculate child layout
+
+          switch (edge) {
+            // north + south
+            case 1:
+            case 2:
+              // Full available width
+              width = availWidth - marginLeft - marginRight; // Limit width to min/max
+
+              if (width < hint.minWidth) {
+                width = hint.minWidth;
+              } else if (width > hint.maxWidth) {
+                width = hint.maxWidth;
+              } // Child preferred height
+
+
+              height = heights[i]; // Compute position
+
+              top = nextTop + util.computeVerticalAlignOffset(alignMap[edge], height, availHeight, marginTop, marginBottom);
+              left = nextLeft + util.computeHorizontalAlignOffset(child.getAlignX() || "left", width, availWidth, marginLeft, marginRight); // Render the separator
+
+              if (separatorWidths.y) {
+                if (edge == 1) {
+                  separatorTop = nextTop + height + marginTop + spacingY + marginBottom;
+                } else {
+                  separatorTop = nextTop + availHeight - height - marginTop - spacingY - marginBottom - separatorWidths.y;
+                }
+
+                separatorLeft = left;
+                separatorWidth = availWidth;
+
+                if (connectSeparators && separatorLeft > 0) {
+                  separatorLeft -= spacingX + marginLeft;
+                  separatorWidth += spacingX * 2;
+                } else {
+                  separatorLeft -= marginLeft;
+                }
+
+                this._renderSeparator(separatorY, {
+                  left: separatorLeft + padding.left,
+                  top: separatorTop + padding.top,
+                  width: separatorWidth,
+                  height: separatorWidths.y
+                });
+              } // Update available height
+
+
+              used = height + marginTop + marginBottom + spacingY;
+
+              if (separatorWidths.y) {
+                used += separatorWidths.y + spacingY;
+              }
+
+              availHeight -= used; // Update coordinates, for next child
+
+              if (edge == 1) {
+                nextTop += used;
+              }
+
+              break;
+            // west + east
+
+            case 3:
+            case 4:
+              // Full available height
+              height = availHeight - marginTop - marginBottom; // Limit height to min/max
+
+              if (height < hint.minHeight) {
+                height = hint.minHeight;
+              } else if (height > hint.maxHeight) {
+                height = hint.maxHeight;
+              } // Child preferred width
+
+
+              width = widths[i]; // Compute position
+
+              left = nextLeft + util.computeHorizontalAlignOffset(alignMap[edge], width, availWidth, marginLeft, marginRight);
+              top = nextTop + util.computeVerticalAlignOffset(child.getAlignY() || "top", height, availHeight, marginTop, marginBottom); // Render the separator
+
+              if (separatorWidths.x) {
+                if (edge == 3) {
+                  separatorLeft = nextLeft + width + marginLeft + spacingX + marginRight;
+                } else {
+                  separatorLeft = nextLeft + availWidth - width - marginLeft - spacingX - marginRight - separatorWidths.x;
+                }
+
+                separatorTop = top;
+                separatorHeight = availHeight;
+
+                if (connectSeparators && separatorTop > 0) {
+                  separatorTop -= spacingY + marginTop;
+                  separatorHeight += spacingY * 2;
+                } else {
+                  separatorTop -= marginTop;
+                }
+
+                this._renderSeparator(separatorX, {
+                  left: separatorLeft + padding.left,
+                  top: separatorTop + padding.top,
+                  width: separatorWidths.x,
+                  height: separatorHeight
+                });
+              } // Update available height
+
+
+              used = width + marginLeft + marginRight + spacingX;
+
+              if (separatorWidths.x) {
+                used += separatorWidths.x + spacingX;
+              }
+
+              availWidth -= used; // Update coordinates, for next child
+
+              if (edge == 3) {
+                nextLeft += used;
+              }
+
+              break;
+            // center
+
+            default:
+              // Calculated width/height
+              width = availWidth - marginLeft - marginRight;
+              height = availHeight - marginTop - marginBottom; // Limit width to min/max
+
+              if (width < hint.minWidth) {
+                width = hint.minWidth;
+              } else if (width > hint.maxWidth) {
+                width = hint.maxWidth;
+              } // Limit height to min/max
+
+
+              if (height < hint.minHeight) {
+                height = hint.minHeight;
+              } else if (height > hint.maxHeight) {
+                height = hint.maxHeight;
+              } // Compute coordinates (respect margins and alignments for both axis)
+
+
+              left = nextLeft + util.computeHorizontalAlignOffset(child.getAlignX() || "left", width, availWidth, marginLeft, marginRight);
+              top = nextTop + util.computeVerticalAlignOffset(child.getAlignY() || "top", height, availHeight, marginTop, marginBottom);
+          } // Apply layout
+
+
+          child.renderLayout(left + padding.left, top + padding.top, width, height);
+        }
+      },
+
+      /**
+       * Computes the dimensions each separator on both the <code>x</code> and
+       * <code>y</code> axis needs.
+       *
+       * @return {Map} Map with the keys <code>x</code> and
+       *   <code>y</code>
+       */
+      _getSeparatorWidths: function _getSeparatorWidths() {
+        var separatorX = this.getSeparatorX(),
+            separatorY = this.getSeparatorY();
+
+        if (separatorX || separatorY) {
+          var decorationManager = qx.theme.manager.Decoration.getInstance();
+        }
+
+        if (separatorX) {
+          var separatorInstanceX = decorationManager.resolve(separatorX);
+          var separatorInsetsX = separatorInstanceX.getInsets();
+          var separatorWidthX = separatorInsetsX.left + separatorInsetsX.right;
+        }
+
+        if (separatorY) {
+          var separatorInstanceY = decorationManager.resolve(separatorY);
+          var separatorInsetsY = separatorInstanceY.getInsets();
+          var separatorWidthY = separatorInsetsY.top + separatorInsetsY.bottom;
+        }
+
+        return {
+          x: separatorWidthX || 0,
+          y: separatorWidthY || 0
+        };
+      },
+      // overridden
+      _computeSizeHint: function _computeSizeHint() {
+        // Rebuild flex/width caches
+        if (this._invalidChildrenCache) {
+          this.__rebuildCache__P_60_4();
+        }
+
+        var children = this.__children__P_60_0;
+        var edges = this.__edges__P_60_1;
+        var length = children.length;
+        var hint, child;
+        var marginX, marginY;
+        var widthX = 0,
+            minWidthX = 0;
+        var heightX = 0,
+            minHeightX = 0;
+        var widthY = 0,
+            minWidthY = 0;
+        var heightY = 0,
+            minHeightY = 0;
+
+        var separatorWidths = this._getSeparatorWidths();
+
+        var spacingX = this.getSpacingX(),
+            spacingY = this.getSpacingY();
+        var spacingSumX = -spacingX,
+            spacingSumY = -spacingY;
+
+        if (separatorWidths.x) {
+          spacingSumX -= separatorWidths.x + spacingX;
+        }
+
+        if (separatorWidths.y) {
+          spacingSumY -= separatorWidths.y + spacingY;
+        } // Detect children sizes
+
+
+        for (var i = 0; i < length; i++) {
+          child = children[i];
+          hint = child.getSizeHint(); // Pre-cache margin sums
+
+          marginX = child.getMarginLeft() + child.getMarginRight();
+          marginY = child.getMarginTop() + child.getMarginBottom(); // Ok, this part is a bit complicated :)
+
+          switch (edges[i]) {
+            case 1:
+            case 2:
+              // Find the maximum width used by these fully stretched items
+              // The recommended width used by these must add the currently
+              // occupied width by the orthogonal ordered children.
+              widthY = Math.max(widthY, hint.width + widthX + marginX);
+              minWidthY = Math.max(minWidthY, hint.minWidth + minWidthX + marginX); // Add the needed heights of this widget
+
+              heightY += hint.height + marginY;
+              minHeightY += hint.minHeight + marginY; // Add spacing
+
+              spacingSumY += spacingY;
+
+              if (separatorWidths.y) {
+                spacingSumY += separatorWidths.y + spacingY;
+              }
+
+              break;
+
+            case 3:
+            case 4:
+              // Find the maximum height used by these fully stretched items
+              // The recommended height used by these must add the currently
+              // occupied height by the orthogonal ordered children.
+              heightX = Math.max(heightX, hint.height + heightY + marginY);
+              minHeightX = Math.max(minHeightX, hint.minHeight + minHeightY + marginY); // Add the needed widths of this widget
+
+              widthX += hint.width + marginX;
+              minWidthX += hint.minWidth + marginX; // Add spacing
+
+              spacingSumX += spacingX;
+
+              if (separatorWidths.x) {
+                spacingSumX += separatorWidths.x + spacingX;
+              }
+
+              break;
+
+            default:
+              // A centered widget must be added to both sums as
+              // it stretches into the remaining available space.
+              widthX += hint.width + marginX;
+              minWidthX += hint.minWidth + marginX;
+              heightY += hint.height + marginY;
+              minHeightY += hint.minHeight + marginY; // Add spacing
+
+              spacingSumX += spacingX;
+
+              if (separatorWidths.x) {
+                spacingSumX += separatorWidths.x + spacingX;
+              }
+
+              spacingSumY += spacingY;
+
+              if (separatorWidths.y) {
+                spacingSumY += separatorWidths.y + spacingY;
+              }
+
+          }
+        }
+
+        var minWidth = Math.max(minWidthX, minWidthY) + spacingSumX;
+        var width = Math.max(widthX, widthY) + spacingSumX;
+        var minHeight = Math.max(minHeightX, minHeightY) + spacingSumY;
+        var height = Math.max(heightX, heightY) + spacingSumY; // Return hint
+
+        return {
+          minWidth: minWidth,
+          width: width,
+          minHeight: minHeight,
+          height: height
+        };
+      }
+    },
+
+    /*
+    *****************************************************************************
+       DESTRUCTOR
+    *****************************************************************************
+    */
+    destruct: function destruct() {
+      this.__edges__P_60_1 = this.__children__P_60_0 = null;
+    }
+  });
+  qx.ui.layout.Dock.$$dbClassInfo = $$dbClassInfo;
 })();
 
 (function () {
@@ -14751,10 +15604,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __font__P_54_0: null,
-      __invalidContentSize__P_54_1: null,
-      __tapListenerId__P_54_2: null,
-      __webfontListenerId__P_54_3: null,
+      __font__P_61_0: null,
+      __invalidContentSize__P_61_1: null,
+      __tapListenerId__P_61_2: null,
+      __webfontListenerId__P_61_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -14763,14 +15616,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       */
       // overridden
       _getContentHint: function _getContentHint() {
-        if (this.__invalidContentSize__P_54_1) {
-          this.__contentSize__P_54_4 = this.__computeContentSize__P_54_5();
-          delete this.__invalidContentSize__P_54_1;
+        if (this.__invalidContentSize__P_61_1) {
+          this.__contentSize__P_61_4 = this.__computeContentSize__P_61_5();
+          delete this.__invalidContentSize__P_61_1;
         }
 
         return {
-          width: this.__contentSize__P_54_4.width,
-          height: this.__contentSize__P_54_4.height
+          width: this.__contentSize__P_61_4.width,
+          height: this.__contentSize__P_61_4.height
         };
       },
       // overridden
@@ -14799,7 +15652,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           return null;
         }
 
-        return this.__computeContentSize__P_54_5(width).height;
+        return this.__computeContentSize__P_61_5(width).height;
       },
       // overridden
       _createContentElement: function _createContentElement() {
@@ -14829,33 +15682,33 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @lint ignoreReferenceField(__contentSize)
        */
-      __contentSize__P_54_4: {
+      __contentSize__P_61_4: {
         width: 0,
         height: 0
       },
       // property apply
       _applyFont: function _applyFont(value, old) {
-        if (old && this.__font__P_54_0 && this.__webfontListenerId__P_54_3) {
-          this.__font__P_54_0.removeListenerById(this.__webfontListenerId__P_54_3);
+        if (old && this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
+          this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
 
-          this.__webfontListenerId__P_54_3 = null;
+          this.__webfontListenerId__P_61_3 = null;
         } // Apply
 
 
         var styles;
 
         if (value) {
-          this.__font__P_54_0 = qx.theme.manager.Font.getInstance().resolve(value);
+          this.__font__P_61_0 = qx.theme.manager.Font.getInstance().resolve(value);
 
-          if (this.__font__P_54_0 instanceof qx.bom.webfonts.WebFont) {
-            if (!this.__font__P_54_0.isValid()) {
-              this.__webfontListenerId__P_54_3 = this.__font__P_54_0.addListener("changeStatus", this._onWebFontStatusChange, this);
+          if (this.__font__P_61_0 instanceof qx.bom.webfonts.WebFont) {
+            if (!this.__font__P_61_0.isValid()) {
+              this.__webfontListenerId__P_61_3 = this.__font__P_61_0.addListener("changeStatus", this._onWebFontStatusChange, this);
             }
           }
 
-          styles = this.__font__P_54_0.getStyles();
+          styles = this.__font__P_61_0.getStyles();
         } else {
-          this.__font__P_54_0 = null;
+          this.__font__P_61_0 = null;
           styles = qx.bom.Font.getDefaultStyles();
         } // check if text color already set - if so this local value has higher priority
 
@@ -14866,7 +15719,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         this.getContentElement().setStyles(styles); // Invalidate text size
 
-        this.__invalidContentSize__P_54_1 = true; // Update layout
+        this.__invalidContentSize__P_61_1 = true; // Update layout
 
         qx.ui.core.queue.Layout.add(this);
       },
@@ -14877,15 +15730,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * @param width {Integer?null} Optional width constraint
        * @return {Map} Map with <code>width</code> and <code>height</code> keys
        */
-      __computeContentSize__P_54_5: function __computeContentSize__P_54_5(width) {
+      __computeContentSize__P_61_5: function __computeContentSize__P_61_5(width) {
         var Label = qx.bom.Label;
         var font = this.getFont();
-        var styles = font ? this.__font__P_54_0.getStyles() : qx.bom.Font.getDefaultStyles();
+        var styles = font ? this.__font__P_61_0.getStyles() : qx.bom.Font.getDefaultStyles();
         var content = this.getValue() || "A";
         var rich = this.getRich();
 
-        if (this.__webfontListenerId__P_54_3) {
-          this.__fixEllipsis__P_54_6();
+        if (this.__webfontListenerId__P_61_3) {
+          this.__fixEllipsis__P_61_6();
         }
 
         if (rich && this.getBreakWithinWords()) {
@@ -14900,7 +15753,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        * though there is enough space for the text. Re-applying the content forces
        * a recalculation and fixes the problem. See qx bug #6293
        */
-      __fixEllipsis__P_54_6: function __fixEllipsis__P_54_6() {
+      __fixEllipsis__P_61_6: function __fixEllipsis__P_61_6() {
         if (!this.getContentElement()) {
           return;
         }
@@ -14924,13 +15777,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _applyBuddy: function _applyBuddy(value, old) {
         if (old != null) {
           this.removeRelatedBindings(old);
-          this.removeListenerById(this.__tapListenerId__P_54_2);
-          this.__tapListenerId__P_54_2 = null;
+          this.removeListenerById(this.__tapListenerId__P_61_2);
+          this.__tapListenerId__P_61_2 = null;
         }
 
         if (value != null) {
           value.bind("enabled", this, "enabled");
-          this.__tapListenerId__P_54_2 = this.addListener("tap", function () {
+          this.__tapListenerId__P_61_2 = this.addListener("tap", function () {
             // only focus focusable elements [BUG #3555]
             if (value.isFocusable()) {
               value.focus.apply(value);
@@ -14948,7 +15801,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         // Sync with content element
         this.getContentElement().setRich(value); // Mark text size cache as invalid
 
-        this.__invalidContentSize__P_54_1 = true; // Update layout
+        this.__invalidContentSize__P_61_1 = true; // Update layout
 
         qx.ui.core.queue.Layout.add(this);
       },
@@ -15001,12 +15854,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           // safari has trouble resizing, adding it again fixed the issue [BUG #8786]
           if (qx.core.Environment.get("browser.name") == "safari" && parseFloat(qx.core.Environment.get("browser.version")) >= 8) {
             window.setTimeout(function () {
-              this.__invalidContentSize__P_54_1 = true;
+              this.__invalidContentSize__P_61_1 = true;
               qx.ui.core.queue.Layout.add(this);
             }.bind(this), 0);
           }
 
-          this.__invalidContentSize__P_54_1 = true;
+          this.__invalidContentSize__P_61_1 = true;
           qx.ui.core.queue.Layout.add(this);
         }
       },
@@ -15021,14 +15874,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           } // Mark text size cache as invalid
 
 
-          this.__invalidContentSize__P_54_1 = true; // Update layout
+          this.__invalidContentSize__P_61_1 = true; // Update layout
 
           qx.ui.core.queue.Layout.add(this);
         },
         "false": function _false(value, old) {
           this.getContentElement().setValue(value); // Mark text size cache as invalid
 
-          this.__invalidContentSize__P_54_1 = true; // Update layout
+          this.__invalidContentSize__P_61_1 = true; // Update layout
 
           qx.ui.core.queue.Layout.add(this);
         }
@@ -15045,867 +15898,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         qx.locale.Manager.getInstance().removeListener("changeLocale", this._onChangeLocale, this);
       }
 
-      if (this.__font__P_54_0 && this.__webfontListenerId__P_54_3) {
-        this.__font__P_54_0.removeListenerById(this.__webfontListenerId__P_54_3);
+      if (this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
+        this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
       }
 
-      this.__font__P_54_0 = null;
+      this.__font__P_61_0 = null;
     }
   });
   qx.ui.basic.Label.$$dbClassInfo = $$dbClassInfo;
-})();
-
-(function () {
-  var $$dbClassInfo = {
-    "dependsOn": {
-      "qx.core.Environment": {
-        "defer": "load",
-        "usage": "dynamic",
-        "require": true
-      },
-      "qx.Class": {
-        "usage": "dynamic",
-        "require": true
-      },
-      "qx.ui.layout.Abstract": {
-        "construct": true,
-        "require": true
-      },
-      "qx.ui.layout.Util": {},
-      "qx.theme.manager.Decoration": {}
-    },
-    "environment": {
-      "provided": [],
-      "required": {
-        "qx.debug": {
-          "load": true
-        }
-      }
-    }
-  };
-  qx.Bootstrap.executePendingDefers($$dbClassInfo);
-
-  /* ************************************************************************
-  
-     qooxdoo - the new era of web development
-  
-     http://qooxdoo.org
-  
-     Copyright:
-       2004-2008 1&1 Internet AG, Germany, http://www.1und1.de
-  
-     License:
-       MIT: https://opensource.org/licenses/MIT
-       See the LICENSE file in the project's top-level directory for details.
-  
-     Authors:
-       * Sebastian Werner (wpbasti)
-       * Fabian Jakobs (fjakobs)
-  
-  ************************************************************************ */
-
-  /**
-   * Docks children to one of the edges.
-   *
-   * *Features*
-   *
-   * * Percent width for left/right/center attached children
-   * * Percent height for top/bottom/center attached children
-   * * Minimum and maximum dimensions
-   * * Prioritized growing/shrinking (flex)
-   * * Auto sizing
-   * * Margins and Spacings
-   * * Alignment in orthogonal axis (e.g. alignX of north attached)
-   * * Different sort options for children
-   *
-   * *Item Properties*
-   *
-   * <ul>
-   * <li><strong>edge</strong> <em>(String)</em>: The edge where the layout item
-   *   should be docked. This may be one of <code>north</code>, <code>east</code>,
-   *   <code>south</code>, <code>west</code> or <code>center</code>. (Required)</li>
-   * <li><strong>width</strong> <em>(String)</em>: Defines a percent
-   *   width for the item. The percent width,
-   *   when specified, is used instead of the width defined by the size hint.
-   *   This is only supported for children added to the north or south edge or
-   *   are centered in the middle of the layout.
-   *   The minimum and maximum width still takes care of the elements limitations.
-   *   It has no influence on the layout's size hint. Percents are mainly useful for
-   *   widgets which are sized by the outer hierarchy.
-   * </li>
-   * <li><strong>height</strong> <em>(String)</em>: Defines a percent
-   *   height for the item. The percent height,
-   *   when specified, is used instead of the height defined by the size hint.
-   *   This is only supported for children added to the west or east edge or
-   *   are centered in the middle of the layout.
-   *   The minimum and maximum height still takes care of the elements limitations.
-   *   It has no influence on the layout's size hint. Percents are mainly useful for
-   *   widgets which are sized by the outer hierarchy.
-   * </li>
-   * </ul>
-   *
-   * *Example*
-   *
-   * <pre class="javascript">
-   * var layout = new qx.ui.layout.Dock();
-   *
-   * var w1 = new qx.ui.core.Widget();
-   * var w2 = new qx.ui.core.Widget();
-   * var w3 = new qx.ui.core.Widget();
-   *
-   * w1.setHeight(200);
-   * w2.setWidth(150);
-   *
-   * var container = new qx.ui.container.Composite(layout);
-   * container.add(w1, {edge:"north"});
-   * container.add(w2, {edge:"west"});
-   * container.add(w3, {edge:"center"});
-   * </pre>
-   *
-   * *Detailed Description*
-   *
-   * Using this layout, items may be "docked" to a specific side
-   * of the available space. Each displayed item reduces the available space
-   * for the following children. Priorities depend on the position of
-   * the child in the internal children list.
-   *
-   * *External Documentation*
-   *
-   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/dock.md'>
-   * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
-   */
-  qx.Class.define("qx.ui.layout.Dock", {
-    extend: qx.ui.layout.Abstract,
-
-    /*
-    *****************************************************************************
-       CONSTRUCTOR
-    *****************************************************************************
-    */
-
-    /**
-     * @param spacingX {Integer?0} The horizontal spacing. Sets {@link #spacingX}.
-     * @param spacingY {Integer?0} The vertical spacing. Sets {@link #spacingY}.
-     * @param separatorX {String|qx.ui.decoration.IDecorator} Separator to render between columns
-     * @param separatorY {String|qx.ui.decoration.IDecorator} Separator to render between rows
-     */
-    construct: function construct(spacingX, spacingY, separatorX, separatorY) {
-      qx.ui.layout.Abstract.constructor.call(this);
-
-      if (spacingX) {
-        this.setSpacingX(spacingX);
-      }
-
-      if (spacingY) {
-        this.setSpacingY(spacingY);
-      }
-
-      if (separatorX) {
-        this.setSeparatorX(separatorX);
-      }
-
-      if (separatorY) {
-        this.setSeparatorY(separatorY);
-      }
-    },
-
-    /*
-    *****************************************************************************
-       PROPERTIES
-    *****************************************************************************
-    */
-    properties: {
-      /**
-       * The way the widgets should be displayed (in conjunction with their
-       * position in the childrens array).
-       */
-      sort: {
-        check: ["auto", "y", "x"],
-        init: "auto",
-        apply: "_applySort"
-      },
-
-      /** Separator lines to use between the horizontal objects */
-      separatorX: {
-        check: "Decorator",
-        nullable: true,
-        apply: "_applyLayoutChange"
-      },
-
-      /** Separator lines to use between the vertical objects */
-      separatorY: {
-        check: "Decorator",
-        nullable: true,
-        apply: "_applyLayoutChange"
-      },
-
-      /**
-       * Whether separators should be collapsed so when a spacing is
-       * configured the line go over into each other
-       */
-      connectSeparators: {
-        check: "Boolean",
-        init: false,
-        apply: "_applyLayoutChange"
-      },
-
-      /** Horizontal spacing between two children */
-      spacingX: {
-        check: "Integer",
-        init: 0,
-        apply: "_applyLayoutChange"
-      },
-
-      /** Vertical spacing between two children */
-      spacingY: {
-        check: "Integer",
-        init: 0,
-        apply: "_applyLayoutChange"
-      }
-    },
-
-    /*
-    *****************************************************************************
-       MEMBERS
-    *****************************************************************************
-    */
-    members: {
-      __children__P_172_0: null,
-      __edges__P_172_1: null,
-      // overridden
-      verifyLayoutProperty: qx.core.Environment.select("qx.debug", {
-        "true": function _true(item, name, value) {
-          this.assertInArray(name, ["flex", "edge", "height", "width"], "The property '" + name + "' is not supported by the Dock layout!");
-
-          if (name === "edge") {
-            this.assertInArray(value, ["north", "south", "west", "east", "center"]);
-          } else if (name === "flex") {
-            this.assertNumber(value);
-            this.assert(value >= 0);
-          } else {
-            this.assertMatch(value, qx.ui.layout.Util.PERCENT_VALUE);
-          }
-        },
-        "false": null
-      }),
-      // property apply
-      _applySort: function _applySort() {
-        // easiest way is to invalidate the cache
-        this._invalidChildrenCache = true; // call normal layout change
-
-        this._applyLayoutChange();
-      },
-
-      /**
-       * @type {Map} Maps edge IDs to numeric values
-       *
-       * @lint ignoreReferenceField(__edgeMap)
-       */
-      __edgeMap__P_172_2: {
-        north: 1,
-        south: 2,
-        west: 3,
-        east: 4,
-        center: 5
-      },
-
-      /**
-       * @type {Map} Maps edges to align values
-       *
-       * @lint ignoreReferenceField(__alignMap)
-       */
-      __alignMap__P_172_3: {
-        1: "top",
-        2: "bottom",
-        3: "left",
-        4: "right"
-      },
-
-      /**
-       * Rebuilds cache for sorted children list.
-       *
-       */
-      __rebuildCache__P_172_4: function __rebuildCache__P_172_4() {
-        var all = this._getLayoutChildren();
-
-        var child, center;
-        var length = all.length;
-        var high = [];
-        var low = [];
-        var edge = [];
-        var yfirst = this.getSort() === "y";
-        var xfirst = this.getSort() === "x";
-
-        for (var i = 0; i < length; i++) {
-          child = all[i];
-          edge = child.getLayoutProperties().edge;
-
-          if (edge === "center") {
-            if (center) {
-              throw new Error("It is not allowed to have more than one child aligned to 'center'!");
-            }
-
-            center = child;
-          } else if (xfirst || yfirst) {
-            if (edge === "north" || edge === "south") {
-              yfirst ? high.push(child) : low.push(child);
-            } else if (edge === "west" || edge === "east") {
-              yfirst ? low.push(child) : high.push(child);
-            }
-          } else {
-            high.push(child);
-          }
-        } // Combine sorted children list
-
-
-        var result = high.concat(low);
-
-        if (center) {
-          result.push(center);
-        }
-
-        this.__children__P_172_0 = result; // Cache edges for faster access
-
-        var edges = [];
-
-        for (var i = 0; i < length; i++) {
-          edge = result[i].getLayoutProperties().edge;
-          edges[i] = this.__edgeMap__P_172_2[edge] || 5;
-        }
-
-        this.__edges__P_172_1 = edges; // Clear invalidation marker
-
-        delete this._invalidChildrenCache;
-      },
-
-      /*
-      ---------------------------------------------------------------------------
-        LAYOUT INTERFACE
-      ---------------------------------------------------------------------------
-      */
-      // overridden
-      renderLayout: function renderLayout(availWidth, availHeight, padding) {
-        // Rebuild flex/width caches
-        if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_172_4();
-        }
-
-        var util = qx.ui.layout.Util;
-        var children = this.__children__P_172_0;
-        var edges = this.__edges__P_172_1;
-        var length = children.length;
-        var flexibles, child, hint, props, flex, grow, width, height, offset;
-        var widths = [];
-        var heights = [];
-
-        var separatorWidths = this._getSeparatorWidths();
-
-        var spacingX = this.getSpacingX();
-        var spacingY = this.getSpacingY(); // **************************************
-        //   Caching children data
-        // **************************************
-
-        var allocatedWidth = -spacingX;
-        var allocatedHeight = -spacingY;
-
-        if (separatorWidths.x) {
-          allocatedWidth -= separatorWidths.x + spacingX;
-        }
-
-        if (separatorWidths.y) {
-          allocatedHeight -= separatorWidths.y + spacingY;
-        }
-
-        for (var i = 0; i < length; i++) {
-          child = children[i];
-          props = child.getLayoutProperties();
-          hint = child.getSizeHint();
-          width = hint.width;
-          height = hint.height;
-
-          if (props.width != null) {
-            width = Math.floor(availWidth * parseFloat(props.width) / 100);
-
-            if (width < hint.minWidth) {
-              width = hint.minWidth;
-            } else if (width > hint.maxWidth) {
-              width = hint.maxWidth;
-            }
-          }
-
-          if (props.height != null) {
-            height = Math.floor(availHeight * parseFloat(props.height) / 100);
-
-            if (height < hint.minHeight) {
-              height = hint.minHeight;
-            } else if (height > hint.maxHeight) {
-              height = hint.maxHeight;
-            }
-          }
-
-          widths[i] = width;
-          heights[i] = height; // Update allocated width
-
-          switch (edges[i]) {
-            // north+south
-            case 1:
-            case 2:
-              allocatedHeight += height + child.getMarginTop() + child.getMarginBottom() + spacingY;
-
-              if (separatorWidths.y) {
-                allocatedHeight += separatorWidths.y + spacingY;
-              }
-
-              break;
-            // west+east
-
-            case 3:
-            case 4:
-              allocatedWidth += width + child.getMarginLeft() + child.getMarginRight() + spacingX;
-
-              if (separatorWidths.x) {
-                allocatedWidth += separatorWidths.x + spacingX;
-              }
-
-              break;
-            // center
-
-            default:
-              allocatedWidth += width + child.getMarginLeft() + child.getMarginRight() + spacingX;
-              allocatedHeight += height + child.getMarginTop() + child.getMarginBottom() + spacingY;
-
-              if (separatorWidths.x) {
-                allocatedWidth += separatorWidths.x + spacingX;
-              }
-
-              if (separatorWidths.y) {
-                allocatedHeight += separatorWidths.y + spacingY;
-              }
-
-          }
-        } // **************************************
-        //   Horizontal flex support
-        // **************************************
-
-
-        if (allocatedWidth != availWidth) {
-          flexibles = {};
-          grow = allocatedWidth < availWidth;
-
-          for (var i = 0; i < length; i++) {
-            child = children[i];
-
-            switch (edges[i]) {
-              case 3:
-              case 4:
-              case 5:
-                flex = child.getLayoutProperties().flex; // Default flex for centered children is '1'
-
-                if (flex == null && edges[i] == 5) {
-                  flex = 1;
-                }
-
-                if (flex > 0) {
-                  hint = child.getSizeHint();
-                  flexibles[i] = {
-                    min: hint.minWidth,
-                    value: widths[i],
-                    max: hint.maxWidth,
-                    flex: flex
-                  };
-                }
-
-            }
-          }
-
-          var result = util.computeFlexOffsets(flexibles, availWidth, allocatedWidth);
-
-          for (var i in result) {
-            offset = result[i].offset;
-            widths[i] += offset;
-            allocatedWidth += offset;
-          }
-        } // **************************************
-        //   Vertical flex support
-        // **************************************
-        // Process height for flex stretching/shrinking
-
-
-        if (allocatedHeight != availHeight) {
-          flexibles = {};
-          grow = allocatedHeight < availHeight;
-
-          for (var i = 0; i < length; i++) {
-            child = children[i];
-
-            switch (edges[i]) {
-              case 1:
-              case 2:
-              case 5:
-                flex = child.getLayoutProperties().flex; // Default flex for centered children is '1'
-
-                if (flex == null && edges[i] == 5) {
-                  flex = 1;
-                }
-
-                if (flex > 0) {
-                  hint = child.getSizeHint();
-                  flexibles[i] = {
-                    min: hint.minHeight,
-                    value: heights[i],
-                    max: hint.maxHeight,
-                    flex: flex
-                  };
-                }
-
-            }
-          }
-
-          var result = util.computeFlexOffsets(flexibles, availHeight, allocatedHeight);
-
-          for (var i in result) {
-            offset = result[i].offset;
-            heights[i] += offset;
-            allocatedHeight += offset;
-          }
-        } // **************************************
-        //   Layout children
-        // **************************************
-        // Pre configure separators
-
-
-        this._clearSeparators(); // Prepare loop
-
-
-        var separatorX = this.getSeparatorX(),
-            separatorY = this.getSeparatorY();
-        var connectSeparators = this.getConnectSeparators();
-        var nextTop = 0,
-            nextLeft = 0;
-        var left, top, width, height, used, edge;
-        var separatorLeft, separatorTop, separatorWidth, separatorHeight;
-        var marginTop, marginBottom, marginLeft, marginRight;
-        var alignMap = this.__alignMap__P_172_3;
-
-        for (var i = 0; i < length; i++) {
-          // Cache child data
-          child = children[i];
-          edge = edges[i];
-          hint = child.getSizeHint(); // Cache child margins
-
-          marginTop = child.getMarginTop();
-          marginBottom = child.getMarginBottom();
-          marginLeft = child.getMarginLeft();
-          marginRight = child.getMarginRight(); // Calculate child layout
-
-          switch (edge) {
-            // north + south
-            case 1:
-            case 2:
-              // Full available width
-              width = availWidth - marginLeft - marginRight; // Limit width to min/max
-
-              if (width < hint.minWidth) {
-                width = hint.minWidth;
-              } else if (width > hint.maxWidth) {
-                width = hint.maxWidth;
-              } // Child preferred height
-
-
-              height = heights[i]; // Compute position
-
-              top = nextTop + util.computeVerticalAlignOffset(alignMap[edge], height, availHeight, marginTop, marginBottom);
-              left = nextLeft + util.computeHorizontalAlignOffset(child.getAlignX() || "left", width, availWidth, marginLeft, marginRight); // Render the separator
-
-              if (separatorWidths.y) {
-                if (edge == 1) {
-                  separatorTop = nextTop + height + marginTop + spacingY + marginBottom;
-                } else {
-                  separatorTop = nextTop + availHeight - height - marginTop - spacingY - marginBottom - separatorWidths.y;
-                }
-
-                separatorLeft = left;
-                separatorWidth = availWidth;
-
-                if (connectSeparators && separatorLeft > 0) {
-                  separatorLeft -= spacingX + marginLeft;
-                  separatorWidth += spacingX * 2;
-                } else {
-                  separatorLeft -= marginLeft;
-                }
-
-                this._renderSeparator(separatorY, {
-                  left: separatorLeft + padding.left,
-                  top: separatorTop + padding.top,
-                  width: separatorWidth,
-                  height: separatorWidths.y
-                });
-              } // Update available height
-
-
-              used = height + marginTop + marginBottom + spacingY;
-
-              if (separatorWidths.y) {
-                used += separatorWidths.y + spacingY;
-              }
-
-              availHeight -= used; // Update coordinates, for next child
-
-              if (edge == 1) {
-                nextTop += used;
-              }
-
-              break;
-            // west + east
-
-            case 3:
-            case 4:
-              // Full available height
-              height = availHeight - marginTop - marginBottom; // Limit height to min/max
-
-              if (height < hint.minHeight) {
-                height = hint.minHeight;
-              } else if (height > hint.maxHeight) {
-                height = hint.maxHeight;
-              } // Child preferred width
-
-
-              width = widths[i]; // Compute position
-
-              left = nextLeft + util.computeHorizontalAlignOffset(alignMap[edge], width, availWidth, marginLeft, marginRight);
-              top = nextTop + util.computeVerticalAlignOffset(child.getAlignY() || "top", height, availHeight, marginTop, marginBottom); // Render the separator
-
-              if (separatorWidths.x) {
-                if (edge == 3) {
-                  separatorLeft = nextLeft + width + marginLeft + spacingX + marginRight;
-                } else {
-                  separatorLeft = nextLeft + availWidth - width - marginLeft - spacingX - marginRight - separatorWidths.x;
-                }
-
-                separatorTop = top;
-                separatorHeight = availHeight;
-
-                if (connectSeparators && separatorTop > 0) {
-                  separatorTop -= spacingY + marginTop;
-                  separatorHeight += spacingY * 2;
-                } else {
-                  separatorTop -= marginTop;
-                }
-
-                this._renderSeparator(separatorX, {
-                  left: separatorLeft + padding.left,
-                  top: separatorTop + padding.top,
-                  width: separatorWidths.x,
-                  height: separatorHeight
-                });
-              } // Update available height
-
-
-              used = width + marginLeft + marginRight + spacingX;
-
-              if (separatorWidths.x) {
-                used += separatorWidths.x + spacingX;
-              }
-
-              availWidth -= used; // Update coordinates, for next child
-
-              if (edge == 3) {
-                nextLeft += used;
-              }
-
-              break;
-            // center
-
-            default:
-              // Calculated width/height
-              width = availWidth - marginLeft - marginRight;
-              height = availHeight - marginTop - marginBottom; // Limit width to min/max
-
-              if (width < hint.minWidth) {
-                width = hint.minWidth;
-              } else if (width > hint.maxWidth) {
-                width = hint.maxWidth;
-              } // Limit height to min/max
-
-
-              if (height < hint.minHeight) {
-                height = hint.minHeight;
-              } else if (height > hint.maxHeight) {
-                height = hint.maxHeight;
-              } // Compute coordinates (respect margins and alignments for both axis)
-
-
-              left = nextLeft + util.computeHorizontalAlignOffset(child.getAlignX() || "left", width, availWidth, marginLeft, marginRight);
-              top = nextTop + util.computeVerticalAlignOffset(child.getAlignY() || "top", height, availHeight, marginTop, marginBottom);
-          } // Apply layout
-
-
-          child.renderLayout(left + padding.left, top + padding.top, width, height);
-        }
-      },
-
-      /**
-       * Computes the dimensions each separator on both the <code>x</code> and
-       * <code>y</code> axis needs.
-       *
-       * @return {Map} Map with the keys <code>x</code> and
-       *   <code>y</code>
-       */
-      _getSeparatorWidths: function _getSeparatorWidths() {
-        var separatorX = this.getSeparatorX(),
-            separatorY = this.getSeparatorY();
-
-        if (separatorX || separatorY) {
-          var decorationManager = qx.theme.manager.Decoration.getInstance();
-        }
-
-        if (separatorX) {
-          var separatorInstanceX = decorationManager.resolve(separatorX);
-          var separatorInsetsX = separatorInstanceX.getInsets();
-          var separatorWidthX = separatorInsetsX.left + separatorInsetsX.right;
-        }
-
-        if (separatorY) {
-          var separatorInstanceY = decorationManager.resolve(separatorY);
-          var separatorInsetsY = separatorInstanceY.getInsets();
-          var separatorWidthY = separatorInsetsY.top + separatorInsetsY.bottom;
-        }
-
-        return {
-          x: separatorWidthX || 0,
-          y: separatorWidthY || 0
-        };
-      },
-      // overridden
-      _computeSizeHint: function _computeSizeHint() {
-        // Rebuild flex/width caches
-        if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_172_4();
-        }
-
-        var children = this.__children__P_172_0;
-        var edges = this.__edges__P_172_1;
-        var length = children.length;
-        var hint, child;
-        var marginX, marginY;
-        var widthX = 0,
-            minWidthX = 0;
-        var heightX = 0,
-            minHeightX = 0;
-        var widthY = 0,
-            minWidthY = 0;
-        var heightY = 0,
-            minHeightY = 0;
-
-        var separatorWidths = this._getSeparatorWidths();
-
-        var spacingX = this.getSpacingX(),
-            spacingY = this.getSpacingY();
-        var spacingSumX = -spacingX,
-            spacingSumY = -spacingY;
-
-        if (separatorWidths.x) {
-          spacingSumX -= separatorWidths.x + spacingX;
-        }
-
-        if (separatorWidths.y) {
-          spacingSumY -= separatorWidths.y + spacingY;
-        } // Detect children sizes
-
-
-        for (var i = 0; i < length; i++) {
-          child = children[i];
-          hint = child.getSizeHint(); // Pre-cache margin sums
-
-          marginX = child.getMarginLeft() + child.getMarginRight();
-          marginY = child.getMarginTop() + child.getMarginBottom(); // Ok, this part is a bit complicated :)
-
-          switch (edges[i]) {
-            case 1:
-            case 2:
-              // Find the maximum width used by these fully stretched items
-              // The recommended width used by these must add the currently
-              // occupied width by the orthogonal ordered children.
-              widthY = Math.max(widthY, hint.width + widthX + marginX);
-              minWidthY = Math.max(minWidthY, hint.minWidth + minWidthX + marginX); // Add the needed heights of this widget
-
-              heightY += hint.height + marginY;
-              minHeightY += hint.minHeight + marginY; // Add spacing
-
-              spacingSumY += spacingY;
-
-              if (separatorWidths.y) {
-                spacingSumY += separatorWidths.y + spacingY;
-              }
-
-              break;
-
-            case 3:
-            case 4:
-              // Find the maximum height used by these fully stretched items
-              // The recommended height used by these must add the currently
-              // occupied height by the orthogonal ordered children.
-              heightX = Math.max(heightX, hint.height + heightY + marginY);
-              minHeightX = Math.max(minHeightX, hint.minHeight + minHeightY + marginY); // Add the needed widths of this widget
-
-              widthX += hint.width + marginX;
-              minWidthX += hint.minWidth + marginX; // Add spacing
-
-              spacingSumX += spacingX;
-
-              if (separatorWidths.x) {
-                spacingSumX += separatorWidths.x + spacingX;
-              }
-
-              break;
-
-            default:
-              // A centered widget must be added to both sums as
-              // it stretches into the remaining available space.
-              widthX += hint.width + marginX;
-              minWidthX += hint.minWidth + marginX;
-              heightY += hint.height + marginY;
-              minHeightY += hint.minHeight + marginY; // Add spacing
-
-              spacingSumX += spacingX;
-
-              if (separatorWidths.x) {
-                spacingSumX += separatorWidths.x + spacingX;
-              }
-
-              spacingSumY += spacingY;
-
-              if (separatorWidths.y) {
-                spacingSumY += separatorWidths.y + spacingY;
-              }
-
-          }
-        }
-
-        var minWidth = Math.max(minWidthX, minWidthY) + spacingSumX;
-        var width = Math.max(widthX, widthY) + spacingSumX;
-        var minHeight = Math.max(minHeightX, minHeightY) + spacingSumY;
-        var height = Math.max(heightX, heightY) + spacingSumY; // Return hint
-
-        return {
-          minWidth: minWidth,
-          width: width,
-          minHeight: minHeight,
-          height: height
-        };
-      }
-    },
-
-    /*
-    *****************************************************************************
-       DESTRUCTOR
-    *****************************************************************************
-    */
-    destruct: function destruct() {
-      this.__edges__P_172_1 = this.__children__P_172_0 = null;
-    }
-  });
-  qx.ui.layout.Dock.$$dbClassInfo = $$dbClassInfo;
 })();
 
 (function () {
@@ -15993,9 +15993,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     *****************************************************************************
     */
     members: {
-      __executableBindingIds__P_20_0: null,
-      __semaphore__P_20_1: false,
-      __executeListenerId__P_20_2: null,
+      __executableBindingIds__P_116_0: null,
+      __semaphore__P_116_1: false,
+      __executeListenerId__P_116_2: null,
 
       /**
        * @type {Map} Set of properties, which will by synced from the command to the
@@ -16015,10 +16015,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var cmd = this.getCommand();
 
         if (cmd) {
-          if (this.__semaphore__P_20_1) {
-            this.__semaphore__P_20_1 = false;
+          if (this.__semaphore__P_116_1) {
+            this.__semaphore__P_116_1 = false;
           } else {
-            this.__semaphore__P_20_1 = true;
+            this.__semaphore__P_116_1 = true;
             cmd.execute(this);
           }
         }
@@ -16031,15 +16031,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
        *
        * @param e {qx.event.type.Event} The execute event of the command.
        */
-      __onCommandExecute__P_20_3: function __onCommandExecute__P_20_3(e) {
+      __onCommandExecute__P_116_3: function __onCommandExecute__P_116_3(e) {
         if (this.isEnabled()) {
-          if (this.__semaphore__P_20_1) {
-            this.__semaphore__P_20_1 = false;
+          if (this.__semaphore__P_116_1) {
+            this.__semaphore__P_116_1 = false;
             return;
           }
 
           if (this.isEnabled()) {
-            this.__semaphore__P_20_1 = true;
+            this.__semaphore__P_116_1 = true;
             this.execute();
           }
         }
@@ -16048,18 +16048,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _applyCommand: function _applyCommand(value, old) {
         // execute forwarding
         if (old != null) {
-          old.removeListenerById(this.__executeListenerId__P_20_2);
+          old.removeListenerById(this.__executeListenerId__P_116_2);
         }
 
         if (value != null) {
-          this.__executeListenerId__P_20_2 = value.addListener("execute", this.__onCommandExecute__P_20_3, this);
+          this.__executeListenerId__P_116_2 = value.addListener("execute", this.__onCommandExecute__P_116_3, this);
         } // binding stuff
 
 
-        var ids = this.__executableBindingIds__P_20_0;
+        var ids = this.__executableBindingIds__P_116_0;
 
         if (ids == null) {
-          this.__executableBindingIds__P_20_0 = ids = {};
+          this.__executableBindingIds__P_116_0 = ids = {};
         }
 
         var selfPropertyValue;
@@ -16104,7 +16104,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     destruct: function destruct() {
       this._applyCommand(null, this.getCommand());
 
-      this.__executableBindingIds__P_20_0 = null;
+      this.__executableBindingIds__P_116_0 = null;
     }
   });
   qx.ui.core.MExecutable.$$dbClassInfo = $$dbClassInfo;
@@ -17903,7 +17903,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   qx.bom.Cookie.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-15.js.map?dt=1651479039752
+//# sourceMappingURL=package-15.js.map?dt=1652435556146
 qx.$$packageData['15'] = {
   "locales": {},
   "resources": {},

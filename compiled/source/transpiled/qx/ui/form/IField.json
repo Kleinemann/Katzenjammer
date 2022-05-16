@@ -143,7 +143,7 @@
   },
   "descendants": [
     "qx.ui.form.IStringForm",
-    "qx.ui.form.INumberForm",
-    "qx.ui.form.IBooleanForm"
+    "qx.ui.form.IBooleanForm",
+    "qx.ui.form.INumberForm"
   ]
 }

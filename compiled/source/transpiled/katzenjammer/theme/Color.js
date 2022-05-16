@@ -33,4 +33,4 @@
   katzenjammer.theme.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1650381506066
+//# sourceMappingURL=Color.js.map?dt=1652417290158

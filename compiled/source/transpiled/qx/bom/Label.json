@@ -222,7 +222,7 @@
             "body": "content {String} Content of the label",
             "paramName": "content",
             "description": " Content of the label",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
@@ -342,7 +342,7 @@
             "body": "value {String} Content to insert.",
             "paramName": "value",
             "description": " Content to insert.",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ]
       },
@@ -380,7 +380,7 @@
           {
             "name": "@return",
             "body": "{String} Content stored in the element.",
-            "type": "String",
+            "type": "qx.bom.String",
             "description": " Content stored in the element."
           }
         ]
@@ -412,7 +412,7 @@
             "body": "content {String} The HTML markup to measure",
             "paramName": "content",
             "description": " The HTML markup to measure",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
@@ -467,7 +467,7 @@
             "body": "text {String} The text to measure",
             "paramName": "text",
             "description": " The text to measure",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",

@@ -603,10 +603,9 @@
       "type": "function",
       "name": "getPosition",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -628,10 +627,9 @@
       "type": "function",
       "name": "setPosition",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -654,10 +652,9 @@
       "type": "function",
       "name": "resetPosition",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -672,10 +669,9 @@
       "type": "function",
       "name": "getPlaceMethod",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -697,10 +693,9 @@
       "type": "function",
       "name": "setPlaceMethod",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -723,10 +718,9 @@
       "type": "function",
       "name": "resetPlaceMethod",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -741,10 +735,9 @@
       "type": "function",
       "name": "getDomMove",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -766,10 +759,9 @@
       "type": "function",
       "name": "isDomMove",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "is",
       "jsdoc": {
         "@description": [
@@ -791,10 +783,9 @@
       "type": "function",
       "name": "setDomMove",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -817,10 +808,9 @@
       "type": "function",
       "name": "resetDomMove",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -835,10 +825,9 @@
       "type": "function",
       "name": "getPlacementModeX",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -860,10 +849,9 @@
       "type": "function",
       "name": "setPlacementModeX",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -886,10 +874,9 @@
       "type": "function",
       "name": "resetPlacementModeX",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -904,10 +891,9 @@
       "type": "function",
       "name": "getPlacementModeY",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -929,10 +915,9 @@
       "type": "function",
       "name": "setPlacementModeY",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -955,10 +940,9 @@
       "type": "function",
       "name": "resetPlacementModeY",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -973,10 +957,9 @@
       "type": "function",
       "name": "getOffsetLeft",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -998,10 +981,9 @@
       "type": "function",
       "name": "setOffsetLeft",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1024,10 +1006,9 @@
       "type": "function",
       "name": "resetOffsetLeft",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1042,10 +1023,9 @@
       "type": "function",
       "name": "getOffsetTop",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1067,10 +1047,9 @@
       "type": "function",
       "name": "setOffsetTop",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1093,10 +1072,9 @@
       "type": "function",
       "name": "resetOffsetTop",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1111,10 +1089,9 @@
       "type": "function",
       "name": "getOffsetRight",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1136,10 +1113,9 @@
       "type": "function",
       "name": "setOffsetRight",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1162,10 +1138,9 @@
       "type": "function",
       "name": "resetOffsetRight",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1180,10 +1155,9 @@
       "type": "function",
       "name": "getOffsetBottom",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1205,10 +1179,9 @@
       "type": "function",
       "name": "setOffsetBottom",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1231,10 +1204,9 @@
       "type": "function",
       "name": "resetOffsetBottom",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1249,10 +1221,9 @@
       "type": "function",
       "name": "setOffset",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1275,10 +1246,9 @@
       "type": "function",
       "name": "resetOffset",
       "abstract": false,
-      "mixin": true,
+      "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.ui.core.MPlacement",
       "property": "reset",
       "jsdoc": {
         "@description": [

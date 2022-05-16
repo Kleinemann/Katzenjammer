@@ -90,7 +90,7 @@
             "body": "str {String} the CSS string",
             "paramName": "str",
             "description": " the CSS string",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ],
         "@return": [

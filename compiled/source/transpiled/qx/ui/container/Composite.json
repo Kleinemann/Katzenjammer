@@ -7485,21 +7485,24 @@
     "jsdoc": {}
   },
   "descendants": [
-    "qx.ui.popup.Popup",
     "katzenjammer.container.MainContainer",
     "katzenjammer.container.Header",
     "katzenjammer.container.LoginContainer",
-    "katzenjammer.widgets.WindowBase",
-    "katzenjammer.container.QuestContainer",
     "katzenjammer.container.RegisterContainer",
+    "katzenjammer.container.QuestContainer",
     "katzenjammer.container.lists.TopPlayerContainer",
-    "qx.ui.table.pane.FocusIndicator",
-    "qx.ui.table.pane.Clipper",
-    "qx.ui.table.headerrenderer.HeaderCell",
-    "qx.ui.toolbar.PartContainer",
     "katzenjammer.container.lists.NewsContainer",
     "katzenjammer.container.lists.UpdatesContainer",
     "katzenjammer.container.lists.BuildingsContainer",
-    "katzenjammer.widgets.PosSearch"
+    "katzenjammer.container.details.BuildingDetailContainer",
+    "katzenjammer.widgets.WindowBase",
+    "katzenjammer.widgets.PosSearch",
+    "qx.ui.table.pane.FocusIndicator",
+    "qx.ui.popup.Popup",
+    "qx.ui.table.pane.Clipper",
+    "qx.ui.table.headerrenderer.HeaderCell",
+    "qx.ui.toolbar.PartContainer",
+    "katzenjammer.container.lists.InformationContainer",
+    "katzenjammer.container.details.QuestDetailContainer"
   ]
 }

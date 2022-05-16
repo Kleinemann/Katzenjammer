@@ -122,18 +122,18 @@
     type: "abstract",
     statics: {
       /** Stylesheet needed to style the native placeholder element. */
-      __stylesheet__P_165_0: null,
-      __addedPlaceholderRules__P_165_1: false,
+      __stylesheet__P_69_0: null,
+      __addedPlaceholderRules__P_69_1: false,
 
       /**
        * Adds the CSS rules needed to style the native placeholder element.
        */
-      __addPlaceholderRules__P_165_2: function __addPlaceholderRules__P_165_2() {
-        if (qx.ui.form.AbstractField.__addedPlaceholderRules__P_165_1) {
+      __addPlaceholderRules__P_69_2: function __addPlaceholderRules__P_69_2() {
+        if (qx.ui.form.AbstractField.__addedPlaceholderRules__P_69_1) {
           return;
         }
 
-        qx.ui.form.AbstractField.__addedPlaceholderRules__P_165_1 = true;
+        qx.ui.form.AbstractField.__addedPlaceholderRules__P_69_1 = true;
         var engine = qx.core.Environment.get("engine.name");
         var browser = qx.core.Environment.get("browser.name");
         var colorManager = qx.theme.manager.Color.getInstance();
@@ -192,7 +192,7 @@
     construct: function construct(value) {
       qx.ui.core.Widget.constructor.call(this); // shortcut for placeholder feature detection
 
-      this.__useQxPlaceholder__P_165_3 = !qx.core.Environment.get("css.placeholder");
+      this.__useQxPlaceholder__P_69_3 = !qx.core.Environment.get("css.placeholder");
 
       if (value != null) {
         this.setValue(value);
@@ -200,12 +200,12 @@
 
       this.getContentElement().addListener("change", this._onChangeContent, this); // use qooxdoo placeholder if no native placeholder is supported
 
-      if (this.__useQxPlaceholder__P_165_3) {
+      if (this.__useQxPlaceholder__P_69_3) {
         // assign the placeholder text after the appearance has been applied
         this.addListener("syncAppearance", this._syncPlaceholder, this);
       } else {
         // add rules for native placeholder color
-        qx.ui.form.AbstractField.__addPlaceholderRules__P_165_2(); // add a class to the input to restrict the placeholder color
+        qx.ui.form.AbstractField.__addPlaceholderRules__P_69_2(); // add a class to the input to restrict the placeholder color
 
 
         this.getContentElement().addClass("qx-placeholder-color");
@@ -342,13 +342,13 @@
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __nullValue__P_165_4: true,
+      __nullValue__P_69_4: true,
       _placeholder: null,
-      __oldValue__P_165_5: null,
-      __oldInputValue__P_165_6: null,
-      __useQxPlaceholder__P_165_3: true,
-      __font__P_165_7: null,
-      __webfontListenerId__P_165_8: null,
+      __oldValue__P_69_5: null,
+      __oldInputValue__P_69_6: null,
+      __useQxPlaceholder__P_69_3: true,
+      __font__P_69_7: null,
+      __webfontListenerId__P_69_8: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -393,8 +393,8 @@
 
         var input = this.getContentElement(); // we don't need to update positions on native placeholders
 
-        if (updateInsets && this.__useQxPlaceholder__P_165_3) {
-          if (this.__useQxPlaceholder__P_165_3) {
+        if (updateInsets && this.__useQxPlaceholder__P_69_3) {
+          if (this.__useQxPlaceholder__P_69_3) {
             var insets = this.getInsets();
 
             this._getPlaceholderElement().setStyles({
@@ -408,7 +408,7 @@
 
         if (inner || changes.margin) {
           // we don't need to update dimensions on native placeholders
-          if (this.__useQxPlaceholder__P_165_3) {
+          if (this.__useQxPlaceholder__P_69_3) {
             var insets = this.getInsets();
 
             this._getPlaceholderElement().setStyles({
@@ -426,7 +426,7 @@
         }
 
         if (changes.position) {
-          if (this.__useQxPlaceholder__P_165_3) {
+          if (this.__useQxPlaceholder__P_69_3) {
             this._getPlaceholderElement().setStyles({
               left: left + pixel,
               top: top + pixel
@@ -474,7 +474,7 @@
 
         this.getContentElement().setEnabled(value);
 
-        if (this.__useQxPlaceholder__P_165_3) {
+        if (this.__useQxPlaceholder__P_69_3) {
           if (value) {
             this._showPlaceholder();
           } else {
@@ -491,36 +491,36 @@
       /**
        * @lint ignoreReferenceField(__textSize)
        */
-      __textSize__P_165_9: {
+      __textSize__P_69_9: {
         width: 16,
         height: 16
       },
       // overridden
       _getContentHint: function _getContentHint() {
         return {
-          width: this.__textSize__P_165_9.width * 10,
-          height: this.__textSize__P_165_9.height || 16
+          width: this.__textSize__P_69_9.width * 10,
+          height: this.__textSize__P_69_9.height || 16
         };
       },
       // overridden
       _applyFont: function _applyFont(value, old) {
-        if (old && this.__font__P_165_7 && this.__webfontListenerId__P_165_8) {
-          this.__font__P_165_7.removeListenerById(this.__webfontListenerId__P_165_8);
+        if (old && this.__font__P_69_7 && this.__webfontListenerId__P_69_8) {
+          this.__font__P_69_7.removeListenerById(this.__webfontListenerId__P_69_8);
 
-          this.__webfontListenerId__P_165_8 = null;
+          this.__webfontListenerId__P_69_8 = null;
         } // Apply
 
 
         var styles;
 
         if (value) {
-          this.__font__P_165_7 = qx.theme.manager.Font.getInstance().resolve(value);
+          this.__font__P_69_7 = qx.theme.manager.Font.getInstance().resolve(value);
 
-          if (this.__font__P_165_7 instanceof qx.bom.webfonts.WebFont) {
-            this.__webfontListenerId__P_165_8 = this.__font__P_165_7.addListener("changeStatus", this._onWebFontStatusChange, this);
+          if (this.__font__P_69_7 instanceof qx.bom.webfonts.WebFont) {
+            this.__webfontListenerId__P_69_8 = this.__font__P_69_7.addListener("changeStatus", this._onWebFontStatusChange, this);
           }
 
-          styles = this.__font__P_165_7.getStyles();
+          styles = this.__font__P_69_7.getStyles();
         } else {
           styles = qx.bom.Font.getDefaultStyles();
         } // check if text color already set - if so this local value has higher priority
@@ -541,7 +541,7 @@
         } // the font will adjust automatically on native placeholders
 
 
-        if (this.__useQxPlaceholder__P_165_3) {
+        if (this.__useQxPlaceholder__P_69_3) {
           // don't apply the color to the placeholder
           delete styles["color"]; // apply the font to the placeholder
 
@@ -550,9 +550,9 @@
 
 
         if (value) {
-          this.__textSize__P_165_9 = qx.bom.Label.getTextSize("A", styles);
+          this.__textSize__P_69_9 = qx.bom.Label.getTextSize("A", styles);
         } else {
-          delete this.__textSize__P_165_9;
+          delete this.__textSize__P_69_9;
         } // Update layout
 
 
@@ -593,7 +593,7 @@
        * @return {Map} The text size.
        */
       _getTextSize: function _getTextSize() {
-        return this.__textSize__P_165_9;
+        return this.__textSize__P_69_9;
       },
 
       /*
@@ -611,9 +611,9 @@
       _onHtmlInput: function _onHtmlInput(e) {
         var value = e.getData();
         var fireEvents = true;
-        this.__nullValue__P_165_4 = false; // value unchanged; Firefox fires "input" when pressing ESC [BUG #5309]
+        this.__nullValue__P_69_4 = false; // value unchanged; Firefox fires "input" when pressing ESC [BUG #5309]
 
-        if (this.__oldInputValue__P_165_6 && this.__oldInputValue__P_165_6 === value) {
+        if (this.__oldInputValue__P_69_6 && this.__oldInputValue__P_69_6 === value) {
           fireEvents = false;
         } // check for the filter
 
@@ -622,7 +622,7 @@
           var filteredValue = this._validateInput(value);
 
           if (filteredValue != value) {
-            fireEvents = this.__oldInputValue__P_165_6 !== filteredValue;
+            fireEvents = this.__oldInputValue__P_69_6 !== filteredValue;
             value = filteredValue;
             this.getContentElement().setValue(value);
           }
@@ -631,17 +631,17 @@
 
         if (fireEvents) {
           // store the old input value
-          this.fireDataEvent("input", value, this.__oldInputValue__P_165_6);
-          this.__oldInputValue__P_165_6 = value; // check for the live change event
+          this.fireDataEvent("input", value, this.__oldInputValue__P_69_6);
+          this.__oldInputValue__P_69_6 = value; // check for the live change event
 
           if (this.getLiveUpdate()) {
-            this.__fireChangeValueEvent__P_165_10(value);
+            this.__fireChangeValueEvent__P_69_10(value);
           } // check for the liveUpdateOnRxMatch change event
           else {
             var fireRx = this.getLiveUpdateOnRxMatch();
 
             if (fireRx && value.match(fireRx)) {
-              this.__fireChangeValueEvent__P_165_10(value);
+              this.__fireChangeValueEvent__P_69_10(value);
             }
           }
         }
@@ -654,9 +654,9 @@
        */
       _onWebFontStatusChange: function _onWebFontStatusChange(ev) {
         if (ev.getData().valid === true) {
-          var styles = this.__font__P_165_7.getStyles();
+          var styles = this.__font__P_69_7.getStyles();
 
-          this.__textSize__P_165_9 = qx.bom.Label.getTextSize("A", styles);
+          this.__textSize__P_69_9 = qx.bom.Label.getTextSize("A", styles);
           qx.ui.core.queue.Layout.add(this);
         }
       },
@@ -667,9 +667,9 @@
        *
        * @param value {String} The new value.
        */
-      __fireChangeValueEvent__P_165_10: function __fireChangeValueEvent__P_165_10(value) {
-        var old = this.__oldValue__P_165_5;
-        this.__oldValue__P_165_5 = value;
+      __fireChangeValueEvent__P_69_10: function __fireChangeValueEvent__P_69_10(value) {
+        var old = this.__oldValue__P_69_5;
+        this.__oldValue__P_69_5 = value;
 
         if (old != value) {
           this.fireNonBubblingEvent("changeValue", qx.event.type.Data, [value, old]);
@@ -695,16 +695,16 @@
 
         if (value === null) {
           // just do nothing if null is already set
-          if (this.__nullValue__P_165_4) {
+          if (this.__nullValue__P_69_4) {
             return value;
           }
 
           value = "";
-          this.__nullValue__P_165_4 = true;
+          this.__nullValue__P_69_4 = true;
         } else {
-          this.__nullValue__P_165_4 = false; // native placeholders will be removed by the browser
+          this.__nullValue__P_69_4 = false; // native placeholders will be removed by the browser
 
-          if (this.__useQxPlaceholder__P_165_3) {
+          if (this.__useQxPlaceholder__P_69_3) {
             this._removePlaceholder();
           }
         }
@@ -715,17 +715,17 @@
           if (elem.getValue() != value) {
             var oldValue = elem.getValue();
             elem.setValue(value);
-            var data = this.__nullValue__P_165_4 ? null : value;
-            this.__oldValue__P_165_5 = oldValue;
+            var data = this.__nullValue__P_69_4 ? null : value;
+            this.__oldValue__P_69_5 = oldValue;
 
-            this.__fireChangeValueEvent__P_165_10(data); // reset the input value on setValue calls [BUG #6892]
+            this.__fireChangeValueEvent__P_69_10(data); // reset the input value on setValue calls [BUG #6892]
 
 
-            this.__oldInputValue__P_165_6 = this.__oldValue__P_165_5;
+            this.__oldInputValue__P_69_6 = this.__oldValue__P_69_5;
           } // native placeholders will be shown by the browser
 
 
-          if (this.__useQxPlaceholder__P_165_3) {
+          if (this.__useQxPlaceholder__P_69_3) {
             this._showPlaceholder();
           }
 
@@ -741,7 +741,7 @@
        * @return {String|null} The current value
        */
       getValue: function getValue() {
-        return this.isDisposed() || this.__nullValue__P_165_4 ? null : this.getContentElement().getValue();
+        return this.isDisposed() || this.__nullValue__P_69_4 ? null : this.getContentElement().getValue();
       },
 
       /**
@@ -757,9 +757,9 @@
        * @param e {qx.event.type.Data} Incoming change event
        */
       _onChangeContent: function _onChangeContent(e) {
-        this.__nullValue__P_165_4 = e.getData() === null;
+        this.__nullValue__P_69_4 = e.getData() === null;
 
-        this.__fireChangeValueEvent__P_165_10(e.getData());
+        this.__fireChangeValueEvent__P_69_10(e.getData());
       },
 
       /*
@@ -849,7 +849,7 @@
       setLayoutParent: function setLayoutParent(parent) {
         qx.ui.form.AbstractField.superclass.prototype.setLayoutParent.call(this, parent);
 
-        if (this.__useQxPlaceholder__P_165_3) {
+        if (this.__useQxPlaceholder__P_69_3) {
           if (parent) {
             this.getLayoutParent().getContentElement().add(this._getPlaceholderElement());
           } else {
@@ -893,7 +893,7 @@
        */
       _removePlaceholder: function _removePlaceholder() {
         if (this.hasState("showingPlaceholder")) {
-          if (this.__useQxPlaceholder__P_165_3) {
+          if (this.__useQxPlaceholder__P_69_3) {
             this._getPlaceholderElement().setStyle("visibility", "hidden");
           }
 
@@ -905,7 +905,7 @@
        * Updates the placeholder text with the DOM
        */
       _syncPlaceholder: function _syncPlaceholder() {
-        if (this.hasState("showingPlaceholder") && this.__useQxPlaceholder__P_165_3) {
+        if (this.hasState("showingPlaceholder") && this.__useQxPlaceholder__P_69_3) {
           this._getPlaceholderElement().setStyle("visibility", "visible");
         }
       },
@@ -962,11 +962,11 @@
           this._placeholder = null;
         }
 
-        if (!this.__useQxPlaceholder__P_165_3 && qx.ui.form.AbstractField.__stylesheet__P_165_0) {
-          qx.bom.Stylesheet.removeSheet(qx.ui.form.AbstractField.__stylesheet__P_165_0);
-          qx.ui.form.AbstractField.__stylesheet__P_165_0 = null;
+        if (!this.__useQxPlaceholder__P_69_3 && qx.ui.form.AbstractField.__stylesheet__P_69_0) {
+          qx.bom.Stylesheet.removeSheet(qx.ui.form.AbstractField.__stylesheet__P_69_0);
+          qx.ui.form.AbstractField.__stylesheet__P_69_0 = null;
 
-          qx.ui.form.AbstractField.__addPlaceholderRules__P_165_2();
+          qx.ui.form.AbstractField.__addPlaceholderRules__P_69_2();
         }
       },
 
@@ -1002,7 +1002,7 @@
       */
       // property apply
       _applyPlaceholder: function _applyPlaceholder(value, old) {
-        if (this.__useQxPlaceholder__P_165_3) {
+        if (this.__useQxPlaceholder__P_69_3) {
           this._getPlaceholderElement().setValue(value);
 
           if (value != null) {
@@ -1074,13 +1074,13 @@
         this._placeholder.dispose();
       }
 
-      this._placeholder = this.__font__P_165_7 = null;
+      this._placeholder = this.__font__P_69_7 = null;
       {
         qx.locale.Manager.getInstance().removeListener("changeLocale", this._onChangeLocale, this);
       }
 
-      if (this.__font__P_165_7 && this.__webfontListenerId__P_165_8) {
-        this.__font__P_165_7.removeListenerById(this.__webfontListenerId__P_165_8);
+      if (this.__font__P_69_7 && this.__webfontListenerId__P_69_8) {
+        this.__font__P_69_7.removeListenerById(this.__webfontListenerId__P_69_8);
       }
 
       this.getContentElement().removeListener("input", this._onHtmlInput, this);
@@ -1089,4 +1089,4 @@
   qx.ui.form.AbstractField.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractField.js.map?dt=1648815535512
+//# sourceMappingURL=AbstractField.js.map?dt=1652417295156

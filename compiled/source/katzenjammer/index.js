@@ -45139,6 +45139,7 @@ qx.$$loader = {
   "10": {
     "uris": [
       "../transpiled/katzenjammer/data/ServiceRequest.js",
+      "../transpiled/katzenjammer/data/Quest.js",
       "../transpiled/katzenjammer/data/UserBuilding.js"
     ]
   },
@@ -45157,7 +45158,10 @@ qx.$$loader = {
       "../transpiled/katzenjammer/container/lists/TopPlayerContainer.js",
       "../transpiled/katzenjammer/container/lists/NewsContainer.js",
       "../transpiled/katzenjammer/container/lists/UpdatesContainer.js",
-      "../transpiled/katzenjammer/container/lists/BuildingsContainer.js"
+      "../transpiled/katzenjammer/container/lists/BuildingsContainer.js",
+      "../transpiled/katzenjammer/container/details/BuildingDetailContainer.js",
+      "../transpiled/katzenjammer/container/details/QuestDetailContainer.js",
+      "../transpiled/katzenjammer/container/lists/InformationContainer.js"
     ]
   },
   "13": {

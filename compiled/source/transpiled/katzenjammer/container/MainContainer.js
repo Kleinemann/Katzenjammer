@@ -16,6 +16,9 @@
       "qx.ui.layout.Grid": {
         "construct": true
       },
+      "qx.event.Timer": {
+        "construct": true
+      },
       "katzenjammer.container.Header": {},
       "katzenjammer.container.MapContainer": {},
       "katzenjammer.container.LoginContainer": {},
@@ -25,6 +28,9 @@
       "katzenjammer.container.lists.NewsContainer": {},
       "katzenjammer.container.lists.UpdatesContainer": {},
       "katzenjammer.container.lists.BuildingsContainer": {},
+      "katzenjammer.container.details.BuildingDetailContainer": {},
+      "katzenjammer.container.details.QuestDetailContainer": {},
+      "katzenjammer.container.lists.InformationContainer": {},
       "qx.ui.layout.VBox": {},
       "qx.ui.form.TextField": {},
       "katzenjammer.data.ServiceRequest": {},
@@ -49,11 +55,9 @@
       Instance: null,
       ContainerSettings: {
         "Header": {
-          "name": null,
           "isWindow": false
         },
         "Map": {
-          "name": null,
           "isWindow": true
         },
         "Login": {
@@ -76,6 +80,10 @@
           "name": "Top-Spieler",
           "isWindow": true
         },
+        "Information": {
+          "name": "Informationes",
+          "isWindow": true
+        },
         "Quests": {
           "name": "Quests",
           "isWindow": true
@@ -85,6 +93,20 @@
           "isWindow": true,
           "subbody": "NewBuilding",
           "subheader": "BuildingHeader"
+        },
+        "Building": {
+          "name": "Gebäude: ",
+          "propname": "Name",
+          "isWindow": true,
+          "subbody": "Description",
+          "closeable": true
+        },
+        "Quest": {
+          "name": "Quest: ",
+          "propname": "Name",
+          "isWindow": true,
+          "subbody": "Description",
+          "closeable": true
         }
       },
       Layouts: {
@@ -97,22 +119,24 @@
           "Map": {
             row: 1,
             column: 0,
-            colSpan: 2
+            colSpan: 2,
+            rowSpan: 2
           },
           "Login": {
             row: 1,
-            column: 2
+            column: 2,
+            rowSpan: 2
           },
           "Update": {
-            row: 2,
+            row: 3,
             column: 0
           },
           "News": {
-            row: 2,
+            row: 3,
             column: 1
           },
           "TopPlayer": {
-            row: 2,
+            row: 3,
             column: 2
           }
         },
@@ -125,23 +149,65 @@
           "Map": {
             row: 1,
             column: 0,
-            colSpan: 2
+            colSpan: 2,
+            rowSpan: 2
           },
           "Quests": {
+            row: 1,
+            column: 2,
+            rowSpan: 3
+          },
+          "Buildings": {
+            row: 3,
+            column: 0
+          },
+          "Information": {
+            row: 3,
+            column: 1
+          }
+        },
+        "building": {
+          "Header": {
+            row: 0,
+            column: 0,
+            colSpan: 3
+          },
+          "Building": {
+            row: 1,
+            column: 0,
+            colSpan: 2,
+            rowSpan: 3
+          },
+          "Map": {
             row: 1,
             column: 2
           },
           "Buildings": {
             row: 2,
-            column: 0
+            column: 2,
+            rowSpan: 2
+          }
+        },
+        "quest": {
+          "Header": {
+            row: 0,
+            column: 0,
+            colSpan: 3
           },
-          "News": {
-            row: 2,
-            column: 1
+          "Quest": {
+            row: 1,
+            column: 0,
+            colSpan: 2,
+            rowSpan: 3
           },
-          "TopPlayer": {
-            row: 2,
+          "Map": {
+            row: 1,
             column: 2
+          },
+          "Quests": {
+            row: 2,
+            column: 2,
+            rowSpan: 2
           }
         }
       }
@@ -188,6 +254,19 @@
       Buildings: {
         init: null,
         nullable: true
+      },
+      Information: {
+        init: null,
+        nullable: true
+      },
+      //GameItems
+      Building: {
+        init: null,
+        nullable: true
+      },
+      Quest: {
+        init: null,
+        nullable: true
       }
     },
     construct: function construct() {
@@ -196,14 +275,25 @@
       layout.setColumnFlex(1, 1);
       layout.setColumnFlex(2, 1);
       layout.setRowFlex(0, 0);
-      layout.setRowFlex(1, 2);
+      layout.setRowFlex(1, 1);
       layout.setRowFlex(2, 1);
+      layout.setRowFlex(3, 1);
       qx.ui.container.Composite.constructor.call(this, layout);
       katzenjammer.container.MainContainer.Instance = this;
       this.setBackgroundColor("#CCCCCC");
       this.loadingLayout("start");
+      this.__gameTimer__P_4_0 = new qx.event.Timer(30000);
+
+      this.__gameTimer__P_4_0.addListener("interval", this.gameInterval, this);
+
+      this.__gameTimer__P_4_0.start();
     },
     members: {
+      gameInterval: function gameInterval() {
+        if (katzenjammer.data.User.Instance !== null) {
+          katzenjammer.data.User.Instance.gameInterval();
+        }
+      },
       equalPosition: function equalPosition(a, b) {
         if ((a === undefined || b === undefined) && a !== b) return false;
 
@@ -230,9 +320,15 @@
         }
 
         for (var i in positions) {
-          if (this.get(i) !== null) this.set(i, null);
-          if (skip.indexOf(i) === -1) this.loadWindow(i, positions[i]);
-        }
+          if (skip.indexOf(i) === -1) {
+            this.loadWindow(i, positions[i]);
+          }
+        } //resize everything
+
+
+        var evt = document.createEvent('UIEvents');
+        evt.initUIEvent('resize', true, false, window, 0);
+        window.dispatchEvent(evt);
       },
       initContainerByName: function initContainerByName(name) {
         switch (name) {
@@ -270,6 +366,18 @@
 
           case "Buildings":
             return new katzenjammer.container.lists.BuildingsContainer();
+            break;
+
+          case "Building":
+            return new katzenjammer.container.details.BuildingDetailContainer();
+            break;
+
+          case "Quest":
+            return new katzenjammer.container.details.QuestDetailContainer();
+            break;
+
+          case "Information":
+            return new katzenjammer.container.lists.InformationContainer();
             break;
 
           default:
@@ -313,11 +421,7 @@
         var contSettings = katzenjammer.container.MainContainer.ContainerSettings[windowName];
         var window = this.get(windowName) !== null ? this.get(windowName) : this.initContainerByName(windowName);
         if (contSettings !== undefined && window !== undefined) this.set(windowName, window);
-        var header = contSettings.subheader !== undefined ? window.get(contSettings.subheader) : contSettings.name;
-
-        if (contSettings.isWindow) {
-          if (contSettings.subbody !== undefined) this.add(new katzenjammer.widgets.WindowBase(header, window, window.get(contSettings.subbody)), position);else this.add(new katzenjammer.widgets.WindowBase(header, window), position);
-        } else this.add(window, position);
+        if (contSettings.isWindow) this.add(new katzenjammer.widgets.WindowBase(window, contSettings), position);else this.add(window, position);
       },
       loadingUser: function loadingUser(args) {
         this.getUser().loadingUser(args);
@@ -335,10 +439,20 @@
             map.movePosition([home.lat, home.lon], home.zoom);
           } else this.getMap().moveRandomPos();
         }
+      },
+      loadingBuilding: function loadingBuilding(userBuilding) {
+        this.loadingLayout("building");
+        this.getBuilding().load(userBuilding);
+        katzenjammer.container.MapContainer.Instance.movePosition(userBuilding.getPosition());
+      },
+      loadingQuest: function loadingQuest(quest) {
+        this.loadingLayout("quest");
+        this.getQuest().load(quest);
+        katzenjammer.container.MapContainer.Instance.movePosition(quest.getPosition());
       }
     }
   });
   katzenjammer.container.MainContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MainContainer.js.map?dt=1651225080478
+//# sourceMappingURL=MainContainer.js.map?dt=1652421565005

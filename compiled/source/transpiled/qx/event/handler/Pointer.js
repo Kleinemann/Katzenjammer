@@ -125,15 +125,15 @@
      */
     construct: function construct(manager) {
       // Define shorthands
-      this.__manager__P_48_0 = manager;
-      this.__window__P_48_1 = manager.getWindow();
-      this.__root__P_48_2 = this.__window__P_48_1.document;
-      qx.event.handler.PointerCore.apply(this, [this.__root__P_48_2]);
+      this.__manager__P_51_0 = manager;
+      this.__window__P_51_1 = manager.getWindow();
+      this.__root__P_51_2 = this.__window__P_51_1.document;
+      qx.event.handler.PointerCore.apply(this, [this.__root__P_51_2]);
     },
     members: {
-      __manager__P_48_0: null,
-      __window__P_48_1: null,
-      __root__P_48_2: null,
+      __manager__P_51_0: null,
+      __window__P_51_1: null,
+      __root__P_51_2: null,
       // interface implementation
       canHandleEvent: function canHandleEvent(target, type) {},
       // interface implementation
@@ -196,12 +196,12 @@
           });
           qx.event.Utils.then(tracker, function () {
             if ((domEvent.getPointerType() !== "mouse" || domEvent.button <= qx.event.handler.PointerCore.LEFT_BUTTON) && (type == "pointerdown" || type == "pointerup" || type == "pointermove" || type == "pointercancel")) {
-              return qx.event.Registration.fireEvent(self.__root__P_48_2, qx.event.handler.PointerCore.POINTER_TO_GESTURE_MAPPING[type], qx.event.type.Pointer, [domEvent, target, null, false, false]);
+              return qx.event.Registration.fireEvent(self.__root__P_51_2, qx.event.handler.PointerCore.POINTER_TO_GESTURE_MAPPING[type], qx.event.type.Pointer, [domEvent, target, null, false, false]);
             }
           });
           qx.event.Utils.then(tracker, function () {
             // Fire user action event
-            return qx.event.Registration.fireEvent(self.__window__P_48_1, "useraction", qx.event.type.Data, [type]);
+            return qx.event.Registration.fireEvent(self.__window__P_51_1, "useraction", qx.event.type.Data, [type]);
           });
           return tracker.promise;
         }
@@ -220,9 +220,9 @@
        * Dispose this object
        */
       dispose: function dispose() {
-        this.__callBase__P_48_3("dispose");
+        this.__callBase__P_51_3("dispose");
 
-        this.__manager__P_48_0 = this.__window__P_48_1 = this.__root__P_48_2 = null;
+        this.__manager__P_51_0 = this.__window__P_51_1 = this.__root__P_51_2 = null;
       },
 
       /**
@@ -231,7 +231,7 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase__P_48_3: function __callBase__P_48_3(method, args) {
+      __callBase__P_51_3: function __callBase__P_51_3(method, args) {
         qx.event.handler.PointerCore.prototype[method].apply(this, args || []);
       }
     },
@@ -243,4 +243,4 @@
   qx.event.handler.Pointer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Pointer.js.map?dt=1648192698496
+//# sourceMappingURL=Pointer.js.map?dt=1652417294031

@@ -100,7 +100,7 @@
       this.addListener("pointerout", this._onPointerOut, this);
       this.addListener("tap", this._onTap, this);
       this.addListener("keyinput", this._onKeyInput, this);
-      this.addListener("changeSelection", this.__onChangeSelection__P_222_0, this);
+      this.addListener("changeSelection", this.__onChangeSelection__P_67_0, this);
     },
 
     /*
@@ -130,7 +130,7 @@
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
       /** @type {qx.ui.basic.Atom} instance */
-      __preSelectedItem__P_222_1: null,
+      __preSelectedItem__P_67_1: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -227,7 +227,7 @@
        *
        * @param e {qx.event.type.Data} Data event.
        */
-      __onChangeSelection__P_222_0: function __onChangeSelection__P_222_0(e) {
+      __onChangeSelection__P_67_0: function __onChangeSelection__P_67_0(e) {
         var listItem = e.getData()[0];
         var list = this.getChildControl("list");
 
@@ -239,9 +239,9 @@
           }
         }
 
-        this.__updateIcon__P_222_2();
+        this.__updateIcon__P_67_2();
 
-        this.__updateLabel__P_222_3(); // ARIA attrs
+        this.__updateLabel__P_67_3(); // ARIA attrs
 
 
         var old = e.getOldData() ? e.getOldData()[0] : null;
@@ -259,7 +259,7 @@
       /**
        * Sets the icon inside the list to match the selected ListItem.
        */
-      __updateIcon__P_222_2: function __updateIcon__P_222_2() {
+      __updateIcon__P_67_2: function __updateIcon__P_67_2() {
         var listItem = this.getChildControl("list").getSelection()[0];
         var atom = this.getChildControl("atom");
         var icon = listItem ? listItem.getIcon() : "";
@@ -269,7 +269,7 @@
       /**
        * Sets the label inside the list to match the selected ListItem.
        */
-      __updateLabel__P_222_3: function __updateLabel__P_222_3() {
+      __updateLabel__P_67_3: function __updateLabel__P_67_3() {
         var listItem = this.getChildControl("list").getSelection()[0];
         var atom = this.getChildControl("atom");
         var label = listItem ? listItem.getLabel() : "";
@@ -354,9 +354,9 @@
           e.stop();
         } else if (iden == "Enter" || iden == "Space") {
           // Apply pre-selected item (translate quick selection to real selection)
-          if (this.__preSelectedItem__P_222_1) {
-            this.setSelection([this.__preSelectedItem__P_222_1]);
-            this.__preSelectedItem__P_222_1 = null;
+          if (this.__preSelectedItem__P_67_1) {
+            this.setSelection([this.__preSelectedItem__P_67_1]);
+            this.__preSelectedItem__P_67_1 = null;
           }
 
           this.toggle();
@@ -382,9 +382,9 @@
       // overridden
       _onListPointerDown: function _onListPointerDown(e) {
         // Apply pre-selected item (translate quick selection to real selection)
-        if (this.__preSelectedItem__P_222_1) {
-          this.setSelection([this.__preSelectedItem__P_222_1]);
-          this.__preSelectedItem__P_222_1 = null;
+        if (this.__preSelectedItem__P_67_1) {
+          this.setSelection([this.__preSelectedItem__P_67_1]);
+          this.__preSelectedItem__P_67_1 = null;
         }
       },
       // overridden
@@ -393,8 +393,8 @@
         var old = e.getOldData(); // Remove old listeners for icon and label changes.
 
         if (old && old.length > 0) {
-          old[0].removeListener("changeIcon", this.__updateIcon__P_222_2, this);
-          old[0].removeListener("changeLabel", this.__updateLabel__P_222_3, this);
+          old[0].removeListener("changeIcon", this.__updateIcon__P_67_2, this);
+          old[0].removeListener("changeLabel", this.__updateLabel__P_67_3, this);
         }
 
         if (current.length > 0) {
@@ -405,15 +405,15 @@
           var context = list.getSelectionContext();
 
           if (popup.isVisible() && (context == "quick" || context == "key")) {
-            this.__preSelectedItem__P_222_1 = current[0];
+            this.__preSelectedItem__P_67_1 = current[0];
           } else {
             this.setSelection([current[0]]);
-            this.__preSelectedItem__P_222_1 = null;
+            this.__preSelectedItem__P_67_1 = null;
           } // Add listeners for icon and label changes
 
 
-          current[0].addListener("changeIcon", this.__updateIcon__P_222_2, this);
-          current[0].addListener("changeLabel", this.__updateLabel__P_222_3, this);
+          current[0].addListener("changeIcon", this.__updateIcon__P_67_2, this);
+          current[0].addListener("changeLabel", this.__updateLabel__P_67_3, this);
         } else {
           this.resetSelection();
         } // Set aria-activedescendant
@@ -476,10 +476,10 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__preSelectedItem__P_222_1 = null;
+      this.__preSelectedItem__P_67_1 = null;
     }
   });
   qx.ui.form.SelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SelectBox.js.map?dt=1650972542123
+//# sourceMappingURL=SelectBox.js.map?dt=1652417295050

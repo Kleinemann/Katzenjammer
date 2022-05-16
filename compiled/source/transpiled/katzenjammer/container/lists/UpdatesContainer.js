@@ -92,4 +92,4 @@
   katzenjammer.container.lists.UpdatesContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=UpdatesContainer.js.map?dt=1650900068252
+//# sourceMappingURL=UpdatesContainer.js.map?dt=1652417291663

@@ -2245,7 +2245,6 @@
     }
   },
   "descendants": [
-    "qx.io.request.Xhr",
-    "qx.io.request.Jsonp"
+    "qx.io.request.Xhr"
   ]
 }

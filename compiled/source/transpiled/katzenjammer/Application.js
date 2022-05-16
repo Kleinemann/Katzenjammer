@@ -75,4 +75,4 @@
   katzenjammer.Application.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Application.js.map?dt=1651254929496
+//# sourceMappingURL=Application.js.map?dt=1652417289493

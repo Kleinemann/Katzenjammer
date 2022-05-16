@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 185,
+        "line": 186,
         "column": 3
       }
     },
@@ -111,6 +111,38 @@
       },
       "name": "BuildingList",
       "propertyType": "new"
+    },
+    "qxOwner": {
+      "type": "property",
+      "name": "qxOwner",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
+    },
+    "qxObjectId": {
+      "type": "property",
+      "name": "qxObjectId",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
     }
   },
   "construct": {
@@ -134,7 +166,7 @@
           "column": 8
         },
         "end": {
-          "line": 40,
+          "line": 45,
           "column": 3
         }
       },
@@ -144,7 +176,7 @@
     "initNewBuilding": {
       "location": {
         "start": {
-          "line": 42,
+          "line": 47,
           "column": 8
         },
         "end": {
@@ -190,7 +222,7 @@
           "column": 8
         },
         "end": {
-          "line": 160,
+          "line": 161,
           "column": 3
         }
       },
@@ -200,11 +232,11 @@
     "initBuildingList": {
       "location": {
         "start": {
-          "line": 163,
+          "line": 164,
           "column": 8
         },
         "end": {
-          "line": 168,
+          "line": 169,
           "column": 9
         }
       },
@@ -214,12 +246,12 @@
     "updateBuildingList": {
       "location": {
         "start": {
-          "line": 170,
+          "line": 171,
           "column": 8
         },
         "end": {
-          "line": 183,
-          "column": 3
+          "line": 184,
+          "column": 9
         }
       },
       "type": "function",

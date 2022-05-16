@@ -58,7 +58,7 @@
             "body": "selector {String} Valid selector (CSS3 + extensions)",
             "paramName": "selector",
             "description": " Valid selector (CSS3 + extensions)",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
@@ -110,7 +110,7 @@
             "body": "selector {String} Selector to filter given set",
             "paramName": "selector",
             "description": " Selector to filter given set",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",

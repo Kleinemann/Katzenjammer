@@ -3310,9 +3310,9 @@
   "descendants": [
     "qx.html.Root",
     "qx.html.Label",
+    "qx.html.Input",
     "qx.html.Image",
     "qx.html.Blocker",
-    "qx.html.Iframe",
-    "qx.html.Input"
+    "qx.html.Iframe"
   ]
 }

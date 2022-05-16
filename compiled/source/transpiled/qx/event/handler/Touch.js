@@ -122,10 +122,10 @@
      */
     construct: function construct(manager) {
       // Define shorthands
-      this.__manager__P_140_0 = manager;
-      this.__window__P_140_1 = manager.getWindow();
-      this.__root__P_140_2 = this.__window__P_140_1.document;
-      qx.event.handler.TouchCore.apply(this, [this.__root__P_140_2]);
+      this.__manager__P_178_0 = manager;
+      this.__window__P_178_1 = manager.getWindow();
+      this.__root__P_178_2 = this.__window__P_178_1.document;
+      qx.event.handler.TouchCore.apply(this, [this.__root__P_178_2]);
     },
 
     /*
@@ -169,11 +169,11 @@
     *****************************************************************************
     */
     members: {
-      __manager__P_140_0: null,
-      __window__P_140_1: null,
-      __root__P_140_2: null,
+      __manager__P_178_0: null,
+      __window__P_178_1: null,
+      __root__P_178_2: null,
       // Checks if the mouse movement is happening while simulating a touch event
-      __isInTouch__P_140_3: false,
+      __isInTouch__P_178_3: false,
 
       /*
       ---------------------------------------------------------------------------
@@ -215,7 +215,7 @@
         } // Fire user action event
 
 
-        qx.event.Registration.fireEvent(this.__window__P_140_1, "useraction", qx.event.type.Data, [type]);
+        qx.event.Registration.fireEvent(this.__window__P_178_1, "useraction", qx.event.type.Data, [type]);
       },
 
       /*
@@ -238,9 +238,9 @@
        * Dispose this object
        */
       dispose: function dispose() {
-        this.__callBase__P_140_4("dispose");
+        this.__callBase__P_178_4("dispose");
 
-        this.__manager__P_140_0 = this.__window__P_140_1 = this.__root__P_140_2 = null;
+        this.__manager__P_178_0 = this.__window__P_178_1 = this.__root__P_178_2 = null;
       },
 
       /**
@@ -249,7 +249,7 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase__P_140_4: function __callBase__P_140_4(method, args) {
+      __callBase__P_178_4: function __callBase__P_178_4(method, args) {
         qx.event.handler.TouchCore.prototype[method].apply(this, args || []);
       }
     },
@@ -271,4 +271,4 @@
   qx.event.handler.Touch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Touch.js.map?dt=1648192702286
+//# sourceMappingURL=Touch.js.map?dt=1652417300013

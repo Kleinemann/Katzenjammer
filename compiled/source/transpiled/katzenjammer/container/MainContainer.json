@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 252,
+        "line": 301,
         "column": 3
       }
     },
@@ -55,7 +55,7 @@
           "column": 8
         },
         "end": {
-          "line": 27,
+          "line": 30,
           "column": 9
         }
       },
@@ -65,11 +65,11 @@
     "Layouts": {
       "location": {
         "start": {
-          "line": 29,
+          "line": 32,
           "column": 8
         },
         "end": {
-          "line": 47,
+          "line": 63,
           "column": 9
         }
       },
@@ -81,11 +81,11 @@
     "User": {
       "location": {
         "start": {
-          "line": 52,
+          "line": 68,
           "column": 8
         },
         "end": {
-          "line": 52,
+          "line": 68,
           "column": 60
         }
       },
@@ -95,11 +95,11 @@
     "CurrentLayout": {
       "location": {
         "start": {
-          "line": 54,
+          "line": 70,
           "column": 8
         },
         "end": {
-          "line": 54,
+          "line": 70,
           "column": 37
         }
       },
@@ -109,11 +109,11 @@
     "Header": {
       "location": {
         "start": {
-          "line": 56,
+          "line": 72,
           "column": 8
         },
         "end": {
-          "line": 56,
+          "line": 72,
           "column": 46
         }
       },
@@ -125,11 +125,11 @@
     "Map": {
       "location": {
         "start": {
-          "line": 57,
+          "line": 73,
           "column": 8
         },
         "end": {
-          "line": 57,
+          "line": 73,
           "column": 43
         }
       },
@@ -141,11 +141,11 @@
     "Login": {
       "location": {
         "start": {
-          "line": 58,
+          "line": 74,
           "column": 8
         },
         "end": {
-          "line": 58,
+          "line": 74,
           "column": 45
         }
       },
@@ -157,11 +157,11 @@
     "Register": {
       "location": {
         "start": {
-          "line": 59,
+          "line": 75,
           "column": 8
         },
         "end": {
-          "line": 59,
+          "line": 75,
           "column": 48
         }
       },
@@ -173,11 +173,11 @@
     "Update": {
       "location": {
         "start": {
-          "line": 60,
+          "line": 76,
           "column": 8
         },
         "end": {
-          "line": 60,
+          "line": 76,
           "column": 46
         }
       },
@@ -189,11 +189,11 @@
     "News": {
       "location": {
         "start": {
-          "line": 61,
+          "line": 77,
           "column": 8
         },
         "end": {
-          "line": 61,
+          "line": 77,
           "column": 44
         }
       },
@@ -205,11 +205,11 @@
     "TopPlayer": {
       "location": {
         "start": {
-          "line": 62,
+          "line": 78,
           "column": 8
         },
         "end": {
-          "line": 62,
+          "line": 78,
           "column": 49
         }
       },
@@ -221,11 +221,11 @@
     "Quests": {
       "location": {
         "start": {
-          "line": 63,
+          "line": 79,
           "column": 8
         },
         "end": {
-          "line": 63,
+          "line": 79,
           "column": 46
         }
       },
@@ -237,15 +237,64 @@
     "Buildings": {
       "location": {
         "start": {
-          "line": 64,
+          "line": 80,
           "column": 8
         },
         "end": {
-          "line": 64,
+          "line": 80,
           "column": 49
         }
       },
       "name": "Buildings",
+      "propertyType": "new",
+      "nullable": true,
+      "allowNull": true
+    },
+    "Information": {
+      "location": {
+        "start": {
+          "line": 81,
+          "column": 8
+        },
+        "end": {
+          "line": 81,
+          "column": 51
+        }
+      },
+      "name": "Information",
+      "propertyType": "new",
+      "nullable": true,
+      "allowNull": true
+    },
+    "Building": {
+      "location": {
+        "start": {
+          "line": 84,
+          "column": 8
+        },
+        "end": {
+          "line": 84,
+          "column": 48
+        }
+      },
+      "jsdoc": {},
+      "name": "Building",
+      "propertyType": "new",
+      "nullable": true,
+      "allowNull": true
+    },
+    "Quest": {
+      "location": {
+        "start": {
+          "line": 85,
+          "column": 8
+        },
+        "end": {
+          "line": 85,
+          "column": 45
+        }
+      },
+      "name": "Quest",
       "propertyType": "new",
       "nullable": true,
       "allowNull": true
@@ -254,25 +303,39 @@
   "construct": {
     "location": {
       "start": {
-        "line": 67,
+        "line": 88,
         "column": 15
       },
       "end": {
-        "line": 86,
+        "line": 111,
         "column": 5
       }
     },
     "jsdoc": {}
   },
   "members": {
-    "equalPosition": {
+    "gameInterval": {
       "location": {
         "start": {
-          "line": 90,
+          "line": 115,
           "column": 8
         },
         "end": {
-          "line": 102,
+          "line": 121,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "equalPosition": {
+      "location": {
+        "start": {
+          "line": 123,
+          "column": 8
+        },
+        "end": {
+          "line": 135,
           "column": 3
         }
       },
@@ -282,11 +345,11 @@
     "loadingLayout": {
       "location": {
         "start": {
-          "line": 105,
+          "line": 138,
           "column": 8
         },
         "end": {
-          "line": 135,
+          "line": 171,
           "column": 9
         }
       },
@@ -296,11 +359,11 @@
     "initContainerByName": {
       "location": {
         "start": {
-          "line": 138,
+          "line": 174,
           "column": 8
         },
         "end": {
-          "line": 153,
+          "line": 192,
           "column": 3
         }
       },
@@ -310,35 +373,7 @@
     "initSearch": {
       "location": {
         "start": {
-          "line": 156,
-          "column": 8
-        },
-        "end": {
-          "line": 185,
-          "column": 3
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "switchWindow": {
-      "location": {
-        "start": {
-          "line": 188,
-          "column": 8
-        },
-        "end": {
-          "line": 202,
-          "column": 3
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "loadWindow": {
-      "location": {
-        "start": {
-          "line": 205,
+          "line": 195,
           "column": 8
         },
         "end": {
@@ -349,15 +384,71 @@
       "type": "function",
       "access": "public"
     },
-    "loadingUser": {
+    "switchWindow": {
       "location": {
         "start": {
           "line": 227,
           "column": 8
         },
         "end": {
-          "line": 250,
+          "line": 241,
           "column": 3
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "loadWindow": {
+      "location": {
+        "start": {
+          "line": 244,
+          "column": 8
+        },
+        "end": {
+          "line": 257,
+          "column": 3
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "loadingUser": {
+      "location": {
+        "start": {
+          "line": 260,
+          "column": 8
+        },
+        "end": {
+          "line": 283,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "loadingBuilding": {
+      "location": {
+        "start": {
+          "line": 285,
+          "column": 8
+        },
+        "end": {
+          "line": 291,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "loadingQuest": {
+      "location": {
+        "start": {
+          "line": 293,
+          "column": 8
+        },
+        "end": {
+          "line": 299,
+          "column": 9
         }
       },
       "type": "function",
@@ -4879,6 +4970,204 @@
           {
             "name": "@description",
             "body": "Resets the user value of the property <code>Buildings</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #Buildings}."
+          }
+        ]
+      }
+    },
+    "getInformation": {
+      "type": "function",
+      "name": "getInformation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>Information</code>.\n\nFor further details take a look at the property definition: {@link #Information}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for Information"
+          }
+        ]
+      }
+    },
+    "setInformation": {
+      "type": "function",
+      "name": "setInformation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>Information</code>.\n\nFor further details take a look at the property definition: {@link #Information}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for Information"
+          }
+        ]
+      }
+    },
+    "resetInformation": {
+      "type": "function",
+      "name": "resetInformation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>Information</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #Information}."
+          }
+        ]
+      }
+    },
+    "getBuilding": {
+      "type": "function",
+      "name": "getBuilding",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>Building</code>.\n\nFor further details take a look at the property definition: {@link #Building}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for Building"
+          }
+        ]
+      }
+    },
+    "setBuilding": {
+      "type": "function",
+      "name": "setBuilding",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>Building</code>.\n\nFor further details take a look at the property definition: {@link #Building}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for Building"
+          }
+        ]
+      }
+    },
+    "resetBuilding": {
+      "type": "function",
+      "name": "resetBuilding",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>Building</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #Building}."
+          }
+        ]
+      }
+    },
+    "getQuest": {
+      "type": "function",
+      "name": "getQuest",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>Quest</code>.\n\nFor further details take a look at the property definition: {@link #Quest}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for Quest"
+          }
+        ]
+      }
+    },
+    "setQuest": {
+      "type": "function",
+      "name": "setQuest",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>Quest</code>.\n\nFor further details take a look at the property definition: {@link #Quest}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for Quest"
+          }
+        ]
+      }
+    },
+    "resetQuest": {
+      "type": "function",
+      "name": "resetQuest",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>Quest</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #Quest}."
           }
         ]
       }

@@ -9,7 +9,8 @@
         "construct": true,
         "require": true
       },
-      "katzenjammer.data.User": {}
+      "katzenjammer.data.User": {},
+      "katzenjammer.data.GameData": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -36,7 +37,8 @@
       },
       Marker: {
         init: {
-          UserBuildings: []
+          UserBuildings: [],
+          UserQuests: []
         }
       }
     },
@@ -57,13 +59,21 @@
         }; // Creating a map object
 
         var map = new L.map(this.getContentElement().getDomElement(), mapOptions); // Creating a Layer object
+        //var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 
-        var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'); // Adding layer to the map
+        var layer = new L.TileLayer('https://tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png'); // Adding layer to the map
 
         map.addLayer(layer);
-        var geocoder = L.Control.geocoder().on('markgeocode', function (e) {
-          console.log(e);
+        setTimeout(function () {
+          map.invalidateSize();
+        }, 0);
+        /*
+        var geocoder = L.Control.geocoder().on('markgeocode', function (e)
+        {
+            console.log(e);
         }).addTo(map);
+        */
+
         this.setMap(map);
       },
       moveRandomPos: function moveRandomPos() {
@@ -72,7 +82,10 @@
       },
       movePosition: function movePosition(pos, zoom) {
         var map = this.getMap();
-        if (map !== null) map.setView(new L.LatLng(pos[0], pos[1]), zoom !== undefined ? zoom : 15);
+
+        if (map !== null) {
+          if (pos.lat !== undefined) map.setView(new L.LatLng(pos.lat, pos.lon), zoom !== undefined ? zoom : 10);else map.setView(new L.LatLng(pos[0], pos[1]), zoom !== undefined ? zoom : 10);
+        }
       },
       createMarker: function createMarker(pos, source) {
         var map = this.getMap();
@@ -95,6 +108,30 @@
 
         marker.addTo(map);
       },
+      updateMapMarker: function updateMapMarker() {
+        this.updateUserBuildings();
+        this.updateUserQuests();
+      },
+      updateUserQuests: function updateUserQuests() {
+        var oldUserQuests = this.getMarker().UserQuests;
+
+        for (var i in oldUserQuests) {
+          oldUserQuests[i].remove();
+        }
+
+        var map = this.getMap();
+        var userQuestMarkers = [];
+        var userQuests = katzenjammer.data.User.Instance.getQuests();
+
+        for (var i in userQuests) {
+          var quest = userQuests[i];
+          var marker = this.createQuest(quest);
+          userQuestMarkers[quest.getID()] = marker;
+          marker.addTo(map);
+        }
+
+        this.getMarker().UserQuests = userQuestMarkers;
+      },
       updateUserBuildings: function updateUserBuildings() {
         var oldBuildings = this.getMarker().UserBuildings;
 
@@ -109,15 +146,29 @@
         for (var i in userBuildings) {
           var building = userBuildings[i];
           var marker = this.createBuilding(building);
-          buildingMarkers[building.getID] = marker;
+          buildingMarkers[building.getID()] = marker;
           marker.addTo(map);
         }
 
         this.getMarker().UserBuildings = buildingMarkers;
       },
+      getIcon: function getIcon(iconId) {
+        var iconData = katzenjammer.data.GameData.Icons[iconId];
+        console.log(iconData);
+      },
       createBuilding: function createBuilding(building) {
+        var bIcon = L.icon(building.getIcon());
         var marker = L.marker(building.getPosition(), {
-          title: building.getName()
+          title: building.getName(),
+          icon: bIcon
+        });
+        return marker;
+      },
+      createQuest: function createQuest(quest) {
+        var bIcon = L.icon(quest.getIcon());
+        var marker = L.marker(quest.getPosition(), {
+          title: quest.getName(),
+          icon: bIcon
         });
         return marker;
       }
@@ -126,4 +177,4 @@
   katzenjammer.container.MapContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MapContainer.js.map?dt=1651479039036
+//# sourceMappingURL=MapContainer.js.map?dt=1652419427171

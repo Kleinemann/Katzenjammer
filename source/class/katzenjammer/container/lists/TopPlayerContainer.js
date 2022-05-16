@@ -48,7 +48,7 @@ qx.Class.define("katzenjammer.container.lists.TopPlayerContainer", {
 
             this.setTable(table);
 
-            this.add(table);
+            this.add(table, { flex: 1 });
         },
 
         updateData: function ()

@@ -80,7 +80,7 @@
        * Static list of all instantiated event managers. The key is the qooxdoo
        * hash value of the corresponding window
        */
-      __managers__P_19_0: {},
+      __managers__P_20_0: {},
 
       /**
        * Get an instance of the event manager, which can handle events for the
@@ -103,11 +103,11 @@
         }
 
         var hash = target.$$hash || qx.core.ObjectRegistry.toHashCode(target);
-        var manager = this.__managers__P_19_0[hash];
+        var manager = this.__managers__P_20_0[hash];
 
         if (!manager) {
           manager = new qx.event.Manager(target, this);
-          this.__managers__P_19_0[hash] = manager;
+          this.__managers__P_20_0[hash] = manager;
         }
 
         return manager;
@@ -123,7 +123,7 @@
        */
       removeManager: function removeManager(mgr) {
         var id = mgr.getWindowId();
-        delete this.__managers__P_19_0[id];
+        delete this.__managers__P_20_0[id];
       },
 
       /**
@@ -297,7 +297,7 @@
        * @return {Event} the event
        * @see #createEvent
        */
-      __fireEvent__P_19_1: function __fireEvent__P_19_1(target, type, clazz, args) {
+      __fireEvent__P_20_1: function __fireEvent__P_20_1(target, type, clazz, args) {
         {
           if (arguments.length > 2 && clazz === undefined && args !== undefined) {
             throw new Error("Create event of type " + type + " with undefined class. Please use null to explicit fallback to default event type!");
@@ -386,7 +386,7 @@
        * @return {Event} the event
        * @see #createEvent
        */
-      __fireNonBubblingEvent__P_19_2: function __fireNonBubblingEvent__P_19_2(target, type, clazz, args) {
+      __fireNonBubblingEvent__P_20_2: function __fireNonBubblingEvent__P_20_2(target, type, clazz, args) {
         {
           if (arguments.length > 2 && clazz === undefined && args !== undefined) {
             throw new Error("Create event of type " + type + " with undefined class. Please use null to explicit fallback to default event type!");
@@ -418,7 +418,7 @@
        * @see #createEvent
        */
       fireNonBubblingEvent: function fireNonBubblingEvent(target, type, clazz, args) {
-        var evt = this.__fireNonBubblingEvent__P_19_2.apply(this, arguments);
+        var evt = this.__fireNonBubblingEvent__P_20_2.apply(this, arguments);
 
         if (evt === null) {
           return true;
@@ -443,7 +443,7 @@
        */
       fireNonBubblingEventAsync: qx.core.Environment.select("qx.promise", {
         "true": function _true(target, type, clazz, args) {
-          var evt = this.__fireNonBubblingEvent__P_19_2.apply(this, arguments);
+          var evt = this.__fireNonBubblingEvent__P_20_2.apply(this, arguments);
 
           if (evt === null) {
             return qx.Promise.resolve(true);
@@ -478,7 +478,7 @@
       */
 
       /** @type {Array} Contains all known event handlers */
-      __handlers__P_19_3: [],
+      __handlers__P_20_3: [],
 
       /**
        * Register an event handler.
@@ -491,10 +491,10 @@
           qx.core.Assert.assertInterface(handler, qx.event.IEventHandler, "Invalid event handler.");
         } // Append to list
 
-        this.__handlers__P_19_3.push(handler); // Re-sort list
+        this.__handlers__P_20_3.push(handler); // Re-sort list
 
 
-        this.__handlers__P_19_3.sort(function (a, b) {
+        this.__handlers__P_20_3.sort(function (a, b) {
           return a.PRIORITY - b.PRIORITY;
         });
       },
@@ -505,7 +505,7 @@
        * @return {qx.event.IEventHandler[]} registered event handlers
        */
       getHandlers: function getHandlers() {
-        return this.__handlers__P_19_3;
+        return this.__handlers__P_20_3;
       },
 
       /*
@@ -515,7 +515,7 @@
       */
 
       /** @type {Array} Contains all known event dispatchers */
-      __dispatchers__P_19_4: [],
+      __dispatchers__P_20_4: [],
 
       /**
        * Register an event dispatcher.
@@ -532,10 +532,10 @@
           qx.core.Assert.assertInterface(dispatcher, qx.event.IEventDispatcher, "Invalid event dispatcher!");
         } // Append to list
 
-        this.__dispatchers__P_19_4.push(dispatcher); // Re-sort list
+        this.__dispatchers__P_20_4.push(dispatcher); // Re-sort list
 
 
-        this.__dispatchers__P_19_4.sort(function (a, b) {
+        this.__dispatchers__P_20_4.sort(function (a, b) {
           return a.PRIORITY - b.PRIORITY;
         });
       },
@@ -546,11 +546,11 @@
        * @return {qx.event.IEventDispatcher[]} all registered event dispatcher
        */
       getDispatchers: function getDispatchers() {
-        return this.__dispatchers__P_19_4;
+        return this.__dispatchers__P_20_4;
       }
     }
   });
   qx.event.Registration.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Registration.js.map?dt=1648192696083
+//# sourceMappingURL=Registration.js.map?dt=1652417291265

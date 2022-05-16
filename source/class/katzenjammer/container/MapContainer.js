@@ -19,7 +19,8 @@ qx.Class.define("katzenjammer.container.MapContainer", {
 
         Marker: {
             init: {
-                UserBuildings: []
+                UserBuildings: [],
+                UserQuests: [],
             }
         }
     },
@@ -45,22 +46,23 @@ qx.Class.define("katzenjammer.container.MapContainer", {
                 center: [17.385044, 78.486671],
                 zoom: 10
             }
-
             // Creating a map object
             var map = new L.map(this.getContentElement().getDomElement(), mapOptions);
 
             // Creating a Layer object
-            var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            //var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            var layer = new L.TileLayer('https://tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png');
 
             // Adding layer to the map
             map.addLayer(layer);
+            setTimeout(function () { map.invalidateSize() }, 0);
 
-            
+            /*
             var geocoder = L.Control.geocoder().on('markgeocode', function (e)
             {
                 console.log(e);
             }).addTo(map);
-            
+            */
             this.setMap(map);
         },
 
@@ -74,8 +76,12 @@ qx.Class.define("katzenjammer.container.MapContainer", {
         movePosition: function (pos, zoom)
         {
             var map = this.getMap();
-            if (map !== null)
-                map.setView(new L.LatLng(pos[0], pos[1]), zoom !== undefined ? zoom : 15);
+            if (map !== null) {
+                if (pos.lat !== undefined)
+                    map.setView(new L.LatLng(pos.lat, pos.lon), zoom !== undefined ? zoom : 10);
+                else
+                    map.setView(new L.LatLng(pos[0], pos[1]), zoom !== undefined ? zoom : 10);
+            }
         },
 
         createMarker: function (pos, source)
@@ -105,6 +111,33 @@ qx.Class.define("katzenjammer.container.MapContainer", {
             marker.addTo(map);
         },
 
+
+        updateMapMarker: function ()
+        {
+            this.updateUserBuildings();
+            this.updateUserQuests();
+        },
+
+        updateUserQuests: function ()
+        {
+            var oldUserQuests = this.getMarker().UserQuests;
+            for (var i in oldUserQuests)
+                oldUserQuests[i].remove();
+
+            var map = this.getMap();
+
+            var userQuestMarkers = [];
+            var userQuests = katzenjammer.data.User.Instance.getQuests();
+            for (var i in userQuests) {
+                var quest = userQuests[i];
+                var marker = this.createQuest(quest);
+                userQuestMarkers[quest.getID()] = marker;
+                marker.addTo(map);
+            }
+
+            this.getMarker().UserQuests = userQuestMarkers;
+        },
+
         updateUserBuildings: function ()
         {
             var oldBuildings = this.getMarker().UserBuildings;
@@ -119,17 +152,31 @@ qx.Class.define("katzenjammer.container.MapContainer", {
             {
                 var building = userBuildings[i];
                 var marker = this.createBuilding(building);
-                buildingMarkers[building.getID] = marker;
+                buildingMarkers[building.getID()] = marker;
                 marker.addTo(map);
             }
 
             this.getMarker().UserBuildings = buildingMarkers;
-		},
+        },
+
+        getIcon: function (iconId)
+        {
+            var iconData = katzenjammer.data.GameData.Icons[iconId];
+            console.log(iconData);
+        },
 
         createBuilding: function (building)
         {
-            var marker = L.marker(building.getPosition(), { title: building.getName() });
+            var bIcon = L.icon(building.getIcon() );
+            var marker = L.marker(building.getPosition(), { title: building.getName(), icon: bIcon });
             return marker;
-		}
+        },
+
+        createQuest: function (quest)
+        {
+            var bIcon = L.icon(quest.getIcon());
+            var marker = L.marker(quest.getPosition(), { title: quest.getName(), icon: bIcon });
+            return marker;
+        }
     }
 });

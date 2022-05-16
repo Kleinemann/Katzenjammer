@@ -280,10 +280,10 @@
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __font__P_54_0: null,
-      __invalidContentSize__P_54_1: null,
-      __tapListenerId__P_54_2: null,
-      __webfontListenerId__P_54_3: null,
+      __font__P_61_0: null,
+      __invalidContentSize__P_61_1: null,
+      __tapListenerId__P_61_2: null,
+      __webfontListenerId__P_61_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -292,14 +292,14 @@
       */
       // overridden
       _getContentHint: function _getContentHint() {
-        if (this.__invalidContentSize__P_54_1) {
-          this.__contentSize__P_54_4 = this.__computeContentSize__P_54_5();
-          delete this.__invalidContentSize__P_54_1;
+        if (this.__invalidContentSize__P_61_1) {
+          this.__contentSize__P_61_4 = this.__computeContentSize__P_61_5();
+          delete this.__invalidContentSize__P_61_1;
         }
 
         return {
-          width: this.__contentSize__P_54_4.width,
-          height: this.__contentSize__P_54_4.height
+          width: this.__contentSize__P_61_4.width,
+          height: this.__contentSize__P_61_4.height
         };
       },
       // overridden
@@ -328,7 +328,7 @@
           return null;
         }
 
-        return this.__computeContentSize__P_54_5(width).height;
+        return this.__computeContentSize__P_61_5(width).height;
       },
       // overridden
       _createContentElement: function _createContentElement() {
@@ -358,33 +358,33 @@
        *
        * @lint ignoreReferenceField(__contentSize)
        */
-      __contentSize__P_54_4: {
+      __contentSize__P_61_4: {
         width: 0,
         height: 0
       },
       // property apply
       _applyFont: function _applyFont(value, old) {
-        if (old && this.__font__P_54_0 && this.__webfontListenerId__P_54_3) {
-          this.__font__P_54_0.removeListenerById(this.__webfontListenerId__P_54_3);
+        if (old && this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
+          this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
 
-          this.__webfontListenerId__P_54_3 = null;
+          this.__webfontListenerId__P_61_3 = null;
         } // Apply
 
 
         var styles;
 
         if (value) {
-          this.__font__P_54_0 = qx.theme.manager.Font.getInstance().resolve(value);
+          this.__font__P_61_0 = qx.theme.manager.Font.getInstance().resolve(value);
 
-          if (this.__font__P_54_0 instanceof qx.bom.webfonts.WebFont) {
-            if (!this.__font__P_54_0.isValid()) {
-              this.__webfontListenerId__P_54_3 = this.__font__P_54_0.addListener("changeStatus", this._onWebFontStatusChange, this);
+          if (this.__font__P_61_0 instanceof qx.bom.webfonts.WebFont) {
+            if (!this.__font__P_61_0.isValid()) {
+              this.__webfontListenerId__P_61_3 = this.__font__P_61_0.addListener("changeStatus", this._onWebFontStatusChange, this);
             }
           }
 
-          styles = this.__font__P_54_0.getStyles();
+          styles = this.__font__P_61_0.getStyles();
         } else {
-          this.__font__P_54_0 = null;
+          this.__font__P_61_0 = null;
           styles = qx.bom.Font.getDefaultStyles();
         } // check if text color already set - if so this local value has higher priority
 
@@ -395,7 +395,7 @@
 
         this.getContentElement().setStyles(styles); // Invalidate text size
 
-        this.__invalidContentSize__P_54_1 = true; // Update layout
+        this.__invalidContentSize__P_61_1 = true; // Update layout
 
         qx.ui.core.queue.Layout.add(this);
       },
@@ -406,15 +406,15 @@
        * @param width {Integer?null} Optional width constraint
        * @return {Map} Map with <code>width</code> and <code>height</code> keys
        */
-      __computeContentSize__P_54_5: function __computeContentSize__P_54_5(width) {
+      __computeContentSize__P_61_5: function __computeContentSize__P_61_5(width) {
         var Label = qx.bom.Label;
         var font = this.getFont();
-        var styles = font ? this.__font__P_54_0.getStyles() : qx.bom.Font.getDefaultStyles();
+        var styles = font ? this.__font__P_61_0.getStyles() : qx.bom.Font.getDefaultStyles();
         var content = this.getValue() || "A";
         var rich = this.getRich();
 
-        if (this.__webfontListenerId__P_54_3) {
-          this.__fixEllipsis__P_54_6();
+        if (this.__webfontListenerId__P_61_3) {
+          this.__fixEllipsis__P_61_6();
         }
 
         if (rich && this.getBreakWithinWords()) {
@@ -429,7 +429,7 @@
        * though there is enough space for the text. Re-applying the content forces
        * a recalculation and fixes the problem. See qx bug #6293
        */
-      __fixEllipsis__P_54_6: function __fixEllipsis__P_54_6() {
+      __fixEllipsis__P_61_6: function __fixEllipsis__P_61_6() {
         if (!this.getContentElement()) {
           return;
         }
@@ -453,13 +453,13 @@
       _applyBuddy: function _applyBuddy(value, old) {
         if (old != null) {
           this.removeRelatedBindings(old);
-          this.removeListenerById(this.__tapListenerId__P_54_2);
-          this.__tapListenerId__P_54_2 = null;
+          this.removeListenerById(this.__tapListenerId__P_61_2);
+          this.__tapListenerId__P_61_2 = null;
         }
 
         if (value != null) {
           value.bind("enabled", this, "enabled");
-          this.__tapListenerId__P_54_2 = this.addListener("tap", function () {
+          this.__tapListenerId__P_61_2 = this.addListener("tap", function () {
             // only focus focusable elements [BUG #3555]
             if (value.isFocusable()) {
               value.focus.apply(value);
@@ -477,7 +477,7 @@
         // Sync with content element
         this.getContentElement().setRich(value); // Mark text size cache as invalid
 
-        this.__invalidContentSize__P_54_1 = true; // Update layout
+        this.__invalidContentSize__P_61_1 = true; // Update layout
 
         qx.ui.core.queue.Layout.add(this);
       },
@@ -530,12 +530,12 @@
           // safari has trouble resizing, adding it again fixed the issue [BUG #8786]
           if (qx.core.Environment.get("browser.name") == "safari" && parseFloat(qx.core.Environment.get("browser.version")) >= 8) {
             window.setTimeout(function () {
-              this.__invalidContentSize__P_54_1 = true;
+              this.__invalidContentSize__P_61_1 = true;
               qx.ui.core.queue.Layout.add(this);
             }.bind(this), 0);
           }
 
-          this.__invalidContentSize__P_54_1 = true;
+          this.__invalidContentSize__P_61_1 = true;
           qx.ui.core.queue.Layout.add(this);
         }
       },
@@ -550,14 +550,14 @@
           } // Mark text size cache as invalid
 
 
-          this.__invalidContentSize__P_54_1 = true; // Update layout
+          this.__invalidContentSize__P_61_1 = true; // Update layout
 
           qx.ui.core.queue.Layout.add(this);
         },
         "false": function _false(value, old) {
           this.getContentElement().setValue(value); // Mark text size cache as invalid
 
-          this.__invalidContentSize__P_54_1 = true; // Update layout
+          this.__invalidContentSize__P_61_1 = true; // Update layout
 
           qx.ui.core.queue.Layout.add(this);
         }
@@ -574,14 +574,14 @@
         qx.locale.Manager.getInstance().removeListener("changeLocale", this._onChangeLocale, this);
       }
 
-      if (this.__font__P_54_0 && this.__webfontListenerId__P_54_3) {
-        this.__font__P_54_0.removeListenerById(this.__webfontListenerId__P_54_3);
+      if (this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
+        this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
       }
 
-      this.__font__P_54_0 = null;
+      this.__font__P_61_0 = null;
     }
   });
   qx.ui.basic.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1648192698887
+//# sourceMappingURL=Label.js.map?dt=1652417294642

@@ -58,8 +58,8 @@
       this._setLayout(new qx.ui.layout.HBox()); // add blocker
 
 
-      this.__blocker__P_204_0 = new qx.ui.core.Blocker(this);
-      this.__paneScroller__P_204_1 = paneScroller; // ARIA attrs
+      this.__blocker__P_126_0 = new qx.ui.core.Blocker(this);
+      this.__paneScroller__P_126_1 = paneScroller; // ARIA attrs
 
       this.getContentElement().setAttribute("role", "row");
     },
@@ -70,10 +70,10 @@
     *****************************************************************************
     */
     members: {
-      __paneScroller__P_204_1: null,
-      __moveFeedback__P_204_2: null,
-      __lastPointerOverColumn__P_204_3: null,
-      __blocker__P_204_0: null,
+      __paneScroller__P_126_1: null,
+      __moveFeedback__P_126_2: null,
+      __lastPointerOverColumn__P_126_3: null,
+      __blocker__P_126_0: null,
 
       /**
        * Returns the TablePaneScroller this header belongs to.
@@ -81,7 +81,7 @@
        * @return {qx.ui.table.pane.Scroller} the TablePaneScroller.
        */
       getPaneScroller: function getPaneScroller() {
-        return this.__paneScroller__P_204_1;
+        return this.__paneScroller__P_126_1;
       },
 
       /**
@@ -90,7 +90,7 @@
        * @return {qx.ui.table.Table} the table.
        */
       getTable: function getTable() {
-        return this.__paneScroller__P_204_1.getTable();
+        return this.__paneScroller__P_126_1.getTable();
       },
 
       /**
@@ -99,7 +99,7 @@
        * @return {qx.ui.core.Blocker} the blocker.
        */
       getBlocker: function getBlocker() {
-        return this.__blocker__P_204_0;
+        return this.__blocker__P_126_0;
       },
 
       /**
@@ -154,9 +154,9 @@
        *      null if the pointer is over no column.
        */
       setPointerOverColumn: function setPointerOverColumn(col) {
-        if (col != this.__lastPointerOverColumn__P_204_3) {
-          if (this.__lastPointerOverColumn__P_204_3 != null) {
-            var widget = this.getHeaderWidgetAtColumn(this.__lastPointerOverColumn__P_204_3);
+        if (col != this.__lastPointerOverColumn__P_126_3) {
+          if (this.__lastPointerOverColumn__P_126_3 != null) {
+            var widget = this.getHeaderWidgetAtColumn(this.__lastPointerOverColumn__P_126_3);
 
             if (widget != null) {
               widget.removeState("hovered");
@@ -167,7 +167,7 @@
             this.getHeaderWidgetAtColumn(col).addState("hovered");
           }
 
-          this.__lastPointerOverColumn__P_204_3 = col;
+          this.__lastPointerOverColumn__P_126_3 = col;
         }
       },
 
@@ -192,7 +192,7 @@
       showColumnMoveFeedback: function showColumnMoveFeedback(col, x) {
         var pos = this.getContentLocation();
 
-        if (this.__moveFeedback__P_204_2 == null) {
+        if (this.__moveFeedback__P_126_2 == null) {
           var table = this.getTable();
           var xPos = this.getPaneScroller().getTablePaneModel().getX(col);
 
@@ -218,24 +218,24 @@
             top: pos.top
           });
           this.getApplicationRoot().add(feedback);
-          this.__moveFeedback__P_204_2 = feedback;
+          this.__moveFeedback__P_126_2 = feedback;
         }
 
-        this.__moveFeedback__P_204_2.setLayoutProperties({
+        this.__moveFeedback__P_126_2.setLayoutProperties({
           left: pos.left + x
         });
 
-        this.__moveFeedback__P_204_2.show();
+        this.__moveFeedback__P_126_2.show();
       },
 
       /**
        * Hides the feedback shown while a column is moved by the user.
        */
       hideColumnMoveFeedback: function hideColumnMoveFeedback() {
-        if (this.__moveFeedback__P_204_2 != null) {
-          this.__moveFeedback__P_204_2.destroy();
+        if (this.__moveFeedback__P_126_2 != null) {
+          this.__moveFeedback__P_126_2.destroy();
 
-          this.__moveFeedback__P_204_2 = null;
+          this.__moveFeedback__P_126_2 = null;
         }
       },
 
@@ -246,7 +246,7 @@
        *    currently shown, <code>false</code> otherwise.
        */
       isShowingColumnMoveFeedback: function isShowingColumnMoveFeedback() {
-        return this.__moveFeedback__P_204_2 != null;
+        return this.__moveFeedback__P_126_2 != null;
       },
 
       /**
@@ -339,12 +339,12 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__blocker__P_204_0.dispose();
+      this.__blocker__P_126_0.dispose();
 
-      this._disposeObjects("__paneScroller__P_204_1");
+      this._disposeObjects("__paneScroller__P_126_1");
     }
   });
   qx.ui.table.pane.Header.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Header.js.map?dt=1650892428155
+//# sourceMappingURL=Header.js.map?dt=1652417297539

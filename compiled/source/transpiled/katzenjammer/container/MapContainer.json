@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 135,
+        "line": 182,
         "column": 3
       }
     },
@@ -87,28 +87,30 @@
           "column": 8
         },
         "end": {
-          "line": 24,
+          "line": 25,
           "column": 9
         }
       },
       "name": "Marker",
       "propertyType": "new",
       "init": {
-        "UserBuildings": []
+        "UserBuildings": [],
+        "UserQuests": []
       },
       "defaultValue": {
-        "UserBuildings": []
+        "UserBuildings": [],
+        "UserQuests": []
       }
     }
   },
   "construct": {
     "location": {
       "start": {
-        "line": 27,
+        "line": 28,
         "column": 15
       },
       "end": {
-        "line": 37,
+        "line": 38,
         "column": 5
       }
     },
@@ -118,11 +120,11 @@
     "initMap": {
       "location": {
         "start": {
-          "line": 41,
+          "line": 42,
           "column": 8
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 9
         }
       },
@@ -132,11 +134,11 @@
     "moveRandomPos": {
       "location": {
         "start": {
-          "line": 67,
+          "line": 69,
           "column": 8
         },
         "end": {
-          "line": 72,
+          "line": 74,
           "column": 9
         }
       },
@@ -146,11 +148,11 @@
     "movePosition": {
       "location": {
         "start": {
-          "line": 74,
+          "line": 76,
           "column": 8
         },
         "end": {
-          "line": 79,
+          "line": 85,
           "column": 9
         }
       },
@@ -160,11 +162,39 @@
     "createMarker": {
       "location": {
         "start": {
-          "line": 81,
+          "line": 87,
           "column": 8
         },
         "end": {
-          "line": 106,
+          "line": 112,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "updateMapMarker": {
+      "location": {
+        "start": {
+          "line": 115,
+          "column": 8
+        },
+        "end": {
+          "line": 119,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "updateUserQuests": {
+      "location": {
+        "start": {
+          "line": 121,
+          "column": 8
+        },
+        "end": {
+          "line": 139,
           "column": 9
         }
       },
@@ -174,12 +204,26 @@
     "updateUserBuildings": {
       "location": {
         "start": {
-          "line": 108,
+          "line": 141,
           "column": 8
         },
         "end": {
-          "line": 127,
-          "column": 3
+          "line": 160,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getIcon": {
+      "location": {
+        "start": {
+          "line": 162,
+          "column": 8
+        },
+        "end": {
+          "line": 166,
+          "column": 9
         }
       },
       "type": "function",
@@ -188,12 +232,26 @@
     "createBuilding": {
       "location": {
         "start": {
-          "line": 129,
+          "line": 168,
           "column": 8
         },
         "end": {
-          "line": 133,
-          "column": 3
+          "line": 173,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "createQuest": {
+      "location": {
+        "start": {
+          "line": 175,
+          "column": 8
+        },
+        "end": {
+          "line": 180,
+          "column": 9
         }
       },
       "type": "function",

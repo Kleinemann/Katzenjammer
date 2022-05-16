@@ -46,7 +46,7 @@
   qx.Bootstrap.define("qx.bom.client.Device", {
     statics: {
       /** Maps user agent names to device IDs */
-      __ids__P_95_0: {
+      __ids__P_70_0: {
         "Windows Phone": "iemobile",
         iPod: "ipod",
         iPad: "ipad",
@@ -69,7 +69,7 @@
       getName: function getName() {
         var str = [];
 
-        for (var key in qx.bom.client.Device.__ids__P_95_0) {
+        for (var key in qx.bom.client.Device.__ids__P_70_0) {
           str.push(key);
         }
 
@@ -77,7 +77,7 @@
         var match = reg.exec(navigator.userAgent);
 
         if (match && match[1]) {
-          return qx.bom.client.Device.__ids__P_95_0[match[1]];
+          return qx.bom.client.Device.__ids__P_70_0[match[1]];
         }
 
         return "pc";
@@ -162,4 +162,4 @@
   qx.bom.client.Device.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Device.js.map?dt=1648192700692
+//# sourceMappingURL=Device.js.map?dt=1652417295177

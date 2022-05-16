@@ -136,7 +136,7 @@
             "body": "propertyName {String} Style property name to check",
             "paramName": "propertyName",
             "description": " Style property name to check",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ],
         "@return": [
@@ -175,14 +175,14 @@
             "body": "propertyName {String} JavaScript style property",
             "paramName": "propertyName",
             "description": " JavaScript style property",
-            "type": "String"
+            "type": "qx.bom.String"
           }
         ],
         "@return": [
           {
             "name": "@return",
             "body": "{String} CSS property",
-            "type": "String",
+            "type": "qx.bom.String",
             "description": " CSS property"
           }
         ]
@@ -221,14 +221,14 @@
             "body": "propertyName {String} the style property to be tested",
             "paramName": "propertyName",
             "description": " the style property to be tested",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",
             "body": "value {String} style property value to be tested",
             "paramName": "value",
             "description": " style property value to be tested",
-            "type": "String"
+            "type": "qx.bom.String"
           },
           {
             "name": "@param",

@@ -52,7 +52,7 @@
        * @param a3 {var?} third argument of the method to call
        * @return {var} The return value of the forward method
        */
-      __forward__P_213_0: function __forward__P_213_0(functionName, a1, a2, a3) {
+      __forward__P_159_0: function __forward__P_159_0(functionName, a1, a2, a3) {
         var container = this.getChildrenContainer();
 
         if (container === this) {
@@ -69,7 +69,7 @@
        *   reference types, please do not modify them in-place)
        */
       getChildren: function getChildren() {
-        return this.__forward__P_213_0("getChildren");
+        return this.__forward__P_159_0("getChildren");
       },
 
       /**
@@ -78,7 +78,7 @@
        * @return {Boolean} Returns <code>true</code> when the widget has children.
        */
       hasChildren: function hasChildren() {
-        return this.__forward__P_213_0("hasChildren");
+        return this.__forward__P_159_0("hasChildren");
       },
 
       /**
@@ -93,7 +93,7 @@
        * @return {qx.ui.core.Widget} This object (for chaining support)
        */
       add: function add(child, options) {
-        return this.__forward__P_213_0("add", child, options);
+        return this.__forward__P_159_0("add", child, options);
       },
 
       /**
@@ -103,7 +103,7 @@
        * @return {qx.ui.core.Widget} This object (for chaining support)
        */
       remove: function remove(child) {
-        return this.__forward__P_213_0("remove", child);
+        return this.__forward__P_159_0("remove", child);
       },
 
       /**
@@ -111,7 +111,7 @@
        * @return {Array} An array containing the removed children.
        */
       removeAll: function removeAll() {
-        return this.__forward__P_213_0("removeAll");
+        return this.__forward__P_159_0("removeAll");
       },
 
       /**
@@ -128,7 +128,7 @@
        *   the given item is no child of this layout.
        */
       indexOf: function indexOf(child) {
-        return this.__forward__P_213_0("indexOf", child);
+        return this.__forward__P_159_0("indexOf", child);
       },
 
       /**
@@ -144,7 +144,7 @@
        * @param options {Map?null} Optional layout data for item.
        */
       addAt: function addAt(child, index, options) {
-        this.__forward__P_213_0("addAt", child, index, options);
+        this.__forward__P_159_0("addAt", child, index, options);
       },
 
       /**
@@ -160,7 +160,7 @@
        * @param options {Map?null} Optional layout data for item.
        */
       addBefore: function addBefore(child, before, options) {
-        this.__forward__P_213_0("addBefore", child, before, options);
+        this.__forward__P_159_0("addBefore", child, before, options);
       },
 
       /**
@@ -176,7 +176,7 @@
        * @param options {Map?null} Optional layout data for item.
        */
       addAfter: function addAfter(child, after, options) {
-        this.__forward__P_213_0("addAfter", child, after, options);
+        this.__forward__P_159_0("addAfter", child, after, options);
       },
 
       /**
@@ -191,7 +191,7 @@
        * @return {qx.ui.core.LayoutItem} The removed item
        */
       removeAt: function removeAt(index) {
-        return this.__forward__P_213_0("removeAt", index);
+        return this.__forward__P_159_0("removeAt", index);
       }
     }
   });
@@ -798,7 +798,7 @@
     */
     members: {
       /** @type {qx.ui.core.SingleSelectionManager} the single selection manager */
-      __manager__P_188_0: null,
+      __manager__P_130_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -819,7 +819,7 @@
         }
 
         if (item instanceof qx.ui.core.Widget) {
-          this.__getManager__P_188_1().setSelected(item);
+          this.__getManager__P_130_1().setSelected(item);
 
           return null;
         } else {
@@ -833,14 +833,14 @@
        * @returns {null|qx.ui.core.Widget} The currently selected widget or null if there is none.
        */
       getValue: function getValue() {
-        return this.__getManager__P_188_1().getSelected() || null;
+        return this.__getManager__P_130_1().getSelected() || null;
       },
 
       /**
        * resetValue implements part of the {@link qx.ui.form.IField} interface.
        */
       resetValue: function resetValue() {
-        this.__getManager__P_188_1().resetSelected();
+        this.__getManager__P_130_1().resetSelected();
       },
 
       /**
@@ -852,7 +852,7 @@
        * @return {qx.ui.core.Widget[]} List of items.
        */
       getSelection: function getSelection() {
-        var selected = this.__getManager__P_188_1().getSelected();
+        var selected = this.__getManager__P_130_1().getSelected();
 
         if (selected) {
           return [selected];
@@ -875,7 +875,7 @@
             break;
 
           case 1:
-            this.__getManager__P_188_1().setSelected(items[0]);
+            this.__getManager__P_130_1().setSelected(items[0]);
 
             break;
 
@@ -888,7 +888,7 @@
        * Clears the whole selection at once.
        */
       resetSelection: function resetSelection() {
-        this.__getManager__P_188_1().resetSelected();
+        this.__getManager__P_130_1().resetSelected();
       },
 
       /**
@@ -899,7 +899,7 @@
        * @throws {Error} if one of the items is not a child element.
        */
       isSelected: function isSelected(item) {
-        return this.__getManager__P_188_1().isSelected(item);
+        return this.__getManager__P_130_1().isSelected(item);
       },
 
       /**
@@ -908,7 +908,7 @@
        * @return {Boolean} Whether the selection is empty.
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__getManager__P_188_1().isSelectionEmpty();
+        return this.__getManager__P_130_1().isSelectionEmpty();
       },
 
       /**
@@ -919,7 +919,7 @@
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        return this.__getManager__P_188_1().getSelectables(all);
+        return this.__getManager__P_130_1().getSelectables(all);
       },
 
       /*
@@ -949,10 +949,10 @@
        *
        * @return {qx.ui.core.SingleSelectionManager} Single selection manager.
        */
-      __getManager__P_188_1: function __getManager__P_188_1() {
-        if (this.__manager__P_188_0 == null) {
+      __getManager__P_130_1: function __getManager__P_130_1() {
+        if (this.__manager__P_130_0 == null) {
           var that = this;
-          this.__manager__P_188_0 = new qx.ui.core.SingleSelectionManager({
+          this.__manager__P_130_0 = new qx.ui.core.SingleSelectionManager({
             getItems: function getItems() {
               return that._getItems();
             },
@@ -965,12 +965,12 @@
             }
           });
 
-          this.__manager__P_188_0.addListener("changeSelected", this._onChangeSelected, this);
+          this.__manager__P_130_0.addListener("changeSelected", this._onChangeSelected, this);
         }
 
-        this.__manager__P_188_0.setAllowEmptySelection(this._isAllowEmptySelection());
+        this.__manager__P_130_0.setAllowEmptySelection(this._isAllowEmptySelection());
 
-        return this.__manager__P_188_0;
+        return this.__manager__P_130_0;
       }
     },
 
@@ -980,7 +980,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__manager__P_188_0");
+      this._disposeObjects("__manager__P_130_0");
     }
   });
   qx.ui.core.MSingleSelectionHandling.$$dbClassInfo = $$dbClassInfo;
@@ -1028,11 +1028,11 @@
   qx.Mixin.define("qx.ui.form.MModelSelection", {
     construct: function construct() {
       // create the selection array
-      this.__modelSelection__P_189_0 = new qx.data.Array(); // listen to the changes
+      this.__modelSelection__P_131_0 = new qx.data.Array(); // listen to the changes
 
-      this.__modelSelection__P_189_0.addListener("change", this.__onModelSelectionArrayChange__P_189_1, this);
+      this.__modelSelection__P_131_0.addListener("change", this.__onModelSelectionArrayChange__P_131_1, this);
 
-      this.addListener("changeSelection", this.__onModelSelectionChange__P_189_2, this);
+      this.addListener("changeSelection", this.__onModelSelectionChange__P_131_2, this);
     },
     events: {
       /**
@@ -1042,16 +1042,16 @@
       changeModelSelection: "qx.event.type.Data"
     },
     members: {
-      __modelSelection__P_189_0: null,
-      __inSelectionChange__P_189_3: false,
+      __modelSelection__P_131_0: null,
+      __inSelectionChange__P_131_3: false,
 
       /**
        * Handler for the selection change of the including class e.g. SelectBox,
        * List, ...
        * It sets the new modelSelection via {@link #setModelSelection}.
        */
-      __onModelSelectionChange__P_189_2: function __onModelSelectionChange__P_189_2() {
-        if (this.__inSelectionChange__P_189_3) {
+      __onModelSelectionChange__P_131_2: function __onModelSelectionChange__P_131_2() {
+        if (this.__inSelectionChange__P_131_3) {
           return;
         }
 
@@ -1079,12 +1079,12 @@
       /**
        * Listener for the change of the internal model selection data array.
        */
-      __onModelSelectionArrayChange__P_189_1: function __onModelSelectionArrayChange__P_189_1() {
-        this.__inSelectionChange__P_189_3 = true;
+      __onModelSelectionArrayChange__P_131_1: function __onModelSelectionArrayChange__P_131_1() {
+        this.__inSelectionChange__P_131_3 = true;
         var selectables = this.getSelectables(true);
         var itemSelection = [];
 
-        var modelSelection = this.__modelSelection__P_189_0.toArray();
+        var modelSelection = this.__modelSelection__P_131_0.toArray();
 
         for (var i = 0; i < modelSelection.length; i++) {
           var model = modelSelection[i];
@@ -1102,13 +1102,13 @@
         }
 
         this.setSelection(itemSelection);
-        this.__inSelectionChange__P_189_3 = false; // check if the setting has worked
+        this.__inSelectionChange__P_131_3 = false; // check if the setting has worked
 
         var currentSelection = this.getSelection();
 
         if (!qx.lang.Array.equals(currentSelection, itemSelection)) {
           // if not, set the actual selection
-          this.__onModelSelectionChange__P_189_2();
+          this.__onModelSelectionChange__P_131_2();
         }
       },
 
@@ -1122,7 +1122,7 @@
        * @return {qx.data.Array} An array of the models of the selected items.
        */
       getModelSelection: function getModelSelection() {
-        return this.__modelSelection__P_189_0;
+        return this.__modelSelection__P_131_0;
       },
 
       /**
@@ -1141,7 +1141,7 @@
       setModelSelection: function setModelSelection(modelSelection) {
         // check for null values
         if (!modelSelection) {
-          this.__modelSelection__P_189_0.removeAll();
+          this.__modelSelection__P_131_0.removeAll();
 
           return;
         }
@@ -1150,17 +1150,17 @@
           this.assertArray(modelSelection, "Please use an array as parameter.");
         } // add the first two parameter
 
-        modelSelection.unshift(this.__modelSelection__P_189_0.getLength()); // remove index
+        modelSelection.unshift(this.__modelSelection__P_131_0.getLength()); // remove index
 
         modelSelection.unshift(0); // start index
 
-        var returnArray = this.__modelSelection__P_189_0.splice.apply(this.__modelSelection__P_189_0, modelSelection);
+        var returnArray = this.__modelSelection__P_131_0.splice.apply(this.__modelSelection__P_131_0, modelSelection);
 
         returnArray.dispose();
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__modelSelection__P_189_0");
+      this._disposeObjects("__modelSelection__P_131_0");
     }
   });
   qx.ui.form.MModelSelection.$$dbClassInfo = $$dbClassInfo;
@@ -1268,7 +1268,7 @@
       this.addListener("pointerout", this._onPointerOut, this);
       this.addListener("tap", this._onTap, this);
       this.addListener("keyinput", this._onKeyInput, this);
-      this.addListener("changeSelection", this.__onChangeSelection__P_222_0, this);
+      this.addListener("changeSelection", this.__onChangeSelection__P_67_0, this);
     },
 
     /*
@@ -1298,7 +1298,7 @@
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
       /** @type {qx.ui.basic.Atom} instance */
-      __preSelectedItem__P_222_1: null,
+      __preSelectedItem__P_67_1: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -1395,7 +1395,7 @@
        *
        * @param e {qx.event.type.Data} Data event.
        */
-      __onChangeSelection__P_222_0: function __onChangeSelection__P_222_0(e) {
+      __onChangeSelection__P_67_0: function __onChangeSelection__P_67_0(e) {
         var listItem = e.getData()[0];
         var list = this.getChildControl("list");
 
@@ -1407,9 +1407,9 @@
           }
         }
 
-        this.__updateIcon__P_222_2();
+        this.__updateIcon__P_67_2();
 
-        this.__updateLabel__P_222_3(); // ARIA attrs
+        this.__updateLabel__P_67_3(); // ARIA attrs
 
 
         var old = e.getOldData() ? e.getOldData()[0] : null;
@@ -1427,7 +1427,7 @@
       /**
        * Sets the icon inside the list to match the selected ListItem.
        */
-      __updateIcon__P_222_2: function __updateIcon__P_222_2() {
+      __updateIcon__P_67_2: function __updateIcon__P_67_2() {
         var listItem = this.getChildControl("list").getSelection()[0];
         var atom = this.getChildControl("atom");
         var icon = listItem ? listItem.getIcon() : "";
@@ -1437,7 +1437,7 @@
       /**
        * Sets the label inside the list to match the selected ListItem.
        */
-      __updateLabel__P_222_3: function __updateLabel__P_222_3() {
+      __updateLabel__P_67_3: function __updateLabel__P_67_3() {
         var listItem = this.getChildControl("list").getSelection()[0];
         var atom = this.getChildControl("atom");
         var label = listItem ? listItem.getLabel() : "";
@@ -1522,9 +1522,9 @@
           e.stop();
         } else if (iden == "Enter" || iden == "Space") {
           // Apply pre-selected item (translate quick selection to real selection)
-          if (this.__preSelectedItem__P_222_1) {
-            this.setSelection([this.__preSelectedItem__P_222_1]);
-            this.__preSelectedItem__P_222_1 = null;
+          if (this.__preSelectedItem__P_67_1) {
+            this.setSelection([this.__preSelectedItem__P_67_1]);
+            this.__preSelectedItem__P_67_1 = null;
           }
 
           this.toggle();
@@ -1550,9 +1550,9 @@
       // overridden
       _onListPointerDown: function _onListPointerDown(e) {
         // Apply pre-selected item (translate quick selection to real selection)
-        if (this.__preSelectedItem__P_222_1) {
-          this.setSelection([this.__preSelectedItem__P_222_1]);
-          this.__preSelectedItem__P_222_1 = null;
+        if (this.__preSelectedItem__P_67_1) {
+          this.setSelection([this.__preSelectedItem__P_67_1]);
+          this.__preSelectedItem__P_67_1 = null;
         }
       },
       // overridden
@@ -1561,8 +1561,8 @@
         var old = e.getOldData(); // Remove old listeners for icon and label changes.
 
         if (old && old.length > 0) {
-          old[0].removeListener("changeIcon", this.__updateIcon__P_222_2, this);
-          old[0].removeListener("changeLabel", this.__updateLabel__P_222_3, this);
+          old[0].removeListener("changeIcon", this.__updateIcon__P_67_2, this);
+          old[0].removeListener("changeLabel", this.__updateLabel__P_67_3, this);
         }
 
         if (current.length > 0) {
@@ -1573,15 +1573,15 @@
           var context = list.getSelectionContext();
 
           if (popup.isVisible() && (context == "quick" || context == "key")) {
-            this.__preSelectedItem__P_222_1 = current[0];
+            this.__preSelectedItem__P_67_1 = current[0];
           } else {
             this.setSelection([current[0]]);
-            this.__preSelectedItem__P_222_1 = null;
+            this.__preSelectedItem__P_67_1 = null;
           } // Add listeners for icon and label changes
 
 
-          current[0].addListener("changeIcon", this.__updateIcon__P_222_2, this);
-          current[0].addListener("changeLabel", this.__updateLabel__P_222_3, this);
+          current[0].addListener("changeIcon", this.__updateIcon__P_67_2, this);
+          current[0].addListener("changeLabel", this.__updateLabel__P_67_3, this);
         } else {
           this.resetSelection();
         } // Set aria-activedescendant
@@ -1644,7 +1644,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__preSelectedItem__P_222_1 = null;
+      this.__preSelectedItem__P_67_1 = null;
     }
   });
   qx.ui.form.SelectBox.$$dbClassInfo = $$dbClassInfo;
@@ -1849,7 +1849,7 @@
     */
     statics: {
       /** @type {Map} Contains all supported styles */
-      __styles__P_101_0: {
+      __styles__P_115_0: {
         fontFamily: 1,
         fontSize: 1,
         fontWeight: 1,
@@ -1864,8 +1864,8 @@
        *
        * @return {Element} Helper DOM element
        */
-      __prepareText__P_101_1: function __prepareText__P_101_1() {
-        var el = this.__createMeasureElement__P_101_2(false);
+      __prepareText__P_115_1: function __prepareText__P_115_1() {
+        var el = this.__createMeasureElement__P_115_2(false);
 
         document.body.insertBefore(el, document.body.firstChild);
         return this._textElement = el;
@@ -1876,8 +1876,8 @@
        *
        * @return {Element} Helper DOM element
        */
-      __prepareHtml__P_101_3: function __prepareHtml__P_101_3() {
-        var el = this.__createMeasureElement__P_101_2(true);
+      __prepareHtml__P_115_3: function __prepareHtml__P_115_3() {
+        var el = this.__createMeasureElement__P_115_2(true);
 
         document.body.insertBefore(el, document.body.firstChild);
         return this._htmlElement = el;
@@ -1889,7 +1889,7 @@
        * @param html {Boolean?false} Whether HTML markup should be used.
        * @return {Element} The measure element
        */
-      __createMeasureElement__P_101_2: function __createMeasureElement__P_101_2(html) {
+      __createMeasureElement__P_115_2: function __createMeasureElement__P_115_2(html) {
         var el = qx.dom.Element.create("div");
         var style = el.style;
         style.width = style.height = "auto";
@@ -1913,7 +1913,7 @@
             style.margin = "0";
             style.width = "auto";
 
-            for (var key in this.__styles__P_101_0) {
+            for (var key in this.__styles__P_115_0) {
               style[key] = "inherit";
             }
 
@@ -1931,7 +1931,7 @@
        * @param html {Boolean?false} Whether HTML markup should be used.
        * @return {Map} Initial styles which should be applied to a label element.
        */
-      __getStyles__P_101_4: function __getStyles__P_101_4(html) {
+      __getStyles__P_115_4: function __getStyles__P_115_4(html) {
         var styles = {};
         styles.overflow = "hidden";
 
@@ -1990,14 +1990,14 @@
           style.width = "auto"; // Force style inheritance for font styles to omit usage of
           // CSS "label" selector, See bug #1349 for details.
 
-          for (var key in this.__styles__P_101_0) {
+          for (var key in this.__styles__P_115_0) {
             xulel.style[key] = "inherit";
           }
 
           xulel.setAttribute("crop", "end");
           el.appendChild(xulel);
         } else {
-          qx.bom.element.Style.setStyles(el, this.__getStyles__P_101_4(html));
+          qx.bom.element.Style.setStyles(el, this.__getStyles__P_115_4(html));
         }
 
         if (content) {
@@ -2008,7 +2008,7 @@
       },
 
       /** Sanitizer function */
-      __sanitizer__P_101_5: null,
+      __sanitizer__P_115_5: null,
 
       /**
        * Sets a function to sanitize values. It will be used by {@link #setValue}.
@@ -2024,7 +2024,7 @@
             qx.core.Assert.assertFunction(func);
           }
         }
-        qx.bom.Label.__sanitizer__P_101_5 = func;
+        qx.bom.Label.__sanitizer__P_115_5 = func;
       },
 
       /**
@@ -2040,8 +2040,8 @@
         value = value || "";
 
         if (element.useHtml) {
-          if (qx.bom.Label.__sanitizer__P_101_5 && typeof qx.bom.Label.__sanitizer__P_101_5 === "function") {
-            value = qx.bom.Label.__sanitizer__P_101_5(value);
+          if (qx.bom.Label.__sanitizer__P_115_5 && typeof qx.bom.Label.__sanitizer__P_115_5 === "function") {
+            value = qx.bom.Label.__sanitizer__P_115_5(value);
           }
 
           element.innerHTML = value;
@@ -2077,13 +2077,13 @@
        * @return {Map} A map with preferred <code>width</code> and <code>height</code>.
        */
       getHtmlSize: function getHtmlSize(content, styles, width) {
-        var element = this._htmlElement || this.__prepareHtml__P_101_3(); // apply width
+        var element = this._htmlElement || this.__prepareHtml__P_115_3(); // apply width
 
 
         element.style.width = width != undefined ? width + "px" : "auto"; // insert content
 
         element.innerHTML = content;
-        return this.__measureSize__P_101_6(element, styles);
+        return this.__measureSize__P_115_6(element, styles);
       },
 
       /**
@@ -2094,7 +2094,7 @@
        * @return {Map} A map with preferred <code>width</code> and <code>height</code>.
        */
       getTextSize: function getTextSize(text, styles) {
-        var element = this._textElement || this.__prepareText__P_101_1();
+        var element = this._textElement || this.__prepareText__P_115_1();
 
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul")) {
           element.firstChild.setAttribute("value", text);
@@ -2102,7 +2102,7 @@
           qx.bom.element.Attribute.set(element, "text", text);
         }
 
-        return this.__measureSize__P_101_6(element, styles);
+        return this.__measureSize__P_115_6(element, styles);
       },
 
       /**
@@ -2112,9 +2112,9 @@
        * @param styles {Map?null} Optional styles to apply
        * @return {Map} A map with preferred <code>width</code> and <code>height</code>.
        */
-      __measureSize__P_101_6: function __measureSize__P_101_6(element, styles) {
+      __measureSize__P_115_6: function __measureSize__P_115_6(element, styles) {
         // sync styles
-        var keys = this.__styles__P_101_0;
+        var keys = this.__styles__P_115_0;
 
         if (!styles) {
           styles = {};
@@ -3220,7 +3220,7 @@
        *
        * @lint ignoreReferenceField(__contentPaddingSetter)
        */
-      __contentPaddingSetter__P_173_0: {
+      __contentPaddingSetter__P_136_0: {
         contentPaddingTop: "setPaddingTop",
         contentPaddingRight: "setPaddingRight",
         contentPaddingBottom: "setPaddingBottom",
@@ -3232,7 +3232,7 @@
        *
        * @lint ignoreReferenceField(__contentPaddingThemedSetter)
        */
-      __contentPaddingThemedSetter__P_173_1: {
+      __contentPaddingThemedSetter__P_136_1: {
         contentPaddingTop: "setThemedPaddingTop",
         contentPaddingRight: "setThemedPaddingRight",
         contentPaddingBottom: "setThemedPaddingBottom",
@@ -3244,7 +3244,7 @@
        *
        * @lint ignoreReferenceField(__contentPaddingResetter)
        */
-      __contentPaddingResetter__P_173_2: {
+      __contentPaddingResetter__P_136_2: {
         contentPaddingTop: "resetPaddingTop",
         contentPaddingRight: "resetPaddingRight",
         contentPaddingBottom: "resetPaddingBottom",
@@ -3255,15 +3255,15 @@
         var target = this._getContentPaddingTarget();
 
         if (value == null) {
-          var resetter = this.__contentPaddingResetter__P_173_2[name];
+          var resetter = this.__contentPaddingResetter__P_136_2[name];
           target[resetter]();
         } else {
           // forward the themed sates if case the apply was invoked by a theme
           if (variant == "setThemed" || variant == "resetThemed") {
-            var setter = this.__contentPaddingThemedSetter__P_173_1[name];
+            var setter = this.__contentPaddingThemedSetter__P_136_1[name];
             target[setter](value);
           } else {
-            var setter = this.__contentPaddingSetter__P_173_0[name];
+            var setter = this.__contentPaddingSetter__P_136_0[name];
             target[setter](value);
           }
         }
@@ -3548,10 +3548,10 @@
     */
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__createdStyles__P_126_0 = [];
-      this.__validators__P_126_1 = {};
-      this.__queue__P_126_2 = [];
-      this.__preferredFormats__P_126_3 = this.getPreferredFormats();
+      this.__createdStyles__P_154_0 = [];
+      this.__validators__P_154_1 = {};
+      this.__queue__P_154_2 = [];
+      this.__preferredFormats__P_154_3 = this.getPreferredFormats();
     },
 
     /*
@@ -3578,12 +3578,12 @@
     *****************************************************************************
     */
     members: {
-      __createdStyles__P_126_0: null,
-      __styleSheet__P_126_4: null,
-      __validators__P_126_1: null,
-      __preferredFormats__P_126_3: null,
-      __queue__P_126_2: null,
-      __queueInterval__P_126_5: null,
+      __createdStyles__P_154_0: null,
+      __styleSheet__P_154_4: null,
+      __validators__P_154_1: null,
+      __preferredFormats__P_154_3: null,
+      __queue__P_154_2: null,
+      __queueInterval__P_154_5: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -3628,19 +3628,19 @@
 
 
         if (qx.core.Environment.get("engine.name") == "mshtml" && (parseInt(qx.core.Environment.get("engine.version")) < 9 || qx.core.Environment.get("browser.documentmode") < 9)) {
-          if (!this.__queueInterval__P_126_5) {
-            this.__queueInterval__P_126_5 = new qx.event.Timer(100);
+          if (!this.__queueInterval__P_154_5) {
+            this.__queueInterval__P_154_5 = new qx.event.Timer(100);
 
-            this.__queueInterval__P_126_5.addListener("interval", this.__flushQueue__P_126_6, this);
+            this.__queueInterval__P_154_5.addListener("interval", this.__flushQueue__P_154_6, this);
           }
 
-          if (!this.__queueInterval__P_126_5.isEnabled()) {
-            this.__queueInterval__P_126_5.start();
+          if (!this.__queueInterval__P_154_5.isEnabled()) {
+            this.__queueInterval__P_154_5.start();
           }
 
-          this.__queue__P_126_2.push([familyName, sources, fontWeight, fontStyle, comparisonString, version, callback, context]);
+          this.__queue__P_154_2.push([familyName, sources, fontWeight, fontStyle, comparisonString, version, callback, context]);
         } else {
-          this.__require__P_126_7(familyName, sources, fontWeight, fontStyle, comparisonString, version, callback, context);
+          this.__require__P_154_7(familyName, sources, fontWeight, fontStyle, comparisonString, version, callback, context);
         }
       },
 
@@ -3654,28 +3654,28 @@
        * @param fontStyle {String} the font-style.
        */
       remove: function remove(familyName, fontWeight, fontStyle) {
-        var fontLookupKey = this.__createFontLookupKey__P_126_8(familyName, fontWeight, fontStyle);
+        var fontLookupKey = this.__createFontLookupKey__P_154_8(familyName, fontWeight, fontStyle);
 
         var index = null;
 
-        for (var i = 0, l = this.__createdStyles__P_126_0.length; i < l; i++) {
-          if (this.__createdStyles__P_126_0[i] == fontLookupKey) {
+        for (var i = 0, l = this.__createdStyles__P_154_0.length; i < l; i++) {
+          if (this.__createdStyles__P_154_0[i] == fontLookupKey) {
             index = i;
 
-            this.__removeRule__P_126_9(familyName, fontWeight, fontStyle);
+            this.__removeRule__P_154_9(familyName, fontWeight, fontStyle);
 
             break;
           }
         }
 
         if (index !== null) {
-          qx.lang.Array.removeAt(this.__createdStyles__P_126_0, index);
+          qx.lang.Array.removeAt(this.__createdStyles__P_154_0, index);
         }
 
-        if (fontLookupKey in this.__validators__P_126_1) {
-          this.__validators__P_126_1[fontLookupKey].dispose();
+        if (fontLookupKey in this.__validators__P_154_1) {
+          this.__validators__P_154_1[fontLookupKey].dispose();
 
-          delete this.__validators__P_126_1[fontLookupKey];
+          delete this.__validators__P_154_1[fontLookupKey];
         }
       },
 
@@ -3724,13 +3724,13 @@
        * font-families
        */
       removeStyleSheet: function removeStyleSheet() {
-        this.__createdStyles__P_126_0 = [];
+        this.__createdStyles__P_154_0 = [];
 
-        if (this.__styleSheet__P_126_4) {
-          qx.bom.Stylesheet.removeSheet(this.__styleSheet__P_126_4);
+        if (this.__styleSheet__P_154_4) {
+          qx.bom.Stylesheet.removeSheet(this.__styleSheet__P_154_4);
         }
 
-        this.__styleSheet__P_126_4 = null;
+        this.__styleSheet__P_154_4 = null;
       },
 
       /*
@@ -3746,7 +3746,7 @@
        * @param fontStyle {String} the font-style.
        * @return {string} the font lookup key
        */
-      __createFontLookupKey__P_126_8: function __createFontLookupKey__P_126_8(familyName, fontWeight, fontStyle) {
+      __createFontLookupKey__P_154_8: function __createFontLookupKey__P_154_8(familyName, fontWeight, fontStyle) {
         var lookupKey = familyName + "_" + (fontWeight ? fontWeight : "normal") + "_" + (fontStyle ? fontStyle : "normal");
         return lookupKey;
       },
@@ -3769,24 +3769,24 @@
        * applied correctly.
        * @param context {Object?} Optional context for the callback function
        */
-      __require__P_126_7: function __require__P_126_7(familyName, sources, fontWeight, fontStyle, comparisonString, version, callback, context) {
-        var fontLookupKey = this.__createFontLookupKey__P_126_8(familyName, fontWeight, fontStyle);
+      __require__P_154_7: function __require__P_154_7(familyName, sources, fontWeight, fontStyle, comparisonString, version, callback, context) {
+        var fontLookupKey = this.__createFontLookupKey__P_154_8(familyName, fontWeight, fontStyle);
 
-        if (!this.__createdStyles__P_126_0.includes(fontLookupKey)) {
-          var sourcesMap = this.__getSourcesMap__P_126_10(sources);
+        if (!this.__createdStyles__P_154_0.includes(fontLookupKey)) {
+          var sourcesMap = this.__getSourcesMap__P_154_10(sources);
 
-          var rule = this.__getRule__P_126_11(familyName, fontWeight, fontStyle, sourcesMap, version);
+          var rule = this.__getRule__P_154_11(familyName, fontWeight, fontStyle, sourcesMap, version);
 
           if (!rule) {
             throw new Error("Couldn't create @font-face rule for WebFont " + familyName + "!");
           }
 
-          if (!this.__styleSheet__P_126_4) {
-            this.__styleSheet__P_126_4 = qx.bom.Stylesheet.createElement();
+          if (!this.__styleSheet__P_154_4) {
+            this.__styleSheet__P_154_4 = qx.bom.Stylesheet.createElement();
           }
 
           try {
-            this.__addRule__P_126_12(rule);
+            this.__addRule__P_154_12(rule);
           } catch (ex) {
             {
               this.warn("Error while adding @font-face rule:", ex.message);
@@ -3794,39 +3794,39 @@
             }
           }
 
-          this.__createdStyles__P_126_0.push(fontLookupKey);
+          this.__createdStyles__P_154_0.push(fontLookupKey);
         }
 
-        if (!this.__validators__P_126_1[fontLookupKey]) {
-          this.__validators__P_126_1[fontLookupKey] = new qx.bom.webfonts.Validator(familyName, comparisonString, fontWeight, fontStyle);
+        if (!this.__validators__P_154_1[fontLookupKey]) {
+          this.__validators__P_154_1[fontLookupKey] = new qx.bom.webfonts.Validator(familyName, comparisonString, fontWeight, fontStyle);
 
-          this.__validators__P_126_1[fontLookupKey].setTimeout(qx.bom.webfonts.Manager.VALIDATION_TIMEOUT);
+          this.__validators__P_154_1[fontLookupKey].setTimeout(qx.bom.webfonts.Manager.VALIDATION_TIMEOUT);
 
-          this.__validators__P_126_1[fontLookupKey].addListenerOnce("changeStatus", this.__onFontChangeStatus__P_126_13, this);
+          this.__validators__P_154_1[fontLookupKey].addListenerOnce("changeStatus", this.__onFontChangeStatus__P_154_13, this);
         }
 
         if (callback) {
           var cbContext = context || window;
 
-          this.__validators__P_126_1[fontLookupKey].addListenerOnce("changeStatus", callback, cbContext);
+          this.__validators__P_154_1[fontLookupKey].addListenerOnce("changeStatus", callback, cbContext);
         }
 
-        this.__validators__P_126_1[fontLookupKey].validate();
+        this.__validators__P_154_1[fontLookupKey].validate();
       },
 
       /**
        * Processes the next item in the queue
        */
-      __flushQueue__P_126_6: function __flushQueue__P_126_6() {
-        if (this.__queue__P_126_2.length == 0) {
-          this.__queueInterval__P_126_5.stop();
+      __flushQueue__P_154_6: function __flushQueue__P_154_6() {
+        if (this.__queue__P_154_2.length == 0) {
+          this.__queueInterval__P_154_5.stop();
 
           return;
         }
 
-        var next = this.__queue__P_126_2.shift();
+        var next = this.__queue__P_154_2.shift();
 
-        this.__require__P_126_7.apply(this, next);
+        this.__require__P_154_7.apply(this, next);
       },
 
       /**
@@ -3834,7 +3834,7 @@
        *
        * @param ev {qx.event.type.Data} qx.bom.webfonts.Validator#changeStatus
        */
-      __onFontChangeStatus__P_126_13: function __onFontChangeStatus__P_126_13(ev) {
+      __onFontChangeStatus__P_154_13: function __onFontChangeStatus__P_154_13(ev) {
         var result = ev.getData();
 
         if (result.valid === false) {
@@ -3852,7 +3852,7 @@
        * @param sources {String[]} Array of source URLs
        * @return {Map} Map of formats and URLs
        */
-      __getSourcesMap__P_126_10: function __getSourcesMap__P_126_10(sources) {
+      __getSourcesMap__P_154_10: function __getSourcesMap__P_154_10(sources) {
         var formats = qx.bom.webfonts.Manager.FONT_FORMATS;
         var sourcesMap = {};
         var reg = new RegExp(".(" + formats.join("|") + ")");
@@ -3881,15 +3881,15 @@
        * @param version {String?} Optional version to be appended to the URL
        * @return {String} The computed CSS rule
        */
-      __getRule__P_126_11: function __getRule__P_126_11(familyName, fontWeight, fontStyle, sourcesMap, version) {
+      __getRule__P_154_11: function __getRule__P_154_11(familyName, fontWeight, fontStyle, sourcesMap, version) {
         var rules = [];
-        var formatList = this.__preferredFormats__P_126_3.length > 0 ? this.__preferredFormats__P_126_3 : qx.bom.webfonts.Manager.FONT_FORMATS;
+        var formatList = this.__preferredFormats__P_154_3.length > 0 ? this.__preferredFormats__P_154_3 : qx.bom.webfonts.Manager.FONT_FORMATS;
 
         for (var i = 0, l = formatList.length; i < l; i++) {
           var format = formatList[i];
 
           if (sourcesMap[format]) {
-            rules.push(this.__getSourceForFormat__P_126_14(format, sourcesMap[format], version));
+            rules.push(this.__getSourceForFormat__P_154_14(format, sourcesMap[format], version));
           }
         }
 
@@ -3907,7 +3907,7 @@
        * @param version {String?} Optional version to be appended to the URL
        * @return {String} The src directive
        */
-      __getSourceForFormat__P_126_14: function __getSourceForFormat__P_126_14(format, url, version) {
+      __getSourceForFormat__P_154_14: function __getSourceForFormat__P_154_14(format, url, version) {
         if (version) {
           url += "?" + version;
         }
@@ -3938,16 +3938,16 @@
        *
        * @param rule {String} The body of the CSS rule
        */
-      __addRule__P_126_12: function __addRule__P_126_12(rule) {
+      __addRule__P_154_12: function __addRule__P_154_12(rule) {
         var completeRule = "@font-face {" + rule + "}\n";
 
         if (qx.core.Environment.get("browser.name") == "ie" && qx.core.Environment.get("browser.documentmode") < 9) {
-          var cssText = this.__fixCssText__P_126_15(this.__styleSheet__P_126_4.cssText);
+          var cssText = this.__fixCssText__P_154_15(this.__styleSheet__P_154_4.cssText);
 
           cssText += completeRule;
-          this.__styleSheet__P_126_4.cssText = cssText;
+          this.__styleSheet__P_154_4.cssText = cssText;
         } else {
-          this.__styleSheet__P_126_4.insertRule(completeRule, this.__styleSheet__P_126_4.cssRules.length);
+          this.__styleSheet__P_154_4.insertRule(completeRule, this.__styleSheet__P_154_4.cssRules.length);
         }
       },
 
@@ -3959,7 +3959,7 @@
        * @param fontWeight {String} fontWeight font-weight.
        * @param fontStyle {String} fontStyle font-style.
        */
-      __removeRule__P_126_9: function __removeRule__P_126_9(familyName, fontWeight, fontStyle) {
+      __removeRule__P_154_9: function __removeRule__P_154_9(familyName, fontWeight, fontStyle) {
         // In IE and edge even if the rule was added with font-style first
         // and font-weight second, it is not guaranteed that the attributes
         // remain in that order. Therefore we check for both version,
@@ -3973,7 +3973,7 @@
 
           if (sheet.cssText) {
             var cssText = sheet.cssText.replace(/\n/g, "").replace(/\r/g, "");
-            cssText = this.__fixCssText__P_126_15(cssText);
+            cssText = this.__fixCssText__P_154_15(cssText);
 
             if (reg.exec(cssText)) {
               cssText = cssText.replace(reg, "");
@@ -3985,7 +3985,7 @@
               var cssText = sheet.cssRules[j].cssText.replace(/\n/g, "").replace(/\r/g, "");
 
               if (reg.exec(cssText)) {
-                this.__styleSheet__P_126_4.deleteRule(j);
+                this.__styleSheet__P_154_4.deleteRule(j);
 
                 return;
               }
@@ -4002,7 +4002,7 @@
        * @param cssText {String} CSS text
        * @return {String} Fixed CSS text
        */
-      __fixCssText__P_126_15: function __fixCssText__P_126_15(cssText) {
+      __fixCssText__P_154_15: function __fixCssText__P_154_15(cssText) {
         return cssText.replace("'eot)", "'eot')").replace("('embedded-opentype)", "('embedded-opentype')");
       }
     },
@@ -4013,17 +4013,17 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__queueInterval__P_126_5) {
-        this.__queueInterval__P_126_5.stop();
+      if (this.__queueInterval__P_154_5) {
+        this.__queueInterval__P_154_5.stop();
 
-        this.__queueInterval__P_126_5.dispose();
+        this.__queueInterval__P_154_5.dispose();
       }
 
-      delete this.__createdStyles__P_126_0;
+      delete this.__createdStyles__P_154_0;
       this.removeStyleSheet();
 
-      for (var prop in this.__validators__P_126_1) {
-        this.__validators__P_126_1[prop].dispose();
+      for (var prop in this.__validators__P_154_1) {
+        this.__validators__P_154_1[prop].dispose();
       }
 
       qx.bom.webfonts.Validator.removeDefaultHelperElements();
@@ -4505,9 +4505,9 @@
     extend: qx.event.Emitter,
     construct: function construct() {
       var css = qx.core.Environment.get("css.animation");
-      this.__playState__P_158_0 = css && css["play-state"];
-      this.__playing__P_158_1 = true;
-      this.addListenerOnce("end", this.__setEnded__P_158_2, this);
+      this.__playState__P_209_0 = css && css["play-state"];
+      this.__playing__P_209_1 = true;
+      this.addListenerOnce("end", this.__setEnded__P_209_2, this);
     },
     events: {
       /** Fired when the animation started via {@link qx.bom.element.Animation}. */
@@ -4523,16 +4523,16 @@
       iteration: "Element"
     },
     members: {
-      __playState__P_158_0: null,
-      __playing__P_158_1: false,
-      __ended__P_158_3: false,
+      __playState__P_209_0: null,
+      __playing__P_209_1: false,
+      __ended__P_209_3: false,
 
       /**
        * Accessor of the playing state.
        * @return {Boolean} <code>true</code>, if the animations is playing.
        */
       isPlaying: function isPlaying() {
-        return this.__playing__P_158_1;
+        return this.__playing__P_209_1;
       },
 
       /**
@@ -4540,7 +4540,7 @@
        * @return {Boolean} <code>true</code>, if the animations has ended.
        */
       isEnded: function isEnded() {
-        return this.__ended__P_158_3;
+        return this.__ended__P_209_3;
       },
 
       /**
@@ -4548,7 +4548,7 @@
        * @return {Boolean} <code>true</code>, if the animations is paused.
        */
       isPaused: function isPaused() {
-        return this.el.style[this.__playState__P_158_0] == "paused";
+        return this.el.style[this.__playState__P_209_0] == "paused";
       },
 
       /**
@@ -4556,8 +4556,8 @@
        */
       pause: function pause() {
         if (this.el) {
-          this.el.style[this.__playState__P_158_0] = "paused";
-          this.el.$$animation.__playing__P_158_1 = false; // in case the animation is based on JS
+          this.el.style[this.__playState__P_209_0] = "paused";
+          this.el.$$animation.__playing__P_209_1 = false; // in case the animation is based on JS
 
           if (this.animationId && qx.bom.element.AnimationJs) {
             qx.bom.element.AnimationJs.pause(this);
@@ -4571,8 +4571,8 @@
        */
       play: function play() {
         if (this.el) {
-          this.el.style[this.__playState__P_158_0] = "running";
-          this.el.$$animation.__playing__P_158_1 = true; // in case the animation is based on JS
+          this.el.style[this.__playState__P_209_0] = "running";
+          this.el.$$animation.__playing__P_209_1 = true; // in case the animation is based on JS
 
           if (this.i != undefined && qx.bom.element.AnimationJs) {
             qx.bom.element.AnimationJs.play(this);
@@ -4585,10 +4585,10 @@
        */
       stop: function stop() {
         if (this.el && qx.core.Environment.get("css.animation") && !this.jsAnimation) {
-          this.el.style[this.__playState__P_158_0] = "";
+          this.el.style[this.__playState__P_209_0] = "";
           this.el.style[qx.core.Environment.get("css.animation").name] = "";
-          this.el.$$animation.__playing__P_158_1 = false;
-          this.el.$$animation.__ended__P_158_3 = true;
+          this.el.$$animation.__playing__P_209_1 = false;
+          this.el.$$animation.__ended__P_209_3 = true;
         } // in case the animation is based on JS
         else if (this.jsAnimation) {
           this.stopped = true;
@@ -4599,9 +4599,9 @@
       /**
        * Set the animation state to ended
        */
-      __setEnded__P_158_2: function __setEnded__P_158_2() {
-        this.__playing__P_158_1 = false;
-        this.__ended__P_158_3 = true;
+      __setEnded__P_209_2: function __setEnded__P_209_2() {
+        this.__playing__P_209_1 = false;
+        this.__ended__P_209_3 = true;
       }
     }
   });
@@ -4830,7 +4830,7 @@
   qx.Bootstrap.define("qx.bom.element.Transform", {
     statics: {
       /** Internal storage of the CSS names */
-      __cssKeys__P_159_0: qx.core.Environment.get("css.transform"),
+      __cssKeys__P_210_0: qx.core.Environment.get("css.transform"),
 
       /**
        * Method to apply multiple transforms at once to the given element. It
@@ -4854,8 +4854,8 @@
       transform: function transform(el, transforms) {
         var transformCss = this.getTransformValue(transforms);
 
-        if (this.__cssKeys__P_159_0 != null) {
-          var style = this.__cssKeys__P_159_0["name"];
+        if (this.__cssKeys__P_210_0 != null) {
+          var style = this.__cssKeys__P_210_0["name"];
           el.style[style] = transformCss;
         }
       },
@@ -4918,8 +4918,8 @@
       getCss: function getCss(transforms) {
         var transformCss = this.getTransformValue(transforms);
 
-        if (this.__cssKeys__P_159_0 != null) {
-          var style = this.__cssKeys__P_159_0["name"];
+        if (this.__cssKeys__P_210_0 != null) {
+          var style = this.__cssKeys__P_210_0["name"];
           return qx.bom.Style.getCssName(style) + ":" + transformCss + ";";
         }
 
@@ -4935,8 +4935,8 @@
        *   <code>left top</code>.
        */
       setOrigin: function setOrigin(el, value) {
-        if (this.__cssKeys__P_159_0 != null) {
-          el.style[this.__cssKeys__P_159_0["origin"]] = value;
+        if (this.__cssKeys__P_210_0 != null) {
+          el.style[this.__cssKeys__P_210_0["origin"]] = value;
         }
       },
 
@@ -4948,8 +4948,8 @@
        * @return {String} The set property, e.g. <code>50% 50%</code>
        */
       getOrigin: function getOrigin(el) {
-        if (this.__cssKeys__P_159_0 != null) {
-          return el.style[this.__cssKeys__P_159_0["origin"]];
+        if (this.__cssKeys__P_210_0 != null) {
+          return el.style[this.__cssKeys__P_210_0["origin"]];
         }
 
         return "";
@@ -4963,8 +4963,8 @@
        * @param value {String} Either <code>flat</code> or <code>preserve-3d</code>.
        */
       setStyle: function setStyle(el, value) {
-        if (this.__cssKeys__P_159_0 != null) {
-          el.style[this.__cssKeys__P_159_0["style"]] = value;
+        if (this.__cssKeys__P_210_0 != null) {
+          el.style[this.__cssKeys__P_210_0["style"]] = value;
         }
       },
 
@@ -4977,8 +4977,8 @@
        *   <code>preserve-3d</code>.
        */
       getStyle: function getStyle(el) {
-        if (this.__cssKeys__P_159_0 != null) {
-          return el.style[this.__cssKeys__P_159_0["style"]];
+        if (this.__cssKeys__P_210_0 != null) {
+          return el.style[this.__cssKeys__P_210_0["style"]];
         }
 
         return "";
@@ -4993,8 +4993,8 @@
        *   and 5000 give the best results.
        */
       setPerspective: function setPerspective(el, value) {
-        if (this.__cssKeys__P_159_0 != null) {
-          el.style[this.__cssKeys__P_159_0["perspective"]] = value + "px";
+        if (this.__cssKeys__P_210_0 != null) {
+          el.style[this.__cssKeys__P_210_0["perspective"]] = value + "px";
         }
       },
 
@@ -5006,8 +5006,8 @@
        * @return {String} The set property, e.g. <code>500</code>
        */
       getPerspective: function getPerspective(el) {
-        if (this.__cssKeys__P_159_0 != null) {
-          return el.style[this.__cssKeys__P_159_0["perspective"]];
+        if (this.__cssKeys__P_210_0 != null) {
+          return el.style[this.__cssKeys__P_210_0["perspective"]];
         }
 
         return "";
@@ -5022,8 +5022,8 @@
        *   <code>left top</code>.
        */
       setPerspectiveOrigin: function setPerspectiveOrigin(el, value) {
-        if (this.__cssKeys__P_159_0 != null) {
-          el.style[this.__cssKeys__P_159_0["perspective-origin"]] = value;
+        if (this.__cssKeys__P_210_0 != null) {
+          el.style[this.__cssKeys__P_210_0["perspective-origin"]] = value;
         }
       },
 
@@ -5035,14 +5035,14 @@
        * @return {String} The set property, e.g. <code>50% 50%</code>
        */
       getPerspectiveOrigin: function getPerspectiveOrigin(el) {
-        if (this.__cssKeys__P_159_0 != null) {
-          var value = el.style[this.__cssKeys__P_159_0["perspective-origin"]];
+        if (this.__cssKeys__P_210_0 != null) {
+          var value = el.style[this.__cssKeys__P_210_0["perspective-origin"]];
 
           if (value != "") {
             return value;
           } else {
-            var valueX = el.style[this.__cssKeys__P_159_0["perspective-origin"] + "X"];
-            var valueY = el.style[this.__cssKeys__P_159_0["perspective-origin"] + "Y"];
+            var valueX = el.style[this.__cssKeys__P_210_0["perspective-origin"] + "X"];
+            var valueY = el.style[this.__cssKeys__P_210_0["perspective-origin"] + "Y"];
 
             if (valueX != "") {
               return valueX + " " + valueY;
@@ -5061,8 +5061,8 @@
        * @param value {Boolean} <code>true</code> if the backface should be visible.
        */
       setBackfaceVisibility: function setBackfaceVisibility(el, value) {
-        if (this.__cssKeys__P_159_0 != null) {
-          el.style[this.__cssKeys__P_159_0["backface-visibility"]] = value ? "visible" : "hidden";
+        if (this.__cssKeys__P_210_0 != null) {
+          el.style[this.__cssKeys__P_210_0["backface-visibility"]] = value ? "visible" : "hidden";
         }
       },
 
@@ -5074,8 +5074,8 @@
        * @return {Boolean} <code>true</code>, if the backface is visible.
        */
       getBackfaceVisibility: function getBackfaceVisibility(el) {
-        if (this.__cssKeys__P_159_0 != null) {
-          return el.style[this.__cssKeys__P_159_0["backface-visibility"]] == "visible";
+        if (this.__cssKeys__P_210_0 != null) {
+          return el.style[this.__cssKeys__P_210_0["backface-visibility"]] == "visible";
         }
 
         return true;
@@ -5506,7 +5506,7 @@
           // if the end-user navigates in the Iframe.
 
 
-          this.__rememberUrl__P_160_0(iframe);
+          this.__rememberUrl__P_211_0(iframe);
         } catch (ex) {
           qx.log.Logger.warn("Iframe source could not be set!");
         }
@@ -5535,7 +5535,7 @@
        *
        * @param iframe {Element} DOM element of the iframe.
        */
-      __rememberUrl__P_160_0: function __rememberUrl__P_160_0(iframe) {
+      __rememberUrl__P_211_0: function __rememberUrl__P_211_0(iframe) {
         // URL can only be detected after load. Retrieve and store URL once.
         var callback = function callback() {
           qx.bom.Event.removeNativeListener(iframe, "load", callback);
@@ -5625,7 +5625,7 @@
     */
     statics: {
       /** @type {Map} Internal data structures with all supported input types */
-      __types__P_161_0: {
+      __types__P_155_0: {
         text: 1,
         textarea: 1,
         select: 1,
@@ -5658,7 +5658,7 @@
        */
       create: function create(type, attributes, win) {
         {
-          qx.core.Assert.assertKeyInMap(type, this.__types__P_161_0, "Unsupported input type.");
+          qx.core.Assert.assertKeyInMap(type, this.__types__P_155_0, "Unsupported input type.");
         } // Work on a copy to not modify given attributes map
 
         var attributes = attributes ? qx.lang.Object.clone(attributes) : {};
@@ -5887,10 +5887,10 @@
   qx.Class.define("qx.bom.element.Background", {
     statics: {
       /** @type {Array} Internal helper to improve compile performance */
-      __tmpl__P_128_0: ["background-image:url(", null, ");", "background-position:", null, ";", "background-repeat:", null, ";"],
+      __tmpl__P_197_0: ["background-image:url(", null, ");", "background-position:", null, ";", "background-repeat:", null, ";"],
 
       /** @type {Map} Empty styles when no image is given */
-      __emptyStyles__P_128_1: {
+      __emptyStyles__P_197_1: {
         backgroundImage: null,
         backgroundPosition: null,
         backgroundRepeat: null
@@ -5905,7 +5905,7 @@
        *    string value
        * @return {String} The background position CSS value
        */
-      __computePosition__P_128_2: function __computePosition__P_128_2(left, top) {
+      __computePosition__P_197_2: function __computePosition__P_197_2(left, top) {
         // Correcting buggy Firefox background-position implementation
         // Have problems with identical values
         var engine = qx.core.Environment.get("engine.name");
@@ -5948,11 +5948,11 @@
        * @return {String} CSS string
        */
       compile: function compile(source, repeat, left, top) {
-        var position = this.__computePosition__P_128_2(left, top);
+        var position = this.__computePosition__P_197_2(left, top);
 
         var backgroundImageUrl = qx.util.ResourceManager.getInstance().toUri(source); // Updating template
 
-        var tmpl = this.__tmpl__P_128_0;
+        var tmpl = this.__tmpl__P_197_0;
         tmpl[1] = "'" + backgroundImageUrl + "'"; // Put in quotes so spaces work
 
         tmpl[4] = position;
@@ -5979,10 +5979,10 @@
        */
       getStyles: function getStyles(source, repeat, left, top) {
         if (!source) {
-          return this.__emptyStyles__P_128_1;
+          return this.__emptyStyles__P_197_1;
         }
 
-        var position = this.__computePosition__P_128_2(left, top);
+        var position = this.__computePosition__P_197_2(left, top);
 
         var backgroundImageUrl = qx.util.ResourceManager.getInstance().toUri(source);
         var backgroundImageCssString = "url('" + backgroundImageUrl + "')"; // Put in quotes so spaces work
@@ -6117,9 +6117,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct(varargs) {
       qx.core.Object.constructor.call(this); // create item array
 
-      this.__items__P_187_0 = []; // add listener before call add!!!
+      this.__items__P_188_0 = []; // add listener before call add!!!
 
-      this.addListener("changeSelection", this.__onChangeSelection__P_187_1, this);
+      this.addListener("changeSelection", this.__onChangeSelection__P_188_1, this);
 
       if (varargs != null) {
         this.add.apply(this, arguments);
@@ -6229,7 +6229,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     */
     members: {
       /** @type {qx.ui.form.IRadioItem[]} The items of the radio group */
-      __items__P_187_0: null,
+      __items__P_188_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -6243,7 +6243,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.form.IRadioItem[]} All managed items.
        */
       getItems: function getItems() {
-        return this.__items__P_187_0;
+        return this.__items__P_188_0;
       },
 
       /*
@@ -6258,7 +6258,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param varargs {qx.ui.form.IRadioItem} A variable number of items to add.
        */
       add: function add(varargs) {
-        var items = this.__items__P_187_0;
+        var items = this.__items__P_188_0;
         var item;
         var groupedProperty = this.getGroupedProperty();
         var groupedPropertyUp = qx.lang.String.firstUp(groupedProperty);
@@ -6294,7 +6294,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param item {qx.ui.form.IRadioItem} The item to remove.
        */
       remove: function remove(item) {
-        var items = this.__items__P_187_0;
+        var items = this.__items__P_188_0;
         var groupedProperty = this.getGroupedProperty();
         var groupedPropertyUp = qx.lang.String.firstUp(groupedProperty);
 
@@ -6321,7 +6321,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.form.IRadioItem[]} The item array
        */
       getChildren: function getChildren() {
-        return this.__items__P_187_0;
+        return this.__items__P_188_0;
       },
 
       /*
@@ -6357,8 +6357,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var oldFirstUp = qx.lang.String.firstUp(old);
         var newFirstUp = qx.lang.String.firstUp(value);
 
-        for (var i = 0; i < this.__items__P_187_0.length; i++) {
-          item = this.__items__P_187_0[i]; // remove the listener for the old change event
+        for (var i = 0; i < this.__items__P_188_0.length; i++) {
+          item = this.__items__P_188_0[i]; // remove the listener for the old change event
 
           item.removeListener("change" + oldFirstUp, this._onItemChangeChecked, this); // add the listener for the new change event
 
@@ -6367,19 +6367,19 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // property apply
       _applyInvalidMessage: function _applyInvalidMessage(value, old) {
-        for (var i = 0; i < this.__items__P_187_0.length; i++) {
-          this.__items__P_187_0[i].setInvalidMessage(value);
+        for (var i = 0; i < this.__items__P_188_0.length; i++) {
+          this.__items__P_188_0[i].setInvalidMessage(value);
         }
       },
       // property apply
       _applyValid: function _applyValid(value, old) {
-        for (var i = 0; i < this.__items__P_187_0.length; i++) {
-          this.__items__P_187_0[i].setValid(value);
+        for (var i = 0; i < this.__items__P_188_0.length; i++) {
+          this.__items__P_188_0[i].setValid(value);
         }
       },
       // property apply
       _applyEnabled: function _applyEnabled(value, old) {
-        var items = this.__items__P_187_0;
+        var items = this.__items__P_188_0;
 
         if (value == null) {
           for (var i = 0, l = items.length; i < l; i++) {
@@ -6409,7 +6409,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       selectNext: function selectNext() {
         var item = this.getSelection()[0];
-        var items = this.__items__P_187_0;
+        var items = this.__items__P_188_0;
         var index = items.indexOf(item);
 
         if (index == -1) {
@@ -6438,7 +6438,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       selectPrevious: function selectPrevious() {
         var item = this.getSelection()[0];
-        var items = this.__items__P_187_0;
+        var items = this.__items__P_188_0;
         var index = items.indexOf(item);
 
         if (index == -1) {
@@ -6497,7 +6497,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>false</code> otherwise.
        */
       _isItemSelectable: function _isItemSelectable(item) {
-        return this.__items__P_187_0.indexOf(item) != -1;
+        return this.__items__P_188_0.indexOf(item) != -1;
       },
 
       /**
@@ -6505,7 +6505,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Data} Data event.
        */
-      __onChangeSelection__P_187_1: function __onChangeSelection__P_187_1(e) {
+      __onChangeSelection__P_188_1: function __onChangeSelection__P_188_1(e) {
         var value = e.getData()[0];
         var old = e.getOldData()[0];
         var groupedProperty = this.getGroupedProperty();
@@ -6517,7 +6517,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (value) {
           value.set(groupedProperty, true); // If Group is focused, the selection was changed by keyboard. Switch focus to new value
 
-          if (this.__isGroupFocused__P_187_2() && value.isFocusable()) {
+          if (this.__isGroupFocused__P_188_2() && value.isFocusable()) {
             value.focus();
           }
         }
@@ -6527,7 +6527,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Checks if this group is focused by checking focused state of each item
        * @returns {Boolean} result
        */
-      __isGroupFocused__P_187_2: function __isGroupFocused__P_187_2() {
+      __isGroupFocused__P_188_2: function __isGroupFocused__P_188_2() {
         var focusHandler = qx.ui.core.FocusHandler.getInstance();
 
         var _iterator = _createForOfIteratorHelper(this._getItems()),
@@ -6557,7 +6557,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeArray("__items__P_187_0");
+      this._disposeArray("__items__P_188_0");
     }
   });
   qx.ui.form.RadioGroup.$$dbClassInfo = $$dbClassInfo;
@@ -7746,10 +7746,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.setColumnWidth("auto");
     },
     members: {
-      __computedWidth__P_208_0: null,
+      __computedWidth__P_156_0: null,
       // overridden
       renderLayout: function renderLayout(left, top, width, height) {
-        this.__computedWidth__P_208_0 = width;
+        this.__computedWidth__P_156_0 = width;
       },
 
       /**
@@ -7757,7 +7757,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} Computed column width
        */
       getComputedWidth: function getComputedWidth() {
-        return this.__computedWidth__P_208_0;
+        return this.__computedWidth__P_156_0;
       },
 
       /**
@@ -8046,7 +8046,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     extend: qx.ui.table.columnmodel.resizebehavior.Abstract,
     construct: function construct() {
       qx.ui.table.columnmodel.resizebehavior.Abstract.constructor.call(this);
-      this.__resizeColumnData__P_199_0 = []; // This layout is not connected to a widget but to this class. This class
+      this.__resizeColumnData__P_121_0 = []; // This layout is not connected to a widget but to this class. This class
       // must implement the method "getLayoutChildren", which must return all
       // columns (LayoutItems) which should be recalculated. The call
       // "layout.renderLayout" will call the method "renderLayout" on each column
@@ -8054,11 +8054,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       // The advantage of the use of the normal layout manager is that the
       // semantics of flex and percent are exactly the same as in the widget code.
 
-      this.__layout__P_199_1 = new qx.ui.layout.HBox();
+      this.__layout__P_121_1 = new qx.ui.layout.HBox();
 
-      this.__layout__P_199_1.connectToWidget(this);
+      this.__layout__P_121_1.connectToWidget(this);
 
-      this.__deferredComputeColumnsFlexWidth__P_199_2 = new qx.util.DeferredCall(this._computeColumnsFlexWidth, this);
+      this.__deferredComputeColumnsFlexWidth__P_121_2 = new qx.util.DeferredCall(this._computeColumnsFlexWidth, this);
     },
 
     /*
@@ -8107,15 +8107,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __layout__P_199_1: null,
-      __layoutChildren__P_199_3: null,
-      __resizeColumnData__P_199_0: null,
-      __deferredComputeColumnsFlexWidth__P_199_2: null,
+      __layout__P_121_1: null,
+      __layoutChildren__P_121_3: null,
+      __resizeColumnData__P_121_0: null,
+      __deferredComputeColumnsFlexWidth__P_121_2: null,
 
       /**
        * Whether we have initialized widths on the first appear yet
        */
-      __widthsInitialized__P_199_4: false,
+      __widthsInitialized__P_121_4: false,
 
       /**
        * Set the width of a column.
@@ -8135,14 +8135,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       setWidth: function setWidth(col, width, flex) {
         // Ensure the column is within range
-        if (col >= this.__resizeColumnData__P_199_0.length) {
+        if (col >= this.__resizeColumnData__P_121_0.length) {
           throw new Error("Column number out of range");
         } // Set the new width
 
 
-        this.__resizeColumnData__P_199_0[col].setColumnWidth(width, flex);
+        this.__resizeColumnData__P_121_0[col].setColumnWidth(width, flex);
 
-        this.__deferredComputeColumnsFlexWidth__P_199_2.schedule();
+        this.__deferredComputeColumnsFlexWidth__P_121_2.schedule();
       },
 
       /**
@@ -8160,14 +8160,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       setMinWidth: function setMinWidth(col, width) {
         // Ensure the column is within range
-        if (col >= this.__resizeColumnData__P_199_0.length) {
+        if (col >= this.__resizeColumnData__P_121_0.length) {
           throw new Error("Column number out of range");
         } // Set the new width
 
 
-        this.__resizeColumnData__P_199_0[col].setMinWidth(width);
+        this.__resizeColumnData__P_121_0[col].setMinWidth(width);
 
-        this.__deferredComputeColumnsFlexWidth__P_199_2.schedule();
+        this.__deferredComputeColumnsFlexWidth__P_121_2.schedule();
       },
 
       /**
@@ -8185,14 +8185,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       setMaxWidth: function setMaxWidth(col, width) {
         // Ensure the column is within range
-        if (col >= this.__resizeColumnData__P_199_0.length) {
+        if (col >= this.__resizeColumnData__P_121_0.length) {
           throw new Error("Column number out of range");
         } // Set the new width
 
 
-        this.__resizeColumnData__P_199_0[col].setMaxWidth(width);
+        this.__resizeColumnData__P_121_0[col].setMaxWidth(width);
 
-        this.__deferredComputeColumnsFlexWidth__P_199_2.schedule();
+        this.__deferredComputeColumnsFlexWidth__P_121_2.schedule();
       },
 
       /**
@@ -8236,12 +8236,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       onAppear: function onAppear(event, forceRefresh) {
         // If we haven't initialized widths at least once, or
         // they want us to reinitialize widths on every appear event...
-        if (forceRefresh === true || !this.__widthsInitialized__P_199_4 || this.getInitializeWidthsOnEveryAppear()) {
+        if (forceRefresh === true || !this.__widthsInitialized__P_121_4 || this.getInitializeWidthsOnEveryAppear()) {
           // Calculate column widths
           this._computeColumnsFlexWidth(); // Track that we've initialized widths at least once
 
 
-          this.__widthsInitialized__P_199_4 = true;
+          this.__widthsInitialized__P_121_4 = true;
         }
       },
       // overloaded
@@ -8273,7 +8273,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // overloaded
       _setNumColumns: function _setNumColumns(numColumns) {
-        var colData = this.__resizeColumnData__P_199_0; // Are there now fewer (or the same number of) columns than there were
+        var colData = this.__resizeColumnData__P_121_0; // Are there now fewer (or the same number of) columns than there were
         // previously?
 
         if (numColumns <= colData.length) {
@@ -8296,7 +8296,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.ColumnData[]} The list of column data object to layout.
        */
       getLayoutChildren: function getLayoutChildren() {
-        return this.__layoutChildren__P_199_3;
+        return this.__layoutChildren__P_121_3;
       },
 
       /**
@@ -8304,7 +8304,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        */
       _computeColumnsFlexWidth: function _computeColumnsFlexWidth() {
-        this.__deferredComputeColumnsFlexWidth__P_199_2.cancel();
+        this.__deferredComputeColumnsFlexWidth__P_121_2.cancel();
 
         var width = this._getAvailableWidth();
 
@@ -8315,7 +8315,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var tableColumnModel = this.getTableColumnModel();
         var visibleColumns = tableColumnModel.getVisibleColumns();
         var visibleColumnsLength = visibleColumns.length;
-        var colData = this.__resizeColumnData__P_199_0;
+        var colData = this.__resizeColumnData__P_121_0;
         var i, l;
 
         if (visibleColumnsLength === 0) {
@@ -8329,12 +8329,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           columns.push(colData[visibleColumns[i]]);
         }
 
-        this.__layoutChildren__P_199_3 = columns;
+        this.__layoutChildren__P_121_3 = columns;
 
-        this.__clearLayoutCaches__P_199_5(); // Use a horizontal box layout to determine the available width.
+        this.__clearLayoutCaches__P_121_5(); // Use a horizontal box layout to determine the available width.
 
 
-        this.__layout__P_199_1.renderLayout(width, 100, {
+        this.__layout__P_121_1.renderLayout(width, 100, {
           top: 0,
           right: 0,
           bottom: 0,
@@ -8351,10 +8351,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       /**
        * Clear all layout caches of the column datas.
        */
-      __clearLayoutCaches__P_199_5: function __clearLayoutCaches__P_199_5() {
-        this.__layout__P_199_1.invalidateChildrenCache();
+      __clearLayoutCaches__P_121_5: function __clearLayoutCaches__P_121_5() {
+        this.__layout__P_121_1.invalidateChildrenCache();
 
-        var children = this.__layoutChildren__P_199_3;
+        var children = this.__layoutChildren__P_121_3;
 
         for (var i = 0, l = children.length; i < l; i++) {
           children[i].invalidateLayoutCache();
@@ -8481,7 +8481,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.ColumnData[]} array of the resizing information of a column.
        */
       _getResizeColumnData: function _getResizeColumnData() {
-        return this.__resizeColumnData__P_199_0;
+        return this.__resizeColumnData__P_121_0;
       }
     },
 
@@ -8491,9 +8491,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__resizeColumnData__P_199_0 = this.__layoutChildren__P_199_3 = null;
+      this.__resizeColumnData__P_121_0 = this.__layoutChildren__P_121_3 = null;
 
-      this._disposeObjects("__layout__P_199_1", "__deferredComputeColumnsFlexWidth__P_199_2");
+      this._disposeObjects("__layout__P_121_1", "__deferredComputeColumnsFlexWidth__P_121_2");
     }
   });
   qx.ui.table.columnmodel.resizebehavior.Default.$$dbClassInfo = $$dbClassInfo;
@@ -9269,11 +9269,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct() {
       qx.ui.form.MenuButton.constructor.call(this); // add blocker
 
-      this.__blocker__P_200_0 = new qx.ui.core.Blocker(this);
+      this.__blocker__P_123_0 = new qx.ui.core.Blocker(this);
     },
     members: {
-      __columnMenuButtons__P_200_1: null,
-      __blocker__P_200_0: null,
+      __columnMenuButtons__P_123_1: null,
+      __blocker__P_123_0: null,
       // Documented in qx.ui.table.IColumnMenu
       factory: function factory(item, options) {
         switch (item) {
@@ -9309,7 +9309,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Blocker} the blocker.
        */
       getBlocker: function getBlocker() {
-        return this.__blocker__P_200_0;
+        return this.__blocker__P_123_0;
       },
       // Documented in qx.ui.table.IColumnMenu
       empty: function empty() {
@@ -9328,7 +9328,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__blocker__P_200_0.dispose();
+      this.__blocker__P_123_0.dispose();
     }
   });
   qx.ui.table.columnmenu.Button.$$dbClassInfo = $$dbClassInfo;
@@ -9410,7 +9410,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __lastPointerDownHandled__P_201_0: null,
+      __lastPointerDownHandled__P_124_0: null,
 
       /**
        * Handles the tap event.
@@ -9426,10 +9426,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             // This index is not selected -> We react when the pointer is pressed (because of drag and drop)
             this._handleSelectEvent(index, evt);
 
-            this.__lastPointerDownHandled__P_201_0 = true;
+            this.__lastPointerDownHandled__P_124_0 = true;
           } else {
             // This index is already selected -> We react when the pointer is released (because of drag and drop)
-            this.__lastPointerDownHandled__P_201_0 = false;
+            this.__lastPointerDownHandled__P_124_0 = false;
           }
         } else if (evt.isRightPressed() && evt.getModifiers() == 0) {
           var selectionModel = this.getSelectionModel();
@@ -9440,7 +9440,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }
 
-        if (evt.isLeftPressed() && !this.__lastPointerDownHandled__P_201_0) {
+        if (evt.isLeftPressed() && !this.__lastPointerDownHandled__P_124_0) {
           this._handleSelectEvent(index, evt);
         }
       },
@@ -9576,10 +9576,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
      */
     construct: function construct(paneScroller) {
       qx.ui.core.Widget.constructor.call(this);
-      this.__paneScroller__P_203_0 = paneScroller;
-      this.__lastColCount__P_203_1 = 0;
-      this.__lastRowCount__P_203_2 = 0;
-      this.__rowCache__P_203_3 = [];
+      this.__paneScroller__P_125_0 = paneScroller;
+      this.__lastColCount__P_125_1 = 0;
+      this.__lastRowCount__P_125_2 = 0;
+      this.__rowCache__P_125_3 = [];
     },
 
     /*
@@ -9646,15 +9646,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __lastRowCount__P_203_2: null,
-      __lastColCount__P_203_1: null,
-      __paneScroller__P_203_0: null,
-      __tableContainer__P_203_4: null,
-      __focusedRow__P_203_5: null,
-      __focusedCol__P_203_6: null,
+      __lastRowCount__P_125_2: null,
+      __lastColCount__P_125_1: null,
+      __paneScroller__P_125_0: null,
+      __tableContainer__P_125_4: null,
+      __focusedRow__P_125_5: null,
+      __focusedCol__P_125_6: null,
       // sparse array to cache rendered rows
-      __rowCache__P_203_3: null,
-      __rowCacheCount__P_203_7: 0,
+      __rowCache__P_125_3: null,
+      __rowCacheCount__P_125_7: 0,
       // property modifier
       _applyFirstVisibleRow: function _applyFirstVisibleRow(value, old) {
         this.updateContent(false, value - old);
@@ -9679,7 +9679,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.pane.Scroller} the TablePaneScroller.
        */
       getPaneScroller: function getPaneScroller() {
-        return this.__paneScroller__P_203_0;
+        return this.__paneScroller__P_125_0;
       },
 
       /**
@@ -9688,7 +9688,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.Table} the table.
        */
       getTable: function getTable() {
-        return this.__paneScroller__P_203_0.getTable();
+        return this.__paneScroller__P_125_0.getTable();
       },
 
       /**
@@ -9700,10 +9700,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *          If true, no repaint will be done.
        */
       setFocusedCell: function setFocusedCell(col, row, massUpdate) {
-        if (col != this.__focusedCol__P_203_6 || row != this.__focusedRow__P_203_5) {
-          var oldRow = this.__focusedRow__P_203_5;
-          this.__focusedCol__P_203_6 = col;
-          this.__focusedRow__P_203_5 = row; // Update the focused row background
+        if (col != this.__focusedCol__P_125_6 || row != this.__focusedRow__P_125_5) {
+          var oldRow = this.__focusedRow__P_125_5;
+          this.__focusedCol__P_125_6 = col;
+          this.__focusedRow__P_125_5 = row; // Update the focused row background
 
           if (row != oldRow && !massUpdate) {
             if (oldRow !== null) {
@@ -9765,7 +9765,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param lastColumn {Integer} The model index of the last column that has changed.
        */
       onTableModelDataChanged: function onTableModelDataChanged(firstRow, lastRow, firstColumn, lastColumn) {
-        this.__rowCacheClear__P_203_8();
+        this.__rowCacheClear__P_125_8();
 
         var paneFirstRow = this.getFirstVisibleRow();
         var rowCount = this.getVisibleRowCount();
@@ -9789,17 +9789,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // property apply method
       _applyMaxCacheLines: function _applyMaxCacheLines(value, old) {
-        if (this.__rowCacheCount__P_203_7 >= value && value !== -1) {
-          this.__rowCacheClear__P_203_8();
+        if (this.__rowCacheCount__P_125_7 >= value && value !== -1) {
+          this.__rowCacheClear__P_125_8();
         }
       },
 
       /**
        * Clear the row cache
        */
-      __rowCacheClear__P_203_8: function __rowCacheClear__P_203_8() {
-        this.__rowCache__P_203_3 = [];
-        this.__rowCacheCount__P_203_7 = 0;
+      __rowCacheClear__P_125_8: function __rowCacheClear__P_125_8() {
+        this.__rowCache__P_125_3 = [];
+        this.__rowCacheCount__P_125_7 = 0;
       },
 
       /**
@@ -9811,9 +9811,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {String|null} The cached row or null if a row with the given
        *     index is not cached.
        */
-      __rowCacheGet__P_203_9: function __rowCacheGet__P_203_9(row, selected, focused) {
-        if (!selected && !focused && this.__rowCache__P_203_3[row]) {
-          return this.__rowCache__P_203_3[row];
+      __rowCacheGet__P_125_9: function __rowCacheGet__P_125_9(row, selected, focused) {
+        if (!selected && !focused && this.__rowCache__P_125_3[row]) {
+          return this.__rowCache__P_125_3[row];
         } else {
           return null;
         }
@@ -9827,14 +9827,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param selected {Boolean} Whether the row is currently selected
        * @param focused {Boolean} Whether the row is currently focused
        */
-      __rowCacheSet__P_203_10: function __rowCacheSet__P_203_10(row, rowString, selected, focused) {
+      __rowCacheSet__P_125_10: function __rowCacheSet__P_125_10(row, rowString, selected, focused) {
         var maxCacheLines = this.getMaxCacheLines();
 
-        if (!selected && !focused && !this.__rowCache__P_203_3[row] && maxCacheLines > 0) {
+        if (!selected && !focused && !this.__rowCache__P_125_3[row] && maxCacheLines > 0) {
           this._applyMaxCacheLines(maxCacheLines);
 
-          this.__rowCache__P_203_3[row] = rowString;
-          this.__rowCacheCount__P_203_7 += 1;
+          this.__rowCache__P_125_3[row] = rowString;
+          this.__rowCacheCount__P_125_7 += 1;
         }
       },
 
@@ -9850,7 +9850,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       updateContent: function updateContent(completeUpdate, scrollOffset, onlyRow, onlySelectionOrFocusChanged) {
         if (completeUpdate) {
-          this.__rowCacheClear__P_203_8();
+          this.__rowCacheClear__P_125_8();
         }
 
         if (scrollOffset && Math.abs(scrollOffset) <= Math.min(10, this.getVisibleRowCount())) {
@@ -9914,7 +9914,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         for (; y < end; y++, row++) {
           cellInfo.row = row;
           cellInfo.selected = selectionModel.isSelectedIndex(row);
-          cellInfo.focusedRow = this.__focusedRow__P_203_5 == row;
+          cellInfo.focusedRow = this.__focusedRow__P_125_5 == row;
           cellInfo.rowData = tableModel.getRowData(row);
           rowRenderer.updateDataRowElement(cellInfo, rowNodes[y]);
         }
@@ -9947,7 +9947,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             col: col,
             xPos: x,
             editable: tableModel.isColumnEditable(col),
-            focusedCol: this.__focusedCol__P_203_6 == col,
+            focusedCol: this.__focusedCol__P_125_6 == col,
             styleLeft: left,
             styleWidth: cellWidth
           });
@@ -9959,9 +9959,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         for (var row = firstRow; row < firstRow + rowCount; row++) {
           var selected = selectionModel.isSelectedIndex(row);
-          var focusedRow = this.__focusedRow__P_203_5 == row;
+          var focusedRow = this.__focusedRow__P_125_5 == row;
 
-          var cachedRow = this.__rowCacheGet__P_203_9(row, selected, focusedRow);
+          var cachedRow = this.__rowCacheGet__P_125_9(row, selected, focusedRow);
 
           if (cachedRow) {
             rowsArr.push(cachedRow);
@@ -10034,7 +10034,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           rowHtml.push("</div>");
           var rowString = rowHtml.join("");
 
-          this.__rowCacheSet__P_203_10(row, rowString, selected, focusedRow);
+          this.__rowCacheSet__P_125_10(row, rowString, selected, focusedRow);
 
           rowsArr.push(rowString);
         }
@@ -10087,15 +10087,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // render new lines
 
 
-        if (!this.__tableContainer__P_203_4) {
-          this.__tableContainer__P_203_4 = document.createElement("div");
+        if (!this.__tableContainer__P_125_4) {
+          this.__tableContainer__P_125_4 = document.createElement("div");
         }
 
         var tableDummy = "<div>";
         tableDummy += this._getRowsHtml(firstRow + addRowBase, Math.abs(rowOffset));
         tableDummy += "</div>";
-        this.__tableContainer__P_203_4.innerHTML = tableDummy;
-        var newTableRows = this.__tableContainer__P_203_4.firstChild.childNodes; // append new lines
+        this.__tableContainer__P_125_4.innerHTML = tableDummy;
+        var newTableRows = this.__tableContainer__P_125_4.firstChild.childNodes; // append new lines
 
         if (rowOffset > 0) {
           for (var i = newTableRows.length - 1; i >= 0; i--) {
@@ -10110,10 +10110,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // update focus indicator
 
 
-        if (this.__focusedRow__P_203_5 !== null) {
-          this._updateRowStyles(this.__focusedRow__P_203_5 - rowOffset);
+        if (this.__focusedRow__P_125_5 !== null) {
+          this._updateRowStyles(this.__focusedRow__P_125_5 - rowOffset);
 
-          this._updateRowStyles(this.__focusedRow__P_203_5);
+          this._updateRowStyles(this.__focusedRow__P_125_5);
         }
 
         this.fireEvent("paneUpdated");
@@ -10148,12 +10148,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // render new lines
 
 
-        if (!this.__tableContainer__P_203_4) {
-          this.__tableContainer__P_203_4 = document.createElement("div");
+        if (!this.__tableContainer__P_125_4) {
+          this.__tableContainer__P_125_4 = document.createElement("div");
         }
 
-        this.__tableContainer__P_203_4.innerHTML = "<div>" + this._getRowsHtml(row, 1) + "</div>";
-        var newTableRows = this.__tableContainer__P_203_4.firstChild.childNodes;
+        this.__tableContainer__P_125_4.innerHTML = "<div>" + this._getRowsHtml(row, 1) + "</div>";
+        var newTableRows = this.__tableContainer__P_125_4.firstChild.childNodes;
         tableBody.replaceChild(newTableRows[0], rowElem); // update focus indicator
 
         this._updateRowStyles(null);
@@ -10201,8 +10201,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var data = htmlArr.join("");
         elem.innerHTML = data;
         this.setWidth(rowWidth);
-        this.__lastColCount__P_203_1 = colCount;
-        this.__lastRowCount__P_203_2 = rowCount;
+        this.__lastColCount__P_125_1 = colCount;
+        this.__lastRowCount__P_125_2 = rowCount;
         this.fireEvent("paneUpdated");
       }
     },
@@ -10213,7 +10213,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__tableContainer__P_203_4 = this.__paneScroller__P_203_0 = this.__rowCache__P_203_3 = null;
+      this.__tableContainer__P_125_4 = this.__paneScroller__P_125_0 = this.__rowCache__P_125_3 = null;
       this.removeListener("track", this._onTrack, this);
     }
   });
@@ -10280,8 +10280,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this._setLayout(new qx.ui.layout.HBox()); // add blocker
 
 
-      this.__blocker__P_204_0 = new qx.ui.core.Blocker(this);
-      this.__paneScroller__P_204_1 = paneScroller; // ARIA attrs
+      this.__blocker__P_126_0 = new qx.ui.core.Blocker(this);
+      this.__paneScroller__P_126_1 = paneScroller; // ARIA attrs
 
       this.getContentElement().setAttribute("role", "row");
     },
@@ -10292,10 +10292,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __paneScroller__P_204_1: null,
-      __moveFeedback__P_204_2: null,
-      __lastPointerOverColumn__P_204_3: null,
-      __blocker__P_204_0: null,
+      __paneScroller__P_126_1: null,
+      __moveFeedback__P_126_2: null,
+      __lastPointerOverColumn__P_126_3: null,
+      __blocker__P_126_0: null,
 
       /**
        * Returns the TablePaneScroller this header belongs to.
@@ -10303,7 +10303,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.pane.Scroller} the TablePaneScroller.
        */
       getPaneScroller: function getPaneScroller() {
-        return this.__paneScroller__P_204_1;
+        return this.__paneScroller__P_126_1;
       },
 
       /**
@@ -10312,7 +10312,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.Table} the table.
        */
       getTable: function getTable() {
-        return this.__paneScroller__P_204_1.getTable();
+        return this.__paneScroller__P_126_1.getTable();
       },
 
       /**
@@ -10321,7 +10321,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Blocker} the blocker.
        */
       getBlocker: function getBlocker() {
-        return this.__blocker__P_204_0;
+        return this.__blocker__P_126_0;
       },
 
       /**
@@ -10376,9 +10376,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *      null if the pointer is over no column.
        */
       setPointerOverColumn: function setPointerOverColumn(col) {
-        if (col != this.__lastPointerOverColumn__P_204_3) {
-          if (this.__lastPointerOverColumn__P_204_3 != null) {
-            var widget = this.getHeaderWidgetAtColumn(this.__lastPointerOverColumn__P_204_3);
+        if (col != this.__lastPointerOverColumn__P_126_3) {
+          if (this.__lastPointerOverColumn__P_126_3 != null) {
+            var widget = this.getHeaderWidgetAtColumn(this.__lastPointerOverColumn__P_126_3);
 
             if (widget != null) {
               widget.removeState("hovered");
@@ -10389,7 +10389,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             this.getHeaderWidgetAtColumn(col).addState("hovered");
           }
 
-          this.__lastPointerOverColumn__P_204_3 = col;
+          this.__lastPointerOverColumn__P_126_3 = col;
         }
       },
 
@@ -10414,7 +10414,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       showColumnMoveFeedback: function showColumnMoveFeedback(col, x) {
         var pos = this.getContentLocation();
 
-        if (this.__moveFeedback__P_204_2 == null) {
+        if (this.__moveFeedback__P_126_2 == null) {
           var table = this.getTable();
           var xPos = this.getPaneScroller().getTablePaneModel().getX(col);
 
@@ -10440,24 +10440,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             top: pos.top
           });
           this.getApplicationRoot().add(feedback);
-          this.__moveFeedback__P_204_2 = feedback;
+          this.__moveFeedback__P_126_2 = feedback;
         }
 
-        this.__moveFeedback__P_204_2.setLayoutProperties({
+        this.__moveFeedback__P_126_2.setLayoutProperties({
           left: pos.left + x
         });
 
-        this.__moveFeedback__P_204_2.show();
+        this.__moveFeedback__P_126_2.show();
       },
 
       /**
        * Hides the feedback shown while a column is moved by the user.
        */
       hideColumnMoveFeedback: function hideColumnMoveFeedback() {
-        if (this.__moveFeedback__P_204_2 != null) {
-          this.__moveFeedback__P_204_2.destroy();
+        if (this.__moveFeedback__P_126_2 != null) {
+          this.__moveFeedback__P_126_2.destroy();
 
-          this.__moveFeedback__P_204_2 = null;
+          this.__moveFeedback__P_126_2 = null;
         }
       },
 
@@ -10468,7 +10468,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    currently shown, <code>false</code> otherwise.
        */
       isShowingColumnMoveFeedback: function isShowingColumnMoveFeedback() {
-        return this.__moveFeedback__P_204_2 != null;
+        return this.__moveFeedback__P_126_2 != null;
       },
 
       /**
@@ -10561,9 +10561,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__blocker__P_204_0.dispose();
+      this.__blocker__P_126_0.dispose();
 
-      this._disposeObjects("__paneScroller__P_204_1");
+      this._disposeObjects("__paneScroller__P_126_1");
     }
   });
   qx.ui.table.pane.Header.$$dbClassInfo = $$dbClassInfo;
@@ -10686,7 +10686,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
      */
     construct: function construct(table) {
       qx.ui.core.Widget.constructor.call(this);
-      this.__table__P_205_0 = table; // init layout
+      this.__table__P_127_0 = table; // init layout
 
       var grid = new qx.ui.layout.Grid();
       grid.setColumnFlex(0, 1);
@@ -10695,14 +10695,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this._setLayout(grid); // init child controls
 
 
-      this.__header__P_205_1 = this._showChildControl("header");
-      this.__tablePane__P_205_2 = this._showChildControl("pane"); // the top line containing the header clipper and the top right widget
+      this.__header__P_127_1 = this._showChildControl("header");
+      this.__tablePane__P_127_2 = this._showChildControl("pane"); // the top line containing the header clipper and the top right widget
 
-      this.__top__P_205_3 = new qx.ui.container.Composite(new qx.ui.layout.HBox()).set({
+      this.__top__P_127_3 = new qx.ui.container.Composite(new qx.ui.layout.HBox()).set({
         minWidth: 0
       });
 
-      this._add(this.__top__P_205_3, {
+      this._add(this.__top__P_127_3, {
         row: 0,
         column: 0,
         colSpan: 2
@@ -10711,7 +10711,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       this._headerClipper = this._createHeaderClipper();
 
-      this._headerClipper.add(this.__header__P_205_1);
+      this._headerClipper.add(this.__header__P_127_1);
 
       this._headerClipper.addListener("losecapture", this._onChangeCaptureHeader, this);
 
@@ -10723,14 +10723,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       this._headerClipper.addListener("tap", this._onTapHeader, this);
 
-      this.__top__P_205_3.add(this._headerClipper, {
+      this.__top__P_127_3.add(this._headerClipper, {
         flex: 1
       }); // embed pane into a scrollable container
 
 
       this._paneClipper = this._createPaneClipper();
 
-      this._paneClipper.add(this.__tablePane__P_205_2);
+      this._paneClipper.add(this.__tablePane__P_127_2);
 
       this._paneClipper.addListener("roll", this._onRoll, this);
 
@@ -10754,15 +10754,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
       if (qx.core.Environment.get("os.scrollBarOverlayed")) {
-        this.__clipperContainer__P_205_4 = new qx.ui.container.Composite();
+        this.__clipperContainer__P_127_4 = new qx.ui.container.Composite();
 
-        this.__clipperContainer__P_205_4.setLayout(new qx.ui.layout.Canvas());
+        this.__clipperContainer__P_127_4.setLayout(new qx.ui.layout.Canvas());
 
-        this.__clipperContainer__P_205_4.add(this._paneClipper, {
+        this.__clipperContainer__P_127_4.add(this._paneClipper, {
           edge: 0
         });
 
-        this._add(this.__clipperContainer__P_205_4, {
+        this._add(this.__clipperContainer__P_127_4, {
           row: 1,
           column: 0
         });
@@ -10774,10 +10774,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       } // init scroll bars
 
 
-      this.__horScrollBar__P_205_5 = this._showChildControl("scrollbar-x");
-      this.__verScrollBar__P_205_6 = this._showChildControl("scrollbar-y"); // init focus indicator
+      this.__horScrollBar__P_127_5 = this._showChildControl("scrollbar-x");
+      this.__verScrollBar__P_127_6 = this._showChildControl("scrollbar-y"); // init focus indicator
 
-      this.__focusIndicator__P_205_7 = this.getChildControl("focus-indicator"); // need to run the apply method at least once [BUG #4057]
+      this.__focusIndicator__P_127_7 = this.getChildControl("focus-indicator"); // need to run the apply method at least once [BUG #4057]
 
       this.initShowCellFocusIndicator(); // force creation of the resize line
 
@@ -10785,9 +10785,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.addListener("pointerout", this._onPointerout, this);
       this.addListener("appear", this._onAppear, this);
       this.addListener("disappear", this._onDisappear, this);
-      this.__timer__P_205_8 = new qx.event.Timer();
+      this.__timer__P_127_8 = new qx.event.Timer();
 
-      this.__timer__P_205_8.addListener("interval", this._oninterval, this);
+      this.__timer__P_127_8.addListener("interval", this._oninterval, this);
 
       this.initScrollTimeout();
     },
@@ -10990,40 +10990,40 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __lastRowCount__P_205_9: null,
-      __table__P_205_0: null,
-      __updateInterval__P_205_10: null,
-      __updateContentPlanned__P_205_11: null,
-      __onintervalWrapper__P_205_12: null,
+      __lastRowCount__P_127_9: null,
+      __table__P_127_0: null,
+      __updateInterval__P_127_10: null,
+      __updateContentPlanned__P_127_11: null,
+      __onintervalWrapper__P_127_12: null,
       _moveColumn: null,
-      __lastMoveColPos__P_205_13: null,
+      __lastMoveColPos__P_127_13: null,
       _lastMoveTargetX: null,
       _lastMoveTargetScroller: null,
-      __lastMovePointerPageX__P_205_14: null,
-      __resizeColumn__P_205_15: null,
-      __lastResizePointerPageX__P_205_16: null,
-      __lastResizeWidth__P_205_17: null,
-      __lastPointerDownCell__P_205_18: null,
-      __firedTapEvent__P_205_19: false,
-      __ignoreTap__P_205_20: null,
-      __lastPointerPageX__P_205_21: null,
-      __lastPointerPageY__P_205_22: null,
-      __focusedCol__P_205_23: null,
-      __focusedRow__P_205_24: null,
+      __lastMovePointerPageX__P_127_14: null,
+      __resizeColumn__P_127_15: null,
+      __lastResizePointerPageX__P_127_16: null,
+      __lastResizeWidth__P_127_17: null,
+      __lastPointerDownCell__P_127_18: null,
+      __firedTapEvent__P_127_19: false,
+      __ignoreTap__P_127_20: null,
+      __lastPointerPageX__P_127_21: null,
+      __lastPointerPageY__P_127_22: null,
+      __focusedCol__P_127_23: null,
+      __focusedRow__P_127_24: null,
       _cellEditor: null,
-      __cellEditorFactory__P_205_25: null,
-      __topRightWidget__P_205_26: null,
-      __horScrollBar__P_205_5: null,
-      __verScrollBar__P_205_6: null,
-      __header__P_205_1: null,
+      __cellEditorFactory__P_127_25: null,
+      __topRightWidget__P_127_26: null,
+      __horScrollBar__P_127_5: null,
+      __verScrollBar__P_127_6: null,
+      __header__P_127_1: null,
       _headerClipper: null,
-      __tablePane__P_205_2: null,
+      __tablePane__P_127_2: null,
       _paneClipper: null,
-      __clipperContainer__P_205_4: null,
-      __focusIndicator__P_205_7: null,
-      __top__P_205_3: null,
-      __timer__P_205_8: null,
-      __focusIndicatorPointerDownListener__P_205_27: null,
+      __clipperContainer__P_127_4: null,
+      __focusIndicator__P_127_7: null,
+      __top__P_127_3: null,
+      __timer__P_127_8: null,
+      __focusIndicatorPointerDownListener__P_127_27: null,
 
       /**
        * The right inset of the pane. The right inset is the maximum of the
@@ -11034,7 +11034,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       getPaneInsetRight: function getPaneInsetRight() {
         var topRight = this.getTopRightWidget();
         var topRightWidth = topRight && topRight.isVisible() && topRight.getBounds() ? topRight.getBounds().width + topRight.getMarginLeft() + topRight.getMarginRight() : 0;
-        var scrollBar = this.__verScrollBar__P_205_6;
+        var scrollBar = this.__verScrollBar__P_127_6;
         var scrollBarWidth = this.getVerticalScrollBarVisible() ? this.getVerticalScrollBarWidth() + scrollBar.getMarginLeft() + scrollBar.getMarginRight() : 0;
         return Math.max(topRightWidth, scrollBarWidth);
       },
@@ -11093,10 +11093,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             });
             control.addListener("scroll", this._onScrollX, this);
 
-            if (this.__clipperContainer__P_205_4 != null) {
+            if (this.__clipperContainer__P_127_4 != null) {
               control.setMinHeight(qx.ui.core.scroll.AbstractScrollArea.DEFAULT_SCROLLBAR_WIDTH);
 
-              this.__clipperContainer__P_205_4.add(control, {
+              this.__clipperContainer__P_127_4.add(control, {
                 bottom: 0,
                 right: 0,
                 left: 0
@@ -11114,8 +11114,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             control = this._createScrollBar("vertical");
             control.addListener("scroll", this._onScrollY, this);
 
-            if (this.__clipperContainer__P_205_4 != null) {
-              this.__clipperContainer__P_205_4.add(control, {
+            if (this.__clipperContainer__P_127_4 != null) {
+              this.__clipperContainer__P_127_4.add(control, {
                 right: 0,
                 bottom: 0,
                 top: 0
@@ -11135,14 +11135,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       // property modifier
       _applyHorizontalScrollBarVisible: function _applyHorizontalScrollBarVisible(value, old) {
         if (value === null) {
-          this.__horScrollBar__P_205_5.setVisibility("hidden");
+          this.__horScrollBar__P_127_5.setVisibility("hidden");
         } else {
-          this.__horScrollBar__P_205_5.setVisibility(value ? "visible" : "excluded");
+          this.__horScrollBar__P_127_5.setVisibility(value ? "visible" : "excluded");
         }
       },
       // property modifier
       _applyVerticalScrollBarVisible: function _applyVerticalScrollBarVisible(value, old) {
-        this.__verScrollBar__P_205_6.setVisibility(value ? "visible" : "excluded");
+        this.__verScrollBar__P_127_6.setVisibility(value ? "visible" : "excluded");
       },
       // property modifier
       _applyTablePaneModel: function _applyTablePaneModel(value, old) {
@@ -11155,12 +11155,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       // property modifier
       _applyShowCellFocusIndicator: function _applyShowCellFocusIndicator(value, old) {
         if (value) {
-          this.__focusIndicator__P_205_7.setDecorator("table-scroller-focus-indicator");
+          this.__focusIndicator__P_127_7.setDecorator("table-scroller-focus-indicator");
 
           this._updateFocusIndicator();
         } else {
-          if (this.__focusIndicator__P_205_7) {
-            this.__focusIndicator__P_205_7.setDecorator(null);
+          if (this.__focusIndicator__P_127_7) {
+            this.__focusIndicator__P_127_7.setDecorator(null);
           }
         }
       },
@@ -11171,7 +11171,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} The current scroll position.
        */
       getScrollY: function getScrollY() {
-        return this.__verScrollBar__P_205_6.getPosition();
+        return this.__verScrollBar__P_127_6.getPosition();
       },
 
       /**
@@ -11182,7 +11182,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *     performed synchronously.
        */
       setScrollY: function setScrollY(scrollY, renderSync) {
-        this.__verScrollBar__P_205_6.scrollTo(scrollY);
+        this.__verScrollBar__P_127_6.scrollTo(scrollY);
 
         if (renderSync) {
           this._updateContent();
@@ -11195,7 +11195,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} The current scroll position.
        */
       getScrollX: function getScrollX() {
-        return this.__horScrollBar__P_205_5.getPosition();
+        return this.__horScrollBar__P_127_5.getPosition();
       },
 
       /**
@@ -11204,7 +11204,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param scrollX {Integer} The new scroll position.
        */
       setScrollX: function setScrollX(scrollX) {
-        this.__horScrollBar__P_205_5.scrollTo(scrollX);
+        this.__horScrollBar__P_127_5.scrollTo(scrollX);
       },
 
       /**
@@ -11213,7 +11213,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.Table} the table.
        */
       getTable: function getTable() {
-        return this.__table__P_205_0;
+        return this.__table__P_127_0;
       },
 
       /**
@@ -11250,9 +11250,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param width {Integer} the new width.
        */
       setColumnWidth: function setColumnWidth(col, width) {
-        this.__header__P_205_1.setColumnWidth(col, width);
+        this.__header__P_127_1.setColumnWidth(col, width);
 
-        this.__tablePane__P_205_2.setColumnWidth(col, width);
+        this.__tablePane__P_127_2.setColumnWidth(col, width);
 
         var paneModel = this.getTablePaneModel();
         var x = paneModel.getX(col);
@@ -11270,9 +11270,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        */
       onColOrderChanged: function onColOrderChanged() {
-        this.__header__P_205_1.onColOrderChanged();
+        this.__header__P_127_1.onColOrderChanged();
 
-        this.__tablePane__P_205_2.onColOrderChanged();
+        this.__tablePane__P_127_2.onColOrderChanged();
 
         this.updateHorScrollBarMaximum();
       },
@@ -11286,11 +11286,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param lastColumn {Integer} The model index of the last column that has changed.
        */
       onTableModelDataChanged: function onTableModelDataChanged(firstRow, lastRow, firstColumn, lastColumn) {
-        this.__tablePane__P_205_2.onTableModelDataChanged(firstRow, lastRow, firstColumn, lastColumn);
+        this.__tablePane__P_127_2.onTableModelDataChanged(firstRow, lastRow, firstColumn, lastColumn);
 
         var rowCount = this.getTable().getTableModel().getRowCount();
 
-        if (rowCount != this.__lastRowCount__P_205_9) {
+        if (rowCount != this.__lastRowCount__P_127_9) {
           this.updateVerScrollBarMaximum();
           var focusedRow = this.getFocusedRow();
 
@@ -11302,7 +11302,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             }
           }
 
-          this.__lastRowCount__P_205_9 = rowCount;
+          this.__lastRowCount__P_127_9 = rowCount;
         }
       },
 
@@ -11310,14 +11310,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Event handler. Called when the selection has changed.
        */
       onSelectionChanged: function onSelectionChanged() {
-        this.__tablePane__P_205_2.onSelectionChanged();
+        this.__tablePane__P_127_2.onSelectionChanged();
       },
 
       /**
        * Event handler. Called when the table gets or looses the focus.
        */
       onFocusChanged: function onFocusChanged() {
-        this.__tablePane__P_205_2.onFocusChanged();
+        this.__tablePane__P_127_2.onFocusChanged();
       },
 
       /**
@@ -11325,18 +11325,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        */
       onTableModelMetaDataChanged: function onTableModelMetaDataChanged() {
-        this.__header__P_205_1.onTableModelMetaDataChanged();
+        this.__header__P_127_1.onTableModelMetaDataChanged();
 
-        this.__tablePane__P_205_2.onTableModelMetaDataChanged();
+        this.__tablePane__P_127_2.onTableModelMetaDataChanged();
       },
 
       /**
        * Event handler. Called when the pane model has changed.
        */
       _onPaneModelChanged: function _onPaneModelChanged() {
-        this.__header__P_205_1.onPaneModelChanged();
+        this.__header__P_127_1.onPaneModelChanged();
 
-        this.__tablePane__P_205_2.onPaneModelChanged();
+        this.__tablePane__P_127_2.onPaneModelChanged();
       },
 
       /**
@@ -11348,9 +11348,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         this._updateContent();
 
-        this.__header__P_205_1._updateContent();
+        this.__header__P_127_1._updateContent();
 
-        this.__table__P_205_0._updateScrollBarVisibility();
+        this.__table__P_127_0._updateScrollBarVisibility();
       },
 
       /**
@@ -11366,7 +11366,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }
 
         var scrollSize = this.getTablePaneModel().getTotalWidth();
-        var scrollBar = this.__horScrollBar__P_205_5;
+        var scrollBar = this.__horScrollBar__P_127_5;
 
         if (paneSize.width < scrollSize) {
           var max = Math.max(0, scrollSize - paneSize.width);
@@ -11402,7 +11402,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         var rowHeight = this.getTable().getRowHeight();
         var scrollSize = rowCount * rowHeight;
-        var scrollBar = this.__verScrollBar__P_205_6;
+        var scrollBar = this.__verScrollBar__P_127_6;
 
         if (paneSize.height < scrollSize) {
           var max = Math.max(0, scrollSize - paneSize.height);
@@ -11462,14 +11462,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {Map} the event.
        */
-      __inOnScrollY__P_205_28: false,
+      __inOnScrollY__P_127_28: false,
       _onScrollY: function _onScrollY(e) {
-        if (this.__inOnScrollY__P_205_28) {
+        if (this.__inOnScrollY__P_127_28) {
           return;
         }
 
-        var scrollbar = this.__verScrollBar__P_205_6;
-        this.__inOnScrollY__P_205_28 = true; // calculate delta so that one row is scrolled at an minimum
+        var scrollbar = this.__verScrollBar__P_127_6;
+        this.__inOnScrollY__P_127_28 = true; // calculate delta so that one row is scrolled at an minimum
 
         var rowHeight = this.getTable().getRowHeight();
         var delta = e.getData() - e.getOldData();
@@ -11482,7 +11482,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }
 
-        this.__inOnScrollY__P_205_28 = false;
+        this.__inOnScrollY__P_127_28 = false;
         this.fireDataEvent("changeScrollY", scrollbar.getPosition(), e.getOldData());
 
         this._postponedUpdateContent();
@@ -11509,9 +11509,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           delta.y = -1;
         }
 
-        this.__verScrollBar__P_205_6.scrollBy(parseInt(delta.y, 10));
+        this.__verScrollBar__P_127_6.scrollBy(parseInt(delta.y, 10));
 
-        var scrolled = delta.y != 0 && !this.__isAtEdge__P_205_29(this.__verScrollBar__P_205_6, delta.y); // horizontal scrolling
+        var scrolled = delta.y != 0 && !this.__isAtEdge__P_127_29(this.__verScrollBar__P_127_6, delta.y); // horizontal scrolling
         // normalize that at least one step is scrolled at a time
 
         if (delta.x > 0 && delta.x < 1) {
@@ -11520,14 +11520,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           delta.x = -1;
         }
 
-        this.__horScrollBar__P_205_5.scrollBy(parseInt(delta.x, 10)); // Update the focus
+        this.__horScrollBar__P_127_5.scrollBy(parseInt(delta.x, 10)); // Update the focus
 
 
-        if (this.__lastPointerPageX__P_205_21 && this.getFocusCellOnPointerMove()) {
-          this._focusCellAtPagePos(this.__lastPointerPageX__P_205_21, this.__lastPointerPageY__P_205_22);
+        if (this.__lastPointerPageX__P_127_21 && this.getFocusCellOnPointerMove()) {
+          this._focusCellAtPagePos(this.__lastPointerPageX__P_127_21, this.__lastPointerPageY__P_127_22);
         }
 
-        scrolled = scrolled || delta.x != 0 && !this.__isAtEdge__P_205_29(this.__horScrollBar__P_205_5, delta.x); // pass the event to the parent if the scrollbar is at an edge
+        scrolled = scrolled || delta.x != 0 && !this.__isAtEdge__P_127_29(this.__horScrollBar__P_127_5, delta.x); // pass the event to the parent if the scrollbar is at an edge
 
         if (scrolled) {
           e.stop();
@@ -11542,7 +11542,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param delta {Number} The scroll delta.
        * @return {Boolean} <code>true</code>, if the scrolling is a the edge
        */
-      __isAtEdge__P_205_29: function __isAtEdge__P_205_29(scrollBar, delta) {
+      __isAtEdge__P_127_29: function __isAtEdge__P_127_29(scrollBar, delta) {
         var position = scrollBar.getPosition();
         return delta < 0 && position <= 0 || delta > 0 && position >= scrollBar.getMaximum();
       },
@@ -11552,25 +11552,25 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param pageX {Integer} the current pointer x position.
        */
-      __handleResizeColumn__P_205_30: function __handleResizeColumn__P_205_30(pageX) {
+      __handleResizeColumn__P_127_30: function __handleResizeColumn__P_127_30(pageX) {
         var table = this.getTable(); // We are currently resizing -> Update the position
 
-        var headerCell = this.__header__P_205_1.getHeaderWidgetAtColumn(this.__resizeColumn__P_205_15);
+        var headerCell = this.__header__P_127_1.getHeaderWidgetAtColumn(this.__resizeColumn__P_127_15);
 
         var minColumnWidth = headerCell.getSizeHint().minWidth;
-        var newWidth = Math.max(minColumnWidth, this.__lastResizeWidth__P_205_17 + pageX - this.__lastResizePointerPageX__P_205_16);
+        var newWidth = Math.max(minColumnWidth, this.__lastResizeWidth__P_127_17 + pageX - this.__lastResizePointerPageX__P_127_16);
 
         if (this.getLiveResize()) {
           var columnModel = table.getTableColumnModel();
-          columnModel.setColumnWidth(this.__resizeColumn__P_205_15, newWidth, true);
+          columnModel.setColumnWidth(this.__resizeColumn__P_127_15, newWidth, true);
         } else {
           var paneModel = this.getTablePaneModel();
 
-          this._showResizeLine(paneModel.getColumnLeft(this.__resizeColumn__P_205_15) + newWidth);
+          this._showResizeLine(paneModel.getColumnLeft(this.__resizeColumn__P_127_15) + newWidth);
         }
 
-        this.__lastResizePointerPageX__P_205_16 += newWidth - this.__lastResizeWidth__P_205_17;
-        this.__lastResizeWidth__P_205_17 = newWidth;
+        this.__lastResizePointerPageX__P_127_16 += newWidth - this.__lastResizeWidth__P_127_17;
+        this.__lastResizeWidth__P_127_17 = newWidth;
       },
 
       /**
@@ -11579,20 +11579,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param pageX {Integer} the current pointer x position.
        *
        */
-      __handleMoveColumn__P_205_31: function __handleMoveColumn__P_205_31(pageX) {
+      __handleMoveColumn__P_127_31: function __handleMoveColumn__P_127_31(pageX) {
         // We are moving a column
         // Check whether we moved outside the tap tolerance so we can start
         // showing the column move feedback
         // (showing the column move feedback prevents the ontap event)
         var tapTolerance = qx.ui.table.pane.Scroller.TAP_TOLERANCE;
 
-        if (this.__header__P_205_1.isShowingColumnMoveFeedback() || pageX > this.__lastMovePointerPageX__P_205_14 + tapTolerance || pageX < this.__lastMovePointerPageX__P_205_14 - tapTolerance) {
-          this.__lastMoveColPos__P_205_13 += pageX - this.__lastMovePointerPageX__P_205_14;
+        if (this.__header__P_127_1.isShowingColumnMoveFeedback() || pageX > this.__lastMovePointerPageX__P_127_14 + tapTolerance || pageX < this.__lastMovePointerPageX__P_127_14 - tapTolerance) {
+          this.__lastMoveColPos__P_127_13 += pageX - this.__lastMovePointerPageX__P_127_14;
 
-          this.__header__P_205_1.showColumnMoveFeedback(this._moveColumn, this.__lastMoveColPos__P_205_13); // Get the responsible scroller
+          this.__header__P_127_1.showColumnMoveFeedback(this._moveColumn, this.__lastMoveColPos__P_127_13); // Get the responsible scroller
 
 
-          var targetScroller = this.__table__P_205_0.getTablePaneScrollerAtPageX(pageX);
+          var targetScroller = this.__table__P_127_0.getTablePaneScrollerAtPageX(pageX);
 
           if (this._lastMoveTargetScroller && this._lastMoveTargetScroller != targetScroller) {
             this._lastMoveTargetScroller.hideColumnMoveFeedback();
@@ -11605,7 +11605,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
 
           this._lastMoveTargetScroller = targetScroller;
-          this.__lastMovePointerPageX__P_205_14 = pageX;
+          this.__lastMovePointerPageX__P_127_14 = pageX;
         }
       },
 
@@ -11627,18 +11627,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var pageY = e.getDocumentTop(); // Workaround: In onmousewheel the event has wrong coordinates for pageX
         //       and pageY. So we remember the last move event.
 
-        this.__lastPointerPageX__P_205_21 = pageX;
-        this.__lastPointerPageY__P_205_22 = pageY;
+        this.__lastPointerPageX__P_127_21 = pageX;
+        this.__lastPointerPageY__P_127_22 = pageY;
 
-        if (this.__resizeColumn__P_205_15 != null) {
+        if (this.__resizeColumn__P_127_15 != null) {
           // We are currently resizing -> Update the position
-          this.__handleResizeColumn__P_205_30(pageX);
+          this.__handleResizeColumn__P_127_30(pageX);
 
           useResizeCursor = true;
           e.stopPropagation();
         } else if (this._moveColumn != null) {
           // We are moving a column
-          this.__handleMoveColumn__P_205_31(pageX);
+          this.__handleMoveColumn__P_127_31(pageX);
 
           e.stopPropagation();
         } else {
@@ -11662,7 +11662,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this.getApplicationRoot().setGlobalCursor(cursor);
         this.setCursor(cursor);
 
-        this.__header__P_205_1.setPointerOverColumn(pointerOverColumn);
+        this.__header__P_127_1.setPointerOverColumn(pointerOverColumn);
       },
 
       /**
@@ -11682,8 +11682,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var pageY = e.getDocumentTop(); // Workaround: In onpointerwheel the event has wrong coordinates for pageX
         //       and pageY. So we remember the last move event.
 
-        this.__lastPointerPageX__P_205_21 = pageX;
-        this.__lastPointerPageY__P_205_22 = pageY;
+        this.__lastPointerPageX__P_127_21 = pageX;
+        this.__lastPointerPageY__P_127_22 = pageY;
         var useResizeCursor = false;
 
         var resizeCol = this._getResizeColumnForPageX(pageX);
@@ -11706,7 +11706,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }
 
-        this.__header__P_205_1.setPointerOverColumn(null);
+        this.__header__P_127_1.setPointerOverColumn(null);
       },
 
       /**
@@ -11749,9 +11749,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _startResizeHeader: function _startResizeHeader(resizeCol, pageX) {
         var columnModel = this.getTable().getTableColumnModel(); // The pointer is over a resize region -> Start resizing
 
-        this.__resizeColumn__P_205_15 = resizeCol;
-        this.__lastResizePointerPageX__P_205_16 = pageX;
-        this.__lastResizeWidth__P_205_17 = columnModel.getColumnWidth(this.__resizeColumn__P_205_15);
+        this.__resizeColumn__P_127_15 = resizeCol;
+        this.__lastResizePointerPageX__P_127_16 = pageX;
+        this.__lastResizeWidth__P_127_17 = columnModel.getColumnWidth(this.__resizeColumn__P_127_15);
 
         this._headerClipper.capture();
       },
@@ -11765,8 +11765,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _startMoveHeader: function _startMoveHeader(moveCol, pageX) {
         // Prepare column moving
         this._moveColumn = moveCol;
-        this.__lastMovePointerPageX__P_205_14 = pageX;
-        this.__lastMoveColPos__P_205_13 = this.getTablePaneModel().getColumnLeft(moveCol);
+        this.__lastMovePointerPageX__P_127_14 = pageX;
+        this.__lastMoveColPos__P_127_13 = this.getTablePaneModel().getColumnLeft(moveCol);
 
         this._headerClipper.capture();
       },
@@ -11819,7 +11819,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           //  early or late (Firefox on Linux issues it early; Firefox on
           //  Windows issues it late) so no one may clear these values.
           //
-          this.__lastPointerDownCell__P_205_18 = {
+          this.__lastPointerDownCell__P_127_18 = {
             row: row,
             col: col
           }; // On the other hand, we need to know if we've issued the tap event
@@ -11827,7 +11827,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           // indicator, and from the tap even on the pane. Both possibilities
           // are necessary, however, to maintain the qooxdoo order of events.
 
-          this.__firedTapEvent__P_205_19 = false;
+          this.__firedTapEvent__P_127_19 = false;
         }
       },
 
@@ -11837,9 +11837,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Pointer} The pointer event
        */
       _onPointerupFocusIndicator: function _onPointerupFocusIndicator(e) {
-        if (this.__lastPointerDownCell__P_205_18 && !this.__firedTapEvent__P_205_19 && !this.isEditing() && this.__focusIndicator__P_205_7.getRow() == this.__lastPointerDownCell__P_205_18.row && this.__focusIndicator__P_205_7.getColumn() == this.__lastPointerDownCell__P_205_18.col) {
-          this.fireEvent("cellTap", qx.ui.table.pane.CellEvent, [this, e, this.__lastPointerDownCell__P_205_18.row, this.__lastPointerDownCell__P_205_18.col], true);
-          this.__firedTapEvent__P_205_19 = true;
+        if (this.__lastPointerDownCell__P_127_18 && !this.__firedTapEvent__P_127_19 && !this.isEditing() && this.__focusIndicator__P_127_7.getRow() == this.__lastPointerDownCell__P_127_18.row && this.__focusIndicator__P_127_7.getColumn() == this.__lastPointerDownCell__P_127_18.col) {
+          this.fireEvent("cellTap", qx.ui.table.pane.CellEvent, [this, e, this.__lastPointerDownCell__P_127_18.row, this.__lastPointerDownCell__P_127_18.col], true);
+          this.__firedTapEvent__P_127_19 = true;
         } else if (!this.isEditing()) {
           // if no cellTap event should be fired, act like a pointerdown which
           // invokes the change of the selection e.g. [BUG #1632]
@@ -11855,7 +11855,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Data} The data event
        */
       _onChangeCaptureHeader: function _onChangeCaptureHeader(e) {
-        if (this.__resizeColumn__P_205_15 != null) {
+        if (this.__resizeColumn__P_127_15 != null) {
           this._stopResizeHeader();
         }
 
@@ -11874,10 +11874,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (!this.getLiveResize()) {
           this._hideResizeLine();
 
-          columnModel.setColumnWidth(this.__resizeColumn__P_205_15, this.__lastResizeWidth__P_205_17, true);
+          columnModel.setColumnWidth(this.__resizeColumn__P_127_15, this.__lastResizeWidth__P_127_17, true);
         }
 
-        this.__resizeColumn__P_205_15 = null;
+        this.__resizeColumn__P_127_15 = null;
 
         this._headerClipper.releaseCapture();
 
@@ -11893,7 +11893,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var columnModel = this.getTable().getTableColumnModel();
         var paneModel = this.getTablePaneModel(); // We are moving a column -> Drop the column
 
-        this.__header__P_205_1.hideColumnMoveFeedback();
+        this.__header__P_127_1.hideColumnMoveFeedback();
 
         if (this._lastMoveTargetScroller) {
           this._lastMoveTargetScroller.hideColumnMoveFeedback();
@@ -11942,10 +11942,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return;
         }
 
-        if (this.__resizeColumn__P_205_15 != null) {
+        if (this.__resizeColumn__P_127_15 != null) {
           this._stopResizeHeader();
 
-          this.__ignoreTap__P_205_20 = true;
+          this.__ignoreTap__P_127_20 = true;
           e.stop();
         } else if (this._moveColumn != null) {
           this._stopMoveHeader();
@@ -11960,8 +11960,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {Map} the event.
        */
       _onTapHeader: function _onTapHeader(e) {
-        if (this.__ignoreTap__P_205_20) {
-          this.__ignoreTap__P_205_20 = false;
+        if (this.__ignoreTap__P_127_20) {
+          this.__ignoreTap__P_127_20 = false;
           return;
         }
 
@@ -12043,9 +12043,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             table.getSelectionManager().handleTap(row, e);
           }
 
-          if (this.__focusIndicator__P_205_7.isHidden() || this.__lastPointerDownCell__P_205_18 && !this.__firedTapEvent__P_205_19 && !this.isEditing() && row == this.__lastPointerDownCell__P_205_18.row && col == this.__lastPointerDownCell__P_205_18.col) {
+          if (this.__focusIndicator__P_127_7.isHidden() || this.__lastPointerDownCell__P_127_18 && !this.__firedTapEvent__P_127_19 && !this.isEditing() && row == this.__lastPointerDownCell__P_127_18.row && col == this.__lastPointerDownCell__P_127_18.col) {
             this.fireEvent("cellTap", qx.ui.table.pane.CellEvent, [this, e, row, col], true);
-            this.__firedTapEvent__P_205_19 = true;
+            this.__firedTapEvent__P_127_19 = true;
           }
         } else {
           if (row == null && this.getResetSelectionOnTapBelowRows()) {
@@ -12078,7 +12078,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return;
         }
 
-        if (!this.getShowCellFocusIndicator() || row === null || this.__lastPointerDownCell__P_205_18 && row == this.__lastPointerDownCell__P_205_18.row && col == this.__lastPointerDownCell__P_205_18.col) {
+        if (!this.getShowCellFocusIndicator() || row === null || this.__lastPointerDownCell__P_127_18 && row == this.__lastPointerDownCell__P_127_18.row && col == this.__lastPointerDownCell__P_127_18.col) {
           this.fireEvent("cellContextmenu", qx.ui.table.pane.CellEvent, [this, e, row, col], true); // Now that the cellContextmenu handler has had a chance to build
           // the menu for this cell, display it (if there is one).
 
@@ -12147,16 +12147,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // (the cursor will be reset on pointerup)
 
 
-        if (this.__resizeColumn__P_205_15 == null) {
+        if (this.__resizeColumn__P_127_15 == null) {
           this.setCursor(null);
           this.getApplicationRoot().setGlobalCursor(null);
         }
 
-        this.__header__P_205_1.setPointerOverColumn(null); // in case the focus follows the pointer, it should be remove on pointerout
+        this.__header__P_127_1.setPointerOverColumn(null); // in case the focus follows the pointer, it should be remove on pointerout
 
 
         if (this.getFocusCellOnPointerMove()) {
-          this.__table__P_205_0.setFocusedCell();
+          this.__table__P_127_0.setFocusedCell();
         }
       },
 
@@ -12193,7 +12193,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var paneModel = this.getTablePaneModel();
         var columnModel = this.getTable().getTableColumnModel();
 
-        var paneLeft = this.__tablePane__P_205_2.getContentLocation().left;
+        var paneLeft = this.__tablePane__P_127_2.getContentLocation().left;
 
         var colCount = paneModel.getColumnCount();
         var targetXPos = 0;
@@ -12250,7 +12250,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           // The pointer is over the data -> update the focus
           var col = this._getColumnForPageX(pageX);
 
-          this.__table__P_205_0.setFocusedCell(col, row);
+          this.__table__P_127_0.setFocusedCell(col, row);
         }
       },
 
@@ -12262,10 +12262,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       setFocusedCell: function setFocusedCell(col, row) {
         if (!this.isEditing()) {
-          this.__tablePane__P_205_2.setFocusedCell(col, row, this.__updateContentPlanned__P_205_11);
+          this.__tablePane__P_127_2.setFocusedCell(col, row, this.__updateContentPlanned__P_127_11);
 
-          this.__focusedCol__P_205_23 = col;
-          this.__focusedRow__P_205_24 = row;
+          this.__focusedCol__P_127_23 = col;
+          this.__focusedRow__P_127_24 = row;
 
           this._updateFocusIndicator();
         }
@@ -12277,7 +12277,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} the model index of the focused cell's column.
        */
       getFocusedColumn: function getFocusedColumn() {
-        return this.__focusedCol__P_205_23;
+        return this.__focusedCol__P_127_23;
       },
 
       /**
@@ -12286,7 +12286,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} the model index of the focused cell's column.
        */
       getFocusedRow: function getFocusedRow() {
-        return this.__focusedRow__P_205_24;
+        return this.__focusedRow__P_127_24;
       },
 
       /**
@@ -12347,15 +12347,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       startEditing: function startEditing() {
         var table = this.getTable();
         var tableModel = table.getTableModel();
-        var col = this.__focusedCol__P_205_23;
+        var col = this.__focusedCol__P_127_23;
 
         if (!this.isEditing() && col != null && tableModel.isColumnEditable(col)) {
-          var row = this.__focusedRow__P_205_24;
+          var row = this.__focusedRow__P_127_24;
           var xPos = this.getTablePaneModel().getX(col);
           var value = tableModel.getValue(col, row); // scroll cell into view
 
           this.scrollCellVisible(col, row);
-          this.__cellEditorFactory__P_205_25 = table.getTableColumnModel().getCellEditorFactory(col);
+          this.__cellEditorFactory__P_127_25 = table.getTableColumnModel().getCellEditorFactory(col);
           var cellInfo = {
             col: col,
             row: row,
@@ -12364,7 +12364,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             table: table
           }; // Get a cell editor
 
-          this._cellEditor = this.__cellEditorFactory__P_205_25.createCellEditor(cellInfo); // We handle two types of cell editors: the traditional in-place
+          this._cellEditor = this.__cellEditorFactory__P_127_25.createCellEditor(cellInfo); // We handle two types of cell editors: the traditional in-place
           // editor, where the cell editor returned by the factory must fit in
           // the space of the table cell; and a modal window in which the
           // editing takes place.  Additionally, if the cell editor determines
@@ -12399,24 +12399,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             this._cellEditor.open();
           } else {
             // prevent tap event from bubbling up to the table
-            this.__focusIndicatorPointerDownListener__P_205_27 = this.__focusIndicator__P_205_7.addListener("pointerdown", function (e) {
-              this.__lastPointerDownCell__P_205_18 = {
-                row: this.__focusedRow__P_205_24,
-                col: this.__focusedCol__P_205_23
+            this.__focusIndicatorPointerDownListener__P_127_27 = this.__focusIndicator__P_127_7.addListener("pointerdown", function (e) {
+              this.__lastPointerDownCell__P_127_18 = {
+                row: this.__focusedRow__P_127_24,
+                col: this.__focusedCol__P_127_23
               };
               e.stopPropagation();
             }, this);
 
             this._updateFocusIndicator(true);
 
-            this.__focusIndicator__P_205_7.add(this._cellEditor);
+            this.__focusIndicator__P_127_7.add(this._cellEditor);
 
-            this.__focusIndicator__P_205_7.addState("editing");
+            this.__focusIndicator__P_127_7.addState("editing");
 
-            this.__focusIndicator__P_205_7.setKeepActive(false); // Make the focus indicator visible during editing
+            this.__focusIndicator__P_127_7.setKeepActive(false); // Make the focus indicator visible during editing
 
 
-            this.__focusIndicator__P_205_7.setDecorator("table-scroller-focus-indicator");
+            this.__focusIndicator__P_127_7.setDecorator("table-scroller-focus-indicator");
 
             this._cellEditor.focus();
 
@@ -12436,7 +12436,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // If the focus indicator is not being shown normally...
         if (!this.getShowCellFocusIndicator()) {
           // ... then hide it again
-          this.__focusIndicator__P_205_7.setDecorator(null);
+          this.__focusIndicator__P_127_7.setDecorator(null);
         }
 
         this.flushEditor(true);
@@ -12450,21 +12450,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       flushEditor: function flushEditor(cancel) {
         if (this.isEditing()) {
-          var value = this.__cellEditorFactory__P_205_25.getCellEditorValue(this._cellEditor);
+          var value = this.__cellEditorFactory__P_127_25.getCellEditorValue(this._cellEditor);
 
-          var oldValue = this.getTable().getTableModel().getValue(this.__focusedCol__P_205_23, this.__focusedRow__P_205_24);
-          this.getTable().getTableModel().setValue(this.__focusedCol__P_205_23, this.__focusedRow__P_205_24, value);
+          var oldValue = this.getTable().getTableModel().getValue(this.__focusedCol__P_127_23, this.__focusedRow__P_127_24);
+          this.getTable().getTableModel().setValue(this.__focusedCol__P_127_23, this.__focusedRow__P_127_24, value);
 
-          this.__table__P_205_0.focus();
+          this.__table__P_127_0.focus();
 
           if (cancel) {
             this.cancelEditing();
           } // Fire an event containing the value change.
 
 
-          this.__table__P_205_0.fireDataEvent("dataEdited", {
-            row: this.__focusedRow__P_205_24,
-            col: this.__focusedCol__P_205_23,
+          this.__table__P_127_0.fireDataEvent("dataEdited", {
+            row: this.__focusedRow__P_127_24,
+            col: this.__focusedCol__P_127_23,
             oldValue: oldValue,
             value: value
           });
@@ -12477,14 +12477,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       cancelEditing: function cancelEditing() {
         if (this.isEditing()) {
           if (!(this._cellEditor instanceof qx.ui.window.Window)) {
-            this.__focusIndicator__P_205_7.removeState("editing");
+            this.__focusIndicator__P_127_7.removeState("editing");
 
-            this.__focusIndicator__P_205_7.setKeepActive(true);
+            this.__focusIndicator__P_127_7.setKeepActive(true);
 
-            if (this.__focusIndicatorPointerDownListener__P_205_27 !== null) {
-              this.__focusIndicator__P_205_7.removeListenerById(this.__focusIndicatorPointerDownListener__P_205_27);
+            if (this.__focusIndicatorPointerDownListener__P_127_27 !== null) {
+              this.__focusIndicator__P_127_7.removeListenerById(this.__focusIndicatorPointerDownListener__P_127_27);
 
-              this.__focusIndicatorPointerDownListener__P_205_27 = null;
+              this.__focusIndicatorPointerDownListener__P_127_27 = null;
             }
 
             this._updateFocusIndicator();
@@ -12493,7 +12493,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this._cellEditor.destroy();
 
           this._cellEditor = null;
-          this.__cellEditorFactory__P_205_25 = null;
+          this.__cellEditorFactory__P_127_25 = null;
         }
       },
 
@@ -12518,7 +12518,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var paneModel = this.getTablePaneModel();
         var colCount = paneModel.getColumnCount();
 
-        var currX = this.__tablePane__P_205_2.getContentLocation().left;
+        var currX = this.__tablePane__P_127_2.getContentLocation().left;
 
         for (var x = 0; x < colCount; x++) {
           var col = paneModel.getColumnAtX(x);
@@ -12541,7 +12541,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} the column index.
        */
       _getResizeColumnForPageX: function _getResizeColumnForPageX(pageX) {
-        var contentLocation = this.__header__P_205_1.getContentLocation() || this.__tablePane__P_205_2.getContentLocation();
+        var contentLocation = this.__header__P_127_1.getContentLocation() || this.__tablePane__P_127_2.getContentLocation();
 
         if (contentLocation) {
           var currX = contentLocation.left;
@@ -12574,7 +12574,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} the model index of the row the pointer is currently over.
        */
       _getRowForPagePos: function _getRowForPagePos(pageX, pageY) {
-        var panePos = this.__tablePane__P_205_2.getContentLocation();
+        var panePos = this.__tablePane__P_127_2.getContentLocation();
 
         if (panePos === null || pageX < panePos.left || pageX > panePos.right) {
           // There was no cell or header cell hit
@@ -12585,7 +12585,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           // This event is in the pane -> Get the row
           var rowHeight = this.getTable().getRowHeight();
 
-          var scrollY = this.__verScrollBar__P_205_6.getPosition();
+          var scrollY = this.__verScrollBar__P_127_6.getPosition();
 
           if (this.getTable().getKeepFirstVisibleRowComplete()) {
             scrollY = Math.floor(scrollY / rowHeight) * rowHeight;
@@ -12598,7 +12598,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return row < rowCount ? row : null;
         }
 
-        var headerPos = this.__header__P_205_1.getContentLocation();
+        var headerPos = this.__header__P_127_1.getContentLocation();
 
         if (headerPos !== null && pageY >= headerPos.top && pageY <= headerPos.bottom && pageX <= headerPos.right) {
           // This event is in the pane -> Return -1 for the header
@@ -12617,17 +12617,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param widget {qx.ui.core.Widget} The widget to set. May be null.
        */
       setTopRightWidget: function setTopRightWidget(widget) {
-        var oldWidget = this.__topRightWidget__P_205_26;
+        var oldWidget = this.__topRightWidget__P_127_26;
 
         if (oldWidget != null) {
-          this.__top__P_205_3.remove(oldWidget);
+          this.__top__P_127_3.remove(oldWidget);
         }
 
         if (widget != null) {
-          this.__top__P_205_3.add(widget);
+          this.__top__P_127_3.add(widget);
         }
 
-        this.__topRightWidget__P_205_26 = widget;
+        this.__topRightWidget__P_127_26 = widget;
       },
 
       /**
@@ -12636,7 +12636,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget} The top right widget.
        */
       getTopRightWidget: function getTopRightWidget() {
-        return this.__topRightWidget__P_205_26;
+        return this.__topRightWidget__P_127_26;
       },
 
       /**
@@ -12645,7 +12645,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.pane.Header} the header.
        */
       getHeader: function getHeader() {
-        return this.__header__P_205_1;
+        return this.__header__P_127_1;
       },
 
       /**
@@ -12654,7 +12654,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.table.pane.Pane} the table pane.
        */
       getTablePane: function getTablePane() {
-        return this.__tablePane__P_205_2;
+        return this.__tablePane__P_127_2;
       },
 
       /**
@@ -12665,7 +12665,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} The width of the vertical scroll bar
        */
       getVerticalScrollBarWidth: function getVerticalScrollBarWidth() {
-        var scrollBar = this.__verScrollBar__P_205_6;
+        var scrollBar = this.__verScrollBar__P_127_6;
         return scrollBar.isVisible() ? scrollBar.getSizeHint().width || 0 : 0;
       },
 
@@ -12681,9 +12681,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *      (combined by OR).
        */
       getNeededScrollBars: function getNeededScrollBars(forceHorizontal, preventVertical) {
-        var verScrollBar = this.__verScrollBar__P_205_6;
+        var verScrollBar = this.__verScrollBar__P_127_6;
         var verBarWidth = verScrollBar.getSizeHint().width + verScrollBar.getMarginLeft() + verScrollBar.getMarginRight();
-        var horScrollBar = this.__horScrollBar__P_205_5;
+        var horScrollBar = this.__horScrollBar__P_127_5;
         var horBarHeight = horScrollBar.getSizeHint().height + horScrollBar.getMarginTop() + horScrollBar.getMarginBottom(); // Get the width and height of the view (without scroll bars)
 
         var clipperSize = this._paneClipper.getInnerSize();
@@ -12762,16 +12762,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param timeout {Integer} The timeout between two table updates
        */
       _startInterval: function _startInterval(timeout) {
-        this.__timer__P_205_8.setInterval(timeout);
+        this.__timer__P_127_8.setInterval(timeout);
 
-        this.__timer__P_205_8.start();
+        this.__timer__P_127_8.start();
       },
 
       /**
        * stops the current running interval
        */
       _stopInterval: function _stopInterval() {
-        this.__timer__P_205_8.stop();
+        this.__timer__P_127_8.stop();
       },
 
       /**
@@ -12792,8 +12792,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @signature function()
        */
       _oninterval: qx.event.GlobalError.observeMethod(function () {
-        if (this.__updateContentPlanned__P_205_11 && !this.__tablePane__P_205_2._layoutPending) {
-          this.__updateContentPlanned__P_205_11 = false;
+        if (this.__updateContentPlanned__P_127_11 && !this.__tablePane__P_127_2._layoutPending) {
+          this.__updateContentPlanned__P_127_11 = false;
 
           this._updateContent();
         }
@@ -12812,16 +12812,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         var paneHeight = paneSize.height;
 
-        var scrollX = this.__horScrollBar__P_205_5.getPosition();
+        var scrollX = this.__horScrollBar__P_127_5.getPosition();
 
-        var scrollY = this.__verScrollBar__P_205_6.getPosition();
+        var scrollY = this.__verScrollBar__P_127_6.getPosition();
 
         var rowHeight = this.getTable().getRowHeight();
         var firstRow = Math.floor(scrollY / rowHeight);
 
-        var oldFirstRow = this.__tablePane__P_205_2.getFirstVisibleRow();
+        var oldFirstRow = this.__tablePane__P_127_2.getFirstVisibleRow();
 
-        this.__tablePane__P_205_2.setFirstVisibleRow(firstRow);
+        this.__tablePane__P_127_2.setFirstVisibleRow(firstRow);
 
         var visibleRowCount = Math.ceil(paneHeight / rowHeight);
         var paneOffset = 0;
@@ -12835,7 +12835,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           paneOffset = scrollY % rowHeight;
         }
 
-        this.__tablePane__P_205_2.setVisibleRowCount(visibleRowCount);
+        this.__tablePane__P_127_2.setVisibleRowCount(visibleRowCount);
 
         if (firstRow != oldFirstRow) {
           this._updateFocusIndicator();
@@ -12862,7 +12862,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return;
         }
 
-        this.__focusIndicator__P_205_7.moveToCell(this.__focusedCol__P_205_23, this.__focusedRow__P_205_24, editing);
+        this.__focusIndicator__P_127_7.moveToCell(this.__focusedCol__P_127_23, this.__focusedRow__P_127_24, editing);
       }
     },
 
@@ -12881,9 +12881,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         tablePaneModel.dispose();
       }
 
-      this.__lastPointerDownCell__P_205_18 = this.__topRightWidget__P_205_26 = this.__table__P_205_0 = null;
+      this.__lastPointerDownCell__P_127_18 = this.__topRightWidget__P_127_26 = this.__table__P_127_0 = null;
 
-      this._disposeObjects("__horScrollBar__P_205_5", "__verScrollBar__P_205_6", "_headerClipper", "_paneClipper", "__focusIndicator__P_205_7", "__header__P_205_1", "__tablePane__P_205_2", "__top__P_205_3", "__timer__P_205_8", "__clipperContainer__P_205_4");
+      this._disposeObjects("__horScrollBar__P_127_5", "__verScrollBar__P_127_6", "_headerClipper", "_paneClipper", "__focusIndicator__P_127_7", "__header__P_127_1", "__tablePane__P_127_2", "__top__P_127_3", "__timer__P_127_8", "__clipperContainer__P_127_4");
     }
   });
   qx.ui.table.pane.Scroller.$$dbClassInfo = $$dbClassInfo;
@@ -12947,7 +12947,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct(tableColumnModel) {
       qx.core.Object.constructor.call(this);
       this.setTableColumnModel(tableColumnModel);
-      this.__defferedEventDispatcher__P_206_0 = new qx.util.DeferredCall(function () {
+      this.__defferedEventDispatcher__P_128_0 = new qx.util.DeferredCall(function () {
         this.fireEvent(qx.ui.table.pane.Model.EVENT_TYPE_MODEL_CHANGED);
       }, this);
     },
@@ -13002,20 +13002,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __columnCount__P_206_1: null,
-      __tableColumnModel__P_206_2: null,
-      __defferedEventDispatcher__P_206_0: null,
+      __columnCount__P_128_1: null,
+      __tableColumnModel__P_128_2: null,
+      __defferedEventDispatcher__P_128_0: null,
       // property modifier
       _applyFirstColumnX: function _applyFirstColumnX(value, old) {
-        this.__columnCount__P_206_1 = null;
+        this.__columnCount__P_128_1 = null;
 
-        this.__defferedEventDispatcher__P_206_0.schedule();
+        this.__defferedEventDispatcher__P_128_0.schedule();
       },
       // property modifier
       _applyMaxColumnCount: function _applyMaxColumnCount(value, old) {
-        this.__columnCount__P_206_1 = null;
+        this.__columnCount__P_128_1 = null;
 
-        this.__defferedEventDispatcher__P_206_0.schedule();
+        this.__defferedEventDispatcher__P_128_0.schedule();
       },
 
       /**
@@ -13024,19 +13024,19 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param tableColumnModel {qx.ui.table.columnmodel.Basic} the column model
        */
       setTableColumnModel: function setTableColumnModel(tableColumnModel) {
-        if (this.__tableColumnModel__P_206_2) {
-          this.__tableColumnModel__P_206_2.removeListener("visibilityChangedPre", this._onColVisibilityChanged, this);
+        if (this.__tableColumnModel__P_128_2) {
+          this.__tableColumnModel__P_128_2.removeListener("visibilityChangedPre", this._onColVisibilityChanged, this);
 
-          this.__tableColumnModel__P_206_2.removeListener("headerCellRendererChanged", this._onHeaderCellRendererChanged, this);
+          this.__tableColumnModel__P_128_2.removeListener("headerCellRendererChanged", this._onHeaderCellRendererChanged, this);
         }
 
-        this.__tableColumnModel__P_206_2 = tableColumnModel;
+        this.__tableColumnModel__P_128_2 = tableColumnModel;
 
-        this.__tableColumnModel__P_206_2.addListener("visibilityChangedPre", this._onColVisibilityChanged, this);
+        this.__tableColumnModel__P_128_2.addListener("visibilityChangedPre", this._onColVisibilityChanged, this);
 
-        this.__tableColumnModel__P_206_2.addListener("headerCellRendererChanged", this._onHeaderCellRendererChanged, this);
+        this.__tableColumnModel__P_128_2.addListener("headerCellRendererChanged", this._onHeaderCellRendererChanged, this);
 
-        this.__columnCount__P_206_1 = null;
+        this.__columnCount__P_128_1 = null;
       },
 
       /**
@@ -13045,9 +13045,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param evt {Map} the event.
        */
       _onColVisibilityChanged: function _onColVisibilityChanged(evt) {
-        this.__columnCount__P_206_1 = null;
+        this.__columnCount__P_128_1 = null;
 
-        this.__defferedEventDispatcher__P_206_0.schedule();
+        this.__defferedEventDispatcher__P_128_0.schedule();
       },
 
       /**
@@ -13056,7 +13056,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param evt {Map} the event.
        */
       _onHeaderCellRendererChanged: function _onHeaderCellRendererChanged(evt) {
-        this.__defferedEventDispatcher__P_206_0.schedule();
+        this.__defferedEventDispatcher__P_128_0.schedule();
       },
 
       /**
@@ -13065,20 +13065,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Integer} the number of columns in this model.
        */
       getColumnCount: function getColumnCount() {
-        if (this.__columnCount__P_206_1 == null) {
+        if (this.__columnCount__P_128_1 == null) {
           var firstX = this.getFirstColumnX();
           var maxColCount = this.getMaxColumnCount();
 
-          var totalColCount = this.__tableColumnModel__P_206_2.getVisibleColumnCount();
+          var totalColCount = this.__tableColumnModel__P_128_2.getVisibleColumnCount();
 
           if (maxColCount == -1 || firstX + maxColCount > totalColCount) {
-            this.__columnCount__P_206_1 = totalColCount - firstX;
+            this.__columnCount__P_128_1 = totalColCount - firstX;
           } else {
-            this.__columnCount__P_206_1 = maxColCount;
+            this.__columnCount__P_128_1 = maxColCount;
           }
         }
 
-        return this.__columnCount__P_206_1;
+        return this.__columnCount__P_128_1;
       },
 
       /**
@@ -13089,7 +13089,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       getColumnAtX: function getColumnAtX(xPos) {
         var firstX = this.getFirstColumnX();
-        return this.__tableColumnModel__P_206_2.getVisibleColumnAtX(firstX + xPos);
+        return this.__tableColumnModel__P_128_2.getVisibleColumnAtX(firstX + xPos);
       },
 
       /**
@@ -13101,7 +13101,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       getX: function getX(col) {
         var firstX = this.getFirstColumnX();
         var maxColCount = this.getMaxColumnCount();
-        var x = this.__tableColumnModel__P_206_2.getVisibleX(col) - firstX;
+        var x = this.__tableColumnModel__P_128_2.getVisibleX(col) - firstX;
 
         if (x >= 0 && (maxColCount == -1 || x < maxColCount)) {
           return x;
@@ -13131,7 +13131,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             return left;
           }
 
-          left += this.__tableColumnModel__P_206_2.getColumnWidth(currCol);
+          left += this.__tableColumnModel__P_128_2.getColumnWidth(currCol);
         }
 
         return -1;
@@ -13148,7 +13148,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         for (var x = 0; x < colCount; x++) {
           var col = this.getColumnAtX(x);
-          totalWidth += this.__tableColumnModel__P_206_2.getColumnWidth(col);
+          totalWidth += this.__tableColumnModel__P_128_2.getColumnWidth(col);
         }
 
         return totalWidth;
@@ -13161,15 +13161,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__tableColumnModel__P_206_2) {
-        this.__tableColumnModel__P_206_2.removeListener("visibilityChangedPre", this._onColVisibilityChanged, this);
+      if (this.__tableColumnModel__P_128_2) {
+        this.__tableColumnModel__P_128_2.removeListener("visibilityChangedPre", this._onColVisibilityChanged, this);
 
-        this.__tableColumnModel__P_206_2.removeListener("headerCellRendererChanged", this._onHeaderCellRendererChanged, this);
+        this.__tableColumnModel__P_128_2.removeListener("headerCellRendererChanged", this._onHeaderCellRendererChanged, this);
       }
 
-      this.__tableColumnModel__P_206_2 = null;
+      this.__tableColumnModel__P_128_2 = null;
 
-      this._disposeObjects("__defferedEventDispatcher__P_206_0");
+      this._disposeObjects("__defferedEventDispatcher__P_128_0");
     }
   });
   qx.ui.table.pane.Model.$$dbClassInfo = $$dbClassInfo;
@@ -13225,7 +13225,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       // use the grow layout to make sure that the editing control
       // always fills the focus indicator box.
       qx.ui.container.Composite.constructor.call(this, new qx.ui.layout.Grow());
-      this.__scroller__P_207_0 = scroller;
+      this.__scroller__P_129_0 = scroller;
       this.setKeepActive(true);
       this.addListener("keypress", this._onKeyPress, this);
     },
@@ -13249,7 +13249,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
     },
     members: {
-      __scroller__P_207_0: null,
+      __scroller__P_129_0: null,
 
       /**
        * Keypress handler. Suppress all key events but "Enter" and "Escape"
@@ -13275,7 +13275,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // check if the focus indicator is shown and if the new column is
         // editable. if not, just exclude the indicator because the pointer events
         // should go to the cell itself linked with HTML links [BUG #4250]
-        if (!this.__scroller__P_207_0.getShowCellFocusIndicator() && !this.__scroller__P_207_0.getTable().getTableModel().isColumnEditable(col)) {
+        if (!this.__scroller__P_129_0.getShowCellFocusIndicator() && !this.__scroller__P_129_0.getTable().getTableModel().isColumnEditable(col)) {
           this.exclude();
           return;
         } else {
@@ -13287,20 +13287,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this.setRow(null);
           this.setColumn(null);
         } else {
-          var xPos = this.__scroller__P_207_0.getTablePaneModel().getX(col);
+          var xPos = this.__scroller__P_129_0.getTablePaneModel().getX(col);
 
           if (xPos === -1) {
             this.hide();
             this.setRow(null);
             this.setColumn(null);
           } else {
-            var table = this.__scroller__P_207_0.getTable();
+            var table = this.__scroller__P_129_0.getTable();
 
             var columnModel = table.getTableColumnModel();
 
-            var paneModel = this.__scroller__P_207_0.getTablePaneModel();
+            var paneModel = this.__scroller__P_129_0.getTablePaneModel();
 
-            var firstRow = this.__scroller__P_207_0.getTablePane().getFirstVisibleRow();
+            var firstRow = this.__scroller__P_129_0.getTablePane().getFirstVisibleRow();
 
             var rowHeight = table.getRowHeight();
             var wt = 0;
@@ -13323,9 +13323,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             var userHeight = rowHeight + (wl + wr - 2);
             var userTop = (row - firstRow) * rowHeight - (wr - 1);
 
-            if (editing && this.__scroller__P_207_0.getMinCellEditHeight() && this.__scroller__P_207_0.getMinCellEditHeight() > userHeight) {
-              userTop -= Math.floor((this.__scroller__P_207_0.getMinCellEditHeight() - userHeight) / 2);
-              userHeight = this.__scroller__P_207_0.getMinCellEditHeight();
+            if (editing && this.__scroller__P_129_0.getMinCellEditHeight() && this.__scroller__P_129_0.getMinCellEditHeight() > userHeight) {
+              userTop -= Math.floor((this.__scroller__P_129_0.getMinCellEditHeight() - userHeight) / 2);
+              userHeight = this.__scroller__P_129_0.getMinCellEditHeight();
             }
 
             this.setUserBounds(paneModel.getColumnLeft(col) - (wt - 1), userTop, columnModel.getColumnWidth(col) + (wt + wb - 3), userHeight);
@@ -13337,7 +13337,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
     },
     destruct: function destruct() {
-      this.__scroller__P_207_0 = null;
+      this.__scroller__P_129_0 = null;
     }
   });
   qx.ui.table.pane.FocusIndicator.$$dbClassInfo = $$dbClassInfo;
@@ -13520,7 +13520,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct() {
       // Create selection manager
       var clazz = this.SELECTION_MANAGER;
-      var manager = this.__manager__P_224_0 = new clazz(this); // Add widget event listeners
+      var manager = this.__manager__P_196_0 = new clazz(this); // Add widget event listeners
 
       this.addListener("pointerdown", manager.handlePointerDown, manager);
       this.addListener("tap", manager.handleTap, manager);
@@ -13596,10 +13596,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     */
     members: {
       /** @type {qx.ui.core.selection.Abstract} The selection manager */
-      __manager__P_224_0: null,
+      __manager__P_196_0: null,
 
       /** @type {Boolean} used to control recursion in onSelectionChange */
-      __inOnSelectionChange__P_224_1: false,
+      __inOnSelectionChange__P_196_1: false,
 
       /*
       ---------------------------------------------------------------------------
@@ -13615,7 +13615,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       setValue: function setValue(items) {
         if (null === items) {
-          this.__manager__P_224_0.clearSelection();
+          this.__manager__P_196_0.clearSelection();
 
           return null;
         }
@@ -13642,21 +13642,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @returns {qx.ui.core.Widget[]} The selected widgets or null if there are none.
        */
       getValue: function getValue() {
-        return this.__manager__P_224_0.getSelection();
+        return this.__manager__P_196_0.getSelection();
       },
 
       /**
        * resetValue implements part of the {@link qx.ui.form.IField} interface.
        */
       resetValue: function resetValue() {
-        this.__manager__P_224_0.clearSelection();
+        this.__manager__P_196_0.clearSelection();
       },
 
       /**
        * Selects all items of the managed object.
        */
       selectAll: function selectAll() {
-        this.__manager__P_224_0.selectAll();
+        this.__manager__P_196_0.selectAll();
       },
 
       /**
@@ -13671,7 +13671,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           throw new Error("Could not test if " + item + " is selected, because it is not a child element!");
         }
 
-        return this.__manager__P_224_0.isItemSelected(item);
+        return this.__manager__P_196_0.isItemSelected(item);
       },
 
       /**
@@ -13688,7 +13688,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           throw new Error("Could not add + " + item + " to selection, because it is not a child element!");
         }
 
-        this.__manager__P_224_0.addItem(item);
+        this.__manager__P_196_0.addItem(item);
       },
 
       /**
@@ -13705,7 +13705,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           throw new Error("Could not remove " + item + " from selection, because it is not a child element!");
         }
 
-        this.__manager__P_224_0.removeItem(item);
+        this.__manager__P_196_0.removeItem(item);
       },
 
       /**
@@ -13715,7 +13715,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param end {qx.ui.core.Widget} Item to end at
        */
       selectRange: function selectRange(begin, end) {
-        this.__manager__P_224_0.selectItemRange(begin, end);
+        this.__manager__P_196_0.selectItemRange(begin, end);
       },
 
       /**
@@ -13724,7 +13724,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * styles.
        */
       resetSelection: function resetSelection() {
-        this.__manager__P_224_0.clearSelection();
+        this.__manager__P_196_0.clearSelection();
       },
 
       /**
@@ -13740,7 +13740,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         //  cannot change selection again; this is important because modelSelection does not
         //  necessarily match selection, for example when the item's model properties are
         //  null.
-        if (this.__inOnSelectionChange__P_224_1) {
+        if (this.__inOnSelectionChange__P_196_1) {
           return;
         }
 
@@ -13756,7 +13756,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           var currentSelection = this.getSelection();
 
           if (!qx.lang.Array.equals(currentSelection, items)) {
-            this.__manager__P_224_0.replaceSelection(items);
+            this.__manager__P_196_0.replaceSelection(items);
           }
         }
       },
@@ -13770,7 +13770,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget[]} List of items.
        */
       getSelection: function getSelection() {
-        return this.__manager__P_224_0.getSelection();
+        return this.__manager__P_196_0.getSelection();
       },
 
       /**
@@ -13780,7 +13780,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget[]} Sorted list of items
        */
       getSortedSelection: function getSortedSelection() {
-        return this.__manager__P_224_0.getSortedSelection();
+        return this.__manager__P_196_0.getSortedSelection();
       },
 
       /**
@@ -13789,7 +13789,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Boolean} Whether the selection is empty
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__manager__P_224_0.isSelectionEmpty();
+        return this.__manager__P_196_0.isSelectionEmpty();
       },
 
       /**
@@ -13799,7 +13799,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>drag</code> or <code>key</code> or <code>null</code>.
        */
       getSelectionContext: function getSelectionContext() {
-        return this.__manager__P_224_0.getSelectionContext();
+        return this.__manager__P_196_0.getSelectionContext();
       },
 
       /**
@@ -13809,7 +13809,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.selection.Abstract} The selection manager
        */
       _getManager: function _getManager() {
-        return this.__manager__P_224_0;
+        return this.__manager__P_196_0;
       },
 
       /**
@@ -13820,14 +13820,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        return this.__manager__P_224_0.getSelectables(all);
+        return this.__manager__P_196_0.getSelectables(all);
       },
 
       /**
        * Invert the selection. Select the non selected and deselect the selected.
        */
       invertSelection: function invertSelection() {
-        this.__manager__P_224_0.invertSelection();
+        this.__manager__P_196_0.invertSelection();
       },
 
       /**
@@ -13837,12 +13837,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget} The lead item or <code>null</code>
        */
       _getLeadItem: function _getLeadItem() {
-        var mode = this.__manager__P_224_0.getMode();
+        var mode = this.__manager__P_196_0.getMode();
 
         if (mode === "single" || mode === "one") {
-          return this.__manager__P_224_0.getSelectedItem();
+          return this.__manager__P_196_0.getSelectedItem();
         } else {
-          return this.__manager__P_224_0.getLeadItem();
+          return this.__manager__P_196_0.getLeadItem();
         }
       },
 
@@ -13853,15 +13853,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       */
       // property apply
       _applySelectionMode: function _applySelectionMode(value, old) {
-        this.__manager__P_224_0.setMode(value);
+        this.__manager__P_196_0.setMode(value);
       },
       // property apply
       _applyDragSelection: function _applyDragSelection(value, old) {
-        this.__manager__P_224_0.setDrag(value);
+        this.__manager__P_196_0.setDrag(value);
       },
       // property apply
       _applyQuickSelection: function _applyQuickSelection(value, old) {
-        this.__manager__P_224_0.setQuick(value);
+        this.__manager__P_196_0.setQuick(value);
       },
 
       /*
@@ -13876,17 +13876,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Data} Data event
        */
       _onSelectionChange: function _onSelectionChange(e) {
-        if (this.__inOnSelectionChange__P_224_1) {
+        if (this.__inOnSelectionChange__P_196_1) {
           return;
         }
 
-        this.__inOnSelectionChange__P_224_1 = true;
+        this.__inOnSelectionChange__P_196_1 = true;
 
         try {
           this.fireDataEvent("changeSelection", e.getData(), e.getOldData());
           this.fireDataEvent("changeValue", e.getData(), e.getOldData());
         } finally {
-          this.__inOnSelectionChange__P_224_1 = false;
+          this.__inOnSelectionChange__P_196_1 = false;
         }
       }
     },
@@ -13897,7 +13897,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__manager__P_224_0");
+      this._disposeObjects("__manager__P_196_0");
     }
   });
   qx.ui.core.MMultiSelectionHandling.$$dbClassInfo = $$dbClassInfo;
@@ -13972,7 +13972,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct() {
       qx.core.Object.constructor.call(this); // {Map} Internal selection storage
 
-      this.__selection__P_226_0 = {};
+      this.__selection__P_216_0 = {};
     },
 
     /*
@@ -14043,30 +14043,30 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __scrollStepX__P_226_1: 0,
-      __scrollStepY__P_226_2: 0,
-      __scrollTimer__P_226_3: null,
-      __frameScroll__P_226_4: null,
-      __lastRelX__P_226_5: null,
-      __lastRelY__P_226_6: null,
-      __frameLocation__P_226_7: null,
-      __dragStartX__P_226_8: null,
-      __dragStartY__P_226_9: null,
-      __inCapture__P_226_10: null,
-      __pointerX__P_226_11: null,
-      __pointerY__P_226_12: null,
-      __moveDirectionX__P_226_13: null,
-      __moveDirectionY__P_226_14: null,
-      __selectionModified__P_226_15: null,
-      __selectionContext__P_226_16: null,
-      __leadItem__P_226_17: null,
-      __selection__P_226_0: null,
-      __anchorItem__P_226_18: null,
-      __pointerDownOnSelected__P_226_19: null,
+      __scrollStepX__P_216_1: 0,
+      __scrollStepY__P_216_2: 0,
+      __scrollTimer__P_216_3: null,
+      __frameScroll__P_216_4: null,
+      __lastRelX__P_216_5: null,
+      __lastRelY__P_216_6: null,
+      __frameLocation__P_216_7: null,
+      __dragStartX__P_216_8: null,
+      __dragStartY__P_216_9: null,
+      __inCapture__P_216_10: null,
+      __pointerX__P_216_11: null,
+      __pointerY__P_216_12: null,
+      __moveDirectionX__P_216_13: null,
+      __moveDirectionY__P_216_14: null,
+      __selectionModified__P_216_15: null,
+      __selectionContext__P_216_16: null,
+      __leadItem__P_216_17: null,
+      __selection__P_216_0: null,
+      __anchorItem__P_216_18: null,
+      __pointerDownOnSelected__P_216_19: null,
       // A flag that signals an user interaction, which means the selection change
       // was triggered by pointer or keyboard [BUG #3344]
       _userInteraction: false,
-      __oldScrollTop__P_226_20: null,
+      __oldScrollTop__P_216_20: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -14083,7 +14083,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>drag</code> or <code>key</code> or <code>null</code>
        */
       getSelectionContext: function getSelectionContext() {
-        return this.__selectionContext__P_226_16;
+        return this.__selectionContext__P_216_16;
       },
 
       /**
@@ -14289,7 +14289,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Object[]} List of items.
        */
       getSelection: function getSelection() {
-        return Object.values(this.__selection__P_226_0);
+        return Object.values(this.__selection__P_216_0);
       },
 
       /**
@@ -14300,7 +14300,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       getSortedSelection: function getSortedSelection() {
         var children = this.getSelectables();
-        var sel = Object.values(this.__selection__P_226_0);
+        var sel = Object.values(this.__selection__P_216_0);
         sel.sort(function (a, b) {
           return children.indexOf(a) - children.indexOf(b);
         });
@@ -14316,7 +14316,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       isItemSelected: function isItemSelected(item) {
         var hash = this._selectableToHashCode(item);
 
-        return this.__selection__P_226_0[hash] !== undefined;
+        return this.__selection__P_216_0[hash] !== undefined;
       },
 
       /**
@@ -14325,7 +14325,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Boolean} Whether the selection is empty
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return qx.lang.Object.isEmpty(this.__selection__P_226_0);
+        return qx.lang.Object.isEmpty(this.__selection__P_216_0);
       },
 
       /**
@@ -14360,7 +14360,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param value {Object} Any valid item or <code>null</code>
        */
       _setLeadItem: function _setLeadItem(value) {
-        var old = this.__leadItem__P_226_17;
+        var old = this.__leadItem__P_216_17;
 
         if (old !== null) {
           this._styleSelectable(old, "lead", false);
@@ -14370,7 +14370,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this._styleSelectable(value, "lead", true);
         }
 
-        this.__leadItem__P_226_17 = value;
+        this.__leadItem__P_216_17 = value;
       },
 
       /**
@@ -14380,7 +14380,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Object} The lead item or <code>null</code>
        */
       getLeadItem: function getLeadItem() {
-        return this.__leadItem__P_226_17;
+        return this.__leadItem__P_216_17;
       },
 
       /**
@@ -14391,7 +14391,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param value {Object} Any valid item or <code>null</code>
        */
       _setAnchorItem: function _setAnchorItem(value) {
-        var old = this.__anchorItem__P_226_18;
+        var old = this.__anchorItem__P_216_18;
 
         if (old != null) {
           this._styleSelectable(old, "anchor", false);
@@ -14401,7 +14401,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this._styleSelectable(value, "anchor", true);
         }
 
-        this.__anchorItem__P_226_18 = value;
+        this.__anchorItem__P_216_18 = value;
       },
 
       /**
@@ -14412,7 +14412,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Object} The anchor item or <code>null</code>
        */
       _getAnchorItem: function _getAnchorItem() {
-        return this.__anchorItem__P_226_18 !== null ? this.__anchorItem__P_226_18 : null;
+        return this.__anchorItem__P_216_18 !== null ? this.__anchorItem__P_216_18 : null;
       },
 
       /*
@@ -14692,8 +14692,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // All browsers (except Opera) fire a native "mouseover" event when a scroll appears
         // by keyboard interaction. We have to ignore the event to avoid a selection for
         // "pointerover" (quick selection). For more details see [BUG #4225]
-        if (this.__oldScrollTop__P_226_20 != null && this.__oldScrollTop__P_226_20 != this._getScroll().top) {
-          this.__oldScrollTop__P_226_20 = null;
+        if (this.__oldScrollTop__P_216_20 != null && this.__oldScrollTop__P_216_20 != this._getScroll().top) {
+          this.__oldScrollTop__P_216_20 = null;
           return;
         } // quick select should only work on mouse events
 
@@ -14759,11 +14759,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var isShiftPressed = event.isShiftPressed(); // tapping on selected items deselect on pointerup, not on pointerdown
 
         if (this.isItemSelected(item) && !isShiftPressed && !isCtrlPressed && !this.getDrag()) {
-          this.__pointerDownOnSelected__P_226_19 = item;
+          this.__pointerDownOnSelected__P_216_19 = item;
           this._userInteraction = false;
           return;
         } else {
-          this.__pointerDownOnSelected__P_226_19 = null;
+          this.__pointerDownOnSelected__P_216_19 = null;
         } // Be sure that item is in view
 
 
@@ -14778,13 +14778,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this._setLeadItem(item); // Cache location/scroll data
 
 
-          this.__frameLocation__P_226_7 = this._getLocation();
-          this.__frameScroll__P_226_4 = this._getScroll(); // Store position at start
+          this.__frameLocation__P_216_7 = this._getLocation();
+          this.__frameScroll__P_216_4 = this._getScroll(); // Store position at start
 
-          this.__dragStartX__P_226_8 = event.getDocumentLeft() + this.__frameScroll__P_226_4.left;
-          this.__dragStartY__P_226_9 = event.getDocumentTop() + this.__frameScroll__P_226_4.top; // Switch to capture mode
+          this.__dragStartX__P_216_8 = event.getDocumentLeft() + this.__frameScroll__P_216_4.left;
+          this.__dragStartY__P_216_9 = event.getDocumentTop() + this.__frameScroll__P_216_4.top; // Switch to capture mode
 
-          this.__inCapture__P_226_10 = true;
+          this.__inCapture__P_216_10 = true;
 
           this._capture();
         } // Fire change event as needed
@@ -14809,7 +14809,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var isCtrlPressed = event.isCtrlPressed() || qx.core.Environment.get("os.name") == "osx" && event.isMetaPressed();
         var isShiftPressed = event.isShiftPressed();
 
-        if (!isCtrlPressed && !isShiftPressed && this.__pointerDownOnSelected__P_226_19 != null) {
+        if (!isCtrlPressed && !isShiftPressed && this.__pointerDownOnSelected__P_216_19 != null) {
           this._userInteraction = false;
 
           var item = this._getSelectableFromPointerEvent(event);
@@ -14899,65 +14899,65 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       handlePointerMove: function handlePointerMove(event) {
         // Only relevant when capturing is enabled
-        if (!this.__inCapture__P_226_10) {
+        if (!this.__inCapture__P_216_10) {
           return;
         } // Update pointer position cache
 
 
-        this.__pointerX__P_226_11 = event.getDocumentLeft();
-        this.__pointerY__P_226_12 = event.getDocumentTop(); // this is a method invoked by an user interaction, so be careful to
+        this.__pointerX__P_216_11 = event.getDocumentLeft();
+        this.__pointerY__P_216_12 = event.getDocumentTop(); // this is a method invoked by an user interaction, so be careful to
         // set / clear the mark this._userInteraction [BUG #3344]
 
         this._userInteraction = true; // Detect move directions
 
-        var dragX = this.__pointerX__P_226_11 + this.__frameScroll__P_226_4.left;
+        var dragX = this.__pointerX__P_216_11 + this.__frameScroll__P_216_4.left;
 
-        if (dragX > this.__dragStartX__P_226_8) {
-          this.__moveDirectionX__P_226_13 = 1;
-        } else if (dragX < this.__dragStartX__P_226_8) {
-          this.__moveDirectionX__P_226_13 = -1;
+        if (dragX > this.__dragStartX__P_216_8) {
+          this.__moveDirectionX__P_216_13 = 1;
+        } else if (dragX < this.__dragStartX__P_216_8) {
+          this.__moveDirectionX__P_216_13 = -1;
         } else {
-          this.__moveDirectionX__P_226_13 = 0;
+          this.__moveDirectionX__P_216_13 = 0;
         }
 
-        var dragY = this.__pointerY__P_226_12 + this.__frameScroll__P_226_4.top;
+        var dragY = this.__pointerY__P_216_12 + this.__frameScroll__P_216_4.top;
 
-        if (dragY > this.__dragStartY__P_226_9) {
-          this.__moveDirectionY__P_226_14 = 1;
-        } else if (dragY < this.__dragStartY__P_226_9) {
-          this.__moveDirectionY__P_226_14 = -1;
+        if (dragY > this.__dragStartY__P_216_9) {
+          this.__moveDirectionY__P_216_14 = 1;
+        } else if (dragY < this.__dragStartY__P_216_9) {
+          this.__moveDirectionY__P_216_14 = -1;
         } else {
-          this.__moveDirectionY__P_226_14 = 0;
+          this.__moveDirectionY__P_216_14 = 0;
         } // Update scroll steps
 
 
-        var location = this.__frameLocation__P_226_7;
+        var location = this.__frameLocation__P_216_7;
 
-        if (this.__pointerX__P_226_11 < location.left) {
-          this.__scrollStepX__P_226_1 = this.__pointerX__P_226_11 - location.left;
-        } else if (this.__pointerX__P_226_11 > location.right) {
-          this.__scrollStepX__P_226_1 = this.__pointerX__P_226_11 - location.right;
+        if (this.__pointerX__P_216_11 < location.left) {
+          this.__scrollStepX__P_216_1 = this.__pointerX__P_216_11 - location.left;
+        } else if (this.__pointerX__P_216_11 > location.right) {
+          this.__scrollStepX__P_216_1 = this.__pointerX__P_216_11 - location.right;
         } else {
-          this.__scrollStepX__P_226_1 = 0;
+          this.__scrollStepX__P_216_1 = 0;
         }
 
-        if (this.__pointerY__P_226_12 < location.top) {
-          this.__scrollStepY__P_226_2 = this.__pointerY__P_226_12 - location.top;
-        } else if (this.__pointerY__P_226_12 > location.bottom) {
-          this.__scrollStepY__P_226_2 = this.__pointerY__P_226_12 - location.bottom;
+        if (this.__pointerY__P_216_12 < location.top) {
+          this.__scrollStepY__P_216_2 = this.__pointerY__P_216_12 - location.top;
+        } else if (this.__pointerY__P_216_12 > location.bottom) {
+          this.__scrollStepY__P_216_2 = this.__pointerY__P_216_12 - location.bottom;
         } else {
-          this.__scrollStepY__P_226_2 = 0;
+          this.__scrollStepY__P_216_2 = 0;
         } // Dynamically create required timer instance
 
 
-        if (!this.__scrollTimer__P_226_3) {
-          this.__scrollTimer__P_226_3 = new qx.event.Timer(100);
+        if (!this.__scrollTimer__P_216_3) {
+          this.__scrollTimer__P_216_3 = new qx.event.Timer(100);
 
-          this.__scrollTimer__P_226_3.addListener("interval", this._onInterval, this);
+          this.__scrollTimer__P_216_3.addListener("interval", this._onInterval, this);
         } // Start interval
 
 
-        this.__scrollTimer__P_226_3.start(); // Auto select based on new cursor position
+        this.__scrollTimer__P_216_3.start(); // Auto select based on new cursor position
 
 
         this._autoSelect();
@@ -15000,25 +15000,25 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Stops all timers, release capture etc. to cleanup drag selection
        */
       _cleanup: function _cleanup() {
-        if (!this.getDrag() && this.__inCapture__P_226_10) {
+        if (!this.getDrag() && this.__inCapture__P_216_10) {
           return;
         } // Fire change event if needed
 
 
-        if (this.__selectionModified__P_226_15) {
+        if (this.__selectionModified__P_216_15) {
           this._fireChange("tap");
         } // Remove flags
 
 
-        delete this.__inCapture__P_226_10;
-        delete this.__lastRelX__P_226_5;
-        delete this.__lastRelY__P_226_6; // Stop capturing
+        delete this.__inCapture__P_216_10;
+        delete this.__lastRelX__P_216_5;
+        delete this.__lastRelY__P_216_6; // Stop capturing
 
         this._releaseCapture(); // Stop timer
 
 
-        if (this.__scrollTimer__P_226_3) {
-          this.__scrollTimer__P_226_3.stop();
+        if (this.__scrollTimer__P_216_3) {
+          this.__scrollTimer__P_216_3.stop();
         }
       },
 
@@ -15029,10 +15029,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _onInterval: function _onInterval(e) {
         // Scroll by defined block size
-        this._scrollBy(this.__scrollStepX__P_226_1, this.__scrollStepY__P_226_2); // Update scroll cache
+        this._scrollBy(this.__scrollStepX__P_216_1, this.__scrollStepY__P_216_2); // Update scroll cache
 
 
-        this.__frameScroll__P_226_4 = this._getScroll(); // Auto select based on new scroll position and cursor
+        this.__frameScroll__P_216_4 = this._getScroll(); // Auto select based on new scroll position and cursor
 
         this._autoSelect();
       },
@@ -15044,23 +15044,23 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var inner = this._getDimension(); // Get current relative Y position and compare it with previous one
 
 
-        var relX = Math.max(0, Math.min(this.__pointerX__P_226_11 - this.__frameLocation__P_226_7.left, inner.width)) + this.__frameScroll__P_226_4.left;
+        var relX = Math.max(0, Math.min(this.__pointerX__P_216_11 - this.__frameLocation__P_216_7.left, inner.width)) + this.__frameScroll__P_216_4.left;
 
-        var relY = Math.max(0, Math.min(this.__pointerY__P_226_12 - this.__frameLocation__P_226_7.top, inner.height)) + this.__frameScroll__P_226_4.top; // Compare old and new relative coordinates (for performance reasons)
+        var relY = Math.max(0, Math.min(this.__pointerY__P_216_12 - this.__frameLocation__P_216_7.top, inner.height)) + this.__frameScroll__P_216_4.top; // Compare old and new relative coordinates (for performance reasons)
 
 
-        if (this.__lastRelX__P_226_5 === relX && this.__lastRelY__P_226_6 === relY) {
+        if (this.__lastRelX__P_216_5 === relX && this.__lastRelY__P_216_6 === relY) {
           return;
         }
 
-        this.__lastRelX__P_226_5 = relX;
-        this.__lastRelY__P_226_6 = relY; // Cache anchor
+        this.__lastRelX__P_216_5 = relX;
+        this.__lastRelY__P_216_6 = relY; // Cache anchor
 
         var anchor = this._getAnchorItem();
 
         var lead = anchor; // Process X-coordinate
 
-        var moveX = this.__moveDirectionX__P_226_13;
+        var moveX = this.__moveDirectionX__P_216_13;
         var nextX, locationX;
 
         while (moveX !== 0) {
@@ -15081,7 +15081,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Process Y-coordinate
 
 
-        var moveY = this.__moveDirectionY__P_226_14;
+        var moveY = this.__moveDirectionY__P_216_14;
         var nextY, locationY;
 
         while (moveY !== 0) {
@@ -15137,7 +15137,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @lint ignoreReferenceField(__navigationKeys)
        */
-      __navigationKeys__P_226_21: {
+      __navigationKeys__P_216_21: {
         Home: 1,
         Down: 1,
         Right: 1,
@@ -15191,7 +15191,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
             consumed = true;
           }
-        } else if (this.__navigationKeys__P_226_21[key] && readOnly) {
+        } else if (this.__navigationKeys__P_216_21[key] && readOnly) {
           switch (key) {
             case "Home":
               next = this._getFirstSelectable();
@@ -15228,11 +15228,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
           if (next) {
             consumed = true;
-            this.__oldScrollTop__P_226_20 = this._getScroll().top;
+            this.__oldScrollTop__P_216_20 = this._getScroll().top;
 
             this._scrollItemIntoView(next);
           }
-        } else if (this.__navigationKeys__P_226_21[key]) {
+        } else if (this.__navigationKeys__P_216_21[key]) {
           consumed = true;
 
           if (mode === "single" || mode == "one") {
@@ -15331,7 +15331,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
                 break;
             }
 
-            this.__oldScrollTop__P_226_20 = this._getScroll().top;
+            this.__oldScrollTop__P_216_20 = this._getScroll().top;
 
             this._scrollItemIntoView(next);
           }
@@ -15368,13 +15368,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Clears current selection
        */
       _clearSelection: function _clearSelection() {
-        var selection = this.__selection__P_226_0;
+        var selection = this.__selection__P_216_0;
 
         for (var hash in selection) {
           this._removeFromSelection(selection[hash]);
         }
 
-        this.__selection__P_226_0 = {};
+        this.__selection__P_216_0 = {};
       },
 
       /**
@@ -15390,9 +15390,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
         if (!extend) {
-          var selected = this.__selection__P_226_0;
+          var selected = this.__selection__P_216_0;
 
-          var mapped = this.__rangeToMap__P_226_22(range);
+          var mapped = this.__rangeToMap__P_216_22(range);
 
           for (var hash in selected) {
             if (!mapped[hash]) {
@@ -15427,7 +15427,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param range {Array} List of selectable items
        */
-      __rangeToMap__P_226_22: function __rangeToMap__P_226_22(range) {
+      __rangeToMap__P_216_22: function __rangeToMap__P_216_22(range) {
         var mapped = {};
         var item;
 
@@ -15452,8 +15452,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {var} The selected item (or <code>null</code>)
        */
       _getSelectedItem: function _getSelectedItem() {
-        for (var hash in this.__selection__P_226_0) {
-          return this.__selection__P_226_0[hash];
+        for (var hash in this.__selection__P_216_0) {
+          return this.__selection__P_216_0[hash];
         }
 
         return null;
@@ -15467,7 +15467,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _setSelectedItem: function _setSelectedItem(item) {
         if (this._isSelectable(item)) {
           // If already selected try to find out if this is the only item
-          var current = this.__selection__P_226_0;
+          var current = this.__selection__P_216_0;
 
           var hash = this._selectableToHashCode(item);
 
@@ -15493,12 +15493,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _addToSelection: function _addToSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_226_0[hash] == null && this._isSelectable(item)) {
-          this.__selection__P_226_0[hash] = item;
+        if (this.__selection__P_216_0[hash] == null && this._isSelectable(item)) {
+          this.__selection__P_216_0[hash] = item;
 
           this._styleSelectable(item, "selected", true);
 
-          this.__selectionModified__P_226_15 = true;
+          this.__selectionModified__P_216_15 = true;
         }
       },
 
@@ -15511,17 +15511,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _toggleInSelection: function _toggleInSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_226_0[hash] == null) {
-          this.__selection__P_226_0[hash] = item;
+        if (this.__selection__P_216_0[hash] == null) {
+          this.__selection__P_216_0[hash] = item;
 
           this._styleSelectable(item, "selected", true);
         } else {
-          delete this.__selection__P_226_0[hash];
+          delete this.__selection__P_216_0[hash];
 
           this._styleSelectable(item, "selected", false);
         }
 
-        this.__selectionModified__P_226_15 = true;
+        this.__selectionModified__P_216_15 = true;
       },
 
       /**
@@ -15532,12 +15532,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _removeFromSelection: function _removeFromSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_226_0[hash] != null) {
-          delete this.__selection__P_226_0[hash];
+        if (this.__selection__P_216_0[hash] != null) {
+          delete this.__selection__P_216_0[hash];
 
           this._styleSelectable(item, "selected", false);
 
-          this.__selectionModified__P_226_15 = true;
+          this.__selectionModified__P_216_15 = true;
         }
       },
 
@@ -15570,7 +15570,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var first = items[0];
         var last = selectable; // Clear old entries from map
 
-        var current = this.__selection__P_226_0;
+        var current = this.__selection__P_216_0;
 
         for (var hash in current) {
           if (incoming[hash]) {
@@ -15613,7 +15613,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this._setAnchorItem(first); // Finally fire change event
 
 
-        this.__selectionModified__P_226_15 = true;
+        this.__selectionModified__P_216_15 = true;
 
         this._fireChange();
       },
@@ -15626,12 +15626,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>drag</code> or <code>key</code> or <code>null</code>
        */
       _fireChange: function _fireChange(context) {
-        if (this.__selectionModified__P_226_15) {
+        if (this.__selectionModified__P_216_15) {
           // Store context
-          this.__selectionContext__P_226_16 = context || null; // Fire data event which contains the current selection
+          this.__selectionContext__P_216_16 = context || null; // Fire data event which contains the current selection
 
           this.fireDataEvent("changeSelection", this.getSelection());
-          delete this.__selectionModified__P_226_15;
+          delete this.__selectionModified__P_216_15;
         }
       },
 
@@ -15663,10 +15663,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__scrollTimer__P_226_3");
+      this._disposeObjects("__scrollTimer__P_216_3");
 
-      this.__selection__P_226_0 = this.__pointerDownOnSelected__P_226_19 = this.__anchorItem__P_226_18 = null;
-      this.__leadItem__P_226_17 = null;
+      this.__selection__P_216_0 = this.__pointerDownOnSelected__P_216_19 = this.__anchorItem__P_216_18 = null;
+      this.__leadItem__P_216_17 = null;
     }
   });
   qx.ui.core.selection.Abstract.$$dbClassInfo = $$dbClassInfo;
@@ -15723,7 +15723,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
      */
     construct: function construct(widget) {
       qx.ui.core.selection.Abstract.constructor.call(this);
-      this.__widget__P_225_0 = widget;
+      this.__widget__P_208_0 = widget;
     },
 
     /*
@@ -15732,7 +15732,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __widget__P_225_0: null,
+      __widget__P_208_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -15741,7 +15741,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       */
       // overridden
       _isSelectable: function _isSelectable(item) {
-        return this._isItemSelectable(item) && item.getLayoutParent() === this.__widget__P_225_0;
+        return this._isItemSelectable(item) && item.getLayoutParent() === this.__widget__P_208_0;
       },
       // overridden
       _selectableToHashCode: function _selectableToHashCode(item) {
@@ -15753,11 +15753,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // overridden
       _capture: function _capture() {
-        this.__widget__P_225_0.capture();
+        this.__widget__P_208_0.capture();
       },
       // overridden
       _releaseCapture: function _releaseCapture() {
-        this.__widget__P_225_0.releaseCapture();
+        this.__widget__P_208_0.releaseCapture();
       },
 
       /**
@@ -15780,7 +15780,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget} The widget
        */
       _getWidget: function _getWidget() {
-        return this.__widget__P_225_0;
+        return this.__widget__P_208_0;
       },
 
       /*
@@ -15790,13 +15790,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       */
       // overridden
       _getLocation: function _getLocation() {
-        var elem = this.__widget__P_225_0.getContentElement().getDomElement();
+        var elem = this.__widget__P_208_0.getContentElement().getDomElement();
 
         return elem ? qx.bom.element.Location.get(elem) : null;
       },
       // overridden
       _getDimension: function _getDimension() {
-        return this.__widget__P_225_0.getInnerSize();
+        return this.__widget__P_208_0.getInnerSize();
       },
       // overridden
       _getSelectableLocationX: function _getSelectableLocationX(item) {
@@ -15838,7 +15838,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // overridden
       _scrollItemIntoView: function _scrollItemIntoView(item) {
-        this.__widget__P_225_0.scrollChildIntoView(item);
+        this.__widget__P_208_0.scrollChildIntoView(item);
       },
 
       /*
@@ -15856,7 +15856,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this._userInteraction = true;
         }
 
-        var children = this.__widget__P_225_0.getChildren();
+        var children = this.__widget__P_208_0.getChildren();
 
         var result = [];
         var child;
@@ -15882,7 +15882,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // between the given two (including them)
 
 
-        var children = this.__widget__P_225_0.getChildren();
+        var children = this.__widget__P_208_0.getChildren();
 
         var result = [];
         var active = false;
@@ -15909,7 +15909,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // overridden
       _getFirstSelectable: function _getFirstSelectable() {
-        var children = this.__widget__P_225_0.getChildren();
+        var children = this.__widget__P_208_0.getChildren();
 
         for (var i = 0, l = children.length; i < l; i++) {
           if (this._isItemSelectable(children[i])) {
@@ -15921,7 +15921,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // overridden
       _getLastSelectable: function _getLastSelectable() {
-        var children = this.__widget__P_225_0.getChildren();
+        var children = this.__widget__P_208_0.getChildren();
 
         for (var i = children.length - 1; i > 0; i--) {
           if (this._isItemSelectable(children[i])) {
@@ -15941,9 +15941,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // overridden
       _getRelatedSelectable: function _getRelatedSelectable(item, relation) {
-        var vertical = this.__widget__P_225_0.getOrientation() === "vertical";
+        var vertical = this.__widget__P_208_0.getOrientation() === "vertical";
 
-        var children = this.__widget__P_225_0.getChildren();
+        var children = this.__widget__P_208_0.getChildren();
 
         var index = children.indexOf(item);
         var sibling;
@@ -15984,7 +15984,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__widget__P_225_0 = null;
+      this.__widget__P_208_0 = null;
     }
   });
   qx.ui.core.selection.Widget.$$dbClassInfo = $$dbClassInfo;
@@ -16316,14 +16316,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct(horizontal) {
       qx.ui.core.scroll.AbstractScrollArea.constructor.call(this); // Create content
 
-      this.__content__P_223_0 = this._createListItemContainer(); // Used to fire item add/remove events
+      this.__content__P_160_0 = this._createListItemContainer(); // Used to fire item add/remove events
 
-      this.__content__P_223_0.addListener("addChildWidget", this._onAddChild, this);
+      this.__content__P_160_0.addListener("addChildWidget", this._onAddChild, this);
 
-      this.__content__P_223_0.addListener("removeChildWidget", this._onRemoveChild, this); // Add to scrollpane
+      this.__content__P_160_0.addListener("removeChildWidget", this._onRemoveChild, this); // Add to scrollpane
 
 
-      this.getChildControl("pane").add(this.__content__P_223_0); // Apply orientation
+      this.getChildControl("pane").add(this.__content__P_160_0); // Apply orientation
 
       if (horizontal) {
         this.setOrientation("horizontal");
@@ -16335,7 +16335,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.addListener("keypress", this._onKeyPress);
       this.addListener("keyinput", this._onKeyInput); // initialize the search string
 
-      this.__pressedString__P_223_1 = "";
+      this.__pressedString__P_160_1 = "";
     },
 
     /*
@@ -16424,11 +16424,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __pressedString__P_223_1: null,
-      __lastKeyPress__P_223_2: null,
+      __pressedString__P_160_1: null,
+      __lastKeyPress__P_160_2: null,
 
       /** @type {qx.ui.core.Widget} The children container */
-      __content__P_223_0: null,
+      __content__P_160_0: null,
 
       /** @type {Class} Pointer to the selection manager to use */
       SELECTION_MANAGER: qx.ui.core.selection.ScrollArea,
@@ -16440,7 +16440,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       */
       // overridden
       getChildrenContainer: function getChildrenContainer() {
-        return this.__content__P_223_0;
+        return this.__content__P_160_0;
       },
 
       /**
@@ -16503,7 +16503,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _applyOrientation: function _applyOrientation(value, old) {
         // ARIA attrs
         this.getContentElement().setAttribute("aria-orientation", value);
-        var content = this.__content__P_223_0; // save old layout for disposal
+        var content = this.__content__P_160_0; // save old layout for disposal
 
         var oldLayout = content.getLayout(); // Create new layout
 
@@ -16523,7 +16523,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // property apply
       _applySpacing: function _applySpacing(value, old) {
-        this.__content__P_223_0.getLayout().setSpacing(value);
+        this.__content__P_160_0.getLayout().setSpacing(value);
       },
       // property readOnly
       _applyReadOnly: function _applyReadOnly(value) {
@@ -16629,21 +16629,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Reset string after a second of non pressed key
 
 
-        if (new Date().valueOf() - this.__lastKeyPress__P_223_2 > 1000) {
-          this.__pressedString__P_223_1 = "";
+        if (new Date().valueOf() - this.__lastKeyPress__P_160_2 > 1000) {
+          this.__pressedString__P_160_1 = "";
         } // Combine keys the user pressed to a string
 
 
-        this.__pressedString__P_223_1 += e.getChar(); // Find matching item
+        this.__pressedString__P_160_1 += e.getChar(); // Find matching item
 
-        var matchedItem = this.findItemByLabelFuzzy(this.__pressedString__P_223_1); // if an item was found, select it
+        var matchedItem = this.findItemByLabelFuzzy(this.__pressedString__P_160_1); // if an item was found, select it
 
         if (matchedItem) {
           this.setSelection([matchedItem]);
         } // Store timestamp
 
 
-        this.__lastKeyPress__P_223_2 = new Date().valueOf();
+        this.__lastKeyPress__P_160_2 = new Date().valueOf();
       },
 
       /**
@@ -16736,7 +16736,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__content__P_223_0");
+      this._disposeObjects("__content__P_160_0");
     }
   });
   qx.ui.form.List.$$dbClassInfo = $$dbClassInfo;
@@ -16809,7 +16809,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       {
         qx.core.Assert.assertInterface(selectionProvider, qx.ui.core.ISingleSelectionProvider, "Invalid selectionProvider!");
       }
-      this.__selectionProvider__P_190_0 = selectionProvider;
+      this.__selectionProvider__P_161_0 = selectionProvider;
     },
 
     /*
@@ -16836,7 +16836,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       allowEmptySelection: {
         check: "Boolean",
         init: true,
-        apply: "__applyAllowEmptySelection__P_190_1"
+        apply: "__applyAllowEmptySelection__P_161_1"
       }
     },
 
@@ -16847,10 +16847,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     */
     members: {
       /** @type {qx.ui.core.Widget} The selected widget. */
-      __selected__P_190_2: null,
+      __selected__P_161_2: null,
 
       /** @type {qx.ui.core.ISingleSelectionProvider} The provider for selection management */
-      __selectionProvider__P_190_0: null,
+      __selectionProvider__P_161_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -16865,7 +16865,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>null</code> if the selection is empty.
        */
       getSelected: function getSelected() {
-        return this.__selected__P_190_2;
+        return this.__selected__P_161_2;
       },
 
       /**
@@ -16875,11 +16875,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @throws {Error} if the element is not a child element.
        */
       setSelected: function setSelected(item) {
-        if (!this.__isChildElement__P_190_3(item)) {
+        if (!this.__isChildElement__P_161_3(item)) {
           throw new Error("Could not select " + item + ", because it is not a child element!");
         }
 
-        this.__setSelected__P_190_4(item);
+        this.__setSelected__P_161_4(item);
       },
 
       /**
@@ -16887,7 +16887,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * <code>true</code> the first element will be selected.
        */
       resetSelected: function resetSelected() {
-        this.__setSelected__P_190_4(null);
+        this.__setSelected__P_161_4(null);
       },
 
       /**
@@ -16899,11 +16899,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @throws {Error} if the element is not a child element.
        */
       isSelected: function isSelected(item) {
-        if (!this.__isChildElement__P_190_3(item)) {
+        if (!this.__isChildElement__P_161_3(item)) {
           throw new Error("Could not check if " + item + " is selected," + " because it is not a child element!");
         }
 
-        return this.__selected__P_190_2 === item;
+        return this.__selected__P_161_2 === item;
       },
 
       /**
@@ -16913,7 +16913,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>false</code> otherwise.
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__selected__P_190_2 == null;
+        return this.__selected__P_161_2 == null;
       },
 
       /**
@@ -16924,12 +16924,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        var items = this.__selectionProvider__P_190_0.getItems();
+        var items = this.__selectionProvider__P_161_0.getItems();
 
         var result = [];
 
         for (var i = 0; i < items.length; i++) {
-          if (this.__selectionProvider__P_190_0.isItemSelectable(items[i])) {
+          if (this.__selectionProvider__P_161_0.isItemSelectable(items[i])) {
             result.push(items[i]);
           }
         } // in case of an user selectable list, remove the enabled items
@@ -16952,9 +16952,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       ---------------------------------------------------------------------------
       */
       // apply method
-      __applyAllowEmptySelection__P_190_1: function __applyAllowEmptySelection__P_190_1(value, old) {
+      __applyAllowEmptySelection__P_161_1: function __applyAllowEmptySelection__P_161_1(value, old) {
         if (!value) {
-          this.__setSelected__P_190_4(this.__selected__P_190_2);
+          this.__setSelected__P_161_4(this.__selected__P_161_2);
         }
       },
 
@@ -16972,8 +16972,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param item {qx.ui.core.Widget | null} element to select, or
        *    <code>null</code> to reset selection.
        */
-      __setSelected__P_190_4: function __setSelected__P_190_4(item) {
-        var oldSelected = this.__selected__P_190_2;
+      __setSelected__P_161_4: function __setSelected__P_161_4(item) {
+        var oldSelected = this.__selected__P_161_2;
         var newSelected = item;
 
         if (newSelected != null && oldSelected === newSelected) {
@@ -16988,7 +16988,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }
 
-        this.__selected__P_190_2 = newSelected;
+        this.__selected__P_161_2 = newSelected;
         this.fireDataEvent("changeSelected", newSelected, oldSelected);
       },
 
@@ -16999,8 +16999,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Boolean} <code>true</code> if element is child element,
        *    <code>false</code> otherwise.
        */
-      __isChildElement__P_190_3: function __isChildElement__P_190_3(item) {
-        var items = this.__selectionProvider__P_190_0.getItems();
+      __isChildElement__P_161_3: function __isChildElement__P_161_3(item) {
+        var items = this.__selectionProvider__P_161_0.getItems();
 
         for (var i = 0; i < items.length; i++) {
           if (items[i] === item) {
@@ -17018,13 +17018,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
      *****************************************************************************
      */
     destruct: function destruct() {
-      if (this.__selectionProvider__P_190_0.toHashCode) {
-        this._disposeObjects("__selectionProvider__P_190_0");
+      if (this.__selectionProvider__P_161_0.toHashCode) {
+        this._disposeObjects("__selectionProvider__P_161_0");
       } else {
-        this.__selectionProvider__P_190_0 = null;
+        this.__selectionProvider__P_161_0 = null;
       }
 
-      this._disposeObjects("__selected__P_190_2");
+      this._disposeObjects("__selected__P_161_2");
     }
   });
   qx.ui.core.SingleSelectionManager.$$dbClassInfo = $$dbClassInfo;
@@ -17463,17 +17463,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __offset__P_176_0: 2,
-      __originalMinSize__P_176_1: 0,
+      __offset__P_190_0: 2,
+      __originalMinSize__P_190_1: 0,
       // overridden
       _computeSizeHint: function _computeSizeHint() {
         var hint = qx.ui.core.scroll.ScrollBar.superclass.prototype._computeSizeHint.call(this);
 
         if (this.getOrientation() === "horizontal") {
-          this.__originalMinSize__P_176_1 = hint.minWidth;
+          this.__originalMinSize__P_190_1 = hint.minWidth;
           hint.minWidth = 0;
         } else {
-          this.__originalMinSize__P_176_1 = hint.minHeight;
+          this.__originalMinSize__P_190_1 = hint.minHeight;
           hint.minHeight = 0;
         }
 
@@ -17484,7 +17484,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var changes = qx.ui.core.scroll.ScrollBar.superclass.prototype.renderLayout.call(this, left, top, width, height);
         var horizontal = this.getOrientation() === "horizontal";
 
-        if (this.__originalMinSize__P_176_1 >= (horizontal ? width : height)) {
+        if (this.__originalMinSize__P_190_1 >= (horizontal ? width : height)) {
           this.getChildControl("button-begin").setVisibility("hidden");
           this.getChildControl("button-end").setVisibility("hidden");
         } else {
@@ -17705,11 +17705,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var sliderSize = this.getChildControl("slider").getInnerSize();
 
         if (this.getOrientation() == "vertical") {
-          if (sliderSize.height < knobHint.minHeight + this.__offset__P_176_0) {
+          if (sliderSize.height < knobHint.minHeight + this.__offset__P_190_0) {
             hideKnob = true;
           }
         } else {
-          if (sliderSize.width < knobHint.minWidth + this.__offset__P_176_0) {
+          if (sliderSize.width < knobHint.minWidth + this.__offset__P_190_0) {
             hideKnob = true;
           }
         }
@@ -17840,7 +17840,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __frame__P_175_0: null,
+      __frame__P_170_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -18084,20 +18084,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (duration) {
           var from = this.getScrollX();
-          this.__frame__P_175_0 = new qx.bom.AnimationFrame();
+          this.__frame__P_170_0 = new qx.bom.AnimationFrame();
 
-          this.__frame__P_175_0.on("end", function () {
+          this.__frame__P_170_0.on("end", function () {
             this.setScrollX(value);
-            this.__frame__P_175_0 = null;
+            this.__frame__P_170_0 = null;
             this.fireEvent("scrollAnimationEnd");
           }, this);
 
-          this.__frame__P_175_0.on("frame", function (timePassed) {
+          this.__frame__P_170_0.on("frame", function (timePassed) {
             var newX = parseInt(timePassed / duration * (value - from) + from);
             this.setScrollX(newX);
           }, this);
 
-          this.__frame__P_175_0.startSequence(duration);
+          this.__frame__P_170_0.startSequence(duration);
         } else {
           this.setScrollX(value);
         }
@@ -18122,20 +18122,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (duration) {
           var from = this.getScrollY();
-          this.__frame__P_175_0 = new qx.bom.AnimationFrame();
+          this.__frame__P_170_0 = new qx.bom.AnimationFrame();
 
-          this.__frame__P_175_0.on("end", function () {
+          this.__frame__P_170_0.on("end", function () {
             this.setScrollY(value);
-            this.__frame__P_175_0 = null;
+            this.__frame__P_170_0 = null;
             this.fireEvent("scrollAnimationEnd");
           }, this);
 
-          this.__frame__P_175_0.on("frame", function (timePassed) {
+          this.__frame__P_170_0.on("frame", function (timePassed) {
             var newY = parseInt(timePassed / duration * (value - from) + from);
             this.setScrollY(newY);
           }, this);
 
-          this.__frame__P_175_0.startSequence(duration);
+          this.__frame__P_170_0.startSequence(duration);
         } else {
           this.setScrollY(value);
         }
@@ -18165,10 +18165,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * If an scroll animation is running, it will be stopped with that method.
        */
       stopScrollAnimation: function stopScrollAnimation() {
-        if (this.__frame__P_175_0) {
-          this.__frame__P_175_0.cancelSequence();
+        if (this.__frame__P_170_0) {
+          this.__frame__P_170_0.cancelSequence();
 
-          this.__frame__P_175_0 = null;
+          this.__frame__P_170_0 = null;
         }
       },
 
@@ -18284,7 +18284,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       if (fontFamily) {
         this.setFontFamily(fontFamily);
-        this.__requestedHelpers__P_148_0 = this._getRequestedHelpers();
+        this.__requestedHelpers__P_187_0 = this._getRequestedHelpers();
       }
     },
 
@@ -18327,15 +18327,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * property.
        */
       COMPARISON_STRING: "WEei",
-      __defaultSizes__P_148_1: null,
-      __defaultHelpers__P_148_2: null,
+      __defaultSizes__P_187_1: null,
+      __defaultHelpers__P_187_2: null,
 
       /**
        * Removes the two common helper elements used for all size comparisons from
        * the DOM
        */
       removeDefaultHelperElements: function removeDefaultHelperElements() {
-        var defaultHelpers = qx.bom.webfonts.Validator.__defaultHelpers__P_148_2;
+        var defaultHelpers = qx.bom.webfonts.Validator.__defaultHelpers__P_187_2;
 
         if (defaultHelpers) {
           for (var prop in defaultHelpers) {
@@ -18343,7 +18343,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }
 
-        delete qx.bom.webfonts.Validator.__defaultHelpers__P_148_2;
+        delete qx.bom.webfonts.Validator.__defaultHelpers__P_187_2;
       }
     },
 
@@ -18414,9 +18414,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __requestedHelpers__P_148_0: null,
-      __checkTimer__P_148_3: null,
-      __checkStarted__P_148_4: null,
+      __requestedHelpers__P_187_0: null,
+      __checkTimer__P_187_3: null,
+      __checkStarted__P_187_4: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -18428,18 +18428,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Validates the font
        */
       validate: function validate() {
-        this.__checkStarted__P_148_4 = new Date().getTime();
+        this.__checkStarted__P_187_4 = new Date().getTime();
 
-        if (this.__checkTimer__P_148_3) {
-          this.__checkTimer__P_148_3.restart();
+        if (this.__checkTimer__P_187_3) {
+          this.__checkTimer__P_187_3.restart();
         } else {
-          this.__checkTimer__P_148_3 = new qx.event.Timer(100);
+          this.__checkTimer__P_187_3 = new qx.event.Timer(100);
 
-          this.__checkTimer__P_148_3.addListener("interval", this.__onTimerInterval__P_148_5, this); // Give the browser a chance to render the new elements
+          this.__checkTimer__P_187_3.addListener("interval", this.__onTimerInterval__P_187_5, this); // Give the browser a chance to render the new elements
 
 
           qx.event.Timer.once(function () {
-            this.__checkTimer__P_148_3.start();
+            this.__checkTimer__P_187_3.start();
           }, this, 0);
         }
       },
@@ -18454,13 +18454,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Removes the helper elements from the DOM
        */
       _reset: function _reset() {
-        if (this.__requestedHelpers__P_148_0) {
-          for (var prop in this.__requestedHelpers__P_148_0) {
-            var elem = this.__requestedHelpers__P_148_0[prop];
+        if (this.__requestedHelpers__P_187_0) {
+          for (var prop in this.__requestedHelpers__P_187_0) {
+            var elem = this.__requestedHelpers__P_187_0[prop];
             document.body.removeChild(elem);
           }
 
-          this.__requestedHelpers__P_148_0 = null;
+          this.__requestedHelpers__P_187_0 = null;
         }
       },
 
@@ -18473,24 +18473,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * in size
        */
       _isFontValid: function _isFontValid() {
-        if (!qx.bom.webfonts.Validator.__defaultSizes__P_148_1) {
-          this.__init__P_148_6();
+        if (!qx.bom.webfonts.Validator.__defaultSizes__P_187_1) {
+          this.__init__P_187_6();
         }
 
-        if (!this.__requestedHelpers__P_148_0) {
-          this.__requestedHelpers__P_148_0 = this._getRequestedHelpers();
+        if (!this.__requestedHelpers__P_187_0) {
+          this.__requestedHelpers__P_187_0 = this._getRequestedHelpers();
         } // force rerendering for chrome
 
 
-        this.__requestedHelpers__P_148_0.sans.style.visibility = "visible";
-        this.__requestedHelpers__P_148_0.sans.style.visibility = "hidden";
-        this.__requestedHelpers__P_148_0.serif.style.visibility = "visible";
-        this.__requestedHelpers__P_148_0.serif.style.visibility = "hidden";
-        var requestedSans = qx.bom.element.Dimension.getWidth(this.__requestedHelpers__P_148_0.sans);
-        var requestedSerif = qx.bom.element.Dimension.getWidth(this.__requestedHelpers__P_148_0.serif);
+        this.__requestedHelpers__P_187_0.sans.style.visibility = "visible";
+        this.__requestedHelpers__P_187_0.sans.style.visibility = "hidden";
+        this.__requestedHelpers__P_187_0.serif.style.visibility = "visible";
+        this.__requestedHelpers__P_187_0.serif.style.visibility = "hidden";
+        var requestedSans = qx.bom.element.Dimension.getWidth(this.__requestedHelpers__P_187_0.sans);
+        var requestedSerif = qx.bom.element.Dimension.getWidth(this.__requestedHelpers__P_187_0.serif);
         var cls = qx.bom.webfonts.Validator;
 
-        if (requestedSans !== cls.__defaultSizes__P_148_1.sans || requestedSerif !== cls.__defaultSizes__P_148_1.serif) {
+        if (requestedSans !== cls.__defaultSizes__P_187_1.sans || requestedSerif !== cls.__defaultSizes__P_187_1.serif) {
           return true;
         }
 
@@ -18574,19 +18574,19 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       /**
        * Creates the default helper elements and gets their widths
        */
-      __init__P_148_6: function __init__P_148_6() {
+      __init__P_187_6: function __init__P_187_6() {
         var cls = qx.bom.webfonts.Validator;
 
-        if (!cls.__defaultHelpers__P_148_2) {
-          cls.__defaultHelpers__P_148_2 = {
+        if (!cls.__defaultHelpers__P_187_2) {
+          cls.__defaultHelpers__P_187_2 = {
             sans: this._getHelperElement(cls.COMPARISON_FONTS.sans),
             serif: this._getHelperElement(cls.COMPARISON_FONTS.serif)
           };
         }
 
-        cls.__defaultSizes__P_148_1 = {
-          sans: qx.bom.element.Dimension.getWidth(cls.__defaultHelpers__P_148_2.sans),
-          serif: qx.bom.element.Dimension.getWidth(cls.__defaultHelpers__P_148_2.serif)
+        cls.__defaultSizes__P_187_1 = {
+          sans: qx.bom.element.Dimension.getWidth(cls.__defaultHelpers__P_187_2.sans),
+          serif: qx.bom.element.Dimension.getWidth(cls.__defaultHelpers__P_187_2.serif)
         };
       },
 
@@ -18594,9 +18594,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Triggers helper element size comparison and fires a ({@link #changeStatus})
        * event with the result.
        */
-      __onTimerInterval__P_148_5: function __onTimerInterval__P_148_5() {
+      __onTimerInterval__P_187_5: function __onTimerInterval__P_187_5() {
         if (this._isFontValid()) {
-          this.__checkTimer__P_148_3.stop();
+          this.__checkTimer__P_187_3.stop();
 
           this._reset();
 
@@ -18607,8 +18607,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } else {
           var now = new Date().getTime();
 
-          if (now - this.__checkStarted__P_148_4 >= this.getTimeout()) {
-            this.__checkTimer__P_148_3.stop();
+          if (now - this.__checkStarted__P_187_4 >= this.getTimeout()) {
+            this.__checkTimer__P_187_3.stop();
 
             this._reset();
 
@@ -18629,11 +18629,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     destruct: function destruct() {
       this._reset();
 
-      this.__checkTimer__P_148_3.stop();
+      this.__checkTimer__P_187_3.stop();
 
-      this.__checkTimer__P_148_3.removeListener("interval", this.__onTimerInterval__P_148_5, this);
+      this.__checkTimer__P_187_3.removeListener("interval", this.__onTimerInterval__P_187_5, this);
 
-      this._disposeObjects("__checkTimer__P_148_3");
+      this._disposeObjects("__checkTimer__P_187_3");
     }
   });
   qx.bom.webfonts.Validator.$$dbClassInfo = $$dbClassInfo;
@@ -18911,7 +18911,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct() {
       qx.core.Object.constructor.call(this); // Create data structure
 
-      this.__objects__P_212_0 = [];
+      this.__objects__P_191_0 = [];
       var el = document.body;
       var Registration = qx.event.Registration; // React on pointer/mouse events, but on native, to support inline applications
 
@@ -18929,14 +18929,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       } // Create open timer
 
 
-      this.__openTimer__P_212_1 = new qx.event.Timer();
+      this.__openTimer__P_191_1 = new qx.event.Timer();
 
-      this.__openTimer__P_212_1.addListener("interval", this._onOpenInterval, this); // Create close timer
+      this.__openTimer__P_191_1.addListener("interval", this._onOpenInterval, this); // Create close timer
 
 
-      this.__closeTimer__P_212_2 = new qx.event.Timer();
+      this.__closeTimer__P_191_2 = new qx.event.Timer();
 
-      this.__closeTimer__P_212_2.addListener("interval", this._onCloseInterval, this);
+      this.__closeTimer__P_191_2.addListener("interval", this._onCloseInterval, this);
     },
 
     /*
@@ -18947,11 +18947,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __scheduleOpen__P_212_3: null,
-      __scheduleClose__P_212_4: null,
-      __openTimer__P_212_1: null,
-      __closeTimer__P_212_2: null,
-      __objects__P_212_0: null,
+      __scheduleOpen__P_191_3: null,
+      __scheduleClose__P_191_4: null,
+      __openTimer__P_191_1: null,
+      __closeTimer__P_191_2: null,
+      __objects__P_191_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -19021,7 +19021,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Boolean} <code>true</code> if the widget is a menu opener
        */
       _isMenuOpener: function _isMenuOpener(widget) {
-        var menus = this.__objects__P_212_0;
+        var menus = this.__objects__P_191_0;
 
         for (var i = 0; i < menus.length; i++) {
           if (menus[i].getOpener() === widget) {
@@ -19067,7 +19067,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             throw new Error("Object is no menu: " + obj);
           }
         }
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
         reg.push(obj);
         obj.setZIndex(1e6 + reg.length);
       },
@@ -19083,7 +19083,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             throw new Error("Object is no menu: " + obj);
           }
         }
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
 
         if (reg) {
           qx.lang.Array.remove(reg, obj);
@@ -19094,7 +19094,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Hides all currently opened menus.
        */
       hideAll: function hideAll() {
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
 
         if (reg) {
           for (var i = reg.length - 1; i >= 0; i--) {
@@ -19110,7 +19110,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.menu.Menu} The current active menu or <code>null</code>
        */
       getActiveMenu: function getActiveMenu() {
-        var reg = this.__objects__P_212_0;
+        var reg = this.__objects__P_191_0;
         return reg.length > 0 ? reg[reg.length - 1] : null;
       },
 
@@ -19133,16 +19133,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (menu.isVisible()) {
           // Cancel all other open requests
-          if (this.__scheduleOpen__P_212_3) {
-            this.cancelOpen(this.__scheduleOpen__P_212_3);
+          if (this.__scheduleOpen__P_191_3) {
+            this.cancelOpen(this.__scheduleOpen__P_191_3);
           }
         } // When the menu is not visible and not scheduled already
         // then schedule it for opening
-        else if (this.__scheduleOpen__P_212_3 != menu) {
+        else if (this.__scheduleOpen__P_191_3 != menu) {
           // menu.debug("Schedule open");
-          this.__scheduleOpen__P_212_3 = menu;
+          this.__scheduleOpen__P_191_3 = menu;
 
-          this.__openTimer__P_212_1.restartWith(menu.getOpenInterval());
+          this.__openTimer__P_191_1.restartWith(menu.getOpenInterval());
         }
       },
 
@@ -19159,16 +19159,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (!menu.isVisible()) {
           // Cancel all other close requests
-          if (this.__scheduleClose__P_212_4) {
-            this.cancelClose(this.__scheduleClose__P_212_4);
+          if (this.__scheduleClose__P_191_4) {
+            this.cancelClose(this.__scheduleClose__P_191_4);
           }
         } // When the menu is visible and not scheduled already
         // then schedule it for closing
-        else if (this.__scheduleClose__P_212_4 != menu) {
+        else if (this.__scheduleClose__P_191_4 != menu) {
           // menu.debug("Schedule close");
-          this.__scheduleClose__P_212_4 = menu;
+          this.__scheduleClose__P_191_4 = menu;
 
-          this.__closeTimer__P_212_2.restartWith(menu.getCloseInterval());
+          this.__closeTimer__P_191_2.restartWith(menu.getCloseInterval());
         }
       },
 
@@ -19179,11 +19179,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param menu {qx.ui.menu.Menu} The menu to cancel for open
        */
       cancelOpen: function cancelOpen(menu) {
-        if (this.__scheduleOpen__P_212_3 == menu) {
+        if (this.__scheduleOpen__P_191_3 == menu) {
           // menu.debug("Cancel open");
-          this.__openTimer__P_212_1.stop();
+          this.__openTimer__P_191_1.stop();
 
-          this.__scheduleOpen__P_212_3 = null;
+          this.__scheduleOpen__P_191_3 = null;
         }
       },
 
@@ -19194,11 +19194,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param menu {qx.ui.menu.Menu} The menu to cancel for close
        */
       cancelClose: function cancelClose(menu) {
-        if (this.__scheduleClose__P_212_4 == menu) {
+        if (this.__scheduleClose__P_191_4 == menu) {
           // menu.debug("Cancel close");
-          this.__closeTimer__P_212_2.stop();
+          this.__closeTimer__P_191_2.stop();
 
-          this.__scheduleClose__P_212_4 = null;
+          this.__scheduleClose__P_191_4 = null;
         }
       },
 
@@ -19216,12 +19216,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _onOpenInterval: function _onOpenInterval(e) {
         // Stop timer
-        this.__openTimer__P_212_1.stop(); // Open menu and reset flag
+        this.__openTimer__P_191_1.stop(); // Open menu and reset flag
 
 
-        this.__scheduleOpen__P_212_3.open();
+        this.__scheduleOpen__P_191_3.open();
 
-        this.__scheduleOpen__P_212_3 = null;
+        this.__scheduleOpen__P_191_3 = null;
       },
 
       /**
@@ -19232,12 +19232,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _onCloseInterval: function _onCloseInterval(e) {
         // Stop timer, reset scheduling flag
-        this.__closeTimer__P_212_2.stop(); // Close menu and reset flag
+        this.__closeTimer__P_191_2.stop(); // Close menu and reset flag
 
 
-        this.__scheduleClose__P_212_4.exclude();
+        this.__scheduleClose__P_191_4.exclude();
 
-        this.__scheduleClose__P_212_4 = null;
+        this.__scheduleClose__P_191_4 = null;
       },
 
       /*
@@ -19255,7 +19255,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @internal
        */
       preventContextMenuOnce: function preventContextMenuOnce() {
-        qx.event.Registration.addListener(document.body, "contextmenu", this.__onPreventContextMenu__P_212_5, this, true);
+        qx.event.Registration.addListener(document.body, "contextmenu", this.__onPreventContextMenu__P_191_5, this, true);
       },
 
       /**
@@ -19266,7 +19266,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @internal
        */
-      __onPreventContextMenu__P_212_5: function __onPreventContextMenu__P_212_5(e) {
+      __onPreventContextMenu__P_191_5: function __onPreventContextMenu__P_191_5(e) {
         var target = e.getTarget();
         target = qx.ui.core.Widget.getWidgetByElement(target, true);
 
@@ -19276,7 +19276,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // stop only once
 
 
-        qx.event.Registration.removeListener(document.body, "contextmenu", this.__onPreventContextMenu__P_212_5, this, true);
+        qx.event.Registration.removeListener(document.body, "contextmenu", this.__onPreventContextMenu__P_191_5, this, true);
       },
 
       /*
@@ -19310,7 +19310,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // All taps not inside a menu will hide all currently open menus
 
 
-        if (this.__objects__P_212_0.length > 0 && !this._isInMenu(target)) {
+        if (this.__objects__P_191_0.length > 0 && !this._isInMenu(target)) {
           this.hideAll();
         }
       },
@@ -19325,7 +19325,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @type {Map} Map of all keys working on an active menu selection
        * @lint ignoreReferenceField(__selectionKeys)
        */
-      __selectionKeys__P_212_6: {
+      __selectionKeys__P_191_6: {
         Enter: 1,
         Space: 1
       },
@@ -19334,7 +19334,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @type {Map} Map of all keys working without a selection
        * @lint ignoreReferenceField(__navigationKeys)
        */
-      __navigationKeys__P_212_7: {
+      __navigationKeys__P_191_7: {
         Tab: 1,
         Escape: 1,
         Up: 1,
@@ -19359,7 +19359,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         var iden = e.getKeyIdentifier();
 
-        if (this.__navigationKeys__P_212_7[iden] || this.__selectionKeys__P_212_6[iden] && menu.getSelectedButton()) {
+        if (this.__navigationKeys__P_191_7[iden] || this.__selectionKeys__P_191_6[iden] && menu.getSelectedButton()) {
           e.stopPropagation();
         }
       },
@@ -19381,8 +19381,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }
 
         var iden = e.getKeyIdentifier();
-        var navigation = this.__navigationKeys__P_212_7[iden];
-        var selection = this.__selectionKeys__P_212_6[iden];
+        var navigation = this.__navigationKeys__P_191_7[iden];
+        var selection = this.__selectionKeys__P_191_6[iden];
 
         if (navigation) {
           switch (iden) {
@@ -19665,7 +19665,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var target = e.getTarget();
         target = qx.ui.core.Widget.getWidgetByElement(target, true);
 
-        if (this.__objects__P_212_0.length > 0 && !this._isInMenu(target) && !this._isMenuOpener(target) && !e.getMomentum()) {
+        if (this.__objects__P_191_0.length > 0 && !this._isInMenu(target) && !this._isMenuOpener(target) && !e.getMomentum()) {
           this.hideAll();
         }
       }
@@ -19686,9 +19686,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       Registration.removeListener(el, "keyup", this._onKeyUpDown, this, true);
       Registration.removeListener(el, "keypress", this._onKeyPress, this, true);
 
-      this._disposeObjects("__openTimer__P_212_1", "__closeTimer__P_212_2");
+      this._disposeObjects("__openTimer__P_191_1", "__closeTimer__P_191_2");
 
-      this._disposeArray("__objects__P_212_0");
+      this._disposeArray("__objects__P_191_0");
     }
   });
   qx.ui.menu.Manager.$$dbClassInfo = $$dbClassInfo;
@@ -19947,8 +19947,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __scheduledOpen__P_209_0: null,
-      __onAfterSlideBarAdd__P_209_1: null,
+      __scheduledOpen__P_157_0: null,
+      __onAfterSlideBarAdd__P_157_1: null,
 
       /** @type {qx.ui.core.Blocker} blocker for background blocking */
       _blocker: null,
@@ -19967,7 +19967,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           var isPlaced = this.placeToWidget(this.getOpener(), true);
 
           if (isPlaced) {
-            this.__updateSlideBar__P_209_2();
+            this.__updateSlideBar__P_157_2();
 
             this.show();
             this._placementTarget = this.getOpener();
@@ -19987,7 +19987,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       openAtPointer: function openAtPointer(e) {
         this.placeToPointer(e);
 
-        this.__updateSlideBar__P_209_2();
+        this.__updateSlideBar__P_157_2();
 
         this.show();
         this._placementTarget = {
@@ -20005,7 +20005,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       openAtPoint: function openAtPoint(point) {
         this.placeToPoint(point);
 
-        this.__updateSlideBar__P_209_2();
+        this.__updateSlideBar__P_157_2();
 
         this.show();
         this._placementTarget = point;
@@ -20096,13 +20096,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this.resetSelectedButton();
         }
 
-        this.__updateBlockerVisibility__P_209_3();
+        this.__updateBlockerVisibility__P_157_3();
       },
 
       /**
        * Updates the blocker's visibility
        */
-      __updateBlockerVisibility__P_209_3: function __updateBlockerVisibility__P_209_3() {
+      __updateBlockerVisibility__P_157_3: function __updateBlockerVisibility__P_157_3() {
         if (this.isVisible()) {
           if (this.getBlockBackground()) {
             var zIndex = this.getZIndex();
@@ -20150,7 +20150,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // ARIA attrs
 
 
-        var opener = this.__getRootOpener__P_209_4();
+        var opener = this.__getRootOpener__P_157_4();
 
         var contentEl = opener ? opener.getContentElement() : this.getContentElement();
 
@@ -20281,11 +20281,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Updates the visibility of the slidebar based on the menu's current size
        * and position.
        */
-      __updateSlideBar__P_209_2: function __updateSlideBar__P_209_2() {
+      __updateSlideBar__P_157_2: function __updateSlideBar__P_157_2() {
         var menuBounds = this._getMenuBounds();
 
         if (!menuBounds) {
-          this.addListenerOnce("resize", this.__updateSlideBar__P_209_2, this);
+          this.addListenerOnce("resize", this.__updateSlideBar__P_157_2, this);
           return;
         }
 
@@ -20322,17 +20322,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return callback.call(this);
         }
 
-        this.__onAfterSlideBarAdd__P_209_1 = callback;
+        this.__onAfterSlideBarAdd__P_157_1 = callback;
         qx.ui.core.queue.Widget.add(this);
       },
       // overridden
       syncWidget: function syncWidget(jobs) {
         this.getChildControl("slidebar");
 
-        if (this.__onAfterSlideBarAdd__P_209_1) {
-          this.__onAfterSlideBarAdd__P_209_1.call(this);
+        if (this.__onAfterSlideBarAdd__P_157_1) {
+          this.__onAfterSlideBarAdd__P_157_1.call(this);
 
-          delete this.__onAfterSlideBarAdd__P_209_1;
+          delete this.__onAfterSlideBarAdd__P_157_1;
         }
       },
 
@@ -20372,7 +20372,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             throw new Error("Unknown target: " + target);
           }
 
-          this.__updateSlideBar__P_209_2();
+          this.__updateSlideBar__P_157_2();
         }
       },
 
@@ -20399,7 +20399,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
             mgr.scheduleOpen(subMenu); // Remember scheduled menu for opening
 
-            this.__scheduledOpen__P_209_0 = subMenu;
+            this.__scheduledOpen__P_157_0 = subMenu;
           } else {
             var opened = this.getOpenedButton();
 
@@ -20407,9 +20407,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
               mgr.scheduleClose(opened.getMenu());
             }
 
-            if (this.__scheduledOpen__P_209_0) {
-              mgr.cancelOpen(this.__scheduledOpen__P_209_0);
-              this.__scheduledOpen__P_209_0 = null;
+            if (this.__scheduledOpen__P_157_0) {
+              mgr.cancelOpen(this.__scheduledOpen__P_157_0);
+              this.__scheduledOpen__P_157_0 = null;
             }
           }
         } else if (!this.getOpenedButton()) {
@@ -20443,8 +20443,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           // all pending requests to open any other sub menu
 
 
-          if (this.__scheduledOpen__P_209_0) {
-            mgr.cancelOpen(this.__scheduledOpen__P_209_0);
+          if (this.__scheduledOpen__P_157_0) {
+            mgr.cancelOpen(this.__scheduledOpen__P_157_0);
           }
         }
       },
@@ -20461,7 +20461,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @return {qx.ui.core.Widget|null} The opener.
        */
-      __getRootOpener__P_209_4: function __getRootOpener__P_209_4() {
+      __getRootOpener__P_157_4: function __getRootOpener__P_157_4() {
         var parentMenu = this.getParentMenu();
 
         if (!parentMenu) {
@@ -21009,7 +21009,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           columnChildren[column] = child;
         }
 
-        var menu = this.__getMenu__P_218_0(children[0]);
+        var menu = this.__getMenu__P_206_0(children[0]);
 
         var columns = menu.getColumnSizes();
         var spacing = menu.getSpacingX(); // stretch label column
@@ -21046,7 +21046,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param widget {qx.ui.core.Widget} the widget to get the menu for
        * @return {qx.ui.menu.Menu} the menu
        */
-      __getMenu__P_218_0: function __getMenu__P_218_0(widget) {
+      __getMenu__P_206_0: function __getMenu__P_206_0(widget) {
         while (!(widget instanceof qx.ui.menu.Menu)) {
           widget = widget.getLayoutParent();
         }
@@ -21775,11 +21775,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct() {
       // Register listeners to the content
       var content = this.getContentElement();
-      content.addListener("pointerdown", this.__onResizePointerDown__P_215_0, this, true);
-      content.addListener("pointerup", this.__onResizePointerUp__P_215_1, this);
-      content.addListener("pointermove", this.__onResizePointerMove__P_215_2, this);
-      content.addListener("pointerout", this.__onResizePointerOut__P_215_3, this);
-      content.addListener("losecapture", this.__onResizeLoseCapture__P_215_4, this); // Get a reference of the drag and drop handler
+      content.addListener("pointerdown", this.__onResizePointerDown__P_193_0, this, true);
+      content.addListener("pointerup", this.__onResizePointerUp__P_193_1, this);
+      content.addListener("pointermove", this.__onResizePointerMove__P_193_2, this);
+      content.addListener("pointerout", this.__onResizePointerOut__P_193_3, this);
+      content.addListener("losecapture", this.__onResizeLoseCapture__P_193_4, this); // Get a reference of the drag and drop handler
 
       var domElement = content.getDomElement();
 
@@ -21787,7 +21787,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         domElement = window;
       }
 
-      this.__dragDropHandler__P_215_5 = qx.event.Registration.getManager(domElement).getHandler(qx.event.handler.DragDrop);
+      this.__dragDropHandler__P_193_5 = qx.event.Registration.getManager(domElement).getHandler(qx.event.handler.DragDrop);
     },
 
     /*
@@ -21849,13 +21849,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
-      __dragDropHandler__P_215_5: null,
-      __resizeFrame__P_215_6: null,
-      __resizeActive__P_215_7: null,
-      __resizeLeft__P_215_8: null,
-      __resizeTop__P_215_9: null,
-      __resizeStart__P_215_10: null,
-      __resizeRange__P_215_11: null,
+      __dragDropHandler__P_193_5: null,
+      __resizeFrame__P_193_6: null,
+      __resizeActive__P_193_7: null,
+      __resizeLeft__P_193_8: null,
+      __resizeTop__P_193_9: null,
+      __resizeStart__P_193_10: null,
+      __resizeRange__P_193_11: null,
       RESIZE_TOP: 1,
       RESIZE_BOTTOM: 2,
       RESIZE_LEFT: 4,
@@ -21874,10 +21874,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.core.Widget} The resize frame
        */
       _getResizeFrame: function _getResizeFrame() {
-        var frame = this.__resizeFrame__P_215_6;
+        var frame = this.__resizeFrame__P_193_6;
 
         if (!frame) {
-          frame = this.__resizeFrame__P_215_6 = new qx.ui.core.Widget();
+          frame = this.__resizeFrame__P_193_6 = new qx.ui.core.Widget();
           frame.setAppearance("resize-frame");
           frame.exclude();
           qx.core.Init.getApplication().getRoot().add(frame);
@@ -21889,7 +21889,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       /**
        * Creates, shows and syncs the frame with the widget.
        */
-      __showResizeFrame__P_215_12: function __showResizeFrame__P_215_12() {
+      __showResizeFrame__P_193_12: function __showResizeFrame__P_193_12() {
         var location = this.getContentLocation();
 
         var frame = this._getResizeFrame();
@@ -21912,14 +21912,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Pointer} Last pointer event
        * @return {Map} A map with the computed boundaries
        */
-      __computeResizeResult__P_215_13: function __computeResizeResult__P_215_13(e) {
+      __computeResizeResult__P_193_13: function __computeResizeResult__P_193_13(e) {
         // Detect mode
-        var resizeActive = this.__resizeActive__P_215_7; // Read size hint
+        var resizeActive = this.__resizeActive__P_193_7; // Read size hint
 
         var hint = this.getSizeHint();
-        var range = this.__resizeRange__P_215_11; // Read original values
+        var range = this.__resizeRange__P_193_11; // Read original values
 
-        var start = this.__resizeStart__P_215_10;
+        var start = this.__resizeStart__P_193_10;
         var width = start.width;
         var height = start.height;
         var left = start.left;
@@ -21927,7 +21927,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var diff;
 
         if (resizeActive & this.RESIZE_TOP || resizeActive & this.RESIZE_BOTTOM) {
-          diff = Math.max(range.top, Math.min(range.bottom, e.getDocumentTop())) - this.__resizeTop__P_215_9;
+          diff = Math.max(range.top, Math.min(range.bottom, e.getDocumentTop())) - this.__resizeTop__P_193_9;
 
           if (resizeActive & this.RESIZE_TOP) {
             height -= diff;
@@ -21947,7 +21947,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }
 
         if (resizeActive & this.RESIZE_LEFT || resizeActive & this.RESIZE_RIGHT) {
-          diff = Math.max(range.left, Math.min(range.right, e.getDocumentLeft())) - this.__resizeLeft__P_215_8;
+          diff = Math.max(range.left, Math.min(range.right, e.getDocumentLeft())) - this.__resizeLeft__P_193_8;
 
           if (resizeActive & this.RESIZE_LEFT) {
             width -= diff;
@@ -21983,7 +21983,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @lint ignoreReferenceField(__resizeCursors)
        */
-      __resizeCursors__P_215_14: {
+      __resizeCursors__P_193_14: {
         1: "n-resize",
         2: "s-resize",
         4: "w-resize",
@@ -21999,21 +21999,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Pointer} Last pointer event
        */
-      __computeResizeMode__P_215_15: function __computeResizeMode__P_215_15(e) {
+      __computeResizeMode__P_193_15: function __computeResizeMode__P_193_15(e) {
         var location = this.getContentLocation();
         var pointerTolerance = this.getResizeSensitivity();
         var pointerLeft = e.getDocumentLeft();
         var pointerTop = e.getDocumentTop();
 
-        var resizeActive = this.__computeResizeActive__P_215_16(location, pointerLeft, pointerTop, pointerTolerance); // check again in case we have a corner [BUG #1200]
+        var resizeActive = this.__computeResizeActive__P_193_16(location, pointerLeft, pointerTop, pointerTolerance); // check again in case we have a corner [BUG #1200]
 
 
         if (resizeActive > 0) {
           // this is really a | (or)!
-          resizeActive = resizeActive | this.__computeResizeActive__P_215_16(location, pointerLeft, pointerTop, pointerTolerance * 2);
+          resizeActive = resizeActive | this.__computeResizeActive__P_193_16(location, pointerLeft, pointerTop, pointerTolerance * 2);
         }
 
-        this.__resizeActive__P_215_7 = resizeActive;
+        this.__resizeActive__P_193_7 = resizeActive;
       },
 
       /**
@@ -22026,7 +22026,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param pointerTolerance {Integer} The desired distance to the edge.
        * @return {Integer} The resize active number.
        */
-      __computeResizeActive__P_215_16: function __computeResizeActive__P_215_16(location, pointerLeft, pointerTop, pointerTolerance) {
+      __computeResizeActive__P_193_16: function __computeResizeActive__P_193_16(location, pointerLeft, pointerTop, pointerTolerance) {
         var resizeActive = 0; // TOP
 
         if (this.getResizableTop() && Math.abs(location.top - pointerTop) < pointerTolerance && pointerLeft > location.left - pointerTolerance && pointerLeft < location.right + pointerTolerance) {
@@ -22056,21 +22056,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Pointer} The pointer event instance
        */
-      __onResizePointerDown__P_215_0: function __onResizePointerDown__P_215_0(e) {
+      __onResizePointerDown__P_193_0: function __onResizePointerDown__P_193_0(e) {
         // Check for active resize
-        if (!this.__resizeActive__P_215_7 || !this.getEnabled() || e.getPointerType() == "touch") {
+        if (!this.__resizeActive__P_193_7 || !this.getEnabled() || e.getPointerType() == "touch") {
           return;
         } // Add resize state
 
 
         this.addState("resize"); // Store pointer coordinates
 
-        this.__resizeLeft__P_215_8 = e.getDocumentLeft();
-        this.__resizeTop__P_215_9 = e.getDocumentTop(); // Cache bounds
+        this.__resizeLeft__P_193_8 = e.getDocumentLeft();
+        this.__resizeTop__P_193_9 = e.getDocumentTop(); // Cache bounds
 
         var location = this.getContentLocation();
         var bounds = this.getBounds();
-        this.__resizeStart__P_215_10 = {
+        this.__resizeStart__P_193_10 = {
           top: location.top,
           left: location.left,
           width: location.right - location.left,
@@ -22081,7 +22081,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var parent = this.getLayoutParent();
         var parentLocation = parent.getContentLocation();
         var parentBounds = parent.getBounds();
-        this.__resizeRange__P_215_11 = {
+        this.__resizeRange__P_193_11 = {
           left: parentLocation.left,
           top: parentLocation.top,
           right: parentLocation.left + parentBounds.width,
@@ -22089,7 +22089,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }; // Show frame if configured this way
 
         if (this.getUseResizeFrame()) {
-          this.__showResizeFrame__P_215_12();
+          this.__showResizeFrame__P_193_12();
         } // Enable capturing
 
 
@@ -22103,7 +22103,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Pointer} The pointer event instance
        */
-      __onResizePointerUp__P_215_1: function __onResizePointerUp__P_215_1(e) {
+      __onResizePointerUp__P_193_1: function __onResizePointerUp__P_193_1(e) {
         // Check for active resize
         if (!this.hasState("resize") || !this.getEnabled() || e.getPointerType() == "touch") {
           return;
@@ -22115,7 +22115,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Compute bounds
 
 
-        var bounds = this.__computeResizeResult__P_215_13(e); // Sync with widget
+        var bounds = this.__computeResizeResult__P_193_13(e); // Sync with widget
 
 
         this.setWidth(bounds.width);
@@ -22129,7 +22129,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Clear mode
 
 
-        this.__resizeActive__P_215_7 = 0; // Remove resize state
+        this.__resizeActive__P_193_7 = 0; // Remove resize state
 
         this.removeState("resize"); // Reset cursor
 
@@ -22145,9 +22145,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Event} Lose capture event
        */
-      __onResizeLoseCapture__P_215_4: function __onResizeLoseCapture__P_215_4(e) {
+      __onResizeLoseCapture__P_193_4: function __onResizeLoseCapture__P_193_4(e) {
         // Check for active resize
-        if (!this.__resizeActive__P_215_7) {
+        if (!this.__resizeActive__P_193_7) {
           return;
         } // Reset cursor
 
@@ -22167,13 +22167,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Pointer} The pointer event instance
        */
-      __onResizePointerMove__P_215_2: function __onResizePointerMove__P_215_2(e) {
+      __onResizePointerMove__P_193_2: function __onResizePointerMove__P_193_2(e) {
         if (!this.getEnabled() || e.getPointerType() == "touch") {
           return;
         }
 
         if (this.hasState("resize")) {
-          var bounds = this.__computeResizeResult__P_215_13(e); // Update widget
+          var bounds = this.__computeResizeResult__P_193_13(e); // Update widget
 
 
           if (this.getUseResizeFrame()) {
@@ -22196,14 +22196,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
           e.stopPropagation();
-        } else if (!this.hasState("maximized") && !this.__dragDropHandler__P_215_5.isSessionActive()) {
-          this.__computeResizeMode__P_215_15(e);
+        } else if (!this.hasState("maximized") && !this.__dragDropHandler__P_193_5.isSessionActive()) {
+          this.__computeResizeMode__P_193_15(e);
 
-          var resizeActive = this.__resizeActive__P_215_7;
+          var resizeActive = this.__resizeActive__P_193_7;
           var root = this.getApplicationRoot();
 
           if (resizeActive) {
-            var cursor = this.__resizeCursors__P_215_14[resizeActive];
+            var cursor = this.__resizeCursors__P_193_14[resizeActive];
             this.setCursor(cursor);
             root.setGlobalCursor(cursor);
           } else if (this.getCursor()) {
@@ -22218,7 +22218,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Pointer} The pointer event instance
        */
-      __onResizePointerOut__P_215_3: function __onResizePointerOut__P_215_3(e) {
+      __onResizePointerOut__P_193_3: function __onResizePointerOut__P_193_3(e) {
         if (e.getPointerType() == "touch") {
           return;
         } // When the pointer left the window and resizing is not yet
@@ -22243,13 +22243,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this.getApplicationRoot().resetGlobalCursor();
       }
 
-      if (this.__resizeFrame__P_215_6 != null && !qx.core.ObjectRegistry.inShutDown) {
-        this.__resizeFrame__P_215_6.destroy();
+      if (this.__resizeFrame__P_193_6 != null && !qx.core.ObjectRegistry.inShutDown) {
+        this.__resizeFrame__P_193_6.destroy();
 
-        this.__resizeFrame__P_215_6 = null;
+        this.__resizeFrame__P_193_6 = null;
       }
 
-      this.__dragDropHandler__P_215_5 = null;
+      this.__dragDropHandler__P_193_5 = null;
     }
   });
   qx.ui.core.MResizable.$$dbClassInfo = $$dbClassInfo;
@@ -22322,16 +22322,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __moveHandle__P_216_0: null,
-      __moveFrame__P_216_1: null,
-      __dragRange__P_216_2: null,
-      __dragLeft__P_216_3: null,
-      __dragTop__P_216_4: null,
-      __parentLeft__P_216_5: null,
-      __parentTop__P_216_6: null,
-      __blockerAdded__P_216_7: false,
-      __oldBlockerColor__P_216_8: null,
-      __oldBlockerOpacity__P_216_9: 0,
+      __moveHandle__P_194_0: null,
+      __moveFrame__P_194_1: null,
+      __dragRange__P_194_2: null,
+      __dragLeft__P_194_3: null,
+      __dragTop__P_194_4: null,
+      __parentLeft__P_194_5: null,
+      __parentTop__P_194_6: null,
+      __blockerAdded__P_194_7: false,
+      __oldBlockerColor__P_194_8: null,
+      __oldBlockerOpacity__P_194_9: 0,
 
       /*
       ---------------------------------------------------------------------------
@@ -22345,15 +22345,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param widget {qx.ui.core.Widget} Widget to activate as move handle
        */
       _activateMoveHandle: function _activateMoveHandle(widget) {
-        if (this.__moveHandle__P_216_0) {
+        if (this.__moveHandle__P_194_0) {
           throw new Error("The move handle could not be redefined!");
         }
 
-        this.__moveHandle__P_216_0 = widget;
+        this.__moveHandle__P_194_0 = widget;
         widget.addListener("pointerdown", this._onMovePointerDown, this);
         widget.addListener("pointerup", this._onMovePointerUp, this);
         widget.addListener("pointermove", this._onMovePointerMove, this);
-        widget.addListener("losecapture", this.__onMoveLoseCapture__P_216_10, this);
+        widget.addListener("losecapture", this.__onMoveLoseCapture__P_194_10, this);
       },
 
       /**
@@ -22361,11 +22361,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @return {qx.ui.core.Widget} The resize frame
        */
-      __getMoveFrame__P_216_11: function __getMoveFrame__P_216_11() {
-        var frame = this.__moveFrame__P_216_1;
+      __getMoveFrame__P_194_11: function __getMoveFrame__P_194_11() {
+        var frame = this.__moveFrame__P_194_1;
 
         if (!frame) {
-          frame = this.__moveFrame__P_216_1 = new qx.ui.core.Widget();
+          frame = this.__moveFrame__P_194_1 = new qx.ui.core.Widget();
           frame.setAppearance("move-frame");
           frame.exclude();
           qx.core.Init.getApplication().getRoot().add(frame);
@@ -22377,11 +22377,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       /**
        * Creates, shows and syncs the frame with the widget.
        */
-      __showMoveFrame__P_216_12: function __showMoveFrame__P_216_12() {
+      __showMoveFrame__P_194_12: function __showMoveFrame__P_194_12() {
         var location = this.getContentLocation();
         var bounds = this.getBounds();
 
-        var frame = this.__getMoveFrame__P_216_11();
+        var frame = this.__getMoveFrame__P_194_11();
 
         frame.setUserBounds(location.left, location.top, bounds.width, bounds.height);
         frame.show();
@@ -22400,17 +22400,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Pointer} Pointer event
        * @return {Map} A map with the computed drag coordinates
        */
-      __computeMoveCoordinates__P_216_13: function __computeMoveCoordinates__P_216_13(e) {
-        var range = this.__dragRange__P_216_2;
+      __computeMoveCoordinates__P_194_13: function __computeMoveCoordinates__P_194_13(e) {
+        var range = this.__dragRange__P_194_2;
         var pointerLeft = Math.max(range.left, Math.min(range.right, e.getDocumentLeft()));
         var pointerTop = Math.max(range.top, Math.min(range.bottom, e.getDocumentTop()));
-        var viewportLeft = this.__dragLeft__P_216_3 + pointerLeft;
-        var viewportTop = this.__dragTop__P_216_4 + pointerTop;
+        var viewportLeft = this.__dragLeft__P_194_3 + pointerLeft;
+        var viewportTop = this.__dragTop__P_194_4 + pointerTop;
         return {
           viewportLeft: parseInt(viewportLeft, 10),
           viewportTop: parseInt(viewportTop, 10),
-          parentLeft: parseInt(viewportLeft - this.__parentLeft__P_216_5, 10),
-          parentTop: parseInt(viewportTop - this.__parentTop__P_216_6, 10)
+          parentLeft: parseInt(viewportLeft - this.__parentLeft__P_194_5, 10),
+          parentTop: parseInt(viewportTop - this.__parentTop__P_194_6, 10)
         };
       },
 
@@ -22448,16 +22448,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (qx.Class.implementsInterface(parent, qx.ui.window.IDesktop)) {
           if (!parent.isBlocked()) {
-            this.__oldBlockerColor__P_216_8 = parent.getBlockerColor();
-            this.__oldBlockerOpacity__P_216_9 = parent.getBlockerOpacity();
+            this.__oldBlockerColor__P_194_8 = parent.getBlockerColor();
+            this.__oldBlockerOpacity__P_194_9 = parent.getBlockerOpacity();
             parent.setBlockerColor(null);
             parent.setBlockerOpacity(1);
             parent.blockContent(this.getZIndex() - 1);
-            this.__blockerAdded__P_216_7 = true;
+            this.__blockerAdded__P_194_7 = true;
           }
         }
 
-        this.__dragRange__P_216_2 = {
+        this.__dragRange__P_194_2 = {
           left: parentLocation.left,
           top: parentLocation.top,
           right: parentLocation.left + parentBounds.width,
@@ -22465,18 +22465,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }; // Compute drag positions
 
         var widgetLocation = this.getContentLocation();
-        this.__parentLeft__P_216_5 = parentLocation.left;
-        this.__parentTop__P_216_6 = parentLocation.top;
-        this.__dragLeft__P_216_3 = widgetLocation.left - e.getDocumentLeft();
-        this.__dragTop__P_216_4 = widgetLocation.top - e.getDocumentTop(); // Add state
+        this.__parentLeft__P_194_5 = parentLocation.left;
+        this.__parentTop__P_194_6 = parentLocation.top;
+        this.__dragLeft__P_194_3 = widgetLocation.left - e.getDocumentLeft();
+        this.__dragTop__P_194_4 = widgetLocation.top - e.getDocumentTop(); // Add state
 
         this.addState("move"); // Enable capturing
 
-        this.__moveHandle__P_216_0.capture(); // Enable drag frame
+        this.__moveHandle__P_194_0.capture(); // Enable drag frame
 
 
         if (this.getUseMoveFrame()) {
-          this.__showMoveFrame__P_216_12();
+          this.__showMoveFrame__P_194_12();
         } // Stop event
 
 
@@ -22496,10 +22496,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Apply new coordinates using DOM
 
 
-        var coords = this.__computeMoveCoordinates__P_216_13(e);
+        var coords = this.__computeMoveCoordinates__P_194_13(e);
 
         if (this.getUseMoveFrame()) {
-          this.__getMoveFrame__P_216_11().setDomPosition(coords.viewportLeft, coords.viewportTop);
+          this.__getMoveFrame__P_194_11().setDomPosition(coords.viewportLeft, coords.viewportTop);
         } else {
           var insets = this.getLayoutParent().getInsets();
           this.setDomPosition(coords.parentLeft - (insets.left || 0), coords.parentTop - (insets.top || 0));
@@ -22531,21 +22531,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var parent = this.getLayoutParent();
 
         if (qx.Class.implementsInterface(parent, qx.ui.window.IDesktop)) {
-          if (this.__blockerAdded__P_216_7) {
+          if (this.__blockerAdded__P_194_7) {
             parent.unblock();
-            parent.setBlockerColor(this.__oldBlockerColor__P_216_8);
-            parent.setBlockerOpacity(this.__oldBlockerOpacity__P_216_9);
-            this.__oldBlockerColor__P_216_8 = null;
-            this.__oldBlockerOpacity__P_216_9 = 0;
-            this.__blockerAdded__P_216_7 = false;
+            parent.setBlockerColor(this.__oldBlockerColor__P_194_8);
+            parent.setBlockerOpacity(this.__oldBlockerOpacity__P_194_9);
+            this.__oldBlockerColor__P_194_8 = null;
+            this.__oldBlockerOpacity__P_194_9 = 0;
+            this.__blockerAdded__P_194_7 = false;
           }
         } // Disable capturing
 
 
-        this.__moveHandle__P_216_0.releaseCapture(); // Apply them to the layout
+        this.__moveHandle__P_194_0.releaseCapture(); // Apply them to the layout
 
 
-        var coords = this.__computeMoveCoordinates__P_216_13(e);
+        var coords = this.__computeMoveCoordinates__P_194_13(e);
 
         var insets = this.getLayoutParent().getInsets();
         this.setLayoutProperties({
@@ -22554,7 +22554,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }); // Hide frame afterwards
 
         if (this.getUseMoveFrame()) {
-          this.__getMoveFrame__P_216_11().exclude();
+          this.__getMoveFrame__P_194_11().exclude();
         }
 
         e.stopPropagation();
@@ -22565,7 +22565,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Event} Lose capture event
        */
-      __onMoveLoseCapture__P_216_10: function __onMoveLoseCapture__P_216_10(e) {
+      __onMoveLoseCapture__P_194_10: function __onMoveLoseCapture__P_194_10(e) {
         // Check for active move
         if (!this.hasState("move")) {
           return;
@@ -22575,7 +22575,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this.removeState("move"); // Hide frame afterwards
 
         if (this.getUseMoveFrame()) {
-          this.__getMoveFrame__P_216_11().exclude();
+          this.__getMoveFrame__P_194_11().exclude();
         }
       }
     },
@@ -22586,9 +22586,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__moveFrame__P_216_1", "__moveHandle__P_216_0");
+      this._disposeObjects("__moveFrame__P_194_1", "__moveHandle__P_194_0");
 
-      this.__dragRange__P_216_2 = null;
+      this.__dragRange__P_194_2 = null;
     }
   });
   qx.ui.core.MMovable.$$dbClassInfo = $$dbClassInfo;
@@ -22729,10 +22729,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __desktop__P_217_0: null,
+      __desktop__P_195_0: null,
       // interface implementation
       setDesktop: function setDesktop(desktop) {
-        this.__desktop__P_217_0 = desktop;
+        this.__desktop__P_195_0 = desktop;
 
         if (desktop) {
           this.updateStack();
@@ -22750,7 +22750,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {qx.ui.window.IDesktop} The desktop
        */
       getDesktop: function getDesktop() {
-        return this.__desktop__P_217_0;
+        return this.__desktop__P_195_0;
       },
       // interface implementation
       changeActiveWindow: function changeActiveWindow(active, oldActive) {
@@ -22778,9 +22778,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * {@link qx.ui.core.queue.Widget widget queue}.
        */
       syncWidget: function syncWidget() {
-        this.__desktop__P_217_0.forceUnblock();
+        this.__desktop__P_195_0.forceUnblock();
 
-        var windows = this.__desktop__P_217_0.getWindows(); // z-index for all three window kinds
+        var windows = this.__desktop__P_195_0.getWindows(); // z-index for all three window kinds
 
 
         var zIndex = this._minZIndex;
@@ -22805,7 +22805,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           if (win.isModal()) {
             win.setZIndex(zIndexModal);
 
-            this.__desktop__P_217_0.blockContent(zIndexModal - 1);
+            this.__desktop__P_195_0.blockContent(zIndexModal - 1);
 
             zIndexModal += 2; //just activate it if it's modal
 
@@ -22825,11 +22825,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } //set active window or null otherwise
 
 
-        this.__desktop__P_217_0.setActiveWindow(active);
+        this.__desktop__P_195_0.setActiveWindow(active);
       },
       // interface implementation
       bringToFront: function bringToFront(win) {
-        var windows = this.__desktop__P_217_0.getWindows();
+        var windows = this.__desktop__P_195_0.getWindows();
 
         var removed = qx.lang.Array.remove(windows, win);
 
@@ -22840,7 +22840,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       // interface implementation
       sendToBack: function sendToBack(win) {
-        var windows = this.__desktop__P_217_0.getWindows();
+        var windows = this.__desktop__P_195_0.getWindows();
 
         var removed = qx.lang.Array.remove(windows, win);
 
@@ -22857,7 +22857,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__desktop__P_217_0");
+      this._disposeObjects("__desktop__P_195_0");
     }
   });
   qx.ui.window.Manager.$$dbClassInfo = $$dbClassInfo;
@@ -23291,16 +23291,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     /* eslint-disable @qooxdoo/qx/no-refs-in-members */
     members: {
       /** @type {Integer} Original top value before maximation had occurred */
-      __restoredTop__P_210_0: null,
+      __restoredTop__P_158_0: null,
 
       /** @type {Integer} Original left value before maximation had occurred */
-      __restoredLeft__P_210_1: null,
+      __restoredLeft__P_158_1: null,
 
       /** @type {Integer} Listener ID for centering on appear */
-      __centeringAppearId__P_210_2: null,
+      __centeringAppearId__P_158_2: null,
 
       /** @type {Integer} Listener ID for centering on resize */
-      __centeringResizeId__P_210_3: null,
+      __centeringResizeId__P_158_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -23338,16 +23338,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         oldParent = this.getLayoutParent();
 
-        if (oldParent && this.__centeringResizeId__P_210_3) {
-          oldParent.removeListenerById(this.__centeringResizeId__P_210_3);
-          this.__centeringResizeId__P_210_3 = null;
+        if (oldParent && this.__centeringResizeId__P_158_3) {
+          oldParent.removeListenerById(this.__centeringResizeId__P_158_3);
+          this.__centeringResizeId__P_158_3 = null;
         } // Call the superclass
 
 
         qx.ui.window.Window.superclass.prototype.setLayoutParent.call(this, parent); // Re-add a listener for resize, if required
 
         if (parent && this.getCenterOnContainerResize()) {
-          this.__centeringResizeId__P_210_3 = parent.addListener("resize", this.center, this);
+          this.__centeringResizeId__P_158_3 = parent.addListener("resize", this.center, this);
         }
       },
       // overridden
@@ -23622,8 +23622,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
             var props = this.getLayoutProperties();
-            this.__restoredLeft__P_210_1 = props.left === undefined ? 0 : props.left;
-            this.__restoredTop__P_210_0 = props.top === undefined ? 0 : props.top; // Update layout properties
+            this.__restoredLeft__P_158_1 = props.left === undefined ? 0 : props.left;
+            this.__restoredTop__P_158_0 = props.top === undefined ? 0 : props.top; // Update layout properties
 
             this.setLayoutProperties({
               left: null,
@@ -23652,8 +23652,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (this.fireNonBubblingEvent("beforeMinimize", qx.event.type.Event, [false, true])) {
           // store current dimension and location
           var props = this.getLayoutProperties();
-          this.__restoredLeft__P_210_1 = props.left === undefined ? 0 : props.left;
-          this.__restoredTop__P_210_0 = props.top === undefined ? 0 : props.top;
+          this.__restoredLeft__P_158_1 = props.left === undefined ? 0 : props.left;
+          this.__restoredTop__P_158_0 = props.top === undefined ? 0 : props.top;
           this.removeState("maximized");
           this.hide();
           this.fireEvent("minimize");
@@ -23675,8 +23675,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           } // Restore old properties
 
 
-          var left = this.__restoredLeft__P_210_1;
-          var top = this.__restoredTop__P_210_0;
+          var left = this.__restoredLeft__P_158_1;
+          var top = this.__restoredTop__P_158_0;
           this.setLayoutProperties({
             edge: null,
             left: left,
@@ -23814,28 +23814,28 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       _applyCenterOnAppear: function _applyCenterOnAppear(value, old) {
         // Remove prior listener for centering on appear
-        if (this.__centeringAppearId__P_210_2 !== null) {
-          this.removeListenerById(this.__centeringAppearId__P_210_2);
-          this.__centeringAppearId__P_210_2 = null;
+        if (this.__centeringAppearId__P_158_2 !== null) {
+          this.removeListenerById(this.__centeringAppearId__P_158_2);
+          this.__centeringAppearId__P_158_2 = null;
         } // If we are to center on appear, arrange to do so
 
 
         if (value) {
-          this.__centeringAppearId__P_210_2 = this.addListener("appear", this.center, this);
+          this.__centeringAppearId__P_158_2 = this.addListener("appear", this.center, this);
         }
       },
       _applyCenterOnContainerResize: function _applyCenterOnContainerResize(value, old) {
         var parent = this.getLayoutParent(); // Remove prior listener for centering on resize
 
-        if (this.__centeringResizeId__P_210_3 !== null) {
-          parent.removeListenerById(this.__centeringResizeId__P_210_3);
-          this.__centeringResizeId__P_210_3 = null;
+        if (this.__centeringResizeId__P_158_3 !== null) {
+          parent.removeListenerById(this.__centeringResizeId__P_158_3);
+          this.__centeringResizeId__P_158_3 = null;
         } // If we are to center on resize, arrange to do so
 
 
         if (value) {
           if (parent) {
-            this.__centeringResizeId__P_210_3 = parent.addListener("resize", this.center, this);
+            this.__centeringResizeId__P_158_3 = parent.addListener("resize", this.center, this);
           }
         }
       },
@@ -23956,7 +23956,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       if (parent) {
         // Remove the listener for resize, if there is one
-        id = this.__centeringResizeId__P_210_3;
+        id = this.__centeringResizeId__P_158_3;
         id && parent.removeListenerById(id); // Remove ourself from our parent
 
         parent.remove(this);
@@ -24655,20 +24655,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __sliderLocation__P_178_0: null,
-      __knobLocation__P_178_1: null,
-      __knobSize__P_178_2: null,
-      __dragMode__P_178_3: null,
-      __dragOffset__P_178_4: null,
-      __trackingMode__P_178_5: null,
-      __trackingDirection__P_178_6: null,
-      __trackingEnd__P_178_7: null,
-      __timer__P_178_8: null,
+      __sliderLocation__P_213_0: null,
+      __knobLocation__P_213_1: null,
+      __knobSize__P_213_2: null,
+      __dragMode__P_213_3: null,
+      __dragOffset__P_213_4: null,
+      __trackingMode__P_213_5: null,
+      __trackingDirection__P_213_6: null,
+      __trackingEnd__P_213_7: null,
+      __timer__P_213_8: null,
       // event delay stuff during drag
-      __dragTimer__P_178_9: null,
-      __lastValueEvent__P_178_10: null,
-      __dragValue__P_178_11: null,
-      __scrollAnimationframe__P_178_12: null,
+      __dragTimer__P_213_9: null,
+      __lastValueEvent__P_213_10: null,
+      __dragValue__P_213_11: null,
+      __scrollAnimationframe__P_213_12: null,
       // overridden
 
       /**
@@ -24801,11 +24801,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _onPointerDown: function _onPointerDown(e) {
         // this can happen if the user releases the button while dragging outside
         // of the browser viewport
-        if (this.__dragMode__P_178_3) {
+        if (this.__dragMode__P_213_3) {
           return;
         }
 
-        var isHorizontal = this.__isHorizontal__P_178_13;
+        var isHorizontal = this.__isHorizontal__P_213_13;
         var knob = this.getChildControl("knob");
         var locationProperty = isHorizontal ? "left" : "top";
         var cursorLocation = isHorizontal ? e.getDocumentLeft() : e.getDocumentTop();
@@ -24820,48 +24820,48 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           var padding = (this.getPaddingTop() || 0) + decoratorPadding;
         }
 
-        var sliderLocation = this.__sliderLocation__P_178_0 = qx.bom.element.Location.get(this.getContentElement().getDomElement())[locationProperty];
+        var sliderLocation = this.__sliderLocation__P_213_0 = qx.bom.element.Location.get(this.getContentElement().getDomElement())[locationProperty];
         sliderLocation += padding;
-        var knobLocation = this.__knobLocation__P_178_1 = qx.bom.element.Location.get(knob.getContentElement().getDomElement())[locationProperty];
+        var knobLocation = this.__knobLocation__P_213_1 = qx.bom.element.Location.get(knob.getContentElement().getDomElement())[locationProperty];
 
         if (e.getTarget() === knob) {
           // Switch into drag mode
-          this.__dragMode__P_178_3 = true;
+          this.__dragMode__P_213_3 = true;
 
-          if (!this.__dragTimer__P_178_9) {
+          if (!this.__dragTimer__P_213_9) {
             // create a timer to fire delayed dragging events if dragging stops.
-            this.__dragTimer__P_178_9 = new qx.event.Timer(100);
+            this.__dragTimer__P_213_9 = new qx.event.Timer(100);
 
-            this.__dragTimer__P_178_9.addListener("interval", this._fireValue, this);
+            this.__dragTimer__P_213_9.addListener("interval", this._fireValue, this);
           }
 
-          this.__dragTimer__P_178_9.start(); // Compute dragOffset (includes both: inner position of the widget and
+          this.__dragTimer__P_213_9.start(); // Compute dragOffset (includes both: inner position of the widget and
           // cursor position on knob)
 
 
-          this.__dragOffset__P_178_4 = cursorLocation + sliderLocation - knobLocation; // add state
+          this.__dragOffset__P_213_4 = cursorLocation + sliderLocation - knobLocation; // add state
 
           knob.addState("pressed");
         } else {
           // Switch into tracking mode
-          this.__trackingMode__P_178_5 = true; // Detect tracking direction
+          this.__trackingMode__P_213_5 = true; // Detect tracking direction
 
-          this.__trackingDirection__P_178_6 = cursorLocation <= knobLocation ? -1 : 1; // Compute end value
+          this.__trackingDirection__P_213_6 = cursorLocation <= knobLocation ? -1 : 1; // Compute end value
 
-          this.__computeTrackingEnd__P_178_14(e); // Directly call interval method once
+          this.__computeTrackingEnd__P_213_14(e); // Directly call interval method once
 
 
           this._onInterval(); // Initialize timer (when needed)
 
 
-          if (!this.__timer__P_178_8) {
-            this.__timer__P_178_8 = new qx.event.Timer(100);
+          if (!this.__timer__P_213_8) {
+            this.__timer__P_213_8 = new qx.event.Timer(100);
 
-            this.__timer__P_178_8.addListener("interval", this._onInterval, this);
+            this.__timer__P_213_8.addListener("interval", this._onInterval, this);
           } // Start timer
 
 
-          this.__timer__P_178_8.start();
+          this.__timer__P_213_8.start();
         } // Register move listener
 
 
@@ -24879,18 +24879,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Pointer} Incoming event object
        */
       _onPointerUp: function _onPointerUp(e) {
-        if (this.__dragMode__P_178_3) {
+        if (this.__dragMode__P_213_3) {
           // Release capture mode
           this.releaseCapture(); // Cleanup status flags
 
-          delete this.__dragMode__P_178_3; // as we come out of drag mode, make
+          delete this.__dragMode__P_213_3; // as we come out of drag mode, make
           // sure content gets synced
 
-          this.__dragTimer__P_178_9.stop();
+          this.__dragTimer__P_213_9.stop();
 
           this._fireValue();
 
-          delete this.__dragOffset__P_178_4; // remove state
+          delete this.__dragOffset__P_213_4; // remove state
 
           this.getChildControl("knob").removeState("pressed"); // it's necessary to check whether the cursor is over the knob widget to be able to
           // to decide whether to remove the 'hovered' state.
@@ -24900,30 +24900,30 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             var deltaPosition;
             var positionSlider;
 
-            if (this.__isHorizontal__P_178_13) {
-              deltaSlider = e.getDocumentLeft() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_178_0);
+            if (this.__isHorizontal__P_213_13) {
+              deltaSlider = e.getDocumentLeft() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_213_0);
               positionSlider = qx.bom.element.Location.get(this.getContentElement().getDomElement())["top"];
               deltaPosition = e.getDocumentTop() - (positionSlider + this.getChildControl("knob").getBounds().top);
             } else {
-              deltaSlider = e.getDocumentTop() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_178_0);
+              deltaSlider = e.getDocumentTop() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_213_0);
               positionSlider = qx.bom.element.Location.get(this.getContentElement().getDomElement())["left"];
               deltaPosition = e.getDocumentLeft() - (positionSlider + this.getChildControl("knob").getBounds().left);
             }
 
-            if (deltaPosition < 0 || deltaPosition > this.__knobSize__P_178_2 || deltaSlider < 0 || deltaSlider > this.__knobSize__P_178_2) {
+            if (deltaPosition < 0 || deltaPosition > this.__knobSize__P_213_2 || deltaSlider < 0 || deltaSlider > this.__knobSize__P_213_2) {
               this.getChildControl("knob").removeState("hovered");
             }
           }
-        } else if (this.__trackingMode__P_178_5) {
+        } else if (this.__trackingMode__P_213_5) {
           // Stop timer interval
-          this.__timer__P_178_8.stop(); // Release capture mode
+          this.__timer__P_213_8.stop(); // Release capture mode
 
 
           this.releaseCapture(); // Cleanup status flags
 
-          delete this.__trackingMode__P_178_5;
-          delete this.__trackingDirection__P_178_6;
-          delete this.__trackingEnd__P_178_7;
+          delete this.__trackingMode__P_213_5;
+          delete this.__trackingDirection__P_213_6;
+          delete this.__trackingEnd__P_213_7;
         } // Remove move listener again
 
 
@@ -24940,13 +24940,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Pointer} Incoming event object
        */
       _onPointerMove: function _onPointerMove(e) {
-        if (this.__dragMode__P_178_3) {
-          var dragStop = this.__isHorizontal__P_178_13 ? e.getDocumentLeft() : e.getDocumentTop();
-          var position = dragStop - this.__dragOffset__P_178_4;
+        if (this.__dragMode__P_213_3) {
+          var dragStop = this.__isHorizontal__P_213_13 ? e.getDocumentLeft() : e.getDocumentTop();
+          var position = dragStop - this.__dragOffset__P_213_4;
           this.slideTo(this._positionToValue(position));
-        } else if (this.__trackingMode__P_178_5) {
+        } else if (this.__trackingMode__P_213_5) {
           // Update tracking end on pointermove
-          this.__computeTrackingEnd__P_178_14(e);
+          this.__computeTrackingEnd__P_213_14(e);
         } // Stop event
 
 
@@ -24961,7 +24961,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _onInterval: function _onInterval(e) {
         // Compute new value
-        var value = this.getValue() + this.__trackingDirection__P_178_6 * this.getPageStep(); // Limit value
+        var value = this.getValue() + this.__trackingDirection__P_213_6 * this.getPageStep(); // Limit value
 
         if (value < this.getMinimum()) {
           value = this.getMinimum();
@@ -24970,10 +24970,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Stop at tracking position (where the pointer is pressed down)
 
 
-        var slideBack = this.__trackingDirection__P_178_6 == -1;
+        var slideBack = this.__trackingDirection__P_213_6 == -1;
 
-        if (slideBack && value <= this.__trackingEnd__P_178_7 || !slideBack && value >= this.__trackingEnd__P_178_7) {
-          value = this.__trackingEnd__P_178_7;
+        if (slideBack && value <= this.__trackingEnd__P_213_7 || !slideBack && value >= this.__trackingEnd__P_213_7) {
+          value = this.__trackingEnd__P_213_7;
         } // Finally slide to the desired position
 
 
@@ -24989,13 +24989,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         // Update sliding space
         var availSize = this.getInnerSize();
         var knobSize = this.getChildControl("knob").getBounds();
-        var sizeProperty = this.__isHorizontal__P_178_13 ? "width" : "height"; // Sync knob size
+        var sizeProperty = this.__isHorizontal__P_213_13 ? "width" : "height"; // Sync knob size
 
         this._updateKnobSize(); // Store knob size
 
 
-        this.__slidingSpace__P_178_15 = availSize[sizeProperty] - knobSize[sizeProperty];
-        this.__knobSize__P_178_2 = knobSize[sizeProperty]; // Update knob position (sliding space must be updated first)
+        this.__slidingSpace__P_213_15 = availSize[sizeProperty] - knobSize[sizeProperty];
+        this.__knobSize__P_213_2 = knobSize[sizeProperty]; // Update knob position (sliding space must be updated first)
 
         this._updateKnobPosition();
       },
@@ -25007,13 +25007,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       */
 
       /** @type {Boolean} Whether the slider is laid out horizontally */
-      __isHorizontal__P_178_13: false,
+      __isHorizontal__P_213_13: false,
 
       /**
        * @type {Integer} Available space for knob to slide on, computed on resize of
        * the widget
        */
-      __slidingSpace__P_178_15: 0,
+      __slidingSpace__P_213_15: 0,
 
       /**
        * Computes the value where the tracking should end depending on
@@ -25021,12 +25021,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param e {qx.event.type.Pointer} Incoming pointer event
        */
-      __computeTrackingEnd__P_178_14: function __computeTrackingEnd__P_178_14(e) {
-        var isHorizontal = this.__isHorizontal__P_178_13;
+      __computeTrackingEnd__P_213_14: function __computeTrackingEnd__P_213_14(e) {
+        var isHorizontal = this.__isHorizontal__P_213_13;
         var cursorLocation = isHorizontal ? e.getDocumentLeft() : e.getDocumentTop();
-        var sliderLocation = this.__sliderLocation__P_178_0;
-        var knobLocation = this.__knobLocation__P_178_1;
-        var knobSize = this.__knobSize__P_178_2; // Compute relative position
+        var sliderLocation = this.__sliderLocation__P_213_0;
+        var knobLocation = this.__knobLocation__P_213_1;
+        var knobSize = this.__knobSize__P_213_2; // Compute relative position
 
         var position = cursorLocation - sliderLocation;
 
@@ -25047,15 +25047,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } else {
           var old = this.getValue();
           var step = this.getPageStep();
-          var method = this.__trackingDirection__P_178_6 < 0 ? "floor" : "ceil"; // Fix to page step
+          var method = this.__trackingDirection__P_213_6 < 0 ? "floor" : "ceil"; // Fix to page step
 
           value = old + Math[method]((value - old) / step) * step;
         } // Store value when undefined, otherwise only when it follows the
         // current direction e.g. goes up or down
 
 
-        if (this.__trackingEnd__P_178_7 == null || this.__trackingDirection__P_178_6 == -1 && value <= this.__trackingEnd__P_178_7 || this.__trackingDirection__P_178_6 == 1 && value >= this.__trackingEnd__P_178_7) {
-          this.__trackingEnd__P_178_7 = value;
+        if (this.__trackingEnd__P_213_7 == null || this.__trackingDirection__P_213_6 == -1 && value <= this.__trackingEnd__P_213_7 || this.__trackingDirection__P_213_6 == 1 && value >= this.__trackingEnd__P_213_7) {
+          this.__trackingEnd__P_213_7 = value;
         }
       },
 
@@ -25069,7 +25069,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _positionToValue: function _positionToValue(position) {
         // Reading available space
-        var avail = this.__slidingSpace__P_178_15; // Protect undefined value (before initial resize) and division by zero
+        var avail = this.__slidingSpace__P_213_15; // Protect undefined value (before initial resize) and division by zero
 
         if (avail == null || avail == 0) {
           return 0;
@@ -25099,7 +25099,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _valueToPosition: function _valueToPosition(value) {
         // Reading available space
-        var avail = this.__slidingSpace__P_178_15;
+        var avail = this.__slidingSpace__P_213_15;
 
         if (avail == null) {
           return 0;
@@ -25150,7 +25150,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         dec = qx.theme.manager.Decoration.getInstance().resolve(dec);
         var content = knob.getContentElement();
 
-        if (this.__isHorizontal__P_178_13) {
+        if (this.__isHorizontal__P_213_13) {
           if (dec && dec.getPadding()) {
             position += dec.getPadding().left;
           }
@@ -25188,7 +25188,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         } // Read size property
 
 
-        if (this.__isHorizontal__P_178_13) {
+        if (this.__isHorizontal__P_213_13) {
           this.getChildControl("knob").setWidth(Math.round(knobFactor * avail.width));
         } else {
           this.getChildControl("knob").setHeight(Math.round(knobFactor * avail.height));
@@ -25274,7 +25274,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this.stopSlideAnimation();
 
         if (duration) {
-          this.__animateTo__P_178_16(value, duration);
+          this.__animateTo__P_213_16(value, duration);
         } else {
           this.updatePosition(value);
         }
@@ -25285,7 +25285,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param value {Number} The new position.
        */
       updatePosition: function updatePosition(value) {
-        this.setValue(this.__normalizeValue__P_178_17(value));
+        this.setValue(this.__normalizeValue__P_213_17(value));
       },
 
       /**
@@ -25293,10 +25293,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * If not, the method does nothing.
        */
       stopSlideAnimation: function stopSlideAnimation() {
-        if (this.__scrollAnimationframe__P_178_12) {
-          this.__scrollAnimationframe__P_178_12.cancelSequence();
+        if (this.__scrollAnimationframe__P_213_12) {
+          this.__scrollAnimationframe__P_213_12.cancelSequence();
 
-          this.__scrollAnimationframe__P_178_12 = null;
+          this.__scrollAnimationframe__P_213_12 = null;
         }
       },
 
@@ -25306,7 +25306,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param value {Number} The value to normalize.
        * @return {Number} The normalized value.
        */
-      __normalizeValue__P_178_17: function __normalizeValue__P_178_17(value) {
+      __normalizeValue__P_213_17: function __normalizeValue__P_213_17(value) {
         // Bring into allowed range or fix to single step grid
         if (value < this.getMinimum()) {
           value = this.getMinimum();
@@ -25324,22 +25324,22 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param to {Number} The target value.
        * @param duration {Number} The time in milliseconds the slide to should take.
        */
-      __animateTo__P_178_16: function __animateTo__P_178_16(to, duration) {
-        to = this.__normalizeValue__P_178_17(to);
+      __animateTo__P_213_16: function __animateTo__P_213_16(to, duration) {
+        to = this.__normalizeValue__P_213_17(to);
         var from = this.getValue();
-        this.__scrollAnimationframe__P_178_12 = new qx.bom.AnimationFrame();
+        this.__scrollAnimationframe__P_213_12 = new qx.bom.AnimationFrame();
 
-        this.__scrollAnimationframe__P_178_12.on("frame", function (timePassed) {
+        this.__scrollAnimationframe__P_213_12.on("frame", function (timePassed) {
           this.setValue(parseInt(timePassed / duration * (to - from) + from));
         }, this);
 
-        this.__scrollAnimationframe__P_178_12.on("end", function () {
+        this.__scrollAnimationframe__P_213_12.on("end", function () {
           this.setValue(to);
-          this.__scrollAnimationframe__P_178_12 = null;
+          this.__scrollAnimationframe__P_213_12 = null;
           this.fireEvent("slideAnimationEnd");
         }, this);
 
-        this.__scrollAnimationframe__P_178_12.startSequence(duration);
+        this.__scrollAnimationframe__P_213_12.startSequence(duration);
       },
 
       /*
@@ -25353,9 +25353,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this.getContentElement().setAttribute("aria-orientation", value);
         var knob = this.getChildControl("knob"); // Update private flag for faster access
 
-        this.__isHorizontal__P_178_13 = value === "horizontal"; // Toggle states and knob layout
+        this.__isHorizontal__P_213_13 = value === "horizontal"; // Toggle states and knob layout
 
-        if (this.__isHorizontal__P_178_13) {
+        if (this.__isHorizontal__P_213_13) {
           this.removeState("vertical");
           knob.removeState("vertical");
           this.addState("horizontal");
@@ -25385,7 +25385,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (value != null) {
           this._updateKnobSize();
         } else {
-          if (this.__isHorizontal__P_178_13) {
+          if (this.__isHorizontal__P_213_13) {
             this.getChildControl("knob").resetWidth();
           } else {
             this.getChildControl("knob").resetHeight();
@@ -25400,8 +25400,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
           this._updateKnobPosition();
 
-          if (this.__dragMode__P_178_3) {
-            this.__dragValue__P_178_11 = [value, old];
+          if (this.__dragMode__P_213_3) {
+            this.__dragValue__P_213_11 = [value, old];
           } else {
             this.fireEvent("changeValue", qx.event.type.Data, [value, old]);
           }
@@ -25414,12 +25414,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Helper for applyValue which fires the changeValue event.
        */
       _fireValue: function _fireValue() {
-        if (!this.__dragValue__P_178_11) {
+        if (!this.__dragValue__P_213_11) {
           return;
         }
 
-        var tmp = this.__dragValue__P_178_11;
-        this.__dragValue__P_178_11 = null;
+        var tmp = this.__dragValue__P_213_11;
+        this.__dragValue__P_213_11 = null;
         this.fireEvent("changeValue", qx.event.type.Data, tmp);
       },
       // property apply
@@ -25610,9 +25610,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     construct: function construct(label, icon) {
       qx.ui.form.Button.constructor.call(this, label, icon); // create the timer and add the listener
 
-      this.__timer__P_177_0 = new qx.event.AcceleratingTimer();
+      this.__timer__P_205_0 = new qx.event.AcceleratingTimer();
 
-      this.__timer__P_177_0.addListener("interval", this._onInterval, this);
+      this.__timer__P_205_0.addListener("interval", this._onInterval, this);
     },
     events: {
       /**
@@ -25664,8 +25664,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
     },
     members: {
-      __executed__P_177_1: null,
-      __timer__P_177_0: null,
+      __executed__P_205_1: null,
+      __timer__P_205_0: null,
 
       /**
        * Calling this function is like a tap from the user on the
@@ -25679,7 +25679,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           // if the state pressed must be applied (first call)
           if (!this.hasState("pressed")) {
             // start the timer
-            this.__startInternalTimer__P_177_2();
+            this.__startInternalTimer__P_205_2();
           } // set the states
 
 
@@ -25705,7 +25705,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (this.hasState("pressed")) {
           // if the button has not been executed
-          if (!this.__executed__P_177_1) {
+          if (!this.__executed__P_205_1) {
             this.execute();
           }
         } // remove button states
@@ -25714,7 +25714,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         this.removeState("pressed");
         this.removeState("abandoned"); // stop the repeat timer and therefore the execution
 
-        this.__stopInternalTimer__P_177_3();
+        this.__stopInternalTimer__P_205_3();
       },
 
       /*
@@ -25736,7 +25736,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this.removeState("pressed");
           this.removeState("abandoned"); // stop the repeat timer and therefore the execution
 
-          this.__stopInternalTimer__P_177_3();
+          this.__stopInternalTimer__P_205_3();
         }
       },
 
@@ -25764,7 +25764,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this.removeState("abandoned");
           this.addState("pressed");
 
-          this.__timer__P_177_0.start();
+          this.__timer__P_205_0.start();
         }
 
         this.addState("hovered");
@@ -25790,7 +25790,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this.removeState("pressed");
           this.addState("abandoned");
 
-          this.__timer__P_177_0.stop();
+          this.__timer__P_205_0.stop();
         }
       },
 
@@ -25812,7 +25812,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         this.capture();
 
-        this.__startInternalTimer__P_177_2();
+        this.__startInternalTimer__P_205_2();
 
         e.stopPropagation();
       },
@@ -25832,12 +25832,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (!this.hasState("abandoned")) {
           this.addState("hovered");
 
-          if (this.hasState("pressed") && !this.__executed__P_177_1) {
+          if (this.hasState("pressed") && !this.__executed__P_205_1) {
             this.execute();
           }
         }
 
-        this.__stopInternalTimer__P_177_3();
+        this.__stopInternalTimer__P_205_3();
 
         e.stopPropagation();
       },
@@ -25858,7 +25858,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           case "Enter":
           case "Space":
             if (this.hasState("pressed")) {
-              if (!this.__executed__P_177_1) {
+              if (!this.__executed__P_205_1) {
                 this.execute();
               }
 
@@ -25866,7 +25866,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
               this.removeState("abandoned");
               e.stopPropagation();
 
-              this.__stopInternalTimer__P_177_3();
+              this.__stopInternalTimer__P_205_3();
             }
 
         }
@@ -25889,7 +25889,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             this.addState("pressed");
             e.stopPropagation();
 
-            this.__startInternalTimer__P_177_2();
+            this.__startInternalTimer__P_205_2();
 
         }
       },
@@ -25904,7 +25904,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Event} interval event
        */
       _onInterval: function _onInterval(e) {
-        this.__executed__P_177_1 = true;
+        this.__executed__P_205_1 = true;
         this.fireEvent("execute");
       },
 
@@ -25919,11 +25919,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * events in an interval. It also presses the button.
        *
        */
-      __startInternalTimer__P_177_2: function __startInternalTimer__P_177_2() {
+      __startInternalTimer__P_205_2: function __startInternalTimer__P_205_2() {
         this.fireEvent("press");
-        this.__executed__P_177_1 = false;
+        this.__executed__P_205_1 = false;
 
-        this.__timer__P_177_0.set({
+        this.__timer__P_205_0.set({
           interval: this.getInterval(),
           firstInterval: this.getFirstInterval(),
           minimum: this.getMinTimer(),
@@ -25938,10 +25938,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * Stops the internal timer and releases the button.
        *
        */
-      __stopInternalTimer__P_177_3: function __stopInternalTimer__P_177_3() {
+      __stopInternalTimer__P_205_3: function __stopInternalTimer__P_205_3() {
         this.fireEvent("release");
 
-        this.__timer__P_177_0.stop();
+        this.__timer__P_205_0.stop();
 
         this.removeState("abandoned");
         this.removeState("pressed");
@@ -25954,7 +25954,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       *****************************************************************************
       */
     destruct: function destruct() {
-      this._disposeObjects("__timer__P_177_0");
+      this._disposeObjects("__timer__P_205_0");
     }
   });
   qx.ui.form.RepeatButton.$$dbClassInfo = $$dbClassInfo;
@@ -26222,7 +26222,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     *****************************************************************************
     */
     members: {
-      __columnSizes__P_214_0: null,
+      __columnSizes__P_192_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -26235,7 +26235,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         var child, sizes, spacing;
         var spanColumn = this.getSpanColumn();
-        var columnSizes = this.__columnSizes__P_214_0 = [0, 0, 0, 0];
+        var columnSizes = this.__columnSizes__P_192_0 = [0, 0, 0, 0];
         var columnSpacing = this.getColumnSpacing();
         var spanColumnWidth = 0;
         var maxInset = 0; // Compute column sizes and insets
@@ -26307,7 +26307,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @return {Array} List of all column widths
        */
       getColumnSizes: function getColumnSizes() {
-        return this.__columnSizes__P_214_0 || null;
+        return this.__columnSizes__P_192_0 || null;
       }
     },
 
@@ -26317,7 +26317,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
      *****************************************************************************
      */
     destruct: function destruct() {
-      this.__columnSizes__P_214_0 = null;
+      this.__columnSizes__P_192_0 = null;
     }
   });
   qx.ui.menu.Layout.$$dbClassInfo = $$dbClassInfo;
@@ -27027,9 +27027,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     implement: [qx.core.IDisposable],
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__timer__P_179_0 = new qx.event.Timer(this.getInterval());
+      this.__timer__P_214_0 = new qx.event.Timer(this.getInterval());
 
-      this.__timer__P_179_0.addListener("interval", this._onInterval, this);
+      this.__timer__P_214_0.addListener("interval", this._onInterval, this);
     },
     events: {
       /** This event if fired each time the interval time has elapsed */
@@ -27068,48 +27068,48 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
     },
     members: {
-      __timer__P_179_0: null,
-      __currentInterval__P_179_1: null,
+      __timer__P_214_0: null,
+      __currentInterval__P_214_1: null,
 
       /**
        * Reset and start the timer.
        */
       start: function start() {
-        this.__timer__P_179_0.setInterval(this.getFirstInterval());
+        this.__timer__P_214_0.setInterval(this.getFirstInterval());
 
-        this.__timer__P_179_0.start();
+        this.__timer__P_214_0.start();
       },
 
       /**
        * Stop the timer
        */
       stop: function stop() {
-        this.__timer__P_179_0.stop();
+        this.__timer__P_214_0.stop();
 
-        this.__currentInterval__P_179_1 = null;
+        this.__currentInterval__P_214_1 = null;
       },
 
       /**
        * Interval event handler
        */
       _onInterval: function _onInterval() {
-        this.__timer__P_179_0.stop();
+        this.__timer__P_214_0.stop();
 
-        if (this.__currentInterval__P_179_1 == null) {
-          this.__currentInterval__P_179_1 = this.getInterval();
+        if (this.__currentInterval__P_214_1 == null) {
+          this.__currentInterval__P_214_1 = this.getInterval();
         }
 
-        this.__currentInterval__P_179_1 = Math.max(this.getMinimum(), this.__currentInterval__P_179_1 - this.getDecrease());
+        this.__currentInterval__P_214_1 = Math.max(this.getMinimum(), this.__currentInterval__P_214_1 - this.getDecrease());
 
-        this.__timer__P_179_0.setInterval(this.__currentInterval__P_179_1);
+        this.__timer__P_214_0.setInterval(this.__currentInterval__P_214_1);
 
-        this.__timer__P_179_0.start();
+        this.__timer__P_214_0.start();
 
         this.fireEvent("interval");
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__timer__P_179_0");
+      this._disposeObjects("__timer__P_214_0");
     }
   });
   qx.event.AcceleratingTimer.$$dbClassInfo = $$dbClassInfo;
@@ -27191,8 +27191,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this._setLayout(new qx.ui.layout.HBox()); // initialize the overflow handling
 
 
-      this.__removedItems__P_220_0 = [];
-      this.__removePriority__P_220_1 = [];
+      this.__removedItems__P_215_0 = [];
+      this.__removePriority__P_215_1 = [];
     },
 
     /*
@@ -27274,8 +27274,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         OVERFLOW HANDLING
       ---------------------------------------------------------------------------
       */
-      __removedItems__P_220_0: null,
-      __removePriority__P_220_1: null,
+      __removedItems__P_215_0: null,
+      __removePriority__P_215_1: null,
       // overridden
       _computeSizeHint: function _computeSizeHint() {
         // get the original hint
@@ -27354,7 +27354,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             margins = Math.max(margins, this.getSpacing());
             var childWidth = childToHide.getSizeHint().width + margins;
 
-            this.__hideChild__P_220_2(childToHide); // new width is the requiredWidth - the removed childs width
+            this.__hideChild__P_215_2(childToHide); // new width is the requiredWidth - the removed childs width
 
 
             requiredWidth -= childWidth; // show the overflowWidgetWidth
@@ -27369,9 +27369,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             }
           } while (requiredWidth > width); // if we can possibly show something
 
-        } else if (this.__removedItems__P_220_0.length > 0) {
+        } else if (this.__removedItems__P_215_0.length > 0) {
           do {
-            var removedChild = this.__removedItems__P_220_0[0]; // if we have something we can show
+            var removedChild = this.__removedItems__P_215_0[0]; // if we have something we can show
 
             if (removedChild) {
               // get the margins or spacing
@@ -27391,7 +27391,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
               var fits = false; // if we can remove the overflow widget if its available
 
-              if (this.__removedItems__P_220_0.length == 1 && overflowWidgetWidth > 0) {
+              if (this.__removedItems__P_215_0.length == 1 && overflowWidgetWidth > 0) {
                 var addedMargin = margins - this.getSpacing();
                 var wouldRequiredWidth = requiredWidth - overflowWidgetWidth + removedChildWidth + addedMargin;
                 fits = width > wouldRequiredWidth;
@@ -27399,18 +27399,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
               if (width > requiredWidth + removedChildWidth + margins || fits) {
-                this.__showChild__P_220_3(removedChild);
+                this.__showChild__P_215_3(removedChild);
 
                 requiredWidth += removedChildWidth; // check if we need to remove the overflow widget
 
-                if (overflowWidget && this.__removedItems__P_220_0.length == 0) {
+                if (overflowWidget && this.__removedItems__P_215_0.length == 0) {
                   overflowWidget.setVisibility("excluded");
                 }
               } else {
                 return;
               }
             }
-          } while (width >= requiredWidth && this.__removedItems__P_220_0.length > 0);
+          } while (width >= requiredWidth && this.__removedItems__P_215_0.length > 0);
         }
       },
 
@@ -27419,10 +27419,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param child {qx.ui.core.Widget} The widget to show.
        */
-      __showChild__P_220_3: function __showChild__P_220_3(child) {
+      __showChild__P_215_3: function __showChild__P_215_3(child) {
         child.setVisibility("visible");
 
-        this.__removedItems__P_220_0.shift();
+        this.__removedItems__P_215_0.shift();
 
         this.fireDataEvent("showItem", child);
       },
@@ -27432,13 +27432,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *
        * @param child {qx.ui.core.Widget} The widget to exclude.
        */
-      __hideChild__P_220_2: function __hideChild__P_220_2(child) {
+      __hideChild__P_215_2: function __hideChild__P_215_2(child) {
         // ignore the call if no child is given
         if (!child) {
           return;
         }
 
-        this.__removedItems__P_220_0.unshift(child);
+        this.__removedItems__P_215_0.unshift(child);
 
         child.setVisibility("excluded");
         this.fireDataEvent("hideItem", child);
@@ -27454,8 +27454,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       _getNextToHide: function _getNextToHide() {
         // get the elements by priority
-        for (var i = this.__removePriority__P_220_1.length - 1; i >= 0; i--) {
-          var item = this.__removePriority__P_220_1[i]; // maybe a priority is left out and spacers don't have the visibility
+        for (var i = this.__removePriority__P_215_1.length - 1; i >= 0; i--) {
+          var item = this.__removePriority__P_215_1[i]; // maybe a priority is left out and spacers don't have the visibility
 
           if (item && item.getVisibility && item.getVisibility() == "visible") {
             return item;
@@ -27492,11 +27492,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        */
       setRemovePriority: function setRemovePriority(item, priority, override) {
         // security check for overriding priorities
-        if (!override && this.__removePriority__P_220_1[priority] != undefined) {
+        if (!override && this.__removePriority__P_215_1[priority] != undefined) {
           throw new Error("Priority already in use!");
         }
 
-        this.__removePriority__P_220_1[priority] = item;
+        this.__removePriority__P_215_1[priority] = item;
       },
       // property apply
       _applyOverflowHandling: function _applyOverflowHandling(value, old) {
@@ -27529,12 +27529,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           } // set all buttons back to visible
 
 
-          for (var i = 0; i < this.__removedItems__P_220_0.length; i++) {
-            this.__removedItems__P_220_0[i].setVisibility("visible");
+          for (var i = 0; i < this.__removedItems__P_215_0.length; i++) {
+            this.__removedItems__P_215_0[i].setVisibility("visible");
           } // reset the removed items
 
 
-          this.__removedItems__P_220_0 = [];
+          this.__removedItems__P_215_0 = [];
         }
       },
       // property apply
@@ -27559,7 +27559,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         MENU OPEN
       ---------------------------------------------------------------------------
       */
-      __allowMenuOpenHover__P_220_4: false,
+      __allowMenuOpenHover__P_215_4: false,
 
       /**
        * Indicate if a menu could be opened on hover or not.
@@ -27569,7 +27569,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>false</code> otherwise.
        */
       _setAllowMenuOpenHover: function _setAllowMenuOpenHover(value) {
-        this.__allowMenuOpenHover__P_220_4 = value;
+        this.__allowMenuOpenHover__P_215_4 = value;
       },
 
       /**
@@ -27580,7 +27580,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        *    <code>false</code> otherwise.
        */
       _isAllowMenuOpenHover: function _isAllowMenuOpenHover() {
-        return this.__allowMenuOpenHover__P_220_4;
+        return this.__allowMenuOpenHover__P_215_4;
       },
 
       /*
@@ -27843,9 +27843,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       qx.ui.basic.Atom.constructor.call(this, label, icon);
       this.addListener("pointerover", this._onPointerOver, this);
       this.addListener("pointerout", this._onPointerOut, this);
-      this.__timer__P_219_0 = new qx.event.AcceleratingTimer();
+      this.__timer__P_207_0 = new qx.event.AcceleratingTimer();
 
-      this.__timer__P_219_0.addListener("interval", this._onInterval, this);
+      this.__timer__P_207_0.addListener("interval", this._onInterval, this);
     },
     properties: {
       // overridden
@@ -27886,7 +27886,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
     },
     members: {
-      __timer__P_219_0: null,
+      __timer__P_207_0: null,
 
       /**
        * Start timer on pointer over
@@ -27898,7 +27898,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return;
         }
 
-        this.__timer__P_219_0.set({
+        this.__timer__P_207_0.set({
           interval: this.getInterval(),
           firstInterval: this.getFirstInterval(),
           minimum: this.getMinTimer(),
@@ -27914,7 +27914,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
        * @param e {qx.event.type.Pointer} The pointer event
        */
       _onPointerOut: function _onPointerOut(e) {
-        this.__timer__P_219_0.stop();
+        this.__timer__P_207_0.stop();
 
         this.removeState("hovered");
 
@@ -27930,12 +27930,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         if (this.isEnabled()) {
           this.execute();
         } else {
-          this.__timer__P_219_0.stop();
+          this.__timer__P_207_0.stop();
         }
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__timer__P_219_0");
+      this._disposeObjects("__timer__P_207_0");
     }
   });
   qx.ui.form.HoverButton.$$dbClassInfo = $$dbClassInfo;
@@ -28139,12 +28139,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
           case "container":
             control = new qx.ui.toolbar.PartContainer();
-            control.addListener("syncAppearance", this.__onSyncAppearance__P_221_0, this);
+            control.addListener("syncAppearance", this.__onSyncAppearance__P_217_0, this);
 
             this._add(control);
 
             control.addListener("changeChildren", function () {
-              this.__onSyncAppearance__P_221_0();
+              this.__onSyncAppearance__P_217_0();
             }, this);
             break;
         }
@@ -28175,7 +28175,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       /**
        * Helper which applies the left, right and middle states.
        */
-      __onSyncAppearance__P_221_0: function __onSyncAppearance__P_221_0() {
+      __onSyncAppearance__P_217_0: function __onSyncAppearance__P_217_0() {
         // check every child
         var children = this.getChildrenContainer().getChildren();
         children = children.filter(function (child) {
@@ -28454,7 +28454,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   });
   qx.theme.indigo.Color.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-19.js.map?dt=1651479039894
+//# sourceMappingURL=package-19.js.map?dt=1652435556318
 qx.$$packageData['19'] = {
   "locales": {},
   "resources": {},

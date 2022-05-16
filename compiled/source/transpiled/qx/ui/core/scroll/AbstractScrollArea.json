@@ -1675,9 +1675,10 @@
       "type": "function",
       "name": "getDragScrollThresholdX",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1699,9 +1700,10 @@
       "type": "function",
       "name": "setDragScrollThresholdX",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1724,9 +1726,10 @@
       "type": "function",
       "name": "resetDragScrollThresholdX",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1741,9 +1744,10 @@
       "type": "function",
       "name": "getDragScrollThresholdY",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1765,9 +1769,10 @@
       "type": "function",
       "name": "setDragScrollThresholdY",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1790,9 +1795,10 @@
       "type": "function",
       "name": "resetDragScrollThresholdY",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -1807,9 +1813,10 @@
       "type": "function",
       "name": "getDragScrollSlowDownFactor",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -1831,9 +1838,10 @@
       "type": "function",
       "name": "setDragScrollSlowDownFactor",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -1856,9 +1864,10 @@
       "type": "function",
       "name": "resetDragScrollSlowDownFactor",
       "abstract": false,
-      "mixin": false,
+      "mixin": true,
       "inherited": true,
       "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
       "property": "reset",
       "jsdoc": {
         "@description": [

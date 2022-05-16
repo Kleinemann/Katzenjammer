@@ -78,11 +78,11 @@
       }
     },
     members: {
-      __timer__P_146_0: null,
+      __timer__P_184_0: null,
       // property apply
       _applyTimeoutInterval: function _applyTimeoutInterval(value) {
-        if (this.__timer__P_146_0) {
-          this.__timer__P_146_0.setInterval(value);
+        if (this.__timer__P_184_0) {
+          this.__timer__P_184_0.setInterval(value);
         }
       },
 
@@ -96,25 +96,25 @@
       /**
        * Starts the timer but only if there are listeners for the "interval" event
        */
-      __startTimer__P_146_1: function __startTimer__P_146_1() {
-        if (!this.__timer__P_146_0 && this.hasListener("interval")) {
+      __startTimer__P_184_1: function __startTimer__P_184_1() {
+        if (!this.__timer__P_184_0 && this.hasListener("interval")) {
           var timer = new qx.event.Timer(this.getTimeoutInterval());
           timer.addListener("interval", this._onInterval, this);
           timer.start();
-          this.__timer__P_146_0 = timer;
+          this.__timer__P_184_0 = timer;
         }
       },
 
       /**
        * Stops the timer but only if there are no listeners for the interval event
        */
-      __stopTimer__P_146_2: function __stopTimer__P_146_2() {
-        if (this.__timer__P_146_0 && !this.hasListener("interval")) {
-          this.__timer__P_146_0.stop();
+      __stopTimer__P_184_2: function __stopTimer__P_184_2() {
+        if (this.__timer__P_184_0 && !this.hasListener("interval")) {
+          this.__timer__P_184_0.stop();
 
-          this.__timer__P_146_0.dispose();
+          this.__timer__P_184_0.dispose();
 
-          this.__timer__P_146_0 = null;
+          this.__timer__P_184_0 = null;
         }
       },
 
@@ -124,7 +124,7 @@
       addListener: function addListener(type, listener, self, capture) {
         var result = qx.event.Idle.superclass.prototype.addListener.call(this, type, listener, self, capture);
 
-        this.__startTimer__P_146_1();
+        this.__startTimer__P_184_1();
 
         return result;
       },
@@ -135,7 +135,7 @@
       addListenerOnce: function addListenerOnce(type, listener, self, capture) {
         var result = qx.event.Idle.superclass.prototype.addListenerOnce.call(this, type, listener, self, capture);
 
-        this.__startTimer__P_146_1();
+        this.__startTimer__P_184_1();
 
         return result;
       },
@@ -146,7 +146,7 @@
       removeListener: function removeListener(type, listener, self, capture) {
         var result = qx.event.Idle.superclass.prototype.removeListener.call(this, type, listener, self, capture);
 
-        this.__stopTimer__P_146_2();
+        this.__stopTimer__P_184_2();
 
         return result;
       },
@@ -157,7 +157,7 @@
       removeListenerById: function removeListenerById(id) {
         var result = qx.event.Idle.superclass.prototype.removeListenerById.call(this, id);
 
-        this.__stopTimer__P_146_2();
+        this.__stopTimer__P_184_2();
 
         return result;
       }
@@ -169,14 +169,14 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__timer__P_146_0) {
-        this.__timer__P_146_0.stop();
+      if (this.__timer__P_184_0) {
+        this.__timer__P_184_0.stop();
       }
 
-      this.__timer__P_146_0 = null;
+      this.__timer__P_184_0 = null;
     }
   });
   qx.event.Idle.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Idle.js.map?dt=1648192702412
+//# sourceMappingURL=Idle.js.map?dt=1652417300142

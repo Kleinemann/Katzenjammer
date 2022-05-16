@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 26,
+        "line": 57,
         "column": 3
       }
     },
@@ -27,21 +27,110 @@
     }
   },
   "type": "class",
+  "properties": {
+    "QuestList": {
+      "location": {
+        "start": {
+          "line": 14,
+          "column": 8
+        },
+        "end": {
+          "line": 14,
+          "column": 33
+        }
+      },
+      "name": "QuestList",
+      "propertyType": "new"
+    },
+    "qxOwner": {
+      "type": "property",
+      "name": "qxOwner",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
+    },
+    "qxObjectId": {
+      "type": "property",
+      "name": "qxObjectId",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
+    }
+  },
   "construct": {
     "location": {
       "start": {
-        "line": 16,
+        "line": 17,
         "column": 15
       },
       "end": {
-        "line": 20,
+        "line": 23,
         "column": 5
       }
     },
     "jsdoc": {}
   },
-  "events": {},
   "members": {
+    "initQuestContainer": {
+      "location": {
+        "start": {
+          "line": 27,
+          "column": 8
+        },
+        "end": {
+          "line": 32,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "updateQuestList": {
+      "location": {
+        "start": {
+          "line": 34,
+          "column": 8
+        },
+        "end": {
+          "line": 45,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "addQuest": {
+      "location": {
+        "start": {
+          "line": 47,
+          "column": 8
+        },
+        "end": {
+          "line": 55,
+          "column": 9
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
     "getQxOwner": {
       "type": "function",
       "name": "getQxOwner",
@@ -3835,7 +3924,74 @@
           }
         ]
       }
+    },
+    "getQuestList": {
+      "type": "function",
+      "name": "getQuestList",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>QuestList</code>.\n\nFor further details take a look at the property definition: {@link #QuestList}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for QuestList"
+          }
+        ]
+      }
+    },
+    "setQuestList": {
+      "type": "function",
+      "name": "setQuestList",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>QuestList</code>.\n\nFor further details take a look at the property definition: {@link #QuestList}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for QuestList"
+          }
+        ]
+      }
+    },
+    "resetQuestList": {
+      "type": "function",
+      "name": "resetQuestList",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>QuestList</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #QuestList}."
+          }
+        ]
+      }
     }
   },
+  "events": {},
   "descendants": []
 }

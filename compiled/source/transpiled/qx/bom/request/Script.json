@@ -1494,7 +1494,5 @@
       }
     }
   },
-  "descendants": [
-    "qx.bom.request.Jsonp"
-  ]
+  "descendants": []
 }
