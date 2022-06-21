@@ -13,11 +13,13 @@ qx.Class.define("katzenjammer.container.details.QuestDetailContainer", {
     {
         Name: { init: null },
         Description: { init: null },
-        Quest: { init: null, nullable: true }
+        Quest: { init: null, nullable: true },
+
+        HeroTree: { init: null, nullable: true },
+        Building: { init: null, nullable: true }
     },
 
-    construct: function ()
-    {
+    construct: function () {
         var layout = new qx.ui.layout.VBox(3);
         this.base(arguments, layout);
 
@@ -33,9 +35,28 @@ qx.Class.define("katzenjammer.container.details.QuestDetailContainer", {
             this.getDescription().setValue(quest.getDescription());
 
             if (this.getQuest() !== null)
-                this.remove(this.getQuest());
+                this.resetQuest();
 
             this.setQuest(quest);
+
+            if (this.getBuilding() !== null)
+                this.remove(this.getBuilding());
+
+            this.setBuilding(quest.getUserBuilding());
+            this.add(this.getBuilding());
+
+            this.showDetails();
+        },
+
+
+        showDetails: function ()
+        {
+            if (this.getHeroTree() !== null)
+                this.remove(this.getHeroTree());
+
+            var q = this.getQuest();
+            this.setHeroTree(q.getHeroTree())
+            this.add(this.getHeroTree());
         }
     }
 });

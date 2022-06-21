@@ -34928,7 +34928,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   qx.application.Standalone.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-1.js.map?dt=1652435555580
+//# sourceMappingURL=package-1.js.map?dt=1655815252124
 qx.$$packageData['1'] = {
   "locales": {},
   "resources": {},

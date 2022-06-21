@@ -17908,7 +17908,7 @@ module.exports = L.Routing = {
 	 */
 	module.exports = L.Class.extend({
 		options: {
-			serviceUrl: 'https://router.project-osrm.org/route/v1',
+            serviceUrl: 'https://routing.openstreetmap.de/routed-car/route/v1',//'https://router.project-osrm.org/route/v1',
 			profile: 'driving',
 			timeout: 30 * 1000,
 			routingOptions: {

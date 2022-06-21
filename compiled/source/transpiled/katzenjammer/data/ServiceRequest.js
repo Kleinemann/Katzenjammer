@@ -1,3 +1,7 @@
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 (function () {
   var $$dbClassInfo = {
     "dependsOn": {
@@ -29,6 +33,48 @@
       URL_SERVICE: "http://localhost/katzenjammer_service/service.php",
       URL_OpenStreetSearch: "https://nominatim.openstreetmap.org/search",
       URL_OpenStreetReverse: "https://nominatim.openstreetmap.org/reverse.php",
+      //URL_OpenStreetRoute: "https://routing.openstreetmap.de/routed-car/route/v1/driving/",
+      SearchRoute: function () {
+        var _SearchRoute = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(source, target) {
+          var promise;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  promise = new Promise(function (resolve, reject) {
+                    L.Routing.osrmv1({
+                      geometryOnly: true
+                    });
+                    var routing = L.Routing.control({
+                      waypoints: [source, target],
+                      language: 'de',
+                      fitSelectedRoutes: false,
+                      showAlternatives: false,
+                      defaultErrorHandler: null
+                    }).on('routesfound', function (e) {
+                      var route = e.routes[0];
+                      resolve(route);
+                    }).on('routingerror', function (e) {
+                      reject(null);
+                    });
+                    routing.route();
+                  });
+                  return _context.abrupt("return", promise);
+
+                case 2:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        function SearchRoute(_x, _x2) {
+          return _SearchRoute.apply(this, arguments);
+        }
+
+        return SearchRoute;
+      }(),
       SearchAdressRevertRequest: function SearchAdressRevertRequest(pos) {
         var data = {
           lat: pos[0],
@@ -99,4 +145,4 @@
   katzenjammer.data.ServiceRequest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ServiceRequest.js.map?dt=1652417291350
+//# sourceMappingURL=ServiceRequest.js.map?dt=1652777811953

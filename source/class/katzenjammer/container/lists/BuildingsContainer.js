@@ -178,6 +178,14 @@ qx.Class.define("katzenjammer.container.lists.BuildingsContainer", {
             {
                 var item = userBuildings[i].getItem();
                 list.add(item);
+                var heroes = userBuildings[i].getHeroes();
+                for (var h in heroes)
+                {
+                    var hero = heroes[h];
+                    var icon = katzenjammer.data.GameData.Icons[hero.icon_id].iconUrl;
+                    var itemH = new qx.ui.basic.Atom(hero.name, icon);
+                    list.add(itemH);
+                }
             }
 
             katzenjammer.container.MapContainer.Instance.updateUserBuildings();

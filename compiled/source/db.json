@@ -233,7 +233,7 @@
       "hasDefer": true
     },
     "katzenjammer.data.GameData": {
-      "mtime": "2022-05-13T09:45:00.170Z",
+      "mtime": "2022-06-20T10:25:42.092Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -1480,7 +1480,7 @@
       "hasDefer": null
     },
     "katzenjammer.data.ServiceRequest": {
-      "mtime": "2022-04-28T07:03:49.371Z",
+      "mtime": "2022-05-17T08:56:51.142Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -1508,8 +1508,126 @@
       "include": [],
       "implement": [],
       "hasDefer": null,
+      "unresolved": [
+        {
+          "name": "L.Routing.osrmv1",
+          "locations": [
+            {
+              "start": {
+                "line": 21,
+                "column": 16
+              },
+              "end": {
+                "line": 21,
+                "column": 32
+              }
+            },
+            {
+              "start": {
+                "line": 21,
+                "column": 16
+              },
+              "end": {
+                "line": 21,
+                "column": 32
+              }
+            },
+            {
+              "start": {
+                "line": 21,
+                "column": 16
+              },
+              "end": {
+                "line": 21,
+                "column": 32
+              }
+            },
+            {
+              "start": {
+                "line": 21,
+                "column": 16
+              },
+              "end": {
+                "line": 21,
+                "column": 32
+              }
+            }
+          ]
+        },
+        {
+          "name": "L.Routing.control",
+          "locations": [
+            {
+              "start": {
+                "line": 23,
+                "column": 30
+              },
+              "end": {
+                "line": 23,
+                "column": 47
+              }
+            },
+            {
+              "start": {
+                "line": 23,
+                "column": 30
+              },
+              "end": {
+                "line": 23,
+                "column": 47
+              }
+            },
+            {
+              "start": {
+                "line": 23,
+                "column": 30
+              },
+              "end": {
+                "line": 23,
+                "column": 47
+              }
+            },
+            {
+              "start": {
+                "line": 23,
+                "column": 30
+              },
+              "end": {
+                "line": 23,
+                "column": 47
+              }
+            }
+          ]
+        }
+      ],
       "assets": [
         "katzenjammer/*"
+      ],
+      "markers": [
+        {
+          "msgId": "qx.tool.compiler.symbol.unresolved",
+          "pos": {
+            "start": {
+              "line": 21,
+              "column": 16
+            }
+          },
+          "args": [
+            "L.Routing.osrmv1"
+          ]
+        },
+        {
+          "msgId": "qx.tool.compiler.symbol.unresolved",
+          "pos": {
+            "start": {
+              "line": 23,
+              "column": 30
+            }
+          },
+          "args": [
+            "L.Routing.control"
+          ]
+        }
       ]
     },
     "qx.ui.container.Composite": {
@@ -1552,7 +1670,7 @@
       "hasDefer": true
     },
     "katzenjammer.data.User": {
-      "mtime": "2022-05-12T07:26:52.107Z",
+      "mtime": "2022-06-21T12:30:52.987Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -1566,7 +1684,8 @@
         "katzenjammer.data.Quest": {},
         "katzenjammer.container.MainContainer": {},
         "katzenjammer.data.ServiceRequest": {},
-        "katzenjammer.data.UserBuilding": {}
+        "katzenjammer.data.UserBuilding": {},
+        "katzenjammer.data.GameData": {}
       },
       "extends": "qx.core.Object",
       "include": [],
@@ -1691,7 +1810,7 @@
       ]
     },
     "katzenjammer.container.MapContainer": {
-      "mtime": "2022-05-13T05:23:46.367Z",
+      "mtime": "2022-05-19T05:15:43.551Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -1724,31 +1843,31 @@
           "locations": [
             {
               "start": {
-                "line": 50,
+                "line": 55,
                 "column": 26
               },
               "end": {
-                "line": 50,
+                "line": 55,
                 "column": 31
               }
             },
             {
               "start": {
-                "line": 50,
+                "line": 55,
                 "column": 26
               },
               "end": {
-                "line": 50,
+                "line": 55,
                 "column": 31
               }
             },
             {
               "start": {
-                "line": 50,
+                "line": 55,
                 "column": 26
               },
               "end": {
-                "line": 50,
+                "line": 55,
                 "column": 31
               }
             }
@@ -1759,31 +1878,31 @@
           "locations": [
             {
               "start": {
-                "line": 54,
+                "line": 59,
                 "column": 28
               },
               "end": {
-                "line": 54,
+                "line": 59,
                 "column": 39
               }
             },
             {
               "start": {
-                "line": 54,
+                "line": 59,
                 "column": 28
               },
               "end": {
-                "line": 54,
+                "line": 59,
                 "column": 39
               }
             },
             {
               "start": {
-                "line": 54,
+                "line": 59,
                 "column": 28
               },
               "end": {
-                "line": 54,
+                "line": 59,
                 "column": 39
               }
             }
@@ -1794,91 +1913,91 @@
           "locations": [
             {
               "start": {
-                "line": 73,
+                "line": 78,
                 "column": 32
               },
               "end": {
-                "line": 73,
+                "line": 78,
                 "column": 40
               }
             },
             {
               "start": {
-                "line": 73,
+                "line": 78,
                 "column": 32
               },
               "end": {
-                "line": 73,
+                "line": 78,
                 "column": 40
               }
             },
             {
               "start": {
-                "line": 73,
+                "line": 78,
                 "column": 32
               },
               "end": {
-                "line": 73,
+                "line": 78,
                 "column": 40
               }
             },
             {
               "start": {
-                "line": 81,
+                "line": 86,
                 "column": 36
               },
               "end": {
-                "line": 81,
+                "line": 86,
                 "column": 44
               }
             },
             {
               "start": {
-                "line": 81,
+                "line": 86,
                 "column": 36
               },
               "end": {
-                "line": 81,
+                "line": 86,
                 "column": 44
               }
             },
             {
               "start": {
-                "line": 81,
+                "line": 86,
                 "column": 36
               },
               "end": {
-                "line": 81,
+                "line": 86,
                 "column": 44
               }
             },
             {
               "start": {
-                "line": 83,
+                "line": 88,
                 "column": 36
               },
               "end": {
-                "line": 83,
+                "line": 88,
                 "column": 44
               }
             },
             {
               "start": {
-                "line": 83,
+                "line": 88,
                 "column": 36
               },
               "end": {
-                "line": 83,
+                "line": 88,
                 "column": 44
               }
             },
             {
               "start": {
-                "line": 83,
+                "line": 88,
                 "column": 36
               },
               "end": {
-                "line": 83,
+                "line": 88,
                 "column": 44
               }
             }
@@ -1889,91 +2008,91 @@
           "locations": [
             {
               "start": {
-                "line": 96,
+                "line": 101,
                 "column": 25
               },
               "end": {
-                "line": 96,
+                "line": 101,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 96,
+                "line": 101,
                 "column": 25
               },
               "end": {
-                "line": 96,
+                "line": 101,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 96,
+                "line": 101,
                 "column": 25
               },
               "end": {
-                "line": 96,
+                "line": 101,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 171,
+                "line": 177,
                 "column": 25
               },
               "end": {
-                "line": 171,
+                "line": 177,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 171,
+                "line": 177,
                 "column": 25
               },
               "end": {
-                "line": 171,
+                "line": 177,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 171,
+                "line": 177,
                 "column": 25
               },
               "end": {
-                "line": 171,
+                "line": 177,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 178,
+                "line": 184,
                 "column": 25
               },
               "end": {
-                "line": 178,
+                "line": 184,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 178,
+                "line": 184,
                 "column": 25
               },
               "end": {
-                "line": 178,
+                "line": 184,
                 "column": 33
               }
             },
             {
               "start": {
-                "line": 178,
+                "line": 184,
                 "column": 25
               },
               "end": {
-                "line": 178,
+                "line": 184,
                 "column": 33
               }
             }
@@ -1984,61 +2103,61 @@
           "locations": [
             {
               "start": {
-                "line": 170,
+                "line": 176,
                 "column": 24
               },
               "end": {
-                "line": 170,
+                "line": 176,
                 "column": 30
               }
             },
             {
               "start": {
-                "line": 170,
+                "line": 176,
                 "column": 24
               },
               "end": {
-                "line": 170,
+                "line": 176,
                 "column": 30
               }
             },
             {
               "start": {
-                "line": 170,
+                "line": 176,
                 "column": 24
               },
               "end": {
-                "line": 170,
+                "line": 176,
                 "column": 30
               }
             },
             {
               "start": {
-                "line": 177,
+                "line": 183,
                 "column": 24
               },
               "end": {
-                "line": 177,
+                "line": 183,
                 "column": 30
               }
             },
             {
               "start": {
-                "line": 177,
+                "line": 183,
                 "column": 24
               },
               "end": {
-                "line": 177,
+                "line": 183,
                 "column": 30
               }
             },
             {
               "start": {
-                "line": 177,
+                "line": 183,
                 "column": 24
               },
               "end": {
-                "line": 177,
+                "line": 183,
                 "column": 30
               }
             }
@@ -2053,7 +2172,7 @@
           "msgId": "qx.tool.compiler.symbol.unresolved",
           "pos": {
             "start": {
-              "line": 50,
+              "line": 55,
               "column": 26
             }
           },
@@ -2065,7 +2184,7 @@
           "msgId": "qx.tool.compiler.symbol.unresolved",
           "pos": {
             "start": {
-              "line": 54,
+              "line": 59,
               "column": 28
             }
           },
@@ -2077,7 +2196,7 @@
           "msgId": "qx.tool.compiler.symbol.unresolved",
           "pos": {
             "start": {
-              "line": 73,
+              "line": 78,
               "column": 32
             }
           },
@@ -2089,7 +2208,7 @@
           "msgId": "qx.tool.compiler.symbol.unresolved",
           "pos": {
             "start": {
-              "line": 96,
+              "line": 101,
               "column": 25
             }
           },
@@ -2101,7 +2220,7 @@
           "msgId": "qx.tool.compiler.symbol.unresolved",
           "pos": {
             "start": {
-              "line": 170,
+              "line": 176,
               "column": 24
             }
           },
@@ -2343,7 +2462,7 @@
       "hasDefer": null
     },
     "katzenjammer.container.lists.BuildingsContainer": {
-      "mtime": "2022-05-11T05:17:27.275Z",
+      "mtime": "2022-06-20T15:25:58.229Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -2366,6 +2485,7 @@
         "katzenjammer.data.User": {},
         "katzenjammer.data.ServiceRequest": {},
         "katzenjammer.data.UserBuilding": {},
+        "qx.ui.basic.Atom": {},
         "katzenjammer.container.MapContainer": {},
         "qx.ui.core.Widget": {
           "load": true
@@ -2386,7 +2506,7 @@
       "hasDefer": null
     },
     "katzenjammer.container.details.BuildingDetailContainer": {
-      "mtime": "2022-05-13T09:52:34.650Z",
+      "mtime": "2022-06-21T10:17:17.523Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -2397,17 +2517,29 @@
           "load": true,
           "construct": true
         },
-        "qx.ui.layout.VBox": {
+        "qx.ui.layout.Dock": {
           "construct": true
         },
         "qx.ui.basic.Label": {
           "construct": true
         },
-        "qx.ui.layout.HBox": {
-          "construct": true
-        },
+        "qx.ui.layout.VBox": {},
+        "qx.ui.layout.HBox": {},
         "katzenjammer.data.GameData": {},
+        "qx.ui.form.ListItem": {},
+        "katzenjammer.data.User": {},
+        "qx.ui.form.Button": {},
+        "katzenjammer.data.ServiceRequest": {},
         "qx.ui.core.Widget": {
+          "load": true
+        },
+        "qx.ui.core.LayoutItem": {
+          "load": true
+        },
+        "qx.core.Object": {
+          "load": true
+        },
+        "qx.theme.manager.Meta": {
           "load": true
         }
       },
@@ -4676,14 +4808,14 @@
       "hasDefer": null
     },
     "katzenjammer.data.Quest": {
-      "mtime": "2022-05-13T06:50:31.160Z",
+      "mtime": "2022-06-21T12:38:19.744Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
           "load": true,
           "usage": "dynamic"
         },
-        "qx.core.Object": {
+        "katzenjammer.data.GameItem": {
           "load": true,
           "construct": true
         },
@@ -4691,18 +4823,22 @@
           "construct": true
         },
         "katzenjammer.data.ServiceRequest": {},
-        "katzenjammer.data.GameData": {
-          "construct": true
-        },
         "qx.ui.container.Composite": {},
-        "qx.ui.layout.Dock": {},
+        "qx.ui.layout.Flow": {},
         "qx.ui.basic.Label": {},
+        "katzenjammer.data.GameData": {
+          "load": true
+        },
+        "qx.ui.layout.Dock": {},
         "qx.ui.basic.Atom": {},
         "katzenjammer.container.MapContainer": {},
         "qx.ui.form.Button": {},
-        "katzenjammer.container.MainContainer": {}
+        "katzenjammer.container.MainContainer": {},
+        "qx.core.Object": {
+          "load": true
+        }
       },
-      "extends": "qx.core.Object",
+      "extends": "katzenjammer.data.GameItem",
       "include": [],
       "implement": [],
       "hasDefer": null,
@@ -4711,19 +4847,19 @@
       ]
     },
     "katzenjammer.data.UserBuilding": {
-      "mtime": "2022-05-13T05:48:09.903Z",
+      "mtime": "2022-06-20T11:56:41.767Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
           "load": true,
           "usage": "dynamic"
         },
-        "qx.core.Object": {
+        "katzenjammer.data.GameItem": {
           "load": true,
           "construct": true
         },
         "katzenjammer.data.GameData": {
-          "construct": true
+          "load": true
         },
         "qx.ui.container.Composite": {},
         "qx.ui.layout.Dock": {},
@@ -4731,9 +4867,12 @@
         "qx.ui.basic.Atom": {},
         "katzenjammer.container.MapContainer": {},
         "qx.ui.form.Button": {},
-        "katzenjammer.container.MainContainer": {}
+        "katzenjammer.container.MainContainer": {},
+        "qx.core.Object": {
+          "load": true
+        }
       },
-      "extends": "qx.core.Object",
+      "extends": "katzenjammer.data.GameItem",
       "include": [],
       "implement": [],
       "hasDefer": null,
@@ -13930,7 +14069,7 @@
       "hasDefer": null
     },
     "katzenjammer.container.lists.InformationContainer": {
-      "mtime": "2022-05-13T05:19:27.550Z",
+      "mtime": "2022-05-17T09:05:17.526Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -13942,6 +14081,18 @@
           "construct": true
         },
         "qx.ui.layout.VBox": {
+          "construct": true
+        },
+        "qx.ui.form.Button": {
+          "construct": true
+        },
+        "katzenjammer.data.User": {
+          "construct": true
+        },
+        "katzenjammer.data.ServiceRequest": {
+          "construct": true
+        },
+        "katzenjammer.container.MapContainer": {
           "construct": true
         },
         "qx.ui.basic.Label": {},
@@ -13961,10 +14112,61 @@
       "extends": "qx.ui.container.Composite",
       "include": [],
       "implement": [],
-      "hasDefer": null
+      "hasDefer": null,
+      "unresolved": [
+        {
+          "name": "L.polyline",
+          "locations": [
+            {
+              "start": {
+                "line": 51,
+                "column": 34
+              },
+              "end": {
+                "line": 51,
+                "column": 44
+              }
+            },
+            {
+              "start": {
+                "line": 51,
+                "column": 34
+              },
+              "end": {
+                "line": 51,
+                "column": 44
+              }
+            },
+            {
+              "start": {
+                "line": 51,
+                "column": 34
+              },
+              "end": {
+                "line": 51,
+                "column": 44
+              }
+            }
+          ]
+        }
+      ],
+      "markers": [
+        {
+          "msgId": "qx.tool.compiler.symbol.unresolved",
+          "pos": {
+            "start": {
+              "line": 51,
+              "column": 34
+            }
+          },
+          "args": [
+            "L.polyline"
+          ]
+        }
+      ]
     },
     "katzenjammer.container.details.QuestDetailContainer": {
-      "mtime": "2022-05-13T06:49:46.255Z",
+      "mtime": "2022-06-21T12:40:51.171Z",
       "libraryName": "katzenjammer",
       "dependsOn": {
         "qx.Class": {
@@ -13983,25 +14185,87 @@
         },
         "qx.ui.core.Widget": {
           "load": true
-        },
-        "qx.ui.core.LayoutItem": {
-          "load": true
-        },
-        "qx.core.Object": {
-          "load": true
-        },
-        "qx.theme.manager.Meta": {
-          "load": true
         }
       },
       "extends": "qx.ui.container.Composite",
       "include": [],
       "implement": [],
       "hasDefer": null
+    },
+    "katzenjammer.data.GameItem": {
+      "mtime": "2022-05-19T05:43:09.525Z",
+      "libraryName": "katzenjammer",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.core.Object": {
+          "load": true,
+          "construct": true
+        },
+        "katzenjammer.data.GameData": {
+          "construct": true
+        }
+      },
+      "extends": "qx.core.Object",
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "katzenjammer/*"
+      ]
+    },
+    "qx.ui.layout.Flow": {
+      "mtime": "2022-03-17T07:41:59.377Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.core.Environment": {
+          "load": true,
+          "defer": "load",
+          "usage": "dynamic"
+        },
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.ui.layout.Abstract": {
+          "load": true,
+          "construct": true
+        },
+        "qx.ui.layout.LineSizeIterator": {},
+        "qx.ui.layout.Util": {}
+      },
+      "extends": "qx.ui.layout.Abstract",
+      "include": [],
+      "implement": [],
+      "environment": {
+        "provided": [],
+        "required": {
+          "qx.debug": {
+            "load": true
+          }
+        }
+      },
+      "hasDefer": null
+    },
+    "qx.ui.layout.LineSizeIterator": {
+      "mtime": "2022-03-17T07:41:59.536Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": "Object",
+      "include": [],
+      "implement": [],
+      "hasDefer": null
     }
   },
   "manglePrefixes": {
-    "nextPrefix": 217,
+    "nextPrefix": 219,
     "classPrefixes": {
       "qx.Class": "__P_2_",
       "qx.log.appender.Console": "__P_3_",
@@ -14218,7 +14482,9 @@
       "qx.event.AcceleratingTimer": "__P_214_",
       "qx.ui.toolbar.ToolBar": "__P_215_",
       "qx.ui.core.selection.Abstract": "__P_216_",
-      "qx.ui.toolbar.Part": "__P_217_"
+      "qx.ui.toolbar.Part": "__P_217_",
+      "qx.ui.layout.Flow": "__P_218_",
+      "qx.ui.layout.LineSizeIterator": "__P_219_"
     }
   }
 }

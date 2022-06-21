@@ -5,7 +5,7 @@
 *
 **/
 qx.Class.define("katzenjammer.data.Quest", {
-    extend: qx.core.Object,
+    extend: katzenjammer.data.GameItem,
 
     statics:
     {
@@ -47,40 +47,66 @@ qx.Class.define("katzenjammer.data.Quest", {
 
     properties:
     {
-        Building: { init: null },
-
-        ID: { init: null },
-        Name: { init: null },
-        Icon: { init: null },
-        Position: { init: null },
-        Description: { init: null },
-
         UserBuilding: { init: null },
+
+        Conditions: { init: null },
     },
 
     construct: function (questData)
     {
-        this.base(arguments);
+        this.base(arguments, questData);
 
-        this.setID(questData.id);
-        this.setName(questData.name);
+        this.setConditions(JSON.parse(questData.conditions));
 
-        var pos = typeof questData.position !== 'string' ? questData.position : JSON.parse(questData.position);
-        this.setPosition(typeof questData.position !== 'string' ? questData.position : JSON.parse(questData.position));
-
-        this.setDescription(questData.text);
-
-        var iconId = questData.icon_id !== null ? questData.icon_id : questData.icon_id;
-        this.setIcon(katzenjammer.data.GameData.Icons[iconId]);
-
-        var building = katzenjammer.data.User.Instance.getBuildings()[questData.user_building_id];
-
-        this.setUserBuilding(building);
-        building.setQuest(this);
+        this.setUserBuilding(katzenjammer.data.User.Instance.getBuildings()[questData.user_building_id].getItem());
     },
 
     members:
     {
+        getHeroTree: function ()
+        {
+            var cont = new qx.ui.container.Composite(new qx.ui.layout.Flow(5));
+
+            var heroes = this.getConditions().Heroes;
+            for (var i in heroes)
+            {
+                var row = heroes[i];
+                if (Array.isArray(row))
+                {
+                    var subCont = new qx.ui.container.Composite(new qx.ui.layout.Flow(3));
+                    subCont.add(new qx.ui.basic.Label("["));
+
+                    for (var j in row)
+                    {
+                        var subRow = row[j];
+                        var hero = this.getHeroTreeItem(subRow);
+                        subCont.add(hero);
+                    }
+                    subCont.add(new qx.ui.basic.Label("]"));
+                    cont.add(subCont);
+                }
+                else
+                {
+                    var hero = this.getHeroTreeItem(row);
+                    cont.add(hero);
+                }
+
+            }
+            return cont;
+        },
+
+
+        getHeroTreeItem: function (itemData)
+        {
+            var cont = new qx.ui.container.Composite(new qx.ui.layout.Flow(3));
+            if (itemData.count > 1)
+                cont.add(new qx.ui.basic.Label(itemData.count + "x"));
+
+            cont.add(new qx.ui.basic.Label(katzenjammer.data.GameData.Heroes[itemData.id].name));
+            return cont;
+        },
+
+
         getItem: function ()
         {
             var item = new qx.ui.container.Composite(new qx.ui.layout.Dock()).set({ paddingLeft: 10, paddingRight: 10 });

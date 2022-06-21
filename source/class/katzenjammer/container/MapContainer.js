@@ -22,6 +22,11 @@ qx.Class.define("katzenjammer.container.MapContainer", {
                 UserBuildings: [],
                 UserQuests: [],
             }
+        },
+
+        Routs:
+        {
+
         }
     },
 
@@ -137,6 +142,7 @@ qx.Class.define("katzenjammer.container.MapContainer", {
 
             this.getMarker().UserQuests = userQuestMarkers;
         },
+
 
         updateUserBuildings: function ()
         {

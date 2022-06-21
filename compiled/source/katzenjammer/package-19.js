@@ -6024,6 +6024,147 @@
   qx.bom.element.Background.$$dbClassInfo = $$dbClassInfo;
 })();
 
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+     http://qooxdoo.org
+  
+     Copyright:
+       2008 Dihedrals.com, http://www.dihedrals.com
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Chris Banford (zermattchris)
+       * Fabian Jakobs (fjakobs)
+  
+  ************************************************************************ */
+
+  /**
+   * This class iterates over the lines in a flow layout.
+   *
+   * @internal
+   */
+  qx.Class.define("qx.ui.layout.LineSizeIterator", {
+    extend: Object,
+
+    /**
+     * @param children {qx.ui.core.Widget[]} The children of the flow layout to
+     *    compute the lines from
+     * @param spacing {Integer} The horizontal spacing between the children
+     */
+    construct: function construct(children, spacing) {
+      this.__children__P_219_0 = children;
+      this.__spacing__P_219_1 = spacing;
+      this.__hasMoreLines__P_219_2 = children.length > 0;
+      this.__childIndex__P_219_3 = 0;
+    },
+    members: {
+      __children__P_219_0: null,
+      __spacing__P_219_1: null,
+      __hasMoreLines__P_219_2: null,
+      __childIndex__P_219_3: null,
+
+      /**
+       * Computes the properties of the next line taking the available width into
+       * account
+       *
+       * @param availWidth {Integer} The available width for the next line
+       * @return {Map} A map containing the line's properties.
+       */
+      computeNextLine: function computeNextLine(availWidth) {
+        var availWidth = availWidth || Infinity;
+
+        if (!this.__hasMoreLines__P_219_2) {
+          throw new Error("No more lines to compute");
+        }
+
+        var children = this.__children__P_219_0;
+        var lineHeight = 0;
+        var lineWidth = 0;
+        var lineChildren = [];
+        var gapsBefore = [];
+
+        for (var i = this.__childIndex__P_219_3; i < children.length; i++) {
+          var child = children[i];
+          var size = child.getSizeHint();
+
+          var gapBefore = this.__computeGapBeforeChild__P_219_4(i);
+
+          var childWidth = size.width + gapBefore;
+          var isFirstChild = i == this.__childIndex__P_219_3;
+
+          if (!isFirstChild && lineWidth + childWidth > availWidth) {
+            this.__childIndex__P_219_3 = i;
+            break;
+          }
+
+          var childHeight = size.height + child.getMarginTop() + child.getMarginBottom();
+          lineChildren.push(child);
+          gapsBefore.push(gapBefore);
+          lineWidth += childWidth;
+          lineHeight = Math.max(lineHeight, childHeight);
+
+          if (child.getLayoutProperties().lineBreak) {
+            this.__childIndex__P_219_3 = i + 1;
+            break;
+          }
+        }
+
+        if (i >= children.length) {
+          this.__hasMoreLines__P_219_2 = false;
+        }
+
+        return {
+          height: lineHeight,
+          width: lineWidth,
+          children: lineChildren,
+          gapsBefore: gapsBefore
+        };
+      },
+
+      /**
+       * Computes the gap before the child at the given index
+       *
+       * @param childIndex {Integer} The index of the child widget
+       * @return {Integer} The gap before the given child
+       */
+      __computeGapBeforeChild__P_219_4: function __computeGapBeforeChild__P_219_4(childIndex) {
+        var isFirstInLine = childIndex == this.__childIndex__P_219_3;
+
+        if (isFirstInLine) {
+          return this.__children__P_219_0[childIndex].getMarginLeft();
+        } else {
+          return Math.max(this.__children__P_219_0[childIndex - 1].getMarginRight(), this.__children__P_219_0[childIndex].getMarginLeft(), this.__spacing__P_219_1);
+        }
+      },
+
+      /**
+       * Whether there are more lines
+       *
+       * @return {Boolean} Whether there are more lines
+       */
+      hasMoreLines: function hasMoreLines() {
+        return this.__hasMoreLines__P_219_2;
+      }
+    }
+  });
+  qx.ui.layout.LineSizeIterator.$$dbClassInfo = $$dbClassInfo;
+})();
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -28454,7 +28595,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   });
   qx.theme.indigo.Color.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-19.js.map?dt=1652435556318
+//# sourceMappingURL=package-19.js.map?dt=1655815252823
 qx.$$packageData['19'] = {
   "locales": {},
   "resources": {},

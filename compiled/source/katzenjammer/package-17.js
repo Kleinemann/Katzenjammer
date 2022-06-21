@@ -6358,7 +6358,7 @@
   });
   qx.ui.table.selection.Model.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-17.js.map?dt=1652435556233
+//# sourceMappingURL=package-17.js.map?dt=1655815252776
 qx.$$packageData['17'] = {
   "locales": {},
   "resources": {},

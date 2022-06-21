@@ -12,7 +12,8 @@
       "katzenjammer.data.Quest": {},
       "katzenjammer.container.MainContainer": {},
       "katzenjammer.data.ServiceRequest": {},
-      "katzenjammer.data.UserBuilding": {}
+      "katzenjammer.data.UserBuilding": {},
+      "katzenjammer.data.GameData": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -81,7 +82,11 @@
             var quest = katzenjammer.data.Quest.createNewQuest(building);
             var questCont = katzenjammer.container.MainContainer.Instance.getQuests();
             questCont.addQuest(quest);
-          } else console.log(building.getName() + " (" + building.getID() + ") hat die Quest -> " + quest.getName());
+            var building = katzenjammer.data.User.Instance.getBuildings()[questData.user_building_id];
+            this.setUserBuilding(building);
+            building.setQuest(this);
+          } //console.log(building.getName() + " (" + building.getID() + ") hat die Quest -> " + quest.getName());
+
         }
       },
       loadingUser: function loadingUser(args) {
@@ -166,8 +171,39 @@
             }
 
             this.setBuildings(buildings);
-            katzenjammer.container.MainContainer.Instance.getBuildings().updateBuildingList();
+            this.loadingHeroes();
             this.loadingQuests();
+          }
+        }, this);
+        req.send();
+      },
+      loadingHeroes: function loadingHeroes() {
+        var user = katzenjammer.data.User.Instance.getID();
+        var data = {
+          Action: "select",
+          Data: "UserHeroes",
+          ID: user
+        };
+        var req = new katzenjammer.data.ServiceRequest(data);
+        req.addListener("success", function (e) {
+          var response = e.getTarget().getResponse();
+
+          if (response.success) {
+            var data = e.getTarget().getResponse().data;
+            var buildings = this.getBuildings();
+
+            for (var i in data) {
+              var hero = data[i];
+              if (hero.name === null) hero.name = katzenjammer.data.GameData.Heroes[hero.hero_id].name;
+              if (hero.icon_id === null) hero.icon_id = katzenjammer.data.GameData.Heroes[hero.hero_id].icon_id;
+              var building = buildings[hero.building_id];
+              var bHeroes = building.getHeroes();
+              if (bHeroes === null) bHeroes = [];
+              bHeroes.push(hero);
+              building.setHeroes(bHeroes);
+            }
+
+            katzenjammer.container.MainContainer.Instance.getBuildings().updateBuildingList();
           }
         }, this);
         req.send();
@@ -185,10 +221,14 @@
 
           if (response.success) {
             var data = e.getTarget().getResponse().data;
+            var buildings = katzenjammer.data.User.Instance.getBuildings();
             var quests = [];
 
             for (var i in data) {
-              quests[data[i].user_building_id] = new katzenjammer.data.Quest(data[i]);
+              var quest = new katzenjammer.data.Quest(data[i]);
+              quests[data[i].user_building_id] = quest;
+              var b = buildings[data[i].user_building_id];
+              b.setQuest(quest);
             }
 
             this.setQuests(quests);
@@ -202,4 +242,4 @@
   katzenjammer.data.User.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=User.js.map?dt=1652417291389
+//# sourceMappingURL=User.js.map?dt=1655814653771

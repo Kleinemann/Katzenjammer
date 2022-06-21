@@ -21,6 +21,7 @@
       "katzenjammer.data.User": {},
       "katzenjammer.data.ServiceRequest": {},
       "katzenjammer.data.UserBuilding": {},
+      "qx.ui.basic.Atom": {},
       "katzenjammer.container.MapContainer": {}
     }
   };
@@ -164,6 +165,14 @@
         for (var i in userBuildings) {
           var item = userBuildings[i].getItem();
           list.add(item);
+          var heroes = userBuildings[i].getHeroes();
+
+          for (var h in heroes) {
+            var hero = heroes[h];
+            var icon = katzenjammer.data.GameData.Icons[hero.icon_id].iconUrl;
+            var itemH = new qx.ui.basic.Atom(hero.name, icon);
+            list.add(itemH);
+          }
         }
 
         katzenjammer.container.MapContainer.Instance.updateUserBuildings();
@@ -173,4 +182,4 @@
   katzenjammer.container.lists.BuildingsContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BuildingsContainer.js.map?dt=1652417291683
+//# sourceMappingURL=BuildingsContainer.js.map?dt=1655738759051

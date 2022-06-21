@@ -14485,6 +14485,961 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         "construct": true,
         "require": true
       },
+      "qx.ui.layout.LineSizeIterator": {},
+      "qx.ui.layout.Util": {}
+    },
+    "environment": {
+      "provided": [],
+      "required": {
+        "qx.debug": {
+          "load": true
+        }
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+     http://qooxdoo.org
+  
+     Copyright:
+       2008 Dihedrals.com, http://www.dihedrals.com
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Chris Banford (zermattchris)
+       * Fabian Jakobs (fjakobs)
+  
+  ************************************************************************ */
+
+  /**
+   * A basic layout, which supports positioning of child widgets in a 'flowing'
+   * manner, starting at the container's top/left position, placing children left to right
+   * (like a HBox) until the there's no remaining room for the next child. When
+   * out of room on the current line of elements, a new line is started, cleared
+   * below the tallest child of the preceding line -- a bit like using 'float'
+   * in CSS, except that a new line wraps all the way back to the left.
+   *
+   * *Features*
+   *
+   * <ul>
+   * <li> Reversing children order </li>
+   * <li> Manual line breaks </li>
+   * <li> Horizontal alignment of lines </li>
+   * <li> Vertical alignment of individual widgets within a line </li>
+   * <li> Margins with horizontal margin collapsing </li>
+   * <li> Horizontal and vertical spacing </li>
+   * <li> Height for width calculations </li>
+   * <li> Auto-sizing </li>
+   * </ul>
+   *
+   * *Item Properties*
+   *
+   * <ul>
+   * <li><strong>lineBreak</strong> <em>(Boolean)</em>: If set to <code>true</code>
+   *   a forced line break will happen after this child widget.
+   * </li>
+   * <li><strong>stretch</strong> <em>(Boolean)</em>: If set to <code>true</code>
+   *   the widget will be stretched to the remaining line width. This requires
+   *   lineBreak to be true.
+   * </li>
+  
+   * </ul>
+   *
+   * *Example*
+   *
+   * Here is a little example of how to use the Flow layout.
+   *
+   * <pre class="javascript">
+   *  var flowlayout = new qx.ui.layout.Flow();
+   *
+   *  flowlayout.setAlignX( "center" );  // Align children to the X axis of the container (left|center|right)
+   *
+   *  var container = new qx.ui.container.Composite(flowlayout);
+   *  this.getRoot().add(container, {edge: 0});
+   *
+   *  var button1 = new qx.ui.form.Button("1. First Button", "flowlayout/test.png");
+   *  container.add(button1);
+   *
+   *  var button2 = new qx.ui.form.Button("2. Second longer Button...", "flowlayout/test.png");
+   *  // Have this child create a break in the current Line (next child will always start a new Line)
+   *  container.add(button2, {lineBreak: true});
+   *
+   *  var button3 = new qx.ui.form.Button("3rd really, really, really long Button", "flowlayout/test.png");
+   *  button3.setHeight(100);  // tall button
+   *  container.add(button3);
+   *
+   *  var button4 = new qx.ui.form.Button("Number 4", "flowlayout/test.png");
+   *  button4.setAlignY("bottom");
+   *  container.add(button4);
+   *
+   *  var button5 = new qx.ui.form.Button("20px Margins around the great big 5th button!");
+   *  button5.setHeight(100);  // tall button
+   *  button5.setMargin(20);
+   *  container.add(button5, {lineBreak: true});    // Line break after this button.
+   *
+   *  var button6 = new qx.ui.form.Button("Number 6", "flowlayout/test.png");
+   *  button6.setAlignY("middle");  // Align this child to the vertical center of this line.
+   *  container.add(button6);
+   *
+   *  var button7 = new qx.ui.form.Button("7th a wide, short button", "flowlayout/test.png");
+   *  button7.setMaxHeight(20);  // short button
+   *  container.add(button7);
+   * </pre>
+   *
+   * *External Documentation*
+   *
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/flow.md'>
+   * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
+   */
+  qx.Class.define("qx.ui.layout.Flow", {
+    extend: qx.ui.layout.Abstract,
+
+    /*
+    *****************************************************************************
+       CONSTRUCTOR
+    *****************************************************************************
+    */
+
+    /**
+     * @param spacingX {Integer?0} The spacing between child widgets {@link #spacingX}.
+     * @param spacingY {Integer?0} The spacing between the lines {@link #spacingY}.
+     * @param alignX {String?"left"} Horizontal alignment of the whole children
+     *     block {@link #alignX}.
+     */
+    construct: function construct(spacingX, spacingY, alignX) {
+      qx.ui.layout.Abstract.constructor.call(this);
+
+      if (spacingX) {
+        this.setSpacingX(spacingX);
+      }
+
+      if (spacingY) {
+        this.setSpacingY(spacingY);
+      }
+
+      if (alignX) {
+        this.setAlignX(alignX);
+      }
+    },
+
+    /*
+    *****************************************************************************
+       PROPERTIES
+    *****************************************************************************
+    */
+    properties: {
+      /**
+       * Horizontal alignment of the whole children block. The horizontal
+       * alignment of the child is completely ignored in HBoxes (
+       * {@link qx.ui.core.LayoutItem#alignX}).
+       */
+      alignX: {
+        check: ["left", "center", "right"],
+        init: "left",
+        apply: "_applyLayoutChange"
+      },
+
+      /**
+       * Vertical alignment of each child. Can be overridden through
+       * {@link qx.ui.core.LayoutItem#alignY}.
+       */
+      alignY: {
+        check: ["top", "middle", "bottom"],
+        init: "top",
+        apply: "_applyLayoutChange"
+      },
+
+      /** Horizontal spacing between two children */
+      spacingX: {
+        check: "Integer",
+        init: 0,
+        apply: "_applyLayoutChange"
+      },
+
+      /**
+       * The vertical spacing between the lines.
+       */
+      spacingY: {
+        check: "Integer",
+        init: 0,
+        apply: "_applyLayoutChange"
+      },
+
+      /** Whether the actual children list should be laid out in reversed order. */
+      reversed: {
+        check: "Boolean",
+        init: false,
+        apply: "_applyLayoutChange"
+      }
+    },
+
+    /*
+    *****************************************************************************
+       MEMBERS
+    *****************************************************************************
+    */
+    members: {
+      /*
+      ---------------------------------------------------------------------------
+        LAYOUT INTERFACE
+      ---------------------------------------------------------------------------
+      */
+      // overridden
+      verifyLayoutProperty: qx.core.Environment.select("qx.debug", {
+        "true": function _true(item, name, value) {
+          var validProperties = ["lineBreak", "stretch"];
+          this.assertInArray(name, validProperties, "The property '" + name + "' is not supported by the flow layout!");
+        },
+        "false": null
+      }),
+      // overridden
+      connectToWidget: function connectToWidget(widget) {
+        qx.ui.layout.Flow.superclass.prototype.connectToWidget.call(this, widget); // Necessary to be able to calculate the lines for the flow layout.
+        // Otherwise the layout calculates the needed width and height by using
+        // only one line of items which is leading to the wrong height. This
+        // wrong height does e.g. suppress scrolling since the scroll pane does
+        // not know about the correct needed height.
+
+        if (widget) {
+          widget.setAllowShrinkY(false);
+        }
+      },
+
+      /**
+       * The FlowLayout tries to add as many Children as possible to the current 'Line'
+       * and when it sees that the next Child won't fit, it starts on a new Line, continuing
+       * until all the Children have been added.
+       * To enable alignX "left", "center", "right" renderLayout has to calculate the positions
+       * of all a Line's children before it draws them.
+       *
+       * @param availWidth {Integer} Final width available for the content (in pixel)
+       * @param availHeight {Integer} Final height available for the content (in pixel)
+       * @param padding {Map} Map containing the padding values. Keys:
+       * <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>
+       */
+      renderLayout: function renderLayout(availWidth, availHeight, padding) {
+        var children = this._getLayoutChildren();
+
+        if (this.getReversed()) {
+          children = children.concat().reverse();
+        }
+
+        var lineCalculator = new qx.ui.layout.LineSizeIterator(children, this.getSpacingX());
+        var lineTop = padding.top;
+
+        while (lineCalculator.hasMoreLines()) {
+          var line = lineCalculator.computeNextLine(availWidth);
+
+          this.__renderLine__P_218_0(line, lineTop, availWidth, padding);
+
+          lineTop += line.height + this.getSpacingY();
+        }
+      },
+
+      /**
+       * Render a line in the flow layout
+       *
+       * @param line {Map} A line configuration as returned by
+       *    {@link LineSizeIterator#computeNextLine}.
+       * @param lineTop {Integer} The line's top position
+       * @param availWidth {Integer} The available line width
+       * @param padding {Map} Map containing the padding values. Keys:
+       * <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>
+       */
+      __renderLine__P_218_0: function __renderLine__P_218_0(line, lineTop, availWidth, padding) {
+        var util = qx.ui.layout.Util;
+        var left = padding.left;
+
+        if (this.getAlignX() != "left") {
+          left = padding.left + availWidth - line.width;
+
+          if (this.getAlignX() == "center") {
+            left = padding.left + Math.round((availWidth - line.width) / 2);
+          }
+        }
+
+        for (var i = 0; i < line.children.length; i++) {
+          var child = line.children[i];
+          var size = child.getSizeHint();
+          var marginTop = child.getMarginTop();
+          var marginBottom = child.getMarginBottom();
+          var top = util.computeVerticalAlignOffset(child.getAlignY() || this.getAlignY(), marginTop + size.height + marginBottom, line.height, marginTop, marginBottom);
+          var layoutProps = child.getLayoutProperties();
+
+          if (layoutProps.stretch && layoutProps.stretch) {
+            size.width += availWidth - line.width;
+          }
+
+          child.renderLayout(left + line.gapsBefore[i], lineTop + top, size.width, size.height);
+          left += line.gapsBefore[i] + size.width;
+        }
+      },
+      // overridden
+      _computeSizeHint: function _computeSizeHint() {
+        return this.__computeSize__P_218_1(Infinity);
+      },
+      // overridden
+      hasHeightForWidth: function hasHeightForWidth() {
+        return true;
+      },
+      // overridden
+      getHeightForWidth: function getHeightForWidth(width) {
+        return this.__computeSize__P_218_1(width).height;
+      },
+
+      /**
+       * Returns the list of children fitting in the last row of the given width.
+       * @param width {Number} The width to use for the calculation.
+       * @return {Array} List of children in the first row.
+       */
+      getLastLineChildren: function getLastLineChildren(width) {
+        var lineCalculator = new qx.ui.layout.LineSizeIterator(this._getLayoutChildren(), this.getSpacingX());
+        var lineData = [];
+
+        while (lineCalculator.hasMoreLines()) {
+          lineData = lineCalculator.computeNextLine(width).children;
+        }
+
+        return lineData;
+      },
+
+      /**
+       * Compute the preferred size optionally constrained by the available width
+       *
+       * @param availWidth {Integer} The available width
+       * @return {Map} Map containing the preferred height and width of the layout
+       */
+      __computeSize__P_218_1: function __computeSize__P_218_1(availWidth) {
+        var lineCalculator = new qx.ui.layout.LineSizeIterator(this._getLayoutChildren(), this.getSpacingX());
+        var height = 0;
+        var width = 0;
+        var lineCount = 0;
+
+        while (lineCalculator.hasMoreLines()) {
+          var line = lineCalculator.computeNextLine(availWidth);
+          lineCount += 1;
+          width = Math.max(width, line.width);
+          height += line.height;
+        }
+
+        return {
+          width: width,
+          height: height + this.getSpacingY() * (lineCount - 1)
+        };
+      }
+    }
+  });
+  qx.ui.layout.Flow.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.core.Environment": {
+        "defer": "load",
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.ui.core.Widget": {
+        "construct": true,
+        "require": true
+      },
+      "qx.ui.form.IStringForm": {
+        "require": true
+      },
+      "qx.locale.Manager": {
+        "construct": true
+      },
+      "qx.bom.client.Css": {
+        "require": true
+      },
+      "qx.bom.client.Html": {
+        "require": true
+      },
+      "qx.html.Label": {},
+      "qx.theme.manager.Color": {},
+      "qx.theme.manager.Font": {},
+      "qx.bom.webfonts.WebFont": {},
+      "qx.bom.Font": {},
+      "qx.ui.core.queue.Layout": {},
+      "qx.bom.Label": {},
+      "qx.bom.client.OperatingSystem": {
+        "require": true
+      },
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      }
+    },
+    "environment": {
+      "provided": [],
+      "required": {
+        "css.textoverflow": {
+          "className": "qx.bom.client.Css"
+        },
+        "html.xul": {
+          "className": "qx.bom.client.Html"
+        },
+        "os.name": {
+          "className": "qx.bom.client.OperatingSystem"
+        },
+        "engine.name": {
+          "className": "qx.bom.client.Engine"
+        },
+        "engine.version": {
+          "className": "qx.bom.client.Engine"
+        },
+        "qx.dynlocale": {
+          "load": true
+        },
+        "browser.name": {
+          "className": "qx.bom.client.Browser"
+        },
+        "browser.version": {
+          "className": "qx.bom.client.Browser"
+        }
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2004-2008 1&1 Internet AG, Germany, http://www.1und1.de
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Sebastian Werner (wpbasti)
+       * Fabian Jakobs (fjakobs)
+       * Martin Wittemann (martinwittemann)
+  
+  ************************************************************************ */
+
+  /**
+   * The label class brings typical text content to the widget system.
+   *
+   * It supports simple text nodes and complex HTML (rich). The default
+   * content mode is for text only. The mode is changeable through the property
+   * {@link #rich}.
+   *
+   * The label supports heightForWidth when used in HTML mode. This means
+   * that multi line HTML automatically computes the correct preferred height.
+   *
+   * *Example*
+   *
+   * Here is a little example of how to use the widget.
+   *
+   * <pre class='javascript'>
+   *   // a simple text label without wrapping and markup support
+   *   var label1 = new qx.ui.basic.Label("Simple text label");
+   *   this.getRoot().add(label1, {left:20, top:10});
+   *
+   *   // a HTML label with automatic line wrapping
+   *   var label2 = new qx.ui.basic.Label().set({
+   *     value: "A <b>long label</b> text with auto-wrapping. This also may contain <b style='color:red'>rich HTML</b> markup.",
+   *     rich : true,
+   *     width: 120
+   *   });
+   *   this.getRoot().add(label2, {left:20, top:50});
+   * </pre>
+   *
+   * The first label in this example is a basic text only label. As such no
+   * automatic wrapping is supported. The second label is a long label containing
+   * HTML markup with automatic line wrapping.
+   *
+   * *External Documentation*
+   *
+   * <a href='http://qooxdoo.org/docs/#desktop/widget/label.md' target='_blank'>
+   * Documentation of this widget in the qooxdoo manual.</a>
+   *
+   * NOTE: Instances of this class must be disposed of after use
+   *
+   */
+  qx.Class.define("qx.ui.basic.Label", {
+    extend: qx.ui.core.Widget,
+    implement: [qx.ui.form.IStringForm],
+
+    /*
+    *****************************************************************************
+       CONSTRUCTOR
+    *****************************************************************************
+    */
+
+    /**
+     * @param value {String} Text or HTML content to use
+     */
+    construct: function construct(value) {
+      qx.ui.core.Widget.constructor.call(this);
+
+      if (value != null) {
+        this.setValue(value);
+      }
+
+      {
+        qx.locale.Manager.getInstance().addListener("changeLocale", this._onChangeLocale, this);
+      }
+    },
+
+    /*
+    *****************************************************************************
+       PROPERTIES
+    *****************************************************************************
+    */
+    properties: {
+      /**
+       * Switches between rich HTML and text content. The text mode (<code>false</code>) supports
+       * advanced features like ellipsis when the available space is not
+       * enough. HTML mode (<code>true</code>) supports multi-line content and all the
+       * markup features of HTML content.
+       */
+      rich: {
+        check: "Boolean",
+        init: false,
+        event: "changeRich",
+        apply: "_applyRich"
+      },
+
+      /**
+       * Controls whether text wrap is activated or not. But please note, that
+       * this property works only in combination with the property {@link #rich}.
+       * The {@link #wrap} has only an effect if the {@link #rich} property is
+       * set to <code>true</code>, otherwise {@link #wrap} has no effect.
+       */
+      wrap: {
+        check: "Boolean",
+        init: true,
+        apply: "_applyWrap"
+      },
+
+      /**
+       * Controls whether line wrapping can occur in the middle of a word; this is
+       * typically only useful when there is a restricted amount of horizontal space
+       * and words would otherwise overflow beyond the width of the element.  Words
+       * are typically considered as separated by spaces, so "abc/def/ghi" is a 11
+       * character word that would not be split without `breakWithWords` set to true.
+       */
+      breakWithinWords: {
+        check: "Boolean",
+        init: false,
+        apply: "_applyBreakWithinWords"
+      },
+
+      /**
+       * Contains the HTML or text content. Interpretation depends on the value
+       * of {@link #rich}. In text mode entities and other HTML special content
+       * is not supported. But it is possible to use unicode escape sequences
+       * to insert symbols and other non ASCII characters.
+       */
+      value: {
+        check: "String",
+        apply: "_applyValue",
+        event: "changeValue",
+        nullable: true
+      },
+
+      /**
+       * The buddy property can be used to connect the label to another widget.
+       * That causes two things:
+       * <ul>
+       *   <li>The label will always take the same enabled state as the buddy
+       *       widget.
+       *   </li>
+       *   <li>A tap on the label will focus the buddy widget.</li>
+       * </ul>
+       * This is the behavior of the for attribute of HTML:
+       * http://www.w3.org/TR/html401/interact/forms.html#adef-for
+       */
+      buddy: {
+        check: "qx.ui.core.Widget",
+        apply: "_applyBuddy",
+        nullable: true,
+        init: null,
+        dereference: true
+      },
+
+      /** Control the text alignment */
+      textAlign: {
+        check: ["left", "center", "right", "justify"],
+        nullable: true,
+        themeable: true,
+        apply: "_applyTextAlign",
+        event: "changeTextAlign"
+      },
+      // overridden
+      appearance: {
+        refine: true,
+        init: "label"
+      },
+      // overridden
+      selectable: {
+        refine: true,
+        init: false
+      },
+      // overridden
+      allowGrowX: {
+        refine: true,
+        init: false
+      },
+      // overridden
+      allowGrowY: {
+        refine: true,
+        init: false
+      },
+      // overridden
+      allowShrinkY: {
+        refine: true,
+        init: false
+      }
+    },
+
+    /*
+    *****************************************************************************
+       MEMBERS
+    *****************************************************************************
+    */
+
+    /* eslint-disable @qooxdoo/qx/no-refs-in-members */
+    members: {
+      __font__P_61_0: null,
+      __invalidContentSize__P_61_1: null,
+      __tapListenerId__P_61_2: null,
+      __webfontListenerId__P_61_3: null,
+
+      /*
+      ---------------------------------------------------------------------------
+        WIDGET API
+      ---------------------------------------------------------------------------
+      */
+      // overridden
+      _getContentHint: function _getContentHint() {
+        if (this.__invalidContentSize__P_61_1) {
+          this.__contentSize__P_61_4 = this.__computeContentSize__P_61_5();
+          delete this.__invalidContentSize__P_61_1;
+        }
+
+        return {
+          width: this.__contentSize__P_61_4.width,
+          height: this.__contentSize__P_61_4.height
+        };
+      },
+      // overridden
+      _hasHeightForWidth: function _hasHeightForWidth() {
+        return this.getRich() && this.getWrap();
+      },
+      // overridden
+      _applySelectable: function _applySelectable(value) {
+        // This is needed for all browsers not having text-overflow:ellipsis
+        // but supporting XUL (firefox < 4)
+        // https://bugzilla.mozilla.org/show_bug.cgi?id=312156
+        if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul")) {
+          if (value && !this.isRich()) {
+            {
+              this.warn("Only rich labels are selectable in browsers with Gecko engine!");
+            }
+            return;
+          }
+        }
+
+        qx.ui.basic.Label.superclass.prototype._applySelectable.call(this, value);
+      },
+      // overridden
+      _getContentHeightForWidth: function _getContentHeightForWidth(width) {
+        if (!this.getRich() && !this.getWrap()) {
+          return null;
+        }
+
+        return this.__computeContentSize__P_61_5(width).height;
+      },
+      // overridden
+      _createContentElement: function _createContentElement() {
+        return new qx.html.Label();
+      },
+      // property apply
+      _applyTextAlign: function _applyTextAlign(value, old) {
+        this.getContentElement().setStyle("textAlign", value);
+      },
+      // overridden
+      _applyTextColor: function _applyTextColor(value, old) {
+        if (value) {
+          this.getContentElement().setStyle("color", qx.theme.manager.Color.getInstance().resolve(value));
+        } else {
+          this.getContentElement().removeStyle("color");
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        LABEL ADDONS
+      ---------------------------------------------------------------------------
+      */
+
+      /**
+       * @type {Map} Internal fallback of label size when no font is defined
+       *
+       * @lint ignoreReferenceField(__contentSize)
+       */
+      __contentSize__P_61_4: {
+        width: 0,
+        height: 0
+      },
+      // property apply
+      _applyFont: function _applyFont(value, old) {
+        if (old && this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
+          this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
+
+          this.__webfontListenerId__P_61_3 = null;
+        } // Apply
+
+
+        var styles;
+
+        if (value) {
+          this.__font__P_61_0 = qx.theme.manager.Font.getInstance().resolve(value);
+
+          if (this.__font__P_61_0 instanceof qx.bom.webfonts.WebFont) {
+            if (!this.__font__P_61_0.isValid()) {
+              this.__webfontListenerId__P_61_3 = this.__font__P_61_0.addListener("changeStatus", this._onWebFontStatusChange, this);
+            }
+          }
+
+          styles = this.__font__P_61_0.getStyles();
+        } else {
+          this.__font__P_61_0 = null;
+          styles = qx.bom.Font.getDefaultStyles();
+        } // check if text color already set - if so this local value has higher priority
+
+
+        if (this.getTextColor() != null) {
+          delete styles["color"];
+        }
+
+        this.getContentElement().setStyles(styles); // Invalidate text size
+
+        this.__invalidContentSize__P_61_1 = true; // Update layout
+
+        qx.ui.core.queue.Layout.add(this);
+      },
+
+      /**
+       * Internal utility to compute the content dimensions.
+       *
+       * @param width {Integer?null} Optional width constraint
+       * @return {Map} Map with <code>width</code> and <code>height</code> keys
+       */
+      __computeContentSize__P_61_5: function __computeContentSize__P_61_5(width) {
+        var Label = qx.bom.Label;
+        var font = this.getFont();
+        var styles = font ? this.__font__P_61_0.getStyles() : qx.bom.Font.getDefaultStyles();
+        var content = this.getValue() || "A";
+        var rich = this.getRich();
+
+        if (this.__webfontListenerId__P_61_3) {
+          this.__fixEllipsis__P_61_6();
+        }
+
+        if (rich && this.getBreakWithinWords()) {
+          styles.wordBreak = "break-all";
+        }
+
+        return rich ? Label.getHtmlSize(content, styles, width) : Label.getTextSize(content, styles);
+      },
+
+      /**
+       * Firefox > 9 on OS X will draw an ellipsis on top of the label content even
+       * though there is enough space for the text. Re-applying the content forces
+       * a recalculation and fixes the problem. See qx bug #6293
+       */
+      __fixEllipsis__P_61_6: function __fixEllipsis__P_61_6() {
+        if (!this.getContentElement()) {
+          return;
+        }
+
+        if (qx.core.Environment.get("os.name") == "osx" && qx.core.Environment.get("engine.name") == "gecko" && parseInt(qx.core.Environment.get("engine.version"), 10) < 16 && parseInt(qx.core.Environment.get("engine.version"), 10) > 9) {
+          var domEl = this.getContentElement().getDomElement();
+
+          if (domEl) {
+            /* eslint-disable-next-line no-self-assign */
+            domEl.innerHTML = domEl.innerHTML;
+          }
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        PROPERTY APPLIER
+      ---------------------------------------------------------------------------
+      */
+      // property apply
+      _applyBuddy: function _applyBuddy(value, old) {
+        if (old != null) {
+          this.removeRelatedBindings(old);
+          this.removeListenerById(this.__tapListenerId__P_61_2);
+          this.__tapListenerId__P_61_2 = null;
+        }
+
+        if (value != null) {
+          value.bind("enabled", this, "enabled");
+          this.__tapListenerId__P_61_2 = this.addListener("tap", function () {
+            // only focus focusable elements [BUG #3555]
+            if (value.isFocusable()) {
+              value.focus.apply(value);
+            } // furthermore toggle if possible [BUG #6881]
+
+
+            if ("toggleValue" in value && typeof value.toggleValue === "function") {
+              value.toggleValue();
+            }
+          }, this);
+        }
+      },
+      // property apply
+      _applyRich: function _applyRich(value) {
+        // Sync with content element
+        this.getContentElement().setRich(value); // Mark text size cache as invalid
+
+        this.__invalidContentSize__P_61_1 = true; // Update layout
+
+        qx.ui.core.queue.Layout.add(this);
+      },
+      // property apply
+      _applyWrap: function _applyWrap(value, old) {
+        if (value && !this.isRich()) {
+          {
+            this.warn("Only rich labels support wrap.");
+          }
+        }
+
+        if (this.isRich()) {
+          // apply the white space style to the label to force it not
+          // to wrap if wrap is set to false [BUG #3732]
+          var whiteSpace = value ? "normal" : "nowrap";
+          this.getContentElement().setStyle("whiteSpace", whiteSpace);
+        }
+      },
+      // property apply
+      _applyBreakWithinWords: function _applyBreakWithinWords(value, old) {
+        if (this.isRich()) {
+          this.getContentElement().setStyle("wordBreak", value ? "break-all" : "normal");
+        }
+      },
+
+      /**
+       * Locale change event handler
+       *
+       * @signature function(e)
+       * @param e {Event} the change event
+       */
+      _onChangeLocale: qx.core.Environment.select("qx.dynlocale", {
+        "true": function _true(e) {
+          var content = this.getValue();
+
+          if (content && content.translate) {
+            this.setValue(content.translate());
+          }
+        },
+        "false": null
+      }),
+
+      /**
+       * Triggers layout recalculation after a web font was loaded
+       *
+       * @param ev {qx.event.type.Data} "changeStatus" event
+       */
+      _onWebFontStatusChange: function _onWebFontStatusChange(ev) {
+        if (ev.getData().valid === true) {
+          // safari has trouble resizing, adding it again fixed the issue [BUG #8786]
+          if (qx.core.Environment.get("browser.name") == "safari" && parseFloat(qx.core.Environment.get("browser.version")) >= 8) {
+            window.setTimeout(function () {
+              this.__invalidContentSize__P_61_1 = true;
+              qx.ui.core.queue.Layout.add(this);
+            }.bind(this), 0);
+          }
+
+          this.__invalidContentSize__P_61_1 = true;
+          qx.ui.core.queue.Layout.add(this);
+        }
+      },
+      // property apply
+      _applyValue: qx.core.Environment.select("qx.dynlocale", {
+        "true": function _true(value, old) {
+          // Sync with content element
+          if (value && value.translate) {
+            this.getContentElement().setValue(value.translate());
+          } else {
+            this.getContentElement().setValue(value);
+          } // Mark text size cache as invalid
+
+
+          this.__invalidContentSize__P_61_1 = true; // Update layout
+
+          qx.ui.core.queue.Layout.add(this);
+        },
+        "false": function _false(value, old) {
+          this.getContentElement().setValue(value); // Mark text size cache as invalid
+
+          this.__invalidContentSize__P_61_1 = true; // Update layout
+
+          qx.ui.core.queue.Layout.add(this);
+        }
+      })
+    },
+
+    /*
+    *****************************************************************************
+       DESTRUCTOR
+    *****************************************************************************
+    */
+    destruct: function destruct() {
+      {
+        qx.locale.Manager.getInstance().removeListener("changeLocale", this._onChangeLocale, this);
+      }
+
+      if (this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
+        this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
+      }
+
+      this.__font__P_61_0 = null;
+    }
+  });
+  qx.ui.basic.Label.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.core.Environment": {
+        "defer": "load",
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.ui.layout.Abstract": {
+        "construct": true,
+        "require": true
+      },
       "qx.ui.layout.Util": {},
       "qx.theme.manager.Decoration": {}
     },
@@ -15320,592 +16275,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   });
   qx.ui.layout.Dock.$$dbClassInfo = $$dbClassInfo;
-})();
-
-(function () {
-  var $$dbClassInfo = {
-    "dependsOn": {
-      "qx.core.Environment": {
-        "defer": "load",
-        "usage": "dynamic",
-        "require": true
-      },
-      "qx.Class": {
-        "usage": "dynamic",
-        "require": true
-      },
-      "qx.ui.core.Widget": {
-        "construct": true,
-        "require": true
-      },
-      "qx.ui.form.IStringForm": {
-        "require": true
-      },
-      "qx.locale.Manager": {
-        "construct": true
-      },
-      "qx.bom.client.Css": {
-        "require": true
-      },
-      "qx.bom.client.Html": {
-        "require": true
-      },
-      "qx.html.Label": {},
-      "qx.theme.manager.Color": {},
-      "qx.theme.manager.Font": {},
-      "qx.bom.webfonts.WebFont": {},
-      "qx.bom.Font": {},
-      "qx.ui.core.queue.Layout": {},
-      "qx.bom.Label": {},
-      "qx.bom.client.OperatingSystem": {
-        "require": true
-      },
-      "qx.bom.client.Engine": {
-        "require": true
-      },
-      "qx.bom.client.Browser": {
-        "require": true
-      }
-    },
-    "environment": {
-      "provided": [],
-      "required": {
-        "css.textoverflow": {
-          "className": "qx.bom.client.Css"
-        },
-        "html.xul": {
-          "className": "qx.bom.client.Html"
-        },
-        "os.name": {
-          "className": "qx.bom.client.OperatingSystem"
-        },
-        "engine.name": {
-          "className": "qx.bom.client.Engine"
-        },
-        "engine.version": {
-          "className": "qx.bom.client.Engine"
-        },
-        "qx.dynlocale": {
-          "load": true
-        },
-        "browser.name": {
-          "className": "qx.bom.client.Browser"
-        },
-        "browser.version": {
-          "className": "qx.bom.client.Browser"
-        }
-      }
-    }
-  };
-  qx.Bootstrap.executePendingDefers($$dbClassInfo);
-
-  /* ************************************************************************
-  
-     qooxdoo - the new era of web development
-  
-     http://qooxdoo.org
-  
-     Copyright:
-       2004-2008 1&1 Internet AG, Germany, http://www.1und1.de
-  
-     License:
-       MIT: https://opensource.org/licenses/MIT
-       See the LICENSE file in the project's top-level directory for details.
-  
-     Authors:
-       * Sebastian Werner (wpbasti)
-       * Fabian Jakobs (fjakobs)
-       * Martin Wittemann (martinwittemann)
-  
-  ************************************************************************ */
-
-  /**
-   * The label class brings typical text content to the widget system.
-   *
-   * It supports simple text nodes and complex HTML (rich). The default
-   * content mode is for text only. The mode is changeable through the property
-   * {@link #rich}.
-   *
-   * The label supports heightForWidth when used in HTML mode. This means
-   * that multi line HTML automatically computes the correct preferred height.
-   *
-   * *Example*
-   *
-   * Here is a little example of how to use the widget.
-   *
-   * <pre class='javascript'>
-   *   // a simple text label without wrapping and markup support
-   *   var label1 = new qx.ui.basic.Label("Simple text label");
-   *   this.getRoot().add(label1, {left:20, top:10});
-   *
-   *   // a HTML label with automatic line wrapping
-   *   var label2 = new qx.ui.basic.Label().set({
-   *     value: "A <b>long label</b> text with auto-wrapping. This also may contain <b style='color:red'>rich HTML</b> markup.",
-   *     rich : true,
-   *     width: 120
-   *   });
-   *   this.getRoot().add(label2, {left:20, top:50});
-   * </pre>
-   *
-   * The first label in this example is a basic text only label. As such no
-   * automatic wrapping is supported. The second label is a long label containing
-   * HTML markup with automatic line wrapping.
-   *
-   * *External Documentation*
-   *
-   * <a href='http://qooxdoo.org/docs/#desktop/widget/label.md' target='_blank'>
-   * Documentation of this widget in the qooxdoo manual.</a>
-   *
-   * NOTE: Instances of this class must be disposed of after use
-   *
-   */
-  qx.Class.define("qx.ui.basic.Label", {
-    extend: qx.ui.core.Widget,
-    implement: [qx.ui.form.IStringForm],
-
-    /*
-    *****************************************************************************
-       CONSTRUCTOR
-    *****************************************************************************
-    */
-
-    /**
-     * @param value {String} Text or HTML content to use
-     */
-    construct: function construct(value) {
-      qx.ui.core.Widget.constructor.call(this);
-
-      if (value != null) {
-        this.setValue(value);
-      }
-
-      {
-        qx.locale.Manager.getInstance().addListener("changeLocale", this._onChangeLocale, this);
-      }
-    },
-
-    /*
-    *****************************************************************************
-       PROPERTIES
-    *****************************************************************************
-    */
-    properties: {
-      /**
-       * Switches between rich HTML and text content. The text mode (<code>false</code>) supports
-       * advanced features like ellipsis when the available space is not
-       * enough. HTML mode (<code>true</code>) supports multi-line content and all the
-       * markup features of HTML content.
-       */
-      rich: {
-        check: "Boolean",
-        init: false,
-        event: "changeRich",
-        apply: "_applyRich"
-      },
-
-      /**
-       * Controls whether text wrap is activated or not. But please note, that
-       * this property works only in combination with the property {@link #rich}.
-       * The {@link #wrap} has only an effect if the {@link #rich} property is
-       * set to <code>true</code>, otherwise {@link #wrap} has no effect.
-       */
-      wrap: {
-        check: "Boolean",
-        init: true,
-        apply: "_applyWrap"
-      },
-
-      /**
-       * Controls whether line wrapping can occur in the middle of a word; this is
-       * typically only useful when there is a restricted amount of horizontal space
-       * and words would otherwise overflow beyond the width of the element.  Words
-       * are typically considered as separated by spaces, so "abc/def/ghi" is a 11
-       * character word that would not be split without `breakWithWords` set to true.
-       */
-      breakWithinWords: {
-        check: "Boolean",
-        init: false,
-        apply: "_applyBreakWithinWords"
-      },
-
-      /**
-       * Contains the HTML or text content. Interpretation depends on the value
-       * of {@link #rich}. In text mode entities and other HTML special content
-       * is not supported. But it is possible to use unicode escape sequences
-       * to insert symbols and other non ASCII characters.
-       */
-      value: {
-        check: "String",
-        apply: "_applyValue",
-        event: "changeValue",
-        nullable: true
-      },
-
-      /**
-       * The buddy property can be used to connect the label to another widget.
-       * That causes two things:
-       * <ul>
-       *   <li>The label will always take the same enabled state as the buddy
-       *       widget.
-       *   </li>
-       *   <li>A tap on the label will focus the buddy widget.</li>
-       * </ul>
-       * This is the behavior of the for attribute of HTML:
-       * http://www.w3.org/TR/html401/interact/forms.html#adef-for
-       */
-      buddy: {
-        check: "qx.ui.core.Widget",
-        apply: "_applyBuddy",
-        nullable: true,
-        init: null,
-        dereference: true
-      },
-
-      /** Control the text alignment */
-      textAlign: {
-        check: ["left", "center", "right", "justify"],
-        nullable: true,
-        themeable: true,
-        apply: "_applyTextAlign",
-        event: "changeTextAlign"
-      },
-      // overridden
-      appearance: {
-        refine: true,
-        init: "label"
-      },
-      // overridden
-      selectable: {
-        refine: true,
-        init: false
-      },
-      // overridden
-      allowGrowX: {
-        refine: true,
-        init: false
-      },
-      // overridden
-      allowGrowY: {
-        refine: true,
-        init: false
-      },
-      // overridden
-      allowShrinkY: {
-        refine: true,
-        init: false
-      }
-    },
-
-    /*
-    *****************************************************************************
-       MEMBERS
-    *****************************************************************************
-    */
-
-    /* eslint-disable @qooxdoo/qx/no-refs-in-members */
-    members: {
-      __font__P_61_0: null,
-      __invalidContentSize__P_61_1: null,
-      __tapListenerId__P_61_2: null,
-      __webfontListenerId__P_61_3: null,
-
-      /*
-      ---------------------------------------------------------------------------
-        WIDGET API
-      ---------------------------------------------------------------------------
-      */
-      // overridden
-      _getContentHint: function _getContentHint() {
-        if (this.__invalidContentSize__P_61_1) {
-          this.__contentSize__P_61_4 = this.__computeContentSize__P_61_5();
-          delete this.__invalidContentSize__P_61_1;
-        }
-
-        return {
-          width: this.__contentSize__P_61_4.width,
-          height: this.__contentSize__P_61_4.height
-        };
-      },
-      // overridden
-      _hasHeightForWidth: function _hasHeightForWidth() {
-        return this.getRich() && this.getWrap();
-      },
-      // overridden
-      _applySelectable: function _applySelectable(value) {
-        // This is needed for all browsers not having text-overflow:ellipsis
-        // but supporting XUL (firefox < 4)
-        // https://bugzilla.mozilla.org/show_bug.cgi?id=312156
-        if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul")) {
-          if (value && !this.isRich()) {
-            {
-              this.warn("Only rich labels are selectable in browsers with Gecko engine!");
-            }
-            return;
-          }
-        }
-
-        qx.ui.basic.Label.superclass.prototype._applySelectable.call(this, value);
-      },
-      // overridden
-      _getContentHeightForWidth: function _getContentHeightForWidth(width) {
-        if (!this.getRich() && !this.getWrap()) {
-          return null;
-        }
-
-        return this.__computeContentSize__P_61_5(width).height;
-      },
-      // overridden
-      _createContentElement: function _createContentElement() {
-        return new qx.html.Label();
-      },
-      // property apply
-      _applyTextAlign: function _applyTextAlign(value, old) {
-        this.getContentElement().setStyle("textAlign", value);
-      },
-      // overridden
-      _applyTextColor: function _applyTextColor(value, old) {
-        if (value) {
-          this.getContentElement().setStyle("color", qx.theme.manager.Color.getInstance().resolve(value));
-        } else {
-          this.getContentElement().removeStyle("color");
-        }
-      },
-
-      /*
-      ---------------------------------------------------------------------------
-        LABEL ADDONS
-      ---------------------------------------------------------------------------
-      */
-
-      /**
-       * @type {Map} Internal fallback of label size when no font is defined
-       *
-       * @lint ignoreReferenceField(__contentSize)
-       */
-      __contentSize__P_61_4: {
-        width: 0,
-        height: 0
-      },
-      // property apply
-      _applyFont: function _applyFont(value, old) {
-        if (old && this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
-          this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
-
-          this.__webfontListenerId__P_61_3 = null;
-        } // Apply
-
-
-        var styles;
-
-        if (value) {
-          this.__font__P_61_0 = qx.theme.manager.Font.getInstance().resolve(value);
-
-          if (this.__font__P_61_0 instanceof qx.bom.webfonts.WebFont) {
-            if (!this.__font__P_61_0.isValid()) {
-              this.__webfontListenerId__P_61_3 = this.__font__P_61_0.addListener("changeStatus", this._onWebFontStatusChange, this);
-            }
-          }
-
-          styles = this.__font__P_61_0.getStyles();
-        } else {
-          this.__font__P_61_0 = null;
-          styles = qx.bom.Font.getDefaultStyles();
-        } // check if text color already set - if so this local value has higher priority
-
-
-        if (this.getTextColor() != null) {
-          delete styles["color"];
-        }
-
-        this.getContentElement().setStyles(styles); // Invalidate text size
-
-        this.__invalidContentSize__P_61_1 = true; // Update layout
-
-        qx.ui.core.queue.Layout.add(this);
-      },
-
-      /**
-       * Internal utility to compute the content dimensions.
-       *
-       * @param width {Integer?null} Optional width constraint
-       * @return {Map} Map with <code>width</code> and <code>height</code> keys
-       */
-      __computeContentSize__P_61_5: function __computeContentSize__P_61_5(width) {
-        var Label = qx.bom.Label;
-        var font = this.getFont();
-        var styles = font ? this.__font__P_61_0.getStyles() : qx.bom.Font.getDefaultStyles();
-        var content = this.getValue() || "A";
-        var rich = this.getRich();
-
-        if (this.__webfontListenerId__P_61_3) {
-          this.__fixEllipsis__P_61_6();
-        }
-
-        if (rich && this.getBreakWithinWords()) {
-          styles.wordBreak = "break-all";
-        }
-
-        return rich ? Label.getHtmlSize(content, styles, width) : Label.getTextSize(content, styles);
-      },
-
-      /**
-       * Firefox > 9 on OS X will draw an ellipsis on top of the label content even
-       * though there is enough space for the text. Re-applying the content forces
-       * a recalculation and fixes the problem. See qx bug #6293
-       */
-      __fixEllipsis__P_61_6: function __fixEllipsis__P_61_6() {
-        if (!this.getContentElement()) {
-          return;
-        }
-
-        if (qx.core.Environment.get("os.name") == "osx" && qx.core.Environment.get("engine.name") == "gecko" && parseInt(qx.core.Environment.get("engine.version"), 10) < 16 && parseInt(qx.core.Environment.get("engine.version"), 10) > 9) {
-          var domEl = this.getContentElement().getDomElement();
-
-          if (domEl) {
-            /* eslint-disable-next-line no-self-assign */
-            domEl.innerHTML = domEl.innerHTML;
-          }
-        }
-      },
-
-      /*
-      ---------------------------------------------------------------------------
-        PROPERTY APPLIER
-      ---------------------------------------------------------------------------
-      */
-      // property apply
-      _applyBuddy: function _applyBuddy(value, old) {
-        if (old != null) {
-          this.removeRelatedBindings(old);
-          this.removeListenerById(this.__tapListenerId__P_61_2);
-          this.__tapListenerId__P_61_2 = null;
-        }
-
-        if (value != null) {
-          value.bind("enabled", this, "enabled");
-          this.__tapListenerId__P_61_2 = this.addListener("tap", function () {
-            // only focus focusable elements [BUG #3555]
-            if (value.isFocusable()) {
-              value.focus.apply(value);
-            } // furthermore toggle if possible [BUG #6881]
-
-
-            if ("toggleValue" in value && typeof value.toggleValue === "function") {
-              value.toggleValue();
-            }
-          }, this);
-        }
-      },
-      // property apply
-      _applyRich: function _applyRich(value) {
-        // Sync with content element
-        this.getContentElement().setRich(value); // Mark text size cache as invalid
-
-        this.__invalidContentSize__P_61_1 = true; // Update layout
-
-        qx.ui.core.queue.Layout.add(this);
-      },
-      // property apply
-      _applyWrap: function _applyWrap(value, old) {
-        if (value && !this.isRich()) {
-          {
-            this.warn("Only rich labels support wrap.");
-          }
-        }
-
-        if (this.isRich()) {
-          // apply the white space style to the label to force it not
-          // to wrap if wrap is set to false [BUG #3732]
-          var whiteSpace = value ? "normal" : "nowrap";
-          this.getContentElement().setStyle("whiteSpace", whiteSpace);
-        }
-      },
-      // property apply
-      _applyBreakWithinWords: function _applyBreakWithinWords(value, old) {
-        if (this.isRich()) {
-          this.getContentElement().setStyle("wordBreak", value ? "break-all" : "normal");
-        }
-      },
-
-      /**
-       * Locale change event handler
-       *
-       * @signature function(e)
-       * @param e {Event} the change event
-       */
-      _onChangeLocale: qx.core.Environment.select("qx.dynlocale", {
-        "true": function _true(e) {
-          var content = this.getValue();
-
-          if (content && content.translate) {
-            this.setValue(content.translate());
-          }
-        },
-        "false": null
-      }),
-
-      /**
-       * Triggers layout recalculation after a web font was loaded
-       *
-       * @param ev {qx.event.type.Data} "changeStatus" event
-       */
-      _onWebFontStatusChange: function _onWebFontStatusChange(ev) {
-        if (ev.getData().valid === true) {
-          // safari has trouble resizing, adding it again fixed the issue [BUG #8786]
-          if (qx.core.Environment.get("browser.name") == "safari" && parseFloat(qx.core.Environment.get("browser.version")) >= 8) {
-            window.setTimeout(function () {
-              this.__invalidContentSize__P_61_1 = true;
-              qx.ui.core.queue.Layout.add(this);
-            }.bind(this), 0);
-          }
-
-          this.__invalidContentSize__P_61_1 = true;
-          qx.ui.core.queue.Layout.add(this);
-        }
-      },
-      // property apply
-      _applyValue: qx.core.Environment.select("qx.dynlocale", {
-        "true": function _true(value, old) {
-          // Sync with content element
-          if (value && value.translate) {
-            this.getContentElement().setValue(value.translate());
-          } else {
-            this.getContentElement().setValue(value);
-          } // Mark text size cache as invalid
-
-
-          this.__invalidContentSize__P_61_1 = true; // Update layout
-
-          qx.ui.core.queue.Layout.add(this);
-        },
-        "false": function _false(value, old) {
-          this.getContentElement().setValue(value); // Mark text size cache as invalid
-
-          this.__invalidContentSize__P_61_1 = true; // Update layout
-
-          qx.ui.core.queue.Layout.add(this);
-        }
-      })
-    },
-
-    /*
-    *****************************************************************************
-       DESTRUCTOR
-    *****************************************************************************
-    */
-    destruct: function destruct() {
-      {
-        qx.locale.Manager.getInstance().removeListener("changeLocale", this._onChangeLocale, this);
-      }
-
-      if (this.__font__P_61_0 && this.__webfontListenerId__P_61_3) {
-        this.__font__P_61_0.removeListenerById(this.__webfontListenerId__P_61_3);
-      }
-
-      this.__font__P_61_0 = null;
-    }
-  });
-  qx.ui.basic.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
 (function () {
@@ -17903,7 +18272,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   qx.bom.Cookie.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-15.js.map?dt=1652435556146
+//# sourceMappingURL=package-15.js.map?dt=1655815252684
 qx.$$packageData['15'] = {
   "locales": {},
   "resources": {},

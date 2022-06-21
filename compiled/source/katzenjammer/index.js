@@ -45139,6 +45139,7 @@ qx.$$loader = {
   "10": {
     "uris": [
       "../transpiled/katzenjammer/data/ServiceRequest.js",
+      "../transpiled/katzenjammer/data/GameItem.js",
       "../transpiled/katzenjammer/data/Quest.js",
       "../transpiled/katzenjammer/data/UserBuilding.js"
     ]

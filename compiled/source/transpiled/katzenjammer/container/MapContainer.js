@@ -40,7 +40,8 @@
           UserBuildings: [],
           UserQuests: []
         }
-      }
+      },
+      Routs: {}
     },
     construct: function construct() {
       qx.ui.core.Widget.constructor.call(this);
@@ -177,4 +178,4 @@
   katzenjammer.container.MapContainer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MapContainer.js.map?dt=1652419427171
+//# sourceMappingURL=MapContainer.js.map?dt=1652938016061

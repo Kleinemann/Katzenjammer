@@ -5,7 +5,7 @@
 *
 **/
 qx.Class.define("katzenjammer.data.UserBuilding", {
-    extend: qx.core.Object,
+    extend: katzenjammer.data.GameItem,
 
     statics:
     {
@@ -13,33 +13,35 @@ qx.Class.define("katzenjammer.data.UserBuilding", {
 
     properties:
     {
-        ID: { init: null },
         BuildingId: { init: null },
-        Name: { init: null },
-        Position: { init: null },
-
-        Icon: { init: null },
+        Heroes: { init: null, nullable: true },
         Quest: { init: null, nullable: true }
     },
 
     construct: function (buildingData)
     {
-        this.base(arguments);
+        this.updateArguments(buildingData);
 
-        var buildingBase = katzenjammer.data.GameData.Buildings[buildingData.building_id];
+        this.base(arguments, buildingData);
 
-        this.setID(buildingData.id);
-        this.setName(buildingData.name !== null ? buildingData.name : buildingBase.name);
-        this.setBuildingId(buildingBase.id);
-
-        var iconId = buildingData.icon_id !== null ? buildingData.icon_id : buildingBase.icon_id;
-        this.setIcon(katzenjammer.data.GameData.Icons[iconId]);
-
-        this.setPosition(typeof buildingData.position !== 'string' ? buildingData.position : JSON.parse(buildingData.position));
+        this.setBuildingId(buildingData.building_id);
     },
 
     members:
     {
+        updateArguments: function(data)
+        {
+            var baseBuilding = katzenjammer.data.GameData.Buildings[data.building_id];
+
+            data.text = baseBuilding.text;
+
+            if(data.icon_id === null)
+                data.icon_id = baseBuilding.icon_id;
+
+            if (data.name === null)
+                data.name = baseBuilding.name;
+        },
+
         getItem: function ()
         {
             var item = new qx.ui.container.Composite(new qx.ui.layout.Dock()).set({paddingLeft: 10, paddingRight: 10});

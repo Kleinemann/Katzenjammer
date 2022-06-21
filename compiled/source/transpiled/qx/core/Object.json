@@ -3884,8 +3884,6 @@
     "qx.event.Utils",
     "qx.event.handler.Focus",
     "qx.event.type.Event",
-    "katzenjammer.data.Quest",
-    "katzenjammer.data.UserBuilding",
     "qx.ui.layout.Abstract",
     "qx.ui.table.selection.Model",
     "qx.theme.manager.Decoration",
@@ -3943,6 +3941,7 @@
     "qx.event.handler.Orientation",
     "qx.event.AcceleratingTimer",
     "qx.ui.core.selection.Abstract",
-    "qx.event.handler.Iframe"
+    "qx.event.handler.Iframe",
+    "katzenjammer.data.GameItem"
   ]
 }

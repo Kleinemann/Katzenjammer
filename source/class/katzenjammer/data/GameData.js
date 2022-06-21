@@ -65,7 +65,8 @@ qx.Class.define("katzenjammer.data.GameData", {
                     var data = response.data;
                     for (var i in data)
                     {
-                        var building = katzenjammer.data.GameData.Buildings[data[i].building_id];
+                        var hero = data[i];
+                        var building = katzenjammer.data.GameData.Buildings[hero.building_id];
                         if (building.heroes === undefined)
                             building.heroes = [];
 
